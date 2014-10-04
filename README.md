@@ -217,15 +217,15 @@ If you want to use the Ndef Library from your own app, the easiest option is to 
 
 More instructions: https://github.com/mopius/ndef-nfc/wiki
 
-### Core NFC / NDEF Library
+#### Core NFC / NDEF Library
 
-More information: https://nuget.org/packages/NdefLibrary
-Debug symbols: http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibrary
+* More information: https://nuget.org/packages/NdefLibrary
+* Debug symbols: http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibrary
 
-### NFC / NDEF Library Platform-Specific Extension Library
+#### NFC / NDEF Library Platform-Specific Extension Library
 
-More information: https://www.nuget.org/packages/NdefLibraryExtension
-Debug symbols: http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibraryExtension
+* More information: https://www.nuget.org/packages/NdefLibraryExtension
+* Debug symbols: http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibraryExtension
 
 You can also download the complete portable library project from the source control server of this project, and build the library yourself, or directly integrate the relevant class files.
 
@@ -319,5 +319,6 @@ More information about the library:
 http://ndef.mopius.com/
 
 Library homepage on GitHub:
+http://mopius.github.io/ndef-nfc/
 https://github.com/mopius/ndef-nfc/
 
