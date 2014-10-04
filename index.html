@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>NDEF Library for Proximity APIs / NFC by mopius</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>NDEF Library for Proximity APIs / NFC</h1>
+        <h2>Easily parse and create NFC tags that contain standard-based NDEF messages.</h2>
+        <a href="https://github.com/mopius/ndef-nfc" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="ndef-library-for-proximity-apis--nfc" class="anchor" href="#ndef-library-for-proximity-apis--nfc"><span class="octicon octicon-link"></span></a>NDEF Library for Proximity APIs / NFC</h1>
+
+<p>Easily parse and create NFC tags that contain standard-based NDEF messages.</p>
+
+<p>Available in C# and JavaScript (for HTML5-based apps).</p>
+
+<p>The library download comes with complete example apps that demonstrates reading and writing tags using the NDEF Library.</p>
+
+<h2>
+<a name="background---nfc-and-ndef" class="anchor" href="#background---nfc-and-ndef"><span class="octicon octicon-link"></span></a>Background - NFC and NDEF</h2>
+
+<p>NFC tags as well as the content sent in device-to-device communication when tapping two phones is based on certain standards by the <a href="http://www.nfc-forum.org/">NFC Forum</a> (called NDEF – NFC Data Exchange format). Luckily, these standards were well received and nearly all manufacturers are part of the standardization body. This ensures that public NFC tags can actually be read by all mobile phones today.</p>
+
+<p>When it comes to storing data on NFC tags that can have as little writable storage as around 40 bytes, very efficient and complex data storage schemes are necessary. The downside is that most operating systems do integrate the NFC data transmission at the base level, but offer developers very little support for the NDEF standards on top. Obviously, reading those technical documents isn’t generally too much fun – to create an own implementation of a message that stores a simple URL on a tag, a developer would need to read and understand 59 pages of specifications.</p>
+
+<p>As this is a lot work, there is the risk of people creating own solutions, leading to a fragmented NFC ecosystem</p>
+
+<h2>
+<a name="the-nfc-library" class="anchor" href="#the-nfc-library"><span class="octicon octicon-link"></span></a>The NFC Library</h2>
+
+<p>The open source NFC / NDEF Library contains a large set of classes that take care of formatting your data according to NDEF standards, so that these can be directly written to NFC tags or sent to other devices.</p>
+
+<p>In your app, you choose the corresponding record type (e.g., for URLs, emails or geo tags) and provide the necessary data. The library creates an NDEF message out of the data, which you can directly send to the NFC stack in your operating system as a byte array, which takes care of writing it to a tag or publishing it to another device (using the SNEP protocol).</p>
+
+<p>Additionally, the library can parse NDEF byte arrays that you read from tags or receive from other devices and create a list (NDEF Message) of data classes (NDEF records) that you can easily analyze and use in your app.</p>
+
+<p>For Windows (Phone) 8+, the NFC stack is represented through the Proximity APIs - they encapsulate NFC hardware communication and basic NDEF formatting for a very limited subset of the NDEF standards. This missing part is added by this NDEF library.</p>
+
+<h2>
+<a name="availability" class="anchor" href="#availability"><span class="octicon octicon-link"></span></a>Availability</h2>
+
+<p>The NFC / NDEF library is available in C# and JavaScript and can therefore be used on any operating system.</p>
+
+<p>To keep up to date, either follow this project or <a href="https://twitter.com/mopius">follow me on Twitter</a>.</p>
+
+<h3>
+<a name="c-version" class="anchor" href="#c-version"><span class="octicon octicon-link"></span></a>C# Version</h3>
+
+<p>The library is available as a ready-made portable class library, which can be used on the Windows 8(.1) (WinRT) platform, as well as on Windows Phone 8(.1). Both platforms provide support for interacting with the NFC hardware through the Proximity APIs.</p>
+
+<p>Additional platform-specific functionality is added through the the separate extension library. It integrates with the platform APIs for WinRT / WP8.0 and allows real-life tasks like creating a business card record based on a Contact from the Windows 8 address book.</p>
+
+<p>Two example apps are available - for Windows 8.1 as well as Windows Phone 8.0. In addition to the library download on this page, you can use the NuGet package manager of Visual Studio to easily integrate the library with your project.</p>
+
+<h3>
+<a name="javascript--html5-version" class="anchor" href="#javascript--html5-version"><span class="octicon octicon-link"></span></a>JavaScript / HTML5 Version</h3>
+
+<p>The new JavaScript port of the library provides the most important NDEF types also to HTML5 / JavaScript apps.</p>
+
+<h2>
+<a name="feature-overview" class="anchor" href="#feature-overview"><span class="octicon octicon-link"></span></a>Feature Overview</h2>
+
+<h4>
+<a name="reusable-ndef-classes" class="anchor" href="#reusable-ndef-classes"><span class="octicon octicon-link"></span></a>Reusable NDEF classes</h4>
+
+<ul>
+<li>Parse NDEF message &amp; records from raw byte arrays </li>
+<li>Extract all information from the bits &amp; bytes contained in the record </li>
+<li>Create standard compliant records just by providing your data </li>
+<li>Identify the exact record type when reading an NDEF message</li>
+<li>Records check their contents for validity according to standards</li>
+<li>Can throw NdefException in case of content validity issues, with translatable messages defined in a resource file</li>
+<li>Fully documented source code, following Doxygen standards</li>
+</ul><h4>
+<a name="supported-ndef-records" class="anchor" href="#supported-ndef-records"><span class="octicon octicon-link"></span></a>Supported NDEF records:</h4>
+
+<ul>
+<li>URI: the most common type: any kind of URI, for example an Internet address, email link or any custom URI scheme.</li>
+<li>Smart Poster: combines a URL with textual descriptions in various languages (C# only) </li>
+<li>Text records: contains text in a specific language</li>
+<li>Microsoft LaunchApp: launch a Windows (Phone) app just by tapping a tag (C# only) </li>
+<li>Android Application Record (AAR): launch an Android app</li>
+<li>Bluetooth Secure Simple Pairing: connect to a Bluetooth device, contains information about the target device like the service class (C# only) </li>
+<li>Handover Select: part of the Connection Handover specification, provides a list of alternative carriers to connect to. Used for example for NFC loudspeakers. Includes support for child records - Handover Alternative Carrier and Handover Error records (C# only) </li>
+</ul><h4>
+<a name="new-and-custom-functionality-c" class="anchor" href="#new-and-custom-functionality-c"><span class="octicon octicon-link"></span></a>New and custom functionality (C#)</h4>
+
+<ul>
+<li>Smart URI class: automatically represents itself as the smallest possible NDEF type (URI or Smart Poster), depending on supplied data </li>
+</ul><h4>
+<a name="convenience-classes-extending-the-basic-uri-class-for-common-use-case-scenarios" class="anchor" href="#convenience-classes-extending-the-basic-uri-class-for-common-use-case-scenarios"><span class="octicon octicon-link"></span></a>Convenience classes extending the basic URI class for common use case scenarios</h4>
+
+<ul>
+<li>Geo: longitude &amp; latitude of a place, using different Geo URI schemes (more details) </li>
+<li>Social: linking to social networks like Twitter, Facebook, Foursquare or Skype </li>
+<li>SMS: defining number and body of the message (C# only) </li>
+<li>Mailto: sending email messages with recipient address and optional subject and body (C# only) </li>
+<li>Telephone call: defining the number to call</li>
+<li>Nokia Accessories: let the user choose an app to launch on his Nokia Lumia Windows Phone 8 device (C# only) </li>
+<li>WpSettings: launch a settings page on Windows Phone 8 (e.g., Bluetooth settings, flight mode). Actually modifying these settings is not allowed by the security model of Windows Phone (C# only) </li>
+</ul><h4>
+<a name="platform-specific-extension-library-to-enable-real-life-use-cases-c" class="anchor" href="#platform-specific-extension-library-to-enable-real-life-use-cases-c"><span class="octicon octicon-link"></span></a>Platform-specific extension library to enable real-life use cases (C#)</h4>
+
+<ul>
+<li>Business card (vCard): convert a Contact from the user's address book directly to a vCard record (Windows 8, Windows Phone 8)</li>
+<li>iCalendar: store appointments and events on tags, integrates with WinRT calendar classes (Windows 8, alpha release)</li>
+<li>Image: images in various format on NFC tags or embedded in a Smart Poster. Includes de/encoding of JPEG, PNG, GIF and other file formats (Windows 8) </li>
+</ul><h2>
+<a name="example-apps" class="anchor" href="#example-apps"><span class="octicon octicon-link"></span></a>Example Apps</h2>
+
+<p>For C#, the library download comes with NdefDemo and NdefDemoWin: Windows Phone 8 and Windows 8.1 example apps that demonstrate some of the features of the NDEF Library. Both demos are available under GPL v3 license.</p>
+
+<p>Another GPL-licensed example app is <a href="http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/">NfcShare</a>, which is available together with accompanying webinar slides and a recording at the <a href="http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/">NFC developer's section at NfcInteractor.com</a>.</p>
+
+<p>Examples of apps currently using the NDEF Library and available in the public store:</p>
+
+<ul>
+<li>
+<a href="http://www.nfcinteractor.com/">NFC interactor</a> for Windows Phone: powerful NFC tag reader / writer app</li>
+<li>
+<a href="http://www.nearspeak.at/">NearSpeak</a>: store voice messages on NFC tags</li>
+<li>
+<a href="http://www.nfcinteractor.com/related-projects/nfcsms/">NFCsms</a>: enables Windows Phone to send SMS messages from NFC tags </li>
+</ul><h2>
+<a name="usage-example-c" class="anchor" href="#usage-example-c"><span class="octicon octicon-link"></span></a>Usage example (C#)</h2>
+
+<h3>
+<a name="reading--parsing-a-smart-poster" class="anchor" href="#reading--parsing-a-smart-poster"><span class="octicon octicon-link"></span></a>Reading &amp; parsing a Smart Poster</h3>
+
+<pre><code>private void MessageReceivedHandler(ProximityDevice sender, ProximityMessage message)
+{
+    // Parse raw byte array to NDEF message
+    var rawMsg = message.Data.ToArray();
+    var ndefMessage = NdefMessage.FromByteArray(rawMsg);
+
+    // Loop over all records contained in the NDEF message
+    foreach (NdefRecord record in ndefMessage) 
+    {
+        Debug.WriteLine("Record type: " + Encoding.UTF8.GetString(record.Type, 0, record.Type.Length));
+        // Go through each record, check if it's a Smart Poster
+        if (record.CheckSpecializedType(false) == typeof (NdefSpRecord))
+        {
+            // Convert and extract Smart Poster info
+            var spRecord = new NdefSpRecord(record);
+            Debug.WriteLine("URI: " + spRecord.Uri);
+            Debug.WriteLine("Titles: " + spRecord.TitleCount());
+            Debug.WriteLine("1. Title: " + spRecord.Titles[0].Text);
+            Debug.WriteLine("Action set: " + spRecord.ActionInUse());
+        }
+    }
+}
+</code></pre>
+
+<h3>
+<a name="writing-a-smart-poster" class="anchor" href="#writing-a-smart-poster"><span class="octicon octicon-link"></span></a>Writing a Smart Poster</h3>
+
+<pre><code>// Initialize Smart Poster record with URI, Action + 1 Title
+var spRecord = new NdefSpRecord {
+                  Uri = "http://www.nfcinteractor.com", 
+                  NfcAction = NdefSpActRecord.NfcActionType.DoAction };
+spRecord.AddTitle(new NdefTextRecord { 
+                  Text = "Nfc Interactor", LanguageCode = "en" });
+
+// Add record to NDEF message
+var msg = new NdefMessage { spRecord };
+
+// Publish NDEF message to a tag
+// AsBuffer(): add -&gt; using System.Runtime.InteropServices.WindowsRuntime;
+_device.PublishBinaryMessage("NDEF:WriteTag", msg.ToByteArray().AsBuffer());
+
+// Alternative: send NDEF message to another NFC device
+_device.PublishBinaryMessage("NDEF", msg.ToByteArray().AsBuffer());
+</code></pre>
+
+<h2>
+<a name="usage-example-javascript" class="anchor" href="#usage-example-javascript"><span class="octicon octicon-link"></span></a>Usage Example (JavaScript)</h2>
+
+<h3>
+<a name="create-a-uri-record" class="anchor" href="#create-a-uri-record"><span class="octicon octicon-link"></span></a>Create a URI Record:</h3>
+
+<pre><code>// Create NDEF Message
+var ndefMessage = new NdefLibrary.NdefMessage();
+// Create NDEF Uri Record
+var ndefUriRecord = new NdefLibrary.NdefUriRecord();
+// Set Uri in record
+ndefUriRecord.setUri("https://www.mobilefactory.at");
+// Add record to message
+ndefMessage.push(ndefUriRecord);
+// Get byte array for NFC tag
+var byteArray = ndefMessage.toByteArray();
+</code></pre>
+
+<h3>
+<a name="create-a-raw-ndef-message-by-defined-input" class="anchor" href="#create-a-raw-ndef-message-by-defined-input"><span class="octicon octicon-link"></span></a>Create a raw NDEF Message by defined input:</h3>
+
+<pre><code>var recordType = new Array(1,3,1,3,5,6,7);
+var recordPayload = new Array(1,2,1);
+var id = new Array(3,3);
+var ndefRecord2 = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, recordType);
+ndefRecord2.setPayload(recordPayload);
+ndefRecord2.setId(id);
+
+var ndefMessage = new NdefLibrary.NdefMessage();
+ndefMessage.push(ndefRecord2);
+var byteArray = ndefMessage.toByteArray();
+</code></pre>
+
+<h3>
+<a name="create-a-raw-ndef-message-by-byte-array-from-nfc-tag" class="anchor" href="#create-a-raw-ndef-message-by-byte-array-from-nfc-tag"><span class="octicon octicon-link"></span></a>Create a raw NDEF Message by byte array from NFC tag:</h3>
+
+<pre><code>var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(byteArray);
+</code></pre>
+
+<h2>
+<a name="installation-c" class="anchor" href="#installation-c"><span class="octicon octicon-link"></span></a>Installation (C#)</h2>
+
+<p>To try the library, you can download the complete library package from this site and test the included NdefDemo example app (currently available for Windows Phone 8). Note that the Windows 8.1 version of the NdefDemoWin example app requires the <a href="http://msdn.microsoft.com/en-us/windows/apps/bg127574">Microsoft Multilingual App Toolkit</a>.</p>
+
+<p>If you want to use the Ndef Library from your own app, the easiest option is to use the NuGet package manager in Visual Studio 2012/2013 to automatically download &amp; integrate the portable library:</p>
+
+<ul>
+<li><p>Ensure you have Nuget version &gt;= 2.8.1. Update through: Tools -&gt; Extensions and Updates... -&gt; Updates (left sidebar) -&gt; Visual Studio Gallery <em>(Otherwise, you will get an error message like this during installation: Install failed. Rolling back... Could not install package 'NdefLibrary'. You are trying to install this package into a project that targets 'WindowsPhone,Version=v8.0', but the package does not contain any assembly references that are compatible with that framework. For more information, contact the package author.")</em></p></li>
+</ul><ol>
+<li>Tools -&gt; Library Package Manager -&gt; Manage NuGet Packages for Solution...</li>
+<li>Search "Online" for "NDEF"</li>
+<li>Install: "NFC / NDEF Library for Proximity APIs" </li>
+<li>To use the platform extension library, also install: "NFC / NDEF Library Platform Extensions for Proximity APIs"</li>
+</ol><p>More instructions: <a href="https://github.com/mopius/ndef-nfc/wiki">https://github.com/mopius/ndef-nfc/wiki</a></p>
+
+<h3>
+<a name="core-nfc--ndef-library" class="anchor" href="#core-nfc--ndef-library"><span class="octicon octicon-link"></span></a>Core NFC / NDEF Library</h3>
+
+<p>More information: <a href="https://nuget.org/packages/NdefLibrary">https://nuget.org/packages/NdefLibrary</a>
+Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibrary">http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibrary</a></p>
+
+<h3>
+<a name="nfc--ndef-library-platform-specific-extension-library" class="anchor" href="#nfc--ndef-library-platform-specific-extension-library"><span class="octicon octicon-link"></span></a>NFC / NDEF Library Platform-Specific Extension Library</h3>
+
+<p>More information: <a href="https://www.nuget.org/packages/NdefLibraryExtension">https://www.nuget.org/packages/NdefLibraryExtension</a>
+Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibraryExtension">http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibraryExtension</a></p>
+
+<p>You can also download the complete portable library project from the source control server of this project, and build the library yourself, or directly integrate the relevant class files.</p>
+
+<h2>
+<a name="installation-javascript" class="anchor" href="#installation-javascript"><span class="octicon octicon-link"></span></a>Installation (JavaScript)</h2>
+
+<p>The JavaScript library is available in two versions, both are available in the "dist" folder of the JavaScript project:</p>
+
+<ul>
+<li>
+<em>ndeflibrary.js:</em> complete version of the library, use for debugging &amp; development</li>
+<li>
+<em>ndeflibrary.min.js:</em> minified version of the library, use for release </li>
+</ul><h2>
+<a name="version-history-c" class="anchor" href="#version-history-c"><span class="octicon octicon-link"></span></a>Version History (C#)</h2>
+
+<h3>
+<a name="latest-changes" class="anchor" href="#latest-changes"><span class="octicon octicon-link"></span></a>Latest changes</h3>
+
+<ul>
+<li>Rebased library from Codeplex to Github</li>
+</ul><h3>
+<a name="302---july-2014" class="anchor" href="#302---july-2014"><span class="octicon octicon-link"></span></a>3.0.2 - July 2014</h3>
+
+<ul>
+<li>New Windows Phone 8.1 settings schemes</li>
+<li>More flexibility when setting properties of the Bluetooth Secure Simple Pairing record from enum values</li>
+</ul><h3>
+<a name="301-alpha---july-2014" class="anchor" href="#301-alpha---july-2014"><span class="octicon octicon-link"></span></a>3.0.1-alpha - July 2014</h3>
+
+<ul>
+<li>Compatible to Windows Phone 8.1 WinRT-based Apps and Universal Apps</li>
+<li>New Bluetooth and Connection Handover classes. Enables full support for writing Bluetooth handover NFC tags as found in accessories like loudspeakers and headsets.
+
+<ul>
+<li>Bluetooth Secure Simple Pairing record, including extensive ready made type definitions according to Bluetooth Core specification 4.1 from December 2013</li>
+<li>Connection Handover standard by the NFC Forum, version 1.3 (January 2014)
+
+<ul>
+<li>Handover Select record</li>
+<li>Handover Alternative Carrier record</li>
+<li>Handover Error record</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>
+<a name="2002---april-2014" class="anchor" href="#2002---april-2014"><span class="octicon octicon-link"></span></a>2.0.0.2 - April 2014</h3>
+
+<ul>
+<li>New: NDEF record classes
+
+<ul>
+<li>Business card records (vCard): Windows 8 (depends on integrated vCard library) / Windows Phone 8 (no 3rd party dependencies)</li>
+<li>iCalendar records: Windows 8 (alpha version, depends on 3rd party DDay.iCal library)</li>
+<li>MIME / Image records: Windows 8</li>
+</ul>
+</li>
+<li>New: Windows 8.1 Demo app</li>
+<li>New: TagGenerator utility app (console-based) to create files containing NDEF messages</li>
+<li>Changed structure: core NDEF library + platform-specific extension library to enable real-life use cases (e.g., converting a WinRT Contact to a vCard record)</li>
+<li>Added: HERE Maps navigation schemes for Geo records</li>
+<li>Added: Power and screen rotation for WP Settings records</li>
+</ul><h3>
+<a name="1100---july-2013" class="anchor" href="#1100---july-2013"><span class="octicon octicon-link"></span></a>1.1.0.0 - July 2013</h3>
+
+<ul>
+<li>SMS handling improved: allows wrong sms:// scheme, parses URLs without body text and/or number</li>
+<li>Social record adds Google+ and the FourSquare protocol</li>
+<li>Adds dictionary of available Nokia Accessories including their product names</li>
+<li>NearSpeak record now understands cloud-based tags</li>
+<li>Improved comments for NDEF message, removed debug output</li>
+</ul><h2>
+<a name="version-history-javascript" class="anchor" href="#version-history-javascript"><span class="octicon octicon-link"></span></a>Version History (JavaScript)</h2>
+
+<h3>
+<a name="known-issues-and-limitations" class="anchor" href="#known-issues-and-limitations"><span class="octicon octicon-link"></span></a>Known issues and limitations:</h3>
+
+<ul>
+<li>Text record does not support UTF-16 encoding yet.</li>
+<li>Does not identify specialized types for URL records (e.g., Tel record)</li>
+<li>Unit test issue: URL encoding of special characters not equivalent to C# output.</li>
+<li>Unit test issue: UTF-16 text comparison with string.</li>
+</ul><h3>
+<a name="100---work-in-progress" class="anchor" href="#100---work-in-progress"><span class="octicon octicon-link"></span></a>1.0.0 - Work in progress</h3>
+
+<ul>
+<li>Fixes for the compiled JavaScript library (include const to compiled version)</li>
+<li>Use var instead of const for better JavaScript compatibility</li>
+<li>New JavaScript demo app using Apache Cordova for Android, Windows Phone and Windows</li>
+<li>Rebased library from Codeplex to Github</li>
+</ul><h3>
+<a name="001---march-2014" class="anchor" href="#001---march-2014"><span class="octicon octicon-link"></span></a>0.0.1 - March 2014</h3>
+
+<ul>
+<li>Initial Version</li>
+</ul><h2>
+<a name="status--roadmap" class="anchor" href="#status--roadmap"><span class="octicon octicon-link"></span></a>Status &amp; Roadmap</h2>
+
+<p>The NDEF library is classified as stable release and is in use in several projects, most importantly Nfc Interactor for Windows Phone (<a href="http://www.nfcinteractor.com/">http://www.nfcinteractor.com/</a>).</p>
+
+<p>Any open issues as well as planned features are tracked online:
+<a href="https://ndef.codeplex.com/workitem/list/basic">https://ndef.codeplex.com/workitem/list/basic</a></p>
+
+<h2>
+<a name="related-information" class="anchor" href="#related-information"><span class="octicon octicon-link"></span></a>Related Information</h2>
+
+<p>Released under the LGPL 2.1 license - see the LICENSE.LGPL file for details.</p>
+
+<p>Developed by Andreas Jakl, <a href="https://twitter.com/andijakl">https://twitter.com/andijakl</a>
+Ported to Javascript by Sebastian Höbarth, <a href="http://www.mobilefactory.at/">http://www.mobilefactory.at/</a></p>
+
+<p>Parts of this library are based on the respective code of the Connectivity Module of Qt Mobility (NdefMessage, NdefRecord, NdefUriRecord and NdefTextRecord classes. Original source code: <a href="http://qt.gitorious.org/qt-mobility">http://qt.gitorious.org/qt-mobility</a>).</p>
+
+<p>More information about the library:
+<a href="http://ndef.mopius.com/">http://ndef.mopius.com/</a></p>
+
+<p>Library homepage on GitHub:
+<a href="https://github.com/mopius/ndef-nfc/">https://github.com/mopius/ndef-nfc/</a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/mopius/ndef-nfc/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/mopius/ndef-nfc/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/mopius/ndef-nfc"></a> is maintained by <a href="https://github.com/mopius">mopius</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
