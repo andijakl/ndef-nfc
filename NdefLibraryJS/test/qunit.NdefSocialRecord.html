@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="qunit/qunit.css" rel="stylesheet" type="text/css" />
+  <script src="qunit/qunit.js"></script>
+  <!-- Add source files here as necessary.  There are the raw source files,
+  and they have not been compiled of wrapped in a closure.  Include them in the
+  order that they should be included in.  If you are following the template's
+  pattern, the init file MUST be loaded last. -->
+  <script src="../src/ndeflibrary.const.js"></script>
+  <script src="../src/ndeflibrary.core.js"></script>
+  <script src="../src/ndeflibrary.module.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefAndroidAppRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefMessage.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefUriRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTelRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefGeoRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefSocialRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTextRecord.js"></script>
+  <script src="../src/ndeflibrary.init.js"></script>
+  <script>
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">NdefSocialRecord Unit Tests</h1>
+   <h2 id="qunit-banner"></h2>
+   <div id="qunit-testrunner-toolbar"></div>
+   <h2 id="qunit-userAgent"></h2>
+   <ol id="qunit-tests"></ol>
+   <div id="qunit-fixture"></div>
+   <script>
+   (function () {
+
+     module('NdefSocialRecord Constructor');
+     
+     test('NdefSocialRecord ', function() {
+     	
+     	var ndefSocialRecord = new NdefLibrary.NdefSocialRecord();
+        
+        deepEqual(ndefSocialRecord.checkIfValid(), true);
+        
+     });
+     
+     test('NdefSocialRecord 1', function() {
+     	
+     	var ndefSocialRecord = new NdefLibrary.NdefSocialRecord();
+        var userName = "nextstop.at";
+        
+        ndefSocialRecord.setSocialType(NdefLibrary.NdefSocialRecord.NfcSocialType.Facebook);
+        ndefSocialRecord.setSocialUserName(userName);
+        deepEqual(ndefSocialRecord.getUri(), "http://facebook.com/nextstop.at");
+        
+        
+        // deepEqual(ndefTelRecord.getTelNumber(), telnumber);
+        // deepEqual(ndefTelRecord.getUri(), "tel:"+telnumber);
+        // deepEqual(ndefTelRecord.getPayload(), [5, 49, 50, 51, 52, 53, 54, 49, 50, 51, 52, 53, 54]);
+        
+     });
+     
+
+
+
+   } ());
+   </script>
+</body>
+</html>

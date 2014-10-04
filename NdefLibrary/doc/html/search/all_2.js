@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['base64',['Base64',['../namespace_vcard_library.html#a45ae18fcb015964681c6960df73bf54ea1eb445fa6bd078346bf63ecac35fa77c',1,'VcardLibrary']]],
+  ['bbs',['BBS',['../namespace_vcard_library.html#aa4345e45aa9359ae9d5aec21d5b4460aae769ae9749a0077873f72febc3168c62',1,'VcardLibrary']]],
+  ['bingmaps',['BingMaps',['../class_ndef_library_1_1_ndef_1_1_ndef_geo_record.html#a81b55c88eadb238fc94ffd841fb67636a6b66fb4621cad3fed340d645ab87f1e0',1,'NdefLibrary::Ndef::NdefGeoRecord']]],
+  ['birthdate',['BirthDate',['../class_vcard_library_1_1v_card.html#abd6ee50bc5636c1bf4936b338014ff50',1,'VcardLibrary::vCard']]],
+  ['bitoffset',['BitOffset',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device_1_1_minor_device_class_type.html#ab472427b93c53c6c37add7b428cb1b7c',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord::BtClassOfDevice::MinorDeviceClassType']]],
+  ['bitsperserviceclass',['BitsPerServiceClass',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_service_classes.html#a3814afcca395852a0873955732e6e074',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord::BtServiceClasses']]],
+  ['body',['Body',['../class_ndef_library_1_1_ndef_1_1_ndef_mailto_record.html#a90da4d2d706b77b9aa4d050aad72648c',1,'NdefLibrary::Ndef::NdefMailtoRecord']]],
+  ['btactype',['BtAcType',['../class_ndef_library_1_1_ndef_1_1_ndef_handover_alternative_carrier_record.html#ad6da941830af84f886ed386fa6f020fc',1,'NdefLibrary::Ndef::NdefHandoverAlternativeCarrierRecord']]],
+  ['btclassofdevice',['BtClassOfDevice',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device.html#a6a7a28ed2ca4619cdcff8b6d948b34a9',1,'NdefLibrary.Ndef.NdefBtSecureSimplePairingRecord.BtClassOfDevice.BtClassOfDevice(byte[] codData)'],['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device.html#adecf436554f7af3270412b6a25e37453',1,'NdefLibrary.Ndef.NdefBtSecureSimplePairingRecord.BtClassOfDevice.BtClassOfDevice()']]],
+  ['btclassofdevice',['BtClassOfDevice',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device.html',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord']]],
+  ['btdeviceaddress',['BtDeviceAddress',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record.html#aff53a98d97a745c2453ae772c5e3c0ee',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord']]],
+  ['btdeviceaddressstring',['BtDeviceAddressString',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record.html#a59ececb1d77d35b0b122f67a69fc6270',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord']]],
+  ['bthandovererrortype',['BtHandoverErrorType',['../class_ndef_library_1_1_ndef_1_1_ndef_handover_error_record.html#afb13c13bb4681b1a7cfac54150ad97dd',1,'NdefLibrary::Ndef::NdefHandoverErrorRecord']]],
+  ['bthstype',['BtHsType',['../class_ndef_library_1_1_ndef_1_1_ndef_handover_select_record.html#a87678088432bf4425eb01b52aafe148b',1,'NdefLibrary::Ndef::NdefHandoverSelectRecord']]],
+  ['btoobtype',['BtOobType',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record.html#af10424d8856c404a4d6d45a076076219',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord']]],
+  ['btserviceclasses',['BtServiceClasses',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_service_classes.html',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord']]],
+  ['btserviceclasses',['BtServiceClasses',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_service_classes.html#a5b2cbef2100481fb288c0a3f186d57e8',1,'NdefLibrary.Ndef.NdefBtSecureSimplePairingRecord.BtServiceClasses.BtServiceClasses(byte scType, byte[] scData)'],['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_service_classes.html#aae067c4f9715d8383f64e2feb6cd41bf',1,'NdefLibrary.Ndef.NdefBtSecureSimplePairingRecord.BtServiceClasses.BtServiceClasses()']]],
+  ['bytesperserviceclass',['BytesPerServiceClass',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_service_classes.html#a6fa8b67d794615611e2f6da409ac9a51',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord::BtServiceClasses']]]
+];

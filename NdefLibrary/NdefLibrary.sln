@@ -1,0 +1,236 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30626.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefLibrary", "NdefLibrary\NdefLibrary.csproj", "{6FA6963F-89CC-47E5-AF24-79C997AB871D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BB68851E-4ECE-4AC4-A409-01C33922616E}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.GPL = LICENSE.GPL
+		LICENSE.LGPL = LICENSE.LGPL
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefLibraryWp", "NdefLibraryWp\NdefLibraryWp.csproj", "{27228A06-916B-4187-AE2C-ED6765CB3E18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefLibraryWin", "NdefLibraryWin\NdefLibraryWin.csproj", "{EB03D996-F061-4320-AE34-96164FCEF025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VcardLibrary", "VcardLibrary\VcardLibrary.csproj", "{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{C200A423-060B-40DB-98F5-9E784B2BB150}"
+	ProjectSection(SolutionItems) = preProject
+		NdefLibrary.nuspec = NdefLibrary.nuspec
+		NdefLibraryExtension.nuspec = NdefLibraryExtension.nuspec
+		NuGetPackage.bat = NuGetPackage.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nupkg", "nupkg", "{2CB8ABE4-7F17-460A-9614-9E2DA6B0B4C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NdefLibraryJS", "NdefLibraryJS", "{821C37CF-1C30-438A-A983-E0523AB40232}"
+	ProjectSection(SolutionItems) = preProject
+		..\NdefLibraryJS\.jshintrc = ..\NdefLibraryJS\.jshintrc
+		..\NdefLibraryJS\.project = ..\NdefLibraryJS\.project
+		..\NdefLibraryJS\component.json = ..\NdefLibraryJS\component.json
+		..\NdefLibraryJS\Gruntfile.js = ..\NdefLibraryJS\Gruntfile.js
+		..\NdefLibraryJS\package.json = ..\NdefLibraryJS\package.json
+		..\NdefLibraryJS\README.md = ..\NdefLibraryJS\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{1318B8B5-0B79-458E-B6F4-C42BC6A2E45A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{2DF0673B-3367-4322-9B2D-FC13F0757457}"
+	ProjectSection(SolutionItems) = preProject
+		..\NdefLibraryJS\doc\html\bc_s.png = ..\NdefLibraryJS\doc\html\bc_s.png
+		..\NdefLibraryJS\doc\html\bdwn.png = ..\NdefLibraryJS\doc\html\bdwn.png
+		..\NdefLibraryJS\doc\html\closed.png = ..\NdefLibraryJS\doc\html\closed.png
+		..\NdefLibraryJS\doc\html\dir_68267d1309a1af8e8297ef4c3efbcdba.html = ..\NdefLibraryJS\doc\html\dir_68267d1309a1af8e8297ef4c3efbcdba.html
+		..\NdefLibraryJS\doc\html\dir_7c51f5cf012b075b09a708f5c6d2ddcb.html = ..\NdefLibraryJS\doc\html\dir_7c51f5cf012b075b09a708f5c6d2ddcb.html
+		..\NdefLibraryJS\doc\html\doxygen.css = ..\NdefLibraryJS\doc\html\doxygen.css
+		..\NdefLibraryJS\doc\html\doxygen.png = ..\NdefLibraryJS\doc\html\doxygen.png
+		..\NdefLibraryJS\doc\html\dynsections.js = ..\NdefLibraryJS\doc\html\dynsections.js
+		..\NdefLibraryJS\doc\html\ftv2blank.png = ..\NdefLibraryJS\doc\html\ftv2blank.png
+		..\NdefLibraryJS\doc\html\ftv2doc.png = ..\NdefLibraryJS\doc\html\ftv2doc.png
+		..\NdefLibraryJS\doc\html\ftv2folderclosed.png = ..\NdefLibraryJS\doc\html\ftv2folderclosed.png
+		..\NdefLibraryJS\doc\html\ftv2folderopen.png = ..\NdefLibraryJS\doc\html\ftv2folderopen.png
+		..\NdefLibraryJS\doc\html\ftv2lastnode.png = ..\NdefLibraryJS\doc\html\ftv2lastnode.png
+		..\NdefLibraryJS\doc\html\ftv2link.png = ..\NdefLibraryJS\doc\html\ftv2link.png
+		..\NdefLibraryJS\doc\html\ftv2mlastnode.png = ..\NdefLibraryJS\doc\html\ftv2mlastnode.png
+		..\NdefLibraryJS\doc\html\ftv2mnode.png = ..\NdefLibraryJS\doc\html\ftv2mnode.png
+		..\NdefLibraryJS\doc\html\ftv2node.png = ..\NdefLibraryJS\doc\html\ftv2node.png
+		..\NdefLibraryJS\doc\html\ftv2plastnode.png = ..\NdefLibraryJS\doc\html\ftv2plastnode.png
+		..\NdefLibraryJS\doc\html\ftv2pnode.png = ..\NdefLibraryJS\doc\html\ftv2pnode.png
+		..\NdefLibraryJS\doc\html\ftv2splitbar.png = ..\NdefLibraryJS\doc\html\ftv2splitbar.png
+		..\NdefLibraryJS\doc\html\ftv2vertline.png = ..\NdefLibraryJS\doc\html\ftv2vertline.png
+		..\NdefLibraryJS\doc\html\index.html = ..\NdefLibraryJS\doc\html\index.html
+		..\NdefLibraryJS\doc\html\jquery.js = ..\NdefLibraryJS\doc\html\jquery.js
+		..\NdefLibraryJS\doc\html\md_src__r_e_a_d_m_e.html = ..\NdefLibraryJS\doc\html\md_src__r_e_a_d_m_e.html
+		..\NdefLibraryJS\doc\html\nav_f.png = ..\NdefLibraryJS\doc\html\nav_f.png
+		..\NdefLibraryJS\doc\html\nav_g.png = ..\NdefLibraryJS\doc\html\nav_g.png
+		..\NdefLibraryJS\doc\html\nav_h.png = ..\NdefLibraryJS\doc\html\nav_h.png
+		..\NdefLibraryJS\doc\html\NdefLibraryLogo.png = ..\NdefLibraryJS\doc\html\NdefLibraryLogo.png
+		..\NdefLibraryJS\doc\html\open.png = ..\NdefLibraryJS\doc\html\open.png
+		..\NdefLibraryJS\doc\html\pages.html = ..\NdefLibraryJS\doc\html\pages.html
+		..\NdefLibraryJS\doc\html\sync_off.png = ..\NdefLibraryJS\doc\html\sync_off.png
+		..\NdefLibraryJS\doc\html\sync_on.png = ..\NdefLibraryJS\doc\html\sync_on.png
+		..\NdefLibraryJS\doc\html\tab_a.png = ..\NdefLibraryJS\doc\html\tab_a.png
+		..\NdefLibraryJS\doc\html\tab_b.png = ..\NdefLibraryJS\doc\html\tab_b.png
+		..\NdefLibraryJS\doc\html\tab_h.png = ..\NdefLibraryJS\doc\html\tab_h.png
+		..\NdefLibraryJS\doc\html\tab_s.png = ..\NdefLibraryJS\doc\html\tab_s.png
+		..\NdefLibraryJS\doc\html\tabs.css = ..\NdefLibraryJS\doc\html\tabs.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "search", "search", "{F4089ACD-5BBF-4EFD-8A09-0D21998674FA}"
+	ProjectSection(SolutionItems) = preProject
+		..\NdefLibraryJS\doc\html\search\all_0.html = ..\NdefLibraryJS\doc\html\search\all_0.html
+		..\NdefLibraryJS\doc\html\search\all_0.js = ..\NdefLibraryJS\doc\html\search\all_0.js
+		..\NdefLibraryJS\doc\html\search\close.png = ..\NdefLibraryJS\doc\html\search\close.png
+		..\NdefLibraryJS\doc\html\search\mag_sel.png = ..\NdefLibraryJS\doc\html\search\mag_sel.png
+		..\NdefLibraryJS\doc\html\search\nomatches.html = ..\NdefLibraryJS\doc\html\search\nomatches.html
+		..\NdefLibraryJS\doc\html\search\pages_0.html = ..\NdefLibraryJS\doc\html\search\pages_0.html
+		..\NdefLibraryJS\doc\html\search\pages_0.js = ..\NdefLibraryJS\doc\html\search\pages_0.js
+		..\NdefLibraryJS\doc\html\search\search.css = ..\NdefLibraryJS\doc\html\search\search.css
+		..\NdefLibraryJS\doc\html\search\search.js = ..\NdefLibraryJS\doc\html\search\search.js
+		..\NdefLibraryJS\doc\html\search\search_l.png = ..\NdefLibraryJS\doc\html\search\search_l.png
+		..\NdefLibraryJS\doc\html\search\search_m.png = ..\NdefLibraryJS\doc\html\search\search_m.png
+		..\NdefLibraryJS\doc\html\search\search_r.png = ..\NdefLibraryJS\doc\html\search\search_r.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{14C753FC-0C19-4115-A91E-C9D9E700A732}"
+	ProjectSection(SolutionItems) = preProject
+		..\NdefLibraryJS\src\ndeflibrary.const.js = ..\NdefLibraryJS\src\ndeflibrary.const.js
+		..\NdefLibraryJS\src\ndeflibrary.core.js = ..\NdefLibraryJS\src\ndeflibrary.core.js
+		..\NdefLibraryJS\src\ndeflibrary.init.js = ..\NdefLibraryJS\src\ndeflibrary.init.js
+		..\NdefLibraryJS\src\ndeflibrary.intro.js = ..\NdefLibraryJS\src\ndeflibrary.intro.js
+		..\NdefLibraryJS\src\ndeflibrary.module.js = ..\NdefLibraryJS\src\ndeflibrary.module.js
+		..\NdefLibraryJS\src\ndeflibrary.outro.js = ..\NdefLibraryJS\src\ndeflibrary.outro.js
+		..\NdefLibraryJS\src\README.md = ..\NdefLibraryJS\src\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "submodule", "submodule", "{7BB5B103-7EBC-4AF7-A113-874FEF30BC1F}"
+	ProjectSection(SolutionItems) = preProject
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefAndroidAppRecord.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefAndroidAppRecord.js
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefGeoRecord.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefGeoRecord.js
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefMessage.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefMessage.js
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefRecord.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefRecord.js
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefSocialRecord.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefSocialRecord.js
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefTelRecord.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefTelRecord.js
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefTextRecord.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefTextRecord.js
+		..\NdefLibraryJS\src\submodule\ndeflibrary.NdefUriRecord.js = ..\NdefLibraryJS\src\submodule\ndeflibrary.NdefUriRecord.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B53724AF-96EE-4FCF-9CE4-C39E254C2ADE}"
+	ProjectSection(SolutionItems) = preProject
+		..\NdefLibraryJS\test\qunit.NdefAndroidAppRecord.html = ..\NdefLibraryJS\test\qunit.NdefAndroidAppRecord.html
+		..\NdefLibraryJS\test\qunit.NdefGeoRecord.html = ..\NdefLibraryJS\test\qunit.NdefGeoRecord.html
+		..\NdefLibraryJS\test\qunit.NdefLibrary.html = ..\NdefLibraryJS\test\qunit.NdefLibrary.html
+		..\NdefLibraryJS\test\qunit.NdefMessage.html = ..\NdefLibraryJS\test\qunit.NdefMessage.html
+		..\NdefLibraryJS\test\qunit.ndefrecords.html = ..\NdefLibraryJS\test\qunit.ndefrecords.html
+		..\NdefLibraryJS\test\qunit.NdefSocialRecord.html = ..\NdefLibraryJS\test\qunit.NdefSocialRecord.html
+		..\NdefLibraryJS\test\qunit.NdefTelRecord.html = ..\NdefLibraryJS\test\qunit.NdefTelRecord.html
+		..\NdefLibraryJS\test\qunit.NdefTextRecord.html = ..\NdefLibraryJS\test\qunit.NdefTextRecord.html
+		..\NdefLibraryJS\test\qunit.NdefUriRecord.html = ..\NdefLibraryJS\test\qunit.NdefUriRecord.html
+		..\NdefLibraryJS\test\README.md = ..\NdefLibraryJS\test\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "quint", "quint", "{DDB471EC-8CA0-4C33-8F64-96AD3551A54B}"
+	ProjectSection(SolutionItems) = preProject
+		..\NdefLibraryJS\test\qunit\qunit.css = ..\NdefLibraryJS\test\qunit\qunit.css
+		..\NdefLibraryJS\test\qunit\qunit.js = ..\NdefLibraryJS\test\qunit\qunit.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs18
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NdefLibrary\\NdefLibrary.csproj
+		SccProjectName1 = NdefLibrary
+		SccLocalPath1 = NdefLibrary
+		SccProjectUniqueName2 = NdefLibraryWin\\NdefLibraryWin.csproj
+		SccProjectName2 = NdefLibraryWin
+		SccLocalPath2 = NdefLibraryWin
+		SccProjectUniqueName3 = NdefLibraryWp\\NdefLibraryWp.csproj
+		SccProjectName3 = NdefLibraryWp
+		SccLocalPath3 = NdefLibraryWp
+		SccProjectUniqueName4 = VcardLibrary\\VcardLibrary.csproj
+		SccProjectName4 = VcardLibrary
+		SccLocalPath4 = VcardLibrary
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Release|x64.ActiveCfg = Release|Any CPU
+		{6FA6963F-89CC-47E5-AF24-79C997AB871D}.Release|x86.ActiveCfg = Release|Any CPU
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Debug|ARM.ActiveCfg = Debug|ARM
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Debug|ARM.Build.0 = Debug|ARM
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Debug|x86.ActiveCfg = Debug|x86
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Debug|x86.Build.0 = Debug|x86
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Release|ARM.ActiveCfg = Release|ARM
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Release|ARM.Build.0 = Release|ARM
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Release|x64.ActiveCfg = Release|Any CPU
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Release|x86.ActiveCfg = Release|x86
+		{27228A06-916B-4187-AE2C-ED6765CB3E18}.Release|x86.Build.0 = Release|x86
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|ARM.ActiveCfg = Debug|ARM
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|ARM.Build.0 = Debug|ARM
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|x64.ActiveCfg = Debug|x64
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|x64.Build.0 = Debug|x64
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|x86.ActiveCfg = Debug|x86
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Debug|x86.Build.0 = Debug|x86
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|ARM.ActiveCfg = Release|ARM
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|ARM.Build.0 = Release|ARM
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|x64.ActiveCfg = Release|x64
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|x64.Build.0 = Release|x64
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|x86.ActiveCfg = Release|x86
+		{EB03D996-F061-4320-AE34-96164FCEF025}.Release|x86.Build.0 = Release|x86
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|ARM.ActiveCfg = Release|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CB8ABE4-7F17-460A-9614-9E2DA6B0B4C7} = {C200A423-060B-40DB-98F5-9E784B2BB150}
+		{1318B8B5-0B79-458E-B6F4-C42BC6A2E45A} = {821C37CF-1C30-438A-A983-E0523AB40232}
+		{2DF0673B-3367-4322-9B2D-FC13F0757457} = {1318B8B5-0B79-458E-B6F4-C42BC6A2E45A}
+		{F4089ACD-5BBF-4EFD-8A09-0D21998674FA} = {2DF0673B-3367-4322-9B2D-FC13F0757457}
+		{14C753FC-0C19-4115-A91E-C9D9E700A732} = {821C37CF-1C30-438A-A983-E0523AB40232}
+		{7BB5B103-7EBC-4AF7-A113-874FEF30BC1F} = {14C753FC-0C19-4115-A91E-C9D9E700A732}
+		{B53724AF-96EE-4FCF-9CE4-C39E254C2ADE} = {821C37CF-1C30-438A-A983-E0523AB40232}
+		{DDB471EC-8CA0-4C33-8F64-96AD3551A54B} = {B53724AF-96EE-4FCF-9CE4-C39E254C2ADE}
+	EndGlobalSection
+EndGlobal

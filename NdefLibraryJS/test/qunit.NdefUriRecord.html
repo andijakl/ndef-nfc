@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="qunit/qunit.css" rel="stylesheet" type="text/css" />
+  <script src="qunit/qunit.js"></script>
+  <!-- Add source files here as necessary.  There are the raw source files,
+  and they have not been compiled of wrapped in a closure.  Include them in the
+  order that they should be included in.  If you are following the template's
+  pattern, the init file MUST be loaded last. -->
+  <script src="../src/ndeflibrary.const.js"></script>
+  <script src="../src/ndeflibrary.core.js"></script>
+  <script src="../src/ndeflibrary.module.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefAndroidAppRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefMessage.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefUriRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTelRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefGeoRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefSocialRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTextRecord.js"></script>
+  <script src="../src/ndeflibrary.init.js"></script>
+  <script>
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">NdefUriRecrod Unit Tests</h1>
+   <h2 id="qunit-banner"></h2>
+   <div id="qunit-testrunner-toolbar"></div>
+   <h2 id="qunit-userAgent"></h2>
+   <ol id="qunit-tests"></ol>
+   <div id="qunit-fixture"></div>
+   <script>
+   (function () {
+
+     module('NdefUriRecrod Constructor');
+     
+     test('NdefUriRecrod RawUri', function() {
+     	
+     	var ndefUriRecord = new NdefLibrary.NdefUriRecord();
+        
+        var test = new Array(1,2,3);
+        ndefUriRecord.setRawUri(test);
+        // console.log("payload:"+ndefUriRecord.getPayload());
+        
+        var test2 = ndefUriRecord.getRawUri();
+        deepEqual(test2,test);
+        
+        //Check internal payload
+        var arrayPayload = new Array();
+        arrayPayload.push(0);
+        arrayPayload = arrayPayload.concat(test);
+        deepEqual(arrayPayload,ndefUriRecord.getPayload());
+     });
+     
+     // test('check statics', function() {
+//      	
+     	// var test = "test";
+     	// console.log(test+" ARRAY "+test.getBytes());
+     	// console.log(test+" startwith "+test.startsWith("te"));
+     	// console.log(test+" startwith "+test.startsWith("tem"));
+     	// console.log("U".getBytes());
+     	// console.log(fromArray(["01100110", "01101111", "01101111"]));
+//         
+     // });
+     
+       test('NdefUriRecrod Uri', function() {
+     	
+     	var ndefUriRecord = new NdefLibrary.NdefUriRecord();
+        var uri = "https://www.mobilefactory.at";
+        ndefUriRecord.setUri(uri);
+        
+        //Print
+        // var m = new NdefLibrary.NdefMessage();
+        // m.push(ndefUriRecord);
+        // console.log(getHexString(m.toByteArray()));
+        
+        var uri2 = ndefUriRecord.getUri();
+        
+        deepEqual(uri2, uri);
+        
+        uri = "ftp://www.google.com?öadsfadfadsfadsfadf";
+        ndefUriRecord.setUri(uri);
+        uri2 = ndefUriRecord.getUri();
+        
+        deepEqual(uri2, uri);
+        
+        uri = "";
+        ndefUriRecord.setUri(uri);
+        uri2 = ndefUriRecord.getUri();
+        
+        deepEqual(uri2, uri);
+        
+        uri = "asdf";
+        ndefUriRecord.setUri(uri);
+        uri2 = ndefUriRecord.getUri();
+        
+        deepEqual(uri2, uri);
+        
+        uri = "urn:nfc://www.mobilefactory.at/ä?§adjf";
+        ndefUriRecord.setUri(uri);
+        uri2 = ndefUriRecord.getUri();
+        
+        deepEqual(uri2, uri);
+     });
+
+	test('NdefUriRecrod consturctor isRecordType', function() {
+     	
+        var ndefUriRecord = new NdefLibrary.NdefUriRecord();
+        // console.log("type: "+ndefUriRecord.getType()+ " nameformat:"+ndefUriRecord.getTypeNameFormat());
+       
+        deepEqual(NdefLibrary.NdefUriRecord.isRecordType(ndefUriRecord),true);
+        deepEqual(NdefLibrary.NdefUriRecord.isRecordType(new NdefLibrary.NdefRecord()), false);
+        
+     });
+     
+	test('NdefUriRecrod Message envelope', function() {
+     	
+     	var uri = "http://www.mobilefactory.at";
+        var ndefUriRecord = new NdefLibrary.NdefUriRecord();
+        ndefUriRecord.setUri(uri);
+        var ndefMessage = new NdefLibrary.NdefMessage(ndefUriRecord);
+        // console.log(ndefMessage.toByteArray());
+        
+        deepEqual(ndefMessage.toByteArray(), [209, 1, 17, 85, 1, 109, 111, 98, 105, 108, 101, 102, 97, 99, 116, 111, 114, 121, 46, 97, 116]);
+     });
+
+
+
+   } ());
+   </script>
+</body>
+</html>

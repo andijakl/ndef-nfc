@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="qunit/qunit.css" rel="stylesheet" type="text/css" />
+  <script src="qunit/qunit.js"></script>
+  <!-- Add source files here as necessary.  There are the raw source files,
+  and they have not been compiled of wrapped in a closure.  Include them in the
+  order that they should be included in.  If you are following the template's
+  pattern, the init file MUST be loaded last. -->
+  <script src="../dist/ndeflibrary.min.js"></script>
+  <script>
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">NdefMessage Unit Tests</h1>
+   <h2 id="qunit-banner"></h2>
+   <div id="qunit-testrunner-toolbar"></div>
+   <h2 id="qunit-userAgent"></h2>
+   <ol id="qunit-tests"></ol>
+   <div id="qunit-fixture"></div>
+   <script>
+   (function () {
+
+     module('NdefMessage Constructor');
+     
+     test('NdefMessage 1', function() {
+     	var ndefMessage = new NdefLibrary.NdefMessage();
+     	
+     	notEqual(ndefMessage, null);
+     });
+     
+     module('Array');
+     test('NdefMessage Array Modifications', function() {
+     	var ndefMessage = new NdefLibrary.NdefMessage();
+     	var ndefRecord = new NdefLibrary.NdefRecord();
+     	var array = new Array(1,3,1,3);
+    	var ndefRecord2 = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, array);
+     	
+     	
+     	equal(ndefMessage.length(), 0);
+     	ndefMessage.clear();
+     	equal(ndefMessage.length(), 0);
+     	
+     	equal(ndefMessage.length(), 0);
+     	ndefMessage.push(ndefRecord);
+     	equal(ndefMessage.length(), 1);
+     	ndefMessage.clear();
+     	equal(ndefMessage.length(), 0);
+     	ndefMessage.push(ndefRecord);
+     	ndefMessage.push(ndefRecord);
+     	ndefMessage.push(ndefRecord2);
+     	equal(ndefMessage.length(), 3);
+     	
+     	equal(ndefMessage.getRecords()[2],ndefRecord2);
+     });
+     
+     module('Methods');
+     
+     test('toByteArray', function() {
+     	var ndefMessage = new NdefLibrary.NdefMessage();
+     	var ndefMessage2 = new NdefLibrary.NdefMessage();
+     	var ndefRecord = new NdefLibrary.NdefRecord();
+     	
+     	ndefMessage2.push(ndefRecord);
+     	deepEqual(ndefMessage.toByteArray(), ndefMessage2.toByteArray());
+     	
+     	var recordType = new Array(1,3,1,3,5,6,7);
+     	var recordPayload = new Array(1,2,1);
+    	var ndefRecord2 = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.Uri, recordType);
+     	ndefRecord2.setPayload(recordPayload);
+     	
+     	
+     	ndefMessage.push(ndefRecord2);
+     	equal(ndefMessage.length(), 1);
+     	
+     	deepEqual(ndefMessage.toByteArray(), [211,7,3,1,3,1,3,5,6,7,1,2,1]);
+     	
+     	
+     	ndefMessage.push(ndefRecord2);
+     	equal(ndefMessage.length(), 2);
+     	
+     	deepEqual(ndefMessage.toByteArray(), [147,7,3,1,3,1,3,5,6,7,1,2,1,83,7,3,1,3,1,3,5,6,7,1,2,1]);
+     });
+
+ 
+     test('toByteArray no short record', function() {
+     	var ndefMessage = new NdefLibrary.NdefMessage();
+     	
+     	var recordType = new Array(1,3,1,3,5,6,7);
+     	var recordPayload = new Array(1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1);
+    	var ndefRecord2 = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.Uri, recordType);
+     	ndefRecord2.setPayload(recordPayload);
+     	ndefMessage.push(ndefRecord2);
+     	
+     	deepEqual(ndefMessage.toByteArray(), [195,7,0,0,3,123,1,3,1,3,5,6,7,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1]);
+     });
+     
+     module('Statics');
+     
+     test('static from byte array', function() {
+     	var ndefRecord = new NdefLibrary.NdefRecord();
+     	var ndefMessage = new NdefLibrary.NdefMessage(ndefRecord);
+     	var ndefMessageByteArray = ndefMessage.toByteArray();
+     	
+     	var ndefMessage2 = NdefLibrary.NdefMessage.fromByteArray(ndefMessageByteArray);
+     	
+     	deepEqual(ndefMessage, ndefMessage2);
+     	deepEqual(ndefMessage.toByteArray(), ndefMessage2.toByteArray());
+     });
+     
+     test('static from byte array', function() {
+     	var recordType = new Array(1,3,1,3,5,6,7);
+     	var recordPayload = new Array(1,2,1);
+     	var id = new Array(3,3);
+    	var ndefRecord2 = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, recordType);
+     	ndefRecord2.setPayload(recordPayload);
+     	ndefRecord2.setId(id);
+     	
+     	var ndefMessage = new NdefLibrary.NdefMessage(ndefRecord2);
+     	var ndefMessage2 = NdefLibrary.NdefMessage.fromByteArray(ndefMessage.toByteArray());
+     	
+     	deepEqual(ndefMessage2, ndefMessage);
+     	deepEqual(ndefMessage2.toByteArray(), ndefMessage.toByteArray());
+     	
+     	var ndefMessage3 = new NdefLibrary.NdefMessage(ndefRecord2,ndefRecord2);
+     	ndefMessage2 = NdefLibrary.NdefMessage.fromByteArray(ndefMessage3.toByteArray());
+     	notDeepEqual(ndefMessage2, ndefMessage);
+     	notDeepEqual(ndefMessage2.toByteArray(), ndefMessage.toByteArray());
+     	
+     	
+     	var recordType3 = new Array(0,0);
+     	var recordPayload3 = new Array(0,0);
+     	var id3 = new Array(0,0);
+    	var ndefRecord3 = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.Uri, recordType3);
+     	ndefRecord3.setPayload(recordPayload3);
+     	ndefRecord3.setId(id3);
+     	
+     	ndefMessage3 = new NdefLibrary.NdefMessage(ndefRecord3);
+     	ndefMessage2 = NdefLibrary.NdefMessage.fromByteArray(ndefMessage3.toByteArray());
+     	notDeepEqual(ndefMessage2, ndefMessage);
+     	notDeepEqual(ndefMessage2.toByteArray(), ndefMessage.toByteArray());
+     });
+
+
+	test('Dictionary URI', function() {
+		
+		var result = "nfcinteractor:compose";
+		var url = [0xD1, 0x01, 0x16, 0x55, 0x00, 0x6E, 0x66, 0x63, 0x69, 0x6E, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x6F, 0x72, 0x3A, 0x63, 0x6F, 0x6D, 0x70, 0x6F, 0x73, 0x65];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(NdefLibrary.NdefUriRecord.isRecordType(record), true);
+		deepEqual(new NdefLibrary.NdefUriRecord(record).getUri(), result);
+		
+		//URL-http
+		var result = "http://ndef.mopius.com";
+		var url = [0xD1,0x01,0x10,0x55,0x03,0x6E,0x64,0x65,0x66,0x2E,0x6D,0x6F,0x70,0x69,0x75,0x73,0x2E,0x63,0x6F,0x6D];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(NdefLibrary.NdefUriRecord.isRecordType(record), true);
+		deepEqual(new NdefLibrary.NdefUriRecord(record).getUri(), result);
+		
+		//URL-SpecialChars
+		var result = "custom:Testmessage -_(){}\":@äöüÄÖÜ";
+		var url = [0xD1,0x01,0x29,0x55,0x00,0x63,0x75,0x73,0x74,0x6F,0x6D,0x3A,0x54,0x65,0x73,0x74,0x6D,0x65,0x73,0x73,0x61,0x67,0x65,0x20,0x2D,0x5F,0x28,0x29,0x7B,0x7D,0x22,0x3A,0x40,0xC3,0xA4,0xC3,0xB6,0xC3,0xBC,0xC3,0x84,0xC3,0x96,0xC3,0x9C];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(NdefLibrary.NdefUriRecord.isRecordType(record), true);
+		deepEqual(new NdefLibrary.NdefUriRecord(record).getUri(), result);
+		
+     });
+
+	test('Dictionary Geo', function() {
+		
+		var url = [0xD1,0x01,0x17,0x55,0x00,0x67,0x65,0x6F,0x3A,0x34,0x38,0x2E,0x31,0x36,0x38,0x36,0x30,0x34,0x2C,0x31,0x36,0x2E,0x33,0x33,0x33,0x37,0x35];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		
+		var geo = new NdefLibrary.NdefGeoRecord(record);
+		deepEqual(geo.getUri(), "geo:48.168604,16.33375");
+		//TODO lat and lon from URI check		
+     });
+
+	test('Dictionary Android', function() {
+		
+		var result = "com.twitter.android";
+		var url = [0xD4,0x0F,0x13,0x61,0x6E,0x64,0x72,0x6F,0x69,0x64,0x2E,0x63,0x6F,0x6D,0x3A,0x70,0x6B,0x67,0x63,0x6F,0x6D,0x2E,0x74,0x77,0x69,0x74,0x74,0x65,0x72,0x2E,0x61,0x6E,0x64,0x72,0x6F,0x69,0x64];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(NdefLibrary.NdefAndroidAppRecord.isRecordType(record), true);
+		deepEqual(new NdefLibrary.NdefAndroidAppRecord(record).getPackageName(), result);
+     });
+
+	test('Dictionary Social', function() {
+		
+		var result = "mopius";
+		var url = [0xD1,0x01,0x13,0x55,0x03,0x74,0x77,0x69,0x74,0x74,0x65,0x72,0x2E,0x63,0x6F,0x6D,0x2F,0x6D,0x6F,0x70,0x69,0x75,0x73];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(new NdefLibrary.NdefSocialRecord(record).getUri(), "http://twitter.com/mopius");
+		deepEqual(new NdefLibrary.NdefSocialRecord(record).getSocialType(), NdefLibrary.NdefSocialRecord.NfcSocialType.Twitter);
+     });
+
+	test('Dictionary Tel', function() {
+		
+		var result = "+1234";
+		var url = [0xD1,0x01,0x06,0x55,0x05,0x2B,0x31,0x32,0x33,0x34];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(NdefLibrary.NdefTelRecord.isRecordType(record), true);
+		deepEqual(new NdefLibrary.NdefTelRecord(record).getTelNumber(), result);
+		
+     });
+
+	test('Dictionary Ext', function() {
+		
+		var url = [0xD4,0x0E,0x07,0x6D,0x6F,0x70,0x69,0x75,0x73,0x2E,0x63,0x6F,0x6D,0x3A,0x6E,0x66,0x63,0x54,0x65,0x73,0x74,0x69,0x6E,0x67];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(new NdefLibrary.NdefRecord(record).getTypeNameFormat(), NdefLibrary.NdefRecord.TypeNameFormatType.ExternalRtd);
+		deepEqual(new NdefLibrary.NdefRecord(record).getType(), "mopius.com:nfc".getBytes());
+		deepEqual(new NdefLibrary.NdefRecord(record).getPayload(), "Testing".getBytes());
+		
+     });
+
+	test('Dictionary Empty', function() {
+		
+		var url = [0xD0,0x00,0x00];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var record = ndefMessage.getRecords()[0];
+		deepEqual(new NdefLibrary.NdefRecord(record).getTypeNameFormat(), NdefLibrary.NdefRecord.TypeNameFormatType.Empty);
+		
+     });
+
+	test('Dictionary Multible Records', function() {
+		
+		var url = [0x91,0x01,0x0C,0x55,0x01,0x74,0x77,0x69,0x74,0x74,0x65,0x72,0x2E,0x63,0x6F,0x6D,0x54,0x0F,0x13,0x61,0x6E,0x64,0x72,0x6F,0x69,0x64,0x2E,0x63,0x6F,0x6D,0x3A,0x70,0x6B,0x67,0x63,0x6F,0x6D,0x2E,0x74,0x77,0x69,0x74,0x74,0x65,0x72,0x2E,0x61,0x6E,0x64,0x72,0x6F,0x69,0x64];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var records = ndefMessage.getRecords();
+		deepEqual(records.length, 2);
+		deepEqual(ndefMessage.length(), 2);
+		
+		deepEqual(new NdefLibrary.NdefUriRecord(records[0]).getUri(), "http://www.twitter.com");
+		deepEqual(new NdefLibrary.NdefAndroidAppRecord(records[1]).getPackageName(), "com.twitter.android");
+	
+     });
+
+	test('Dictionary Multible Text UTF8', function() {
+		
+		var result = "Mopius";
+		var lang = "en";
+		var encoding = NdefLibrary.NdefTextRecord.TextEncodingType.Utf8;
+		var url = [0xD1,0x01,0x09,0x54,0x02,0x65,0x6E,0x4D,0x6F,0x70,0x69,0x75,0x73];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var records = ndefMessage.getRecords();
+		deepEqual(records.length, 1);
+		deepEqual(ndefMessage.length(), 1);
+		deepEqual(NdefLibrary.NdefTextRecord.isRecordType(records[0]), true);
+		
+		var textRecord = new NdefLibrary.NdefTextRecord(records[0]);
+		deepEqual(textRecord.getText(), result);
+		deepEqual(textRecord.getLanguageCode(), lang);
+		deepEqual(textRecord.getTextEncoding(), encoding);
+	
+     });
+
+	test('Dictionary Multible Text UTF16', function() {
+		
+		var result = "\u004D\u006F\u0070\u0069\u0075\u0073";
+		var lang = "en";
+		var encoding = NdefLibrary.NdefTextRecord.TextEncodingType.Utf16;
+		var url = [0xD1,0x01,0x0F,0x54,0x82,0x65,0x6E,0x00,0x4D,0x00,0x6F,0x00,0x70,0x00,0x69,0x00,0x75,0x00,0x73];
+		var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(url);
+		var records = ndefMessage.getRecords();
+		deepEqual(records.length, 1);
+		deepEqual(ndefMessage.length(), 1);
+		deepEqual(NdefLibrary.NdefTextRecord.isRecordType(records[0]), true);
+		
+		var textRecord = new NdefLibrary.NdefTextRecord(records[0]);
+		deepEqual(textRecord.getText(), result);
+		deepEqual(textRecord.getLanguageCode(), lang);
+		deepEqual(textRecord.getTextEncoding(), encoding);
+		deepEqual(textRecord.getPayload().length, 15);
+	
+     });
+     
+     
+   } ());
+   </script>
+</body>
+</html>

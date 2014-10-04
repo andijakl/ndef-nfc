@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en" original="NdefDemoWin_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="NdefDemoWin" product-version="1.0.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.0.1200.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit translate="yes" id="Resources\Subscriptions\Text" xml:space="preserve">
+          <source>Subscriptions</source>
+          <target state="new">Subscriptions</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusWriteToTag" xml:space="preserve">
+          <source>Tap a tag to write the message (size: {0} bytes, publication ID: {1})</source>
+          <target state="new">Tap a tag to write the message (size: {0} bytes, publication ID: {1})</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusWriteToDevice" xml:space="preserve">
+          <source>Tap a device to write the message (size: {0} bytes, publication ID: {1})</source>
+          <target state="new">Tap a device to write the message (size: {0} bytes, publication ID: {1})</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusText\Text" xml:space="preserve">
+          <source>Tap the "Initialize NFC" button to start NFC</source>
+          <target state="new">Tap the "Initialize NFC" button to start NFC</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusTagParsed" xml:space="preserve">
+          <source>Tag parsed: {0}</source>
+          <target state="new">Tag parsed: {0}</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusSubscriptionStopped" xml:space="preserve">
+          <source>Stopped subscription for NDEF messages</source>
+          <target state="new">Stopped subscription for NDEF messages</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusSubscribed" xml:space="preserve">
+          <source>Subscribed for NDEF messages (subscription ID: {0})</source>
+          <target state="new">Subscribed for NDEF messages (subscription ID: {0})</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusPublicationStopped" xml:space="preserve">
+          <source>Stopped publishing a message</source>
+          <target state="new">Stopped publishing a message</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusPublicationError" xml:space="preserve">
+          <source>There was an error publishing this message: {0}</source>
+          <target state="new">There was an error publishing this message: {0}</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusNfcParsingError" xml:space="preserve">
+          <source>Error when parsing NFC data: {0}</source>
+          <target state="new">Error when parsing NFC data: {0}</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusMessageWritten" xml:space="preserve">
+          <source>Success: message published!</source>
+          <target state="new">Success: message published!</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusLaunchedFromTag" xml:space="preserve">
+          <source>Launched app with LaunchApp tag. Arguments: "{0}"</source>
+          <target state="new">Launched app with LaunchApp tag. Arguments: "{0}"</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusInitialized" xml:space="preserve">
+          <source>Successfully initialized proximity device</source>
+          <target state="new">Successfully initialized proximity device</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\StatusInitFailed" xml:space="preserve">
+          <source>Failed to initialize proximity device</source>
+          <target state="new">Failed to initialize proximity device</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Status\Text" xml:space="preserve">
+          <source>Status</source>
+          <target state="new">Status</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\SettingsFlyout\Title" xml:space="preserve">
+          <source>About</source>
+          <target state="new">About</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\ResourceLanguage" xml:space="preserve">
+          <source>en-US</source>
+          <target state="new">en-US</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\ResourceFlowDirection" xml:space="preserve">
+          <source>LeftToRight</source>
+          <target state="new">LeftToRight</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Publishing\Text" xml:space="preserve">
+          <source>Publishing</source>
+          <target state="new">Publishing</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\PageTitleMain" xml:space="preserve">
+          <source>nfc tests</source>
+          <target state="new">nfc tests</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\PageTitleAbout" xml:space="preserve">
+          <source>about</source>
+          <target state="new">about</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\MenuAbout" xml:space="preserve">
+          <source>Instructions %%amp; About</source>
+          <target state="new">Instructions %%amp; About</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Instructions\Text" xml:space="preserve">
+          <source>This example app demonstrates the NDEF library for Proximity APIs.
+
+After initializing NFC, you can use the app to subscribe for NDEF messages - tapping a tag will parse four of the NDEF records supported by the NDEF library: URI, MailTo, Smart Poster, LaunchApp.
+
+You can also write a message to a tag or publish it to another device. Windows Phone can write to NDEF formatted NFC Forum Type 1 - 4 tags. To publish messages, the other device needs to support the standardized SNEP protcol.</source>
+          <target state="new">This example app demonstrates the NDEF library for Proximity APIs.
+
+After initializing NFC, you can use the app to subscribe for NDEF messages - tapping a tag will parse four of the NDEF records supported by the NDEF library: URI, MailTo, Smart Poster, LaunchApp.
+
+You can also write a message to a tag or publish it to another device. Windows Phone can write to NDEF formatted NFC Forum Type 1 - 4 tags. To publish messages, the other device needs to support the standardized SNEP protcol.</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Initialization\Text" xml:space="preserve">
+          <source>Initialization</source>
+          <target state="new">Initialization</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\InstructionsTitle\Text" xml:space="preserve">
+          <source>Instructions</source>
+          <target state="new">Instructions</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnPublishUri\Content" xml:space="preserve">
+          <source>Publish URI to Devices</source>
+          <target state="new">Publish URI to Devices</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnPublishIcalendar\Content" xml:space="preserve">
+          <source>Publish iCalendar (.ics) to Devices</source>
+          <target state="new">Publish iCalendar (.ics) to Devices</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnStopPublication\Content" xml:space="preserve">
+          <source>Stop Publication</source>
+          <target state="new">Stop Publication</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnStopSubscription\Content" xml:space="preserve">
+          <source>Stop Subscription</source>
+          <target state="new">Stop Subscription</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnSubscribeNdef\Content" xml:space="preserve">
+          <source>Subscribe for NDEF messages</source>
+          <target state="new">Subscribe for NDEF messages</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnWriteLaunchApp\Content" xml:space="preserve">
+          <source>Write LaunchApp Tag</source>
+          <target state="new">Write LaunchApp Tag</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnWriteImage\Content" xml:space="preserve">
+          <source>Write PNG image tag</source>
+          <target state="new">Write PNG image tag</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnWriteBusinessCard\Content" xml:space="preserve">
+          <source>Write Business Card Tag</source>
+          <target state="new">Write Business Card Tag</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnWriteMailTo\Content" xml:space="preserve">
+          <source>Write MailTo Tag</source>
+          <target state="new">Write MailTo Tag</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BtnInitNfc\Content" xml:space="preserve">
+          <source>Initialize NFC</source>
+          <target state="new">Initialize NFC</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\ApplicationTitle\Text" xml:space="preserve">
+          <source>NFC NDEF Demo</source>
+          <target state="new">NFC NDEF Demo</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Actions\Text" xml:space="preserve">
+          <source>Actions</source>
+          <target state="new">Actions</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutTwitterUri" xml:space="preserve">
+          <source>https://twitter.com/mopius</source>
+          <target state="new">https://twitter.com/mopius</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutTwitterButton\Content" xml:space="preserve">
+          <source>For Updates: Twitter</source>
+          <target state="new">For Updates: Twitter</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutText\Text" xml:space="preserve">
+          <source>This simple code example for developers demonstrates how to write NFC code using the NDEF library. You can download the open source library using the NuGet package manager to directly integrate it into your project. For a fully featured tag reader / writer app, install NFC interactor for Windows Phone 8.</source>
+          <target state="new">This simple code example for developers demonstrates how to write NFC code using the NDEF library. You can download the open source library using the NuGet package manager to directly integrate it into your project. For a fully featured tag reader / writer app, install NFC interactor for Windows Phone 8.</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutNfcInteractorButton\Content" xml:space="preserve">
+          <source>NFC interactor</source>
+          <target state="new">NFC interactor</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutNfcInteractorUri" xml:space="preserve">
+          <source>http://www.nfcinteractor.com/</source>
+          <target state="new">http://www.nfcinteractor.com/</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutTextTitle\Text" xml:space="preserve">
+          <source>About</source>
+          <target state="new">About</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutNdefLibraryUri" xml:space="preserve">
+          <source>https://ndef.codeplex.com/</source>
+          <target state="new">https://ndef.codeplex.com/</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AboutNdefLibraryButton\Content" xml:space="preserve">
+          <source>NDEF Library</source>
+          <target state="new">NDEF Library</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

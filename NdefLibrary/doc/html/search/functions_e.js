@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['setandassignchildrecords',['SetAndAssignChildRecords',['../class_ndef_library_1_1_ndef_1_1_ndef_handover_select_record.html#a7abb264ead15220cfb28529be9742969',1,'NdefLibrary::Ndef::NdefHandoverSelectRecord']]],
+  ['setimage',['SetImage',['../class_ndef_library_win_1_1_ndef_1_1_ndef_mime_image_record.html#aef5183c99c5f1853e552c38c5f0e8a1e',1,'NdefLibraryWin::Ndef::NdefMimeImageRecord']]],
+  ['setmajordeviceclassfromenum',['SetMajorDeviceClassFromEnum',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device.html#a3c8086b776dbc368cba1574c5f64d41a',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord::BtClassOfDevice']]],
+  ['setmajorserviceclassfromenum',['SetMajorServiceClassFromEnum',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device.html#a8ba9e91b5b6871c33dce4453521b7aac',1,'NdefLibrary.Ndef.NdefBtSecureSimplePairingRecord.BtClassOfDevice.SetMajorServiceClassFromEnum(MajorServiceClassTypes majorClass)'],['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device.html#aa43860f0cbd0ed3012be7a3fe56f78fd',1,'NdefLibrary.Ndef.NdefBtSecureSimplePairingRecord.BtClassOfDevice.SetMajorServiceClassFromEnum(IEnumerable&lt; MajorServiceClassTypes &gt; majorClasses)']]],
+  ['setminordeviceclassfromenum',['SetMinorDeviceClassFromEnum',['../class_ndef_library_1_1_ndef_1_1_ndef_bt_secure_simple_pairing_record_1_1_bt_class_of_device.html#ad35f39dfc1b36a72bc8c8f6ef999ceae',1,'NdefLibrary::Ndef::NdefBtSecureSimplePairingRecord::BtClassOfDevice']]],
+  ['setpayloadandparse',['SetPayloadAndParse',['../class_ndef_library_1_1_ndef_1_1_ndef_launch_app_record.html#a5f285024ddbc15d5c08148140eeb8bb6',1,'NdefLibrary.Ndef.NdefLaunchAppRecord.SetPayloadAndParse()'],['../class_ndef_library_1_1_ndef_1_1_ndef_sp_record.html#ae160c471f27c6bbe92a7c9f9e41392fd',1,'NdefLibrary.Ndef.NdefSpRecord.SetPayloadAndParse()']]],
+  ['seturi',['SetUri',['../class_ndef_library_1_1_ndef_1_1_ndef_sp_record.html#ab10bb7bb4b9bef6a54b8d4422d16d9a9',1,'NdefLibrary::Ndef::NdefSpRecord']]],
+  ['sizeinuse',['SizeInUse',['../class_ndef_library_1_1_ndef_1_1_ndef_sp_record.html#af46a6405d39e700d529be34d3a815783',1,'NdefLibrary::Ndef::NdefSpRecord']]]
+];

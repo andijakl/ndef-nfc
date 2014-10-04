@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="qunit/qunit.css" rel="stylesheet" type="text/css" />
+  <script src="qunit/qunit.js"></script>
+  <!-- Add source files here as necessary.  There are the raw source files,
+  and they have not been compiled of wrapped in a closure.  Include them in the
+  order that they should be included in.  If you are following the template's
+  pattern, the init file MUST be loaded last. -->
+  <script src="../src/ndeflibrary.const.js"></script>
+  <script src="../src/ndeflibrary.core.js"></script>
+  <script src="../src/ndeflibrary.module.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefAndroidAppRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefMessage.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefUriRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTelRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefGeoRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefSocialRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTextRecord.js"></script>
+  <script src="../src/ndeflibrary.init.js"></script>
+  <script>
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">NdefGeoRecord Unit Tests</h1>
+   <h2 id="qunit-banner"></h2>
+   <div id="qunit-testrunner-toolbar"></div>
+   <h2 id="qunit-userAgent"></h2>
+   <ol id="qunit-tests"></ol>
+   <div id="qunit-fixture"></div>
+   <script>
+   (function () {
+
+     module('NdefGeoRecord Constructor');
+     
+     test('NdefGeoRecord ', function() {
+     	
+     	var ndefGeoRecord = new NdefLibrary.NdefGeoRecord();
+        
+        deepEqual(ndefGeoRecord.checkIfValid(), true);
+        
+     });
+     
+     test('NdefGeoRecord 1', function() {
+     	
+     	var ndefGeoRecord = new NdefLibrary.NdefGeoRecord();
+     	ndefGeoRecord.setGeoType(NdefLibrary.NdefGeoRecord.NfcGeoType.GeoUri);
+     	ndefGeoRecord.setLatitude(14.848484);
+     	ndefGeoRecord.setLongitude(48.848484);
+     	
+        deepEqual(ndefGeoRecord.getUri(), "geo:14.848484,48.848484");
+     });
+     
+
+
+
+   } ());
+   </script>
+</body>
+</html>

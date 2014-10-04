@@ -1,0 +1,5 @@
+{
+  "name": "lib-ndeflibrary",
+  "version": "1.0.0",
+  "main": "./dist/ndeflibrary.min.js"
+}

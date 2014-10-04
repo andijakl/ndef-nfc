@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="qunit/qunit.css" rel="stylesheet" type="text/css" />
+  <script src="qunit/qunit.js"></script>
+  <!-- Add source files here as necessary.  There are the raw source files,
+  and they have not been compiled of wrapped in a closure.  Include them in the
+  order that they should be included in.  If you are following the template's
+  pattern, the init file MUST be loaded last. -->
+  <script src="../src/ndeflibrary.const.js"></script>
+  <script src="../src/ndeflibrary.core.js"></script>
+  <script src="../src/ndeflibrary.module.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefUriRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefAndroidAppRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefMessage.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTelRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefGeoRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefSocialRecord.js"></script>
+  <script src="../src/submodule/ndeflibrary.NdefTextRecord.js"></script>
+  <script src="../src/ndeflibrary.init.js"></script>
+  <script>
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">NdefRecords Unit Tests</h1>
+   <h2 id="qunit-banner"></h2>
+   <div id="qunit-testrunner-toolbar"></div>
+   <h2 id="qunit-userAgent"></h2>
+   <ol id="qunit-tests"></ol>
+   <div id="qunit-fixture"></div>
+   <script>
+   (function () {
+
+     module('NdefRecord Constructor');
+     
+     test('NdefRecord type check', function() {
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, "1");
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.Empty, "0");
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.Mime, "2");
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.Uri, "3");
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.ExternalRtd, "4");
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.Unknown, 5);
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.Unchanged, 6);
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.Reserved, 7);
+     });
+
+     test('Can NdefRecord run', function() {
+        var ndefRecord = new NdefLibrary.NdefRecord();
+
+        equal(NdefLibrary.NdefRecord.TypeNameFormatType.Empty, ndefRecord.getTypeNameFormat());
+     });
+     
+     test('TypeNameFormatType', function() {
+        var ndefRecord = new NdefLibrary.NdefRecord();
+        
+    	ndefRecord.setTypeNameFormat(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd);
+    	
+		equal(ndefRecord.getTypeNameFormat(), "1");
+     });
+
+
+     test('type setter getter', function() {
+        var ndefRecord = new NdefLibrary.NdefRecord();
+		
+    	var array = new Array(1,3,1,3);
+    	equal(array, array);
+    	
+    	ndefRecord.setType(array);
+    	var t = ndefRecord.getType();
+        deepEqual(t, array);
+     });
+     
+     
+
+     test('_id setter getter', function() {
+        var ndefRecord = new NdefLibrary.NdefRecord();
+
+		var array = new Array(1,3,1,3,000000,0,0,0,0,0,0,0,0,00,0,0,5);
+    	equal(array, array);
+    	
+    	ndefRecord.setId(array);
+        deepEqual(ndefRecord.getId(), array);
+     });
+
+     test('_payload setter getter', function() {
+        var ndefRecord = new NdefLibrary.NdefRecord();
+
+		var array = new Array(1,3,1,3,000000,0,0,0,0,0,0,0,0,00,0,0,5);
+    	equal(array, array);
+    	
+    	ndefRecord.setPayload(array);
+        deepEqual(ndefRecord.getPayload(), array);
+     });
+
+     test('empty consturctor', function() {
+        var ndefRecord = new NdefLibrary.NdefRecord();
+
+		equal(ndefRecord.getTypeNameFormat(), NdefLibrary.NdefRecord.TypeNameFormatType.Empty);
+        deepEqual(ndefRecord.getType(), []);
+        deepEqual(ndefRecord.getId(), []);
+     });
+
+     test('type consturctor', function() {
+		var array = new Array(1,3,1,3,000000,0,0,0,0,0,0,0,0,00,0,0,5);
+    	var ndefRecord = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, array);
+        equal(ndefRecord.getTypeNameFormat(), NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd);
+        deepEqual(ndefRecord.getType(), array);
+        deepEqual(ndefRecord.getId(), []);
+     });
+
+     test('copy consturctor', function() {
+
+		var array = new Array(1,3,1,3,000000,0,0,0,0,0,0,0,0,00,0,0,5);
+    	var ndefRecord = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, array);
+    	var ndefRecord2 = new NdefLibrary.NdefRecord(ndefRecord);
+    	
+        equal(ndefRecord.getTypeNameFormat(), ndefRecord2.getTypeNameFormat());
+        deepEqual(ndefRecord.getType(), ndefRecord2.getType());
+        deepEqual(ndefRecord.getId(), ndefRecord2.getId());
+        
+        ndefRecord2.setId(array);
+        notDeepEqual(ndefRecord.getId(), ndefRecord2.getId());
+		
+     });
+
+     test('validcheck', function() {
+
+		var array = new Array();
+    	var ndefRecord = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.Unchanged, array);
+        deepEqual(ndefRecord.checkIfValid(), true);
+        
+        ndefRecord = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.Unknown, array);
+        deepEqual(ndefRecord.checkIfValid(), true);
+        
+        ndefRecord = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, new Array(1,2,3));
+        deepEqual(ndefRecord.checkIfValid(), true);
+     });
+ 
+     
+     
+
+
+
+   } ());
+   </script>
+</body>
+</html>
