@@ -4,10 +4,11 @@ ndef-nfc
 NDEF Library for Proximity APIs / NFC
 https://github.com/mopius/ndef-nfc
 
-Easily parse and create NDEF records with C# and the Windows Proximity APIs (NFC).
+Easily parse and create NDEF records, for use with NFC / Proximity APIs.
+Library available for C# and JavaScript.
 
 
-# Background - NFC and NDEF
+## Background - NFC and NDEF
 
 NFC tags as well as the content sent in device-to-device communication when tapping two phones is based on certain standards by the NFC Forum (called NDEF – NFC Data Exchange format). Luckily, these standards were well received and nearly all manufacturers are part of the standardization body. This ensures that public NFC tags can actually be read by all mobile phones today.
 
@@ -16,7 +17,7 @@ When it comes to storing data on NFC tags that can have as little writable stora
 As this is a lot work, there is the risk of people creating own solutions, leading to a fragmented NFC ecosystem
 
 
-# The NFC Library
+## The NFC Library
 
 The open source NFC / NDEF Library contains a large set of classes that take care of formatting your data according to NDEF standards, so that these can be directly written to NFC tags or sent to other devices.
 
@@ -27,7 +28,7 @@ Additionally, the library can parse NDEF byte arrays that you read from tags or 
 For Windows (Phone) 8, the NFC stack is represented through the Proximity APIs - they encapsulate NFC hardware communication and basic NDEF formatting for a very limited subset of the NDEF standards. This missing part is added by this NDEF library.
 
 
-# Availability
+## Availability
 
 The NFC / NDEF library is written in C# and can therefore be used on any operating system that supports C# development.
 
@@ -37,8 +38,10 @@ Additional platform-specific functionality is added through the the separate ext
 
 Two example apps are available - for Windows 8.1 as well as Windows Phone 8.0. In addition to the library download on this page, you can use the NuGet package manager of Visual Studio to easily integrate the library with your project.
 
+In addition, a JavaScript port of the library is available - see the readme file in the corresponding directory for more information: https://github.com/mopius/ndef-nfc/tree/master/NdefLibraryJS
 
-# Reusable NDEF classes
+
+## Reusable NDEF classes
 
 * Parse NDEF message & records from raw byte arrays 
 * Extract all information from the bits & bytes contained in the record 
@@ -74,9 +77,9 @@ Two example apps are available - for Windows 8.1 as well as Windows Phone 8.0. I
 	* Image: images in various format on NFC tags or embedded in a Smart Poster. Includes de/encoding of JPEG, PNG, GIF and other file formats (Windows 8) 
 
 
-# Usage example
+## Usage example
 
-## Reading & parsing a Smart Poster
+### Reading & parsing a Smart Poster
 
 ``` 
 private void MessageReceivedHandler(ProximityDevice sender, ProximityMessage message)
@@ -103,7 +106,7 @@ private void MessageReceivedHandler(ProximityDevice sender, ProximityMessage mes
 }
 ``` 
 
-## Writing a Smart Poster
+### Writing a Smart Poster
 
 ``` 
 // Initialize Smart Poster record with URI, Action + 1 Title
@@ -124,11 +127,11 @@ _device.PublishBinaryMessage("NDEF:WriteTag", msg.ToByteArray().AsBuffer());
 _device.PublishBinaryMessage("NDEF", msg.ToByteArray().AsBuffer());
 ``` 
 
-# Installation
+## Installation
 
 Easiest is to use the NuGet package manager in Visual Studio to integrate the portable library with your project:
 
-## Prerequisites
+### Prerequisites
 
 * Visual Studio 2012 or higher
   Required for using portable class libraries that target Windows Phone 8 & Windows Store apps.
@@ -137,7 +140,7 @@ Easiest is to use the NuGet package manager in Visual Studio to integrate the po
   Please go to "Tools" -> "Extensions and Updates..." to search for updates and install all available updates in this dialog.
   If you have the initial version of NuGet installed, you will *always* get an error message about incompatible platforms when installing the NDEF library, as Windows Phone 8 as a target was not understood by the old NuGet manager.
 
-## Installation
+### Installation
 
 1. Tools -> Library Package Manager -> Manage NuGet Packages for Solution...
 2. Search "Online" for "NDEF"
@@ -149,16 +152,16 @@ More instructions: https://github.com/mopius/ndef-nfc/wiki
 You can also download the complete portable library project from the source control server of this project, and build the library yourself, or directly integrate the relevant class files.
 
 
-# Version History
+## Version History
 
-# Latest changes
+### Latest changes
 * Rebased library from Codeplex to Github
 
-## 3.0.2 - July 2014
+### 3.0.2 - July 2014
 * New Windows Phone 8.1 settings schemes
 * More flexibility when setting properties of the Bluetooth Secure Simple Pairing record from enum values
 
-3.0.1-alpha - July 2014
+### 3.0.1-alpha - July 2014
 * Compatible to Windows Phone 8.1 WinRT-based Apps and Universal Apps
 * New Bluetooth and Connection Handover classes. Enables full support for writing Bluetooth handover NFC tags as found in accessories like loudspeakers and headsets.
 	* Bluetooth Secure Simple Pairing record, including extensive ready made type definitions according to Bluetooth Core specification 4.1 from December 2013
@@ -167,7 +170,7 @@ You can also download the complete portable library project from the source cont
 		* Handover Alternative Carrier record
 		* Handover Error record
 
-2.0.0.2 - April 2014
+### 2.0.0.2 - April 2014
 * New: NDEF record classes
 	* Business card records (vCard): Windows 8 (depends on integrated vCard library) / Windows Phone 8 (no 3rd party dependencies)
 	* iCalendar records: Windows 8 (alpha version, depends on 3rd party DDay.iCal library)
@@ -178,7 +181,7 @@ You can also download the complete portable library project from the source cont
 * Added: HERE Maps navigation schemes for Geo records
 * Added: Power and screen rotation for WP Settings records
 	
-1.1.0.0 - July 2013
+### 1.1.0.0 - July 2013
 * SMS handling improved: allows wrong sms:// scheme, parses URLs without body text and/or number
 * Social record adds Google+ and the FourSquare protocol
 * Adds dictionary of available Nokia Accessories including their product names
@@ -186,7 +189,7 @@ You can also download the complete portable library project from the source cont
 * Improved comments for NDEF message, removed debug output
 
 
-# Status & Roadmap
+## Status & Roadmap
 
 The NDEF library is classified as stable release and is in use in several projects, most importantly Nfc Interactor for Windows Phone (http://www.nfcinteractor.com/).
 
@@ -194,7 +197,7 @@ Any open issues as well as planned features are tracked online:
 https://ndef.codeplex.com/workitem/list/basic
 
 
-# Related Information
+## Related Information
 
 Released under the LGPL 2.1 license - see the LICENSE.LGPL file for details.
 
