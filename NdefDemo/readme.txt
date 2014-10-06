@@ -1,5 +1,5 @@
 Example app for the NDEF Library for Proximity APIs (NFC)
-https://ndef.codeplex.com/
+http://ndef.mopius.com/
 -------------------------------------------------------------------------------
 
 The NDEF Demo is an example app that demonstrates how to use the 
@@ -29,5 +29,5 @@ More information about the library:
 http://ndef.mopius.com/
 
 Library homepage:
-https://ndef.codeplex.com/
+http://mopius.github.io/ndef-nfc/
 

@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="NdefDemoWin" Executable="$targetnametoken$.exe" EntryPoint="NdefDemoWin.App">
-      <m2:VisualElements DisplayName="NFC / NDEF Demo" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Demonstrates reading and writing NDEF formatted tags using the NDEF Library for Proximity APIs (NFC). More information at https://ndef.codeplex.com/" ForegroundText="light" BackgroundColor="#0080c8">
+      <m2:VisualElements DisplayName="NFC / NDEF Demo" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Demonstrates reading and writing NDEF formatted tags using the NDEF Library for Proximity APIs (NFC). More information at http://ndef.mopius.com/" ForegroundText="light" BackgroundColor="#0080c8">
         <m2:DefaultTile ShortName="NDEF Demo" DefaultSize="square150x150Logo" Wide310x150Logo="Assets\Wide310x150Logo.png" Square70x70Logo="Assets\Square70x70Logo.png">
           <m2:ShowNameOnTiles>
             <m2:ShowOn Tile="square150x150Logo" />

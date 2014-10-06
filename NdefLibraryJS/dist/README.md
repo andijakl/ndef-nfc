@@ -100,7 +100,7 @@ var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(byteArray);
 # Status & Roadmap
 
 Any open issues as well as planned features are tracked online:
-https://ndef.codeplex.com/workitem/list/basic
+http://ndef.mopius.com/workitem/list/basic
 
 Known issues and limitations:
 * Text record does not support UTF-16 encoding yet.

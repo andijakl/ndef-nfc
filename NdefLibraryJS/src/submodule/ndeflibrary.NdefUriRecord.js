@@ -6,7 +6,7 @@
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public

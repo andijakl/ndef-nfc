@@ -9,7 +9,7 @@
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -164,7 +164,7 @@ var fromArrayUTF16 = function (array) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -265,7 +265,7 @@ function initLibraryCore(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -305,7 +305,7 @@ function initLibraryModule(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -423,7 +423,7 @@ function initLibraryNdefAndroidAppRecord(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -578,7 +578,7 @@ function initLibraryNdefSocialRecord(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -778,7 +778,7 @@ function initLibraryNdefGeoRecord(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -939,7 +939,7 @@ function initLibraryNdefTelRecord(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -1157,7 +1157,7 @@ function initLibraryNdefUriRecord(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -1366,7 +1366,7 @@ function initLibraryNdefTextRecord(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -1628,7 +1628,7 @@ function initLibraryNdefRecord(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -1978,7 +1978,7 @@ function initLibraryNdefMessage(context) {
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public

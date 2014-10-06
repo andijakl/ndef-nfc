@@ -302,7 +302,7 @@ The JavaScript library is available in two versions, both are available in the "
 The NDEF library is classified as stable release and is in use in several projects, most importantly Nfc Interactor for Windows Phone (http://www.nfcinteractor.com/).
 
 Any open issues as well as planned features are tracked online:
-https://ndef.codeplex.com/workitem/list/basic
+https://github.com/mopius/ndef-nfc/issues
 
 
 

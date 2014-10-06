@@ -160,7 +160,7 @@ You can also write a message to a tag or publish it to another device. Windows P
     <value>NDEF Library</value>
   </data>
   <data name="AboutNdefLibraryUri" xml:space="preserve">
-    <value>https://ndef.codeplex.com/</value>
+    <value>http://ndef.mopius.com/</value>
   </data>
   <data name="AboutNfcInteractor" xml:space="preserve">
     <value>Install NFC interactor</value>

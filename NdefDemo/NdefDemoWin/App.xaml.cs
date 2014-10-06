@@ -6,7 +6,7 @@
 ** Code example for the NDEF Library for Proximity APIs (NFC).
 **
 ** Created by Andreas Jakl (2013).
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU General Public License Usage
 ** Alternatively, this file may be used under the terms of the GNU General

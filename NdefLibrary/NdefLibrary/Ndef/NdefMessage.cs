@@ -8,7 +8,7 @@
 ** of Qt Mobility (http://qt.gitorious.org/qt-mobility).
 **
 ** Ported to C# by Andreas Jakl (2012)
-** More information: http://ndef.codeplex.com/
+** More information: http://ndef.mopius.com/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{544ec154-b521-4d73-9405-963830adb213}" Title="NFC / NDEF Demo" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Andreas Jakl" Description="Demonstrates reading and writing NDEF formatted tags using the NDEF Library for Proximity APIs (NFC).&#xD;&#xA;More information at https://ndef.codeplex.com/" Publisher="Mopius" PublisherID="{9b5d3ec5-ac98-4d8e-b88a-bd9ce63846f0}">
+  <App xmlns="" ProductID="{544ec154-b521-4d73-9405-963830adb213}" Title="NFC / NDEF Demo" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Andreas Jakl" Description="Demonstrates reading and writing NDEF formatted tags using the NDEF Library for Proximity APIs (NFC).&#xD;&#xA;More information at http://ndef.mopius.com/" Publisher="Mopius" PublisherID="{9b5d3ec5-ac98-4d8e-b88a-bd9ce63846f0}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

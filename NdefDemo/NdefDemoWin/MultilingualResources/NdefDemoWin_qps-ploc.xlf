@@ -187,8 +187,8 @@ You can also write a message to a tag or publish it to another device. Windows P
           <target state="new">About</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\AboutNdefLibraryUri" xml:space="preserve">
-          <source>https://ndef.codeplex.com/</source>
-          <target state="new">https://ndef.codeplex.com/</target>
+          <source>http://ndef.mopius.com/</source>
+          <target state="new">http://ndef.mopius.com/</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\AboutNdefLibraryButton\Content" xml:space="preserve">
           <source>NDEF Library</source>

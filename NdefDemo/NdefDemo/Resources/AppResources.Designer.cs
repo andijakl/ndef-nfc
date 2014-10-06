@@ -92,7 +92,7 @@ namespace NdefDemo.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://ndef.codeplex.com/.
+        ///   Looks up a localized string similar to http://ndef.mopius.com/.
         /// </summary>
         public static string AboutNdefLibraryUri {
             get {

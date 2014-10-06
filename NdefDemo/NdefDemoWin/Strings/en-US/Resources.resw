@@ -121,7 +121,7 @@
     <value>NDEF Library</value>
   </data>
   <data name="AboutNdefLibraryUri" xml:space="preserve">
-    <value>https://ndef.codeplex.com/</value>
+    <value>http://ndef.mopius.com/</value>
   </data>
   <data name="AboutNfcInteractorButton.Content" xml:space="preserve">
     <value>NFC interactor</value>
