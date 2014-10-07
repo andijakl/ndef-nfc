@@ -134,9 +134,6 @@
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
-    <Content Include="pages\page2\page2.css" />
-    <Content Include="pages\page2\page2.html" />
-    <Content Include="pages\page2\page2.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\navigator.js" />
     <Content Include="scripts\ndeflibrary.js" />
