@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>NFC Demo</title>
+
+    <link href="./../../css/index.css" rel="stylesheet" />
+    <link href="home.css" rel="stylesheet" />
+    <script src="home.js"></script>
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment homepage">
+        <header aria-label="Header content" role="banner">
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">NFC Demo</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <h2>Subscribe</h2>
+            <button id="subscribeBtn" class="actionBtn">Subscribe for NDEF</button>
+
+            <h2>Write Tags</h2>
+            <input id="urlInput" type="url" placeholder="Enter URL to write to a tag" value="http://www.mopius.com/"/><br />
+            <button id="publishUriBtn" class="actionBtn">Publish URI to Tag</button><br/>
+
+            <h2>Share to Devices</h2>
+            <button id="shareUriBtn" class="actionBtn">Share URI to Device</button><br/>
+
+            <h2>Status</h2>
+            <div class="statusListItemTemplate" data-win-control="WinJS.Binding.Template">
+                <div class="statusListTextItem">
+                    <strong><span data-win-bind="innerText: title">:</span></strong> 
+                        <span data-win-bind="innerText: text"></span>
+                </div>
+            </div>
+            <div id="statusListView"
+                 class="win-selectionstylefilled"
+                 data-win-control="WinJS.UI.ListView"
+                 data-win-options="{
+                        itemDataSource: NdefDemo.StatusListView.data.dataSource,
+                        itemTemplate: select('.statusListItemTemplate'),
+                        selectionMode: 'none',
+                        tapBehavior: 'none',
+                        swipeBehavior: 'none',
+                        layout: { type: WinJS.UI.ListLayout }
+                }">
+            </div>
+            <!--<div id="ratingControlDiv" data-win-control="WinJS.UI.Rating">
+                </div>
+                <p><a href="./../page2/page2.html">Go to page 2.</a></p>-->
+        </section>
+    </div>
+</body>
+</html>

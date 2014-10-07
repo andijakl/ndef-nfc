@@ -1,0 +1,34 @@
+﻿/* Android home.css */
+.statusListTextItem
+{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    overflow: auto;
+}
+
+/*#statusListView .win-listview { 
+    height: 200px;
+    margin-left: 0; 
+
+}
+#statusListView .win-listview .win-container {
+    margin-left: 0;
+    padding: 0;
+    overflow: hidden;
+}*/
+
+.homepage section[role=main] {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.fragment section[role=main] {
+	width: calc(100% - 48px)
+}
+
+.fragment header[role=banner] .titlearea {
+    -ms-grid-column: 3;
+    margin-top: 10px;
+    margin-left: 10px;
+}
