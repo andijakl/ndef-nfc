@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
     <metadata minClientVersion="2.8.1">
         <id>NdefLibraryExtension</id>
-        <version>3.0.2</version>
+        <version>3.0.3</version>
         <title>NFC / NDEF Library Platform Extensions for Proximity APIs</title>
         <authors>Andreas Jakl</authors>
         <owners>Andreas Jakl</owners>
@@ -19,11 +19,11 @@ Based on the cross platform NFC / NDEF library, this extension module adds addit
         <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics</tags>
 		<dependencies> 
 		   <group>
-				<dependency id="NdefLibrary" version="3.0.2" />
+				<dependency id="NdefLibrary" version="3.0.3" />
 		   </group>
 
 		   <group targetFramework="netcore451">
-				<dependency id="NdefLibrary" version="3.0.2" />
+				<dependency id="NdefLibrary" version="3.0.3" />
 				<dependency id="DDay.iCal" version="1.0.2.575" />
 		   </group>
 		</dependencies>

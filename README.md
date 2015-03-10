@@ -245,6 +245,9 @@ The JavaScript library is available in two versions, both are available in the "
 ### Latest changes
 * Rebased library from Codeplex to Github
 
+### 3.0.3 - March 2015
+* Changed contact information
+
 ### 3.0.2 - July 2014
 * New Windows Phone 8.1 settings schemes
 * More flexibility when setting properties of the Bluetooth Secure Simple Pairing record from enum values
