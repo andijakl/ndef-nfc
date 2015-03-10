@@ -16,14 +16,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/mopius/ndef-nfc">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/andijakl/ndef-nfc">View on GitHub</a>
 
           <h1 id="project_title">NDEF Library for Proximity APIs / NFC</h1>
           <h2 id="project_tagline">Easily parse and create NFC tags that contain standard-based NDEF messages.</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/mopius/ndef-nfc/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/mopius/ndef-nfc/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/andijakl/ndef-nfc/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/andijakl/ndef-nfc/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -36,7 +36,7 @@
 <p>The library download comes with complete example apps that demonstrates reading and writing tags using the NDEF Library.</p>
 
 <h2>
-<a name="background---nfc-and-ndef" class="anchor" href="#background---nfc-and-ndef"><span class="octicon octicon-link"></span></a>Background - NFC and NDEF</h2>
+<a id="background---nfc-and-ndef" class="anchor" href="#background---nfc-and-ndef" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background - NFC and NDEF</h2>
 
 <p>NFC tags as well as the content sent in device-to-device communication when tapping two phones is based on certain standards by the <a href="http://www.nfc-forum.org/">NFC Forum</a> (called NDEF – NFC Data Exchange format). Luckily, these standards were well received and nearly all manufacturers are part of the standardization body. This ensures that public NFC tags can actually be read by all mobile phones today.</p>
 
@@ -45,7 +45,7 @@
 <p>As this is a lot work, there is the risk of people creating own solutions, leading to a fragmented NFC ecosystem</p>
 
 <h2>
-<a name="the-nfc-library" class="anchor" href="#the-nfc-library"><span class="octicon octicon-link"></span></a>The NFC Library</h2>
+<a id="the-nfc-library" class="anchor" href="#the-nfc-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>The NFC Library</h2>
 
 <p>The open source NFC / NDEF Library contains a large set of classes that take care of formatting your data according to NDEF standards, so that these can be directly written to NFC tags or sent to other devices.</p>
 
@@ -56,14 +56,14 @@
 <p>For Windows (Phone) 8+, the NFC stack is represented through the Proximity APIs - they encapsulate NFC hardware communication and basic NDEF formatting for a very limited subset of the NDEF standards. This missing part is added by this NDEF library.</p>
 
 <h2>
-<a name="availability" class="anchor" href="#availability"><span class="octicon octicon-link"></span></a>Availability</h2>
+<a id="availability" class="anchor" href="#availability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Availability</h2>
 
 <p>The NFC / NDEF library is available in C# and JavaScript and can therefore be used on any operating system.</p>
 
-<p>To keep up to date, either follow this project or <a href="https://twitter.com/mopius">follow me on Twitter</a>.</p>
+<p>To keep up to date, either follow this project or <a href="https://twitter.com/andijakl">follow me on Twitter</a>.</p>
 
 <h3>
-<a name="c-version" class="anchor" href="#c-version"><span class="octicon octicon-link"></span></a>C# Version</h3>
+<a id="c-version" class="anchor" href="#c-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>C# Version</h3>
 
 <p>The library is available as a ready-made portable class library, which can be used on the Windows 8(.1) (WinRT) platform, as well as on Windows Phone 8(.1). Both platforms provide support for interacting with the NFC hardware through the Proximity APIs.</p>
 
@@ -72,15 +72,15 @@
 <p>Two example apps are available - for Windows 8.1 as well as Windows Phone 8.0. In addition to the library download on this page, you can use the NuGet package manager of Visual Studio to easily integrate the library with your project.</p>
 
 <h3>
-<a name="javascript--html5-version" class="anchor" href="#javascript--html5-version"><span class="octicon octicon-link"></span></a>JavaScript / HTML5 Version</h3>
+<a id="javascript--html5-version" class="anchor" href="#javascript--html5-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>JavaScript / HTML5 Version</h3>
 
 <p>The new JavaScript port of the library provides the most important NDEF types also to HTML5 / JavaScript apps.</p>
 
 <h2>
-<a name="feature-overview" class="anchor" href="#feature-overview"><span class="octicon octicon-link"></span></a>Feature Overview</h2>
+<a id="feature-overview" class="anchor" href="#feature-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature Overview</h2>
 
 <h4>
-<a name="reusable-ndef-classes" class="anchor" href="#reusable-ndef-classes"><span class="octicon octicon-link"></span></a>Reusable NDEF classes</h4>
+<a id="reusable-ndef-classes" class="anchor" href="#reusable-ndef-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reusable NDEF classes</h4>
 
 <ul>
 <li>Parse NDEF message &amp; records from raw byte arrays </li>
@@ -90,8 +90,10 @@
 <li>Records check their contents for validity according to standards</li>
 <li>Can throw NdefException in case of content validity issues, with translatable messages defined in a resource file</li>
 <li>Fully documented source code, following Doxygen standards</li>
-</ul><h4>
-<a name="supported-ndef-records" class="anchor" href="#supported-ndef-records"><span class="octicon octicon-link"></span></a>Supported NDEF records:</h4>
+</ul>
+
+<h4>
+<a id="supported-ndef-records" class="anchor" href="#supported-ndef-records" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported NDEF records:</h4>
 
 <ul>
 <li>URI: the most common type: any kind of URI, for example an Internet address, email link or any custom URI scheme.</li>
@@ -101,13 +103,17 @@
 <li>Android Application Record (AAR): launch an Android app</li>
 <li>Bluetooth Secure Simple Pairing: connect to a Bluetooth device, contains information about the target device like the service class (C# only) </li>
 <li>Handover Select: part of the Connection Handover specification, provides a list of alternative carriers to connect to. Used for example for NFC loudspeakers. Includes support for child records - Handover Alternative Carrier and Handover Error records (C# only) </li>
-</ul><h4>
-<a name="new-and-custom-functionality-c" class="anchor" href="#new-and-custom-functionality-c"><span class="octicon octicon-link"></span></a>New and custom functionality (C#)</h4>
+</ul>
+
+<h4>
+<a id="new-and-custom-functionality-c" class="anchor" href="#new-and-custom-functionality-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>New and custom functionality (C#)</h4>
 
 <ul>
 <li>Smart URI class: automatically represents itself as the smallest possible NDEF type (URI or Smart Poster), depending on supplied data </li>
-</ul><h4>
-<a name="convenience-classes-extending-the-basic-uri-class-for-common-use-case-scenarios" class="anchor" href="#convenience-classes-extending-the-basic-uri-class-for-common-use-case-scenarios"><span class="octicon octicon-link"></span></a>Convenience classes extending the basic URI class for common use case scenarios</h4>
+</ul>
+
+<h4>
+<a id="convenience-classes-extending-the-basic-uri-class-for-common-use-case-scenarios" class="anchor" href="#convenience-classes-extending-the-basic-uri-class-for-common-use-case-scenarios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Convenience classes extending the basic URI class for common use case scenarios</h4>
 
 <ul>
 <li>Geo: longitude &amp; latitude of a place, using different Geo URI schemes (more details) </li>
@@ -117,15 +123,19 @@
 <li>Telephone call: defining the number to call</li>
 <li>Nokia Accessories: let the user choose an app to launch on his Nokia Lumia Windows Phone 8 device (C# only) </li>
 <li>WpSettings: launch a settings page on Windows Phone 8 (e.g., Bluetooth settings, flight mode). Actually modifying these settings is not allowed by the security model of Windows Phone (C# only) </li>
-</ul><h4>
-<a name="platform-specific-extension-library-to-enable-real-life-use-cases-c" class="anchor" href="#platform-specific-extension-library-to-enable-real-life-use-cases-c"><span class="octicon octicon-link"></span></a>Platform-specific extension library to enable real-life use cases (C#)</h4>
+</ul>
+
+<h4>
+<a id="platform-specific-extension-library-to-enable-real-life-use-cases-c" class="anchor" href="#platform-specific-extension-library-to-enable-real-life-use-cases-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Platform-specific extension library to enable real-life use cases (C#)</h4>
 
 <ul>
 <li>Business card (vCard): convert a Contact from the user's address book directly to a vCard record (Windows 8, Windows Phone 8)</li>
 <li>iCalendar: store appointments and events on tags, integrates with WinRT calendar classes (Windows 8, alpha release)</li>
 <li>Image: images in various format on NFC tags or embedded in a Smart Poster. Includes de/encoding of JPEG, PNG, GIF and other file formats (Windows 8) </li>
-</ul><h2>
-<a name="example-apps" class="anchor" href="#example-apps"><span class="octicon octicon-link"></span></a>Example Apps</h2>
+</ul>
+
+<h2>
+<a id="example-apps" class="anchor" href="#example-apps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Apps</h2>
 
 <p>For C#, the library download comes with NdefDemo and NdefDemoWin: Windows Phone 8 and Windows 8.1 example apps that demonstrate some of the features of the NDEF Library. Both demos are available under GPL v3 license.</p>
 
@@ -140,11 +150,13 @@
 <a href="http://www.nearspeak.at/">NearSpeak</a>: store voice messages on NFC tags</li>
 <li>
 <a href="http://www.nfcinteractor.com/related-projects/nfcsms/">NFCsms</a>: enables Windows Phone to send SMS messages from NFC tags </li>
-</ul><h2>
-<a name="usage-example-c" class="anchor" href="#usage-example-c"><span class="octicon octicon-link"></span></a>Usage example (C#)</h2>
+</ul>
+
+<h2>
+<a id="usage-example-c" class="anchor" href="#usage-example-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage example (C#)</h2>
 
 <h3>
-<a name="reading--parsing-a-smart-poster" class="anchor" href="#reading--parsing-a-smart-poster"><span class="octicon octicon-link"></span></a>Reading &amp; parsing a Smart Poster</h3>
+<a id="reading--parsing-a-smart-poster" class="anchor" href="#reading--parsing-a-smart-poster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reading &amp; parsing a Smart Poster</h3>
 
 <pre><code>private void MessageReceivedHandler(ProximityDevice sender, ProximityMessage message)
 {
@@ -171,7 +183,7 @@
 </code></pre>
 
 <h3>
-<a name="writing-a-smart-poster" class="anchor" href="#writing-a-smart-poster"><span class="octicon octicon-link"></span></a>Writing a Smart Poster</h3>
+<a id="writing-a-smart-poster" class="anchor" href="#writing-a-smart-poster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing a Smart Poster</h3>
 
 <pre><code>// Initialize Smart Poster record with URI, Action + 1 Title
 var spRecord = new NdefSpRecord {
@@ -192,10 +204,10 @@ _device.PublishBinaryMessage("NDEF", msg.ToByteArray().AsBuffer());
 </code></pre>
 
 <h2>
-<a name="usage-example-javascript" class="anchor" href="#usage-example-javascript"><span class="octicon octicon-link"></span></a>Usage Example (JavaScript)</h2>
+<a id="usage-example-javascript" class="anchor" href="#usage-example-javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage Example (JavaScript)</h2>
 
 <h3>
-<a name="create-a-uri-record" class="anchor" href="#create-a-uri-record"><span class="octicon octicon-link"></span></a>Create a URI Record:</h3>
+<a id="create-a-uri-record" class="anchor" href="#create-a-uri-record" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a URI Record:</h3>
 
 <pre><code>// Create NDEF Message
 var ndefMessage = new NdefLibrary.NdefMessage();
@@ -210,7 +222,7 @@ var byteArray = ndefMessage.toByteArray();
 </code></pre>
 
 <h3>
-<a name="create-a-raw-ndef-message-by-defined-input" class="anchor" href="#create-a-raw-ndef-message-by-defined-input"><span class="octicon octicon-link"></span></a>Create a raw NDEF Message by defined input:</h3>
+<a id="create-a-raw-ndef-message-by-defined-input" class="anchor" href="#create-a-raw-ndef-message-by-defined-input" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a raw NDEF Message by defined input:</h3>
 
 <pre><code>var recordType = new Array(1,3,1,3,5,6,7);
 var recordPayload = new Array(1,2,1);
@@ -225,13 +237,13 @@ var byteArray = ndefMessage.toByteArray();
 </code></pre>
 
 <h3>
-<a name="create-a-raw-ndef-message-by-byte-array-from-nfc-tag" class="anchor" href="#create-a-raw-ndef-message-by-byte-array-from-nfc-tag"><span class="octicon octicon-link"></span></a>Create a raw NDEF Message by byte array from NFC tag:</h3>
+<a id="create-a-raw-ndef-message-by-byte-array-from-nfc-tag" class="anchor" href="#create-a-raw-ndef-message-by-byte-array-from-nfc-tag" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a raw NDEF Message by byte array from NFC tag:</h3>
 
 <pre><code>var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(byteArray);
 </code></pre>
 
 <h2>
-<a name="installation-c" class="anchor" href="#installation-c"><span class="octicon octicon-link"></span></a>Installation (C#)</h2>
+<a id="installation-c" class="anchor" href="#installation-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation (C#)</h2>
 
 <p>To try the library, you can download the complete library package from this site and test the included NdefDemo example app (currently available for Windows Phone 8). Note that the Windows 8.1 version of the NdefDemoWin example app requires the <a href="http://msdn.microsoft.com/en-us/windows/apps/bg127574">Microsoft Multilingual App Toolkit</a>.</p>
 
@@ -239,21 +251,25 @@ var byteArray = ndefMessage.toByteArray();
 
 <ul>
 <li><p>Ensure you have Nuget version &gt;= 2.8.1. Update through: Tools -&gt; Extensions and Updates... -&gt; Updates (left sidebar) -&gt; Visual Studio Gallery <em>(Otherwise, you will get an error message like this during installation: Install failed. Rolling back... Could not install package 'NdefLibrary'. You are trying to install this package into a project that targets 'WindowsPhone,Version=v8.0', but the package does not contain any assembly references that are compatible with that framework. For more information, contact the package author.")</em></p></li>
-</ul><ol>
+</ul>
+
+<ol>
 <li>Tools -&gt; Library Package Manager -&gt; Manage NuGet Packages for Solution...</li>
 <li>Search "Online" for "NDEF"</li>
 <li>Install: "NFC / NDEF Library for Proximity APIs" </li>
 <li>To use the platform extension library, also install: "NFC / NDEF Library Platform Extensions for Proximity APIs"</li>
-</ol><p>More instructions: <a href="https://github.com/mopius/ndef-nfc/wiki">https://github.com/mopius/ndef-nfc/wiki</a></p>
+</ol>
+
+<p>More instructions: <a href="https://github.com/andijakl/ndef-nfc/wiki">https://github.com/andijakl/ndef-nfc/wiki</a></p>
 
 <h3>
-<a name="core-nfc--ndef-library" class="anchor" href="#core-nfc--ndef-library"><span class="octicon octicon-link"></span></a>Core NFC / NDEF Library</h3>
+<a id="core-nfc--ndef-library" class="anchor" href="#core-nfc--ndef-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Core NFC / NDEF Library</h3>
 
 <p>More information: <a href="https://nuget.org/packages/NdefLibrary">https://nuget.org/packages/NdefLibrary</a>
 Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibrary">http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibrary</a></p>
 
 <h3>
-<a name="nfc--ndef-library-platform-specific-extension-library" class="anchor" href="#nfc--ndef-library-platform-specific-extension-library"><span class="octicon octicon-link"></span></a>NFC / NDEF Library Platform-Specific Extension Library</h3>
+<a id="nfc--ndef-library-platform-specific-extension-library" class="anchor" href="#nfc--ndef-library-platform-specific-extension-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>NFC / NDEF Library Platform-Specific Extension Library</h3>
 
 <p>More information: <a href="https://www.nuget.org/packages/NdefLibraryExtension">https://www.nuget.org/packages/NdefLibraryExtension</a>
 Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibraryExtension">http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibraryExtension</a></p>
@@ -261,7 +277,7 @@ Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Projec
 <p>You can also download the complete portable library project from the source control server of this project, and build the library yourself, or directly integrate the relevant class files.</p>
 
 <h2>
-<a name="installation-javascript" class="anchor" href="#installation-javascript"><span class="octicon octicon-link"></span></a>Installation (JavaScript)</h2>
+<a id="installation-javascript" class="anchor" href="#installation-javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation (JavaScript)</h2>
 
 <p>The JavaScript library is available in two versions, both are available in the "dist" folder of the JavaScript project:</p>
 
@@ -270,22 +286,35 @@ Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Projec
 <em>ndeflibrary.js:</em> complete version of the library, use for debugging &amp; development</li>
 <li>
 <em>ndeflibrary.min.js:</em> minified version of the library, use for release </li>
-</ul><h2>
-<a name="version-history-c" class="anchor" href="#version-history-c"><span class="octicon octicon-link"></span></a>Version History (C#)</h2>
+</ul>
+
+<h2>
+<a id="version-history-c" class="anchor" href="#version-history-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version History (C#)</h2>
 
 <h3>
-<a name="latest-changes" class="anchor" href="#latest-changes"><span class="octicon octicon-link"></span></a>Latest changes</h3>
+<a id="latest-changes" class="anchor" href="#latest-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Latest changes</h3>
 
 <ul>
 <li>Rebased library from Codeplex to Github</li>
-</ul><h3>
-<a name="302---july-2014" class="anchor" href="#302---july-2014"><span class="octicon octicon-link"></span></a>3.0.2 - July 2014</h3>
+</ul>
+
+<h3>
+<a id="303---march-2015" class="anchor" href="#303---march-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.0.3 - March 2015</h3>
+
+<ul>
+<li>Changed contact information</li>
+</ul>
+
+<h3>
+<a id="302---july-2014" class="anchor" href="#302---july-2014" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.0.2 - July 2014</h3>
 
 <ul>
 <li>New Windows Phone 8.1 settings schemes</li>
 <li>More flexibility when setting properties of the Bluetooth Secure Simple Pairing record from enum values</li>
-</ul><h3>
-<a name="301-alpha---july-2014" class="anchor" href="#301-alpha---july-2014"><span class="octicon octicon-link"></span></a>3.0.1-alpha - July 2014</h3>
+</ul>
+
+<h3>
+<a id="301-alpha---july-2014" class="anchor" href="#301-alpha---july-2014" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.0.1-alpha - July 2014</h3>
 
 <ul>
 <li>Compatible to Windows Phone 8.1 WinRT-based Apps and Universal Apps</li>
@@ -303,8 +332,10 @@ Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Projec
 </li>
 </ul>
 </li>
-</ul><h3>
-<a name="2002---april-2014" class="anchor" href="#2002---april-2014"><span class="octicon octicon-link"></span></a>2.0.0.2 - April 2014</h3>
+</ul>
+
+<h3>
+<a id="2002---april-2014" class="anchor" href="#2002---april-2014" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.0.0.2 - April 2014</h3>
 
 <ul>
 <li>New: NDEF record classes
@@ -320,8 +351,10 @@ Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Projec
 <li>Changed structure: core NDEF library + platform-specific extension library to enable real-life use cases (e.g., converting a WinRT Contact to a vCard record)</li>
 <li>Added: HERE Maps navigation schemes for Geo records</li>
 <li>Added: Power and screen rotation for WP Settings records</li>
-</ul><h3>
-<a name="1100---july-2013" class="anchor" href="#1100---july-2013"><span class="octicon octicon-link"></span></a>1.1.0.0 - July 2013</h3>
+</ul>
+
+<h3>
+<a id="1100---july-2013" class="anchor" href="#1100---july-2013" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.1.0.0 - July 2013</h3>
 
 <ul>
 <li>SMS handling improved: allows wrong sms:// scheme, parses URLs without body text and/or number</li>
@@ -329,40 +362,48 @@ Debug symbols: <a href="http://www.symbolsource.org/Public/Metadata/NuGet/Projec
 <li>Adds dictionary of available Nokia Accessories including their product names</li>
 <li>NearSpeak record now understands cloud-based tags</li>
 <li>Improved comments for NDEF message, removed debug output</li>
-</ul><h2>
-<a name="version-history-javascript" class="anchor" href="#version-history-javascript"><span class="octicon octicon-link"></span></a>Version History (JavaScript)</h2>
+</ul>
+
+<h2>
+<a id="version-history-javascript" class="anchor" href="#version-history-javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version History (JavaScript)</h2>
 
 <h3>
-<a name="known-issues-and-limitations" class="anchor" href="#known-issues-and-limitations"><span class="octicon octicon-link"></span></a>Known issues and limitations:</h3>
+<a id="known-issues-and-limitations" class="anchor" href="#known-issues-and-limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known issues and limitations:</h3>
 
 <ul>
 <li>Text record does not support UTF-16 encoding yet.</li>
 <li>Does not identify specialized types for URL records (e.g., Tel record)</li>
 <li>Unit test issue: URL encoding of special characters not equivalent to C# output.</li>
 <li>Unit test issue: UTF-16 text comparison with string.</li>
-</ul><h3>
-<a name="100---work-in-progress" class="anchor" href="#100---work-in-progress"><span class="octicon octicon-link"></span></a>1.0.0 - Work in progress</h3>
+</ul>
+
+<h3>
+<a id="100---work-in-progress" class="anchor" href="#100---work-in-progress" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.0.0 - Work in progress</h3>
 
 <ul>
 <li>Fixes for the compiled JavaScript library (include const to compiled version)</li>
 <li>Use var instead of const for better JavaScript compatibility</li>
 <li>New JavaScript demo app using Apache Cordova for Android, Windows Phone and Windows</li>
 <li>Rebased library from Codeplex to Github</li>
-</ul><h3>
-<a name="001---march-2014" class="anchor" href="#001---march-2014"><span class="octicon octicon-link"></span></a>0.0.1 - March 2014</h3>
+</ul>
+
+<h3>
+<a id="001---march-2014" class="anchor" href="#001---march-2014" aria-hidden="true"><span class="octicon octicon-link"></span></a>0.0.1 - March 2014</h3>
 
 <ul>
 <li>Initial Version</li>
-</ul><h2>
-<a name="status--roadmap" class="anchor" href="#status--roadmap"><span class="octicon octicon-link"></span></a>Status &amp; Roadmap</h2>
+</ul>
+
+<h2>
+<a id="status--roadmap" class="anchor" href="#status--roadmap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Status &amp; Roadmap</h2>
 
 <p>The NDEF library is classified as stable release and is in use in several projects, most importantly Nfc Interactor for Windows Phone (<a href="http://www.nfcinteractor.com/">http://www.nfcinteractor.com/</a>).</p>
 
 <p>Any open issues as well as planned features are tracked online:
-<a href="https://ndef.codeplex.com/workitem/list/basic">https://ndef.codeplex.com/workitem/list/basic</a></p>
+<a href="https://github.com/andijakl/ndef-nfc/issues">https://github.com/andijakl/ndef-nfc/issues</a></p>
 
 <h2>
-<a name="related-information" class="anchor" href="#related-information"><span class="octicon octicon-link"></span></a>Related Information</h2>
+<a id="related-information" class="anchor" href="#related-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Related Information</h2>
 
 <p>Released under the LGPL 2.1 license - see the LICENSE.LGPL file for details.</p>
 
@@ -371,18 +412,16 @@ Ported to Javascript by Sebastian Höbarth, <a href="http://www.mobilefactory.at
 
 <p>Parts of this library are based on the respective code of the Connectivity Module of Qt Mobility (NdefMessage, NdefRecord, NdefUriRecord and NdefTextRecord classes. Original source code: <a href="http://qt.gitorious.org/qt-mobility">http://qt.gitorious.org/qt-mobility</a>).</p>
 
-<p>More information about the library:
-<a href="http://ndef.mopius.com/">http://ndef.mopius.com/</a></p>
-
 <p>Library homepage on GitHub:
-<a href="https://github.com/mopius/ndef-nfc/">https://github.com/mopius/ndef-nfc/</a></p>
+<a href="http://andijakl.github.io/ndef-nfc/">http://andijakl.github.io/ndef-nfc/</a>
+<a href="https://github.com/andijakl/ndef-nfc/">https://github.com/andijakl/ndef-nfc/</a></p>
       </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">NDEF Library for Proximity APIs / NFC maintained by <a href="https://github.com/mopius">mopius</a></p>
+        <p class="copyright">NDEF Library for Proximity APIs / NFC maintained by <a href="https://github.com/andijakl">andijakl</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
