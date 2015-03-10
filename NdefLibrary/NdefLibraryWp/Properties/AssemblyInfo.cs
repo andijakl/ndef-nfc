@@ -9,9 +9,9 @@ using System.Resources;
 [assembly: AssemblyTitle("NDEF Library for Proximity APIs / NFC (Windows Phone 8 Extension)")]
 [assembly: AssemblyDescription("Easily parse and create NDEF records with the Windows Proximity APIs / Near Field Communication NFC.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mopius")]
+[assembly: AssemblyCompany("Andreas Jakl")]
 [assembly: AssemblyProduct("NdefLibraryWp")]
-[assembly: AssemblyCopyright("Copyright © 2012-2014 Andreas Jakl, Mopius")]
+[assembly: AssemblyCopyright("Copyright © 2012-2015 Andreas Jakl")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

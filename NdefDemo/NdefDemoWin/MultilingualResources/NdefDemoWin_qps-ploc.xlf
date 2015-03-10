@@ -163,8 +163,8 @@ You can also write a message to a tag or publish it to another device. Windows P
           <target state="new">Actions</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\AboutTwitterUri" xml:space="preserve">
-          <source>https://twitter.com/mopius</source>
-          <target state="new">https://twitter.com/mopius</target>
+          <source>https://twitter.com/andijakl</source>
+          <target state="new">https://twitter.com/andijakl</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\AboutTwitterButton\Content" xml:space="preserve">
           <source>For Updates: Twitter</source>
@@ -187,8 +187,8 @@ You can also write a message to a tag or publish it to another device. Windows P
           <target state="new">About</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\AboutNdefLibraryUri" xml:space="preserve">
-          <source>http://ndef.mopius.com/</source>
-          <target state="new">http://ndef.mopius.com/</target>
+          <source>http://andijakl.github.io/ndef-nfc/</source>
+          <target state="new">http://andijakl.github.io/ndef-nfc/</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\AboutNdefLibraryButton\Content" xml:space="preserve">
           <source>NDEF Library</source>

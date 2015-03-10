@@ -1,12 +1,12 @@
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
 **
-** More information: http://ndef.mopius.com/
+** More information: http://andijakl.github.io/ndef-nfc/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public

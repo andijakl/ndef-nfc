@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("NfcTagGenerator")]
-[assembly: AssemblyCopyright("Copyright © Mopius 2014")]
+[assembly: AssemblyCopyright("Copyright © Andreas Jakl 2014 - 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

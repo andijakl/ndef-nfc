@@ -1,12 +1,12 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2014 Andreas Jakl / Mopius.
+** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Code example for the NDEF Library for Proximity APIs (NFC).
 **
 ** Created by Andreas Jakl (2014).
-** More information: http://ndef.mopius.com/
+** More information: http://andijakl.github.io/ndef-nfc/
 **
 ** GNU General Public License Usage
 ** Alternatively, this file may be used under the terms of the GNU General
@@ -34,19 +34,19 @@ namespace NfcTagGenerator
 
         private static readonly Dictionary<string, NdefRecord> NfcRecords = new Dictionary<string, NdefRecord>
         {
-            {"URL-http", new NdefUriRecord { Uri = "http://ndef.mopius.com"}},
+            {"URL-http", new NdefUriRecord { Uri = "http://andijakl.github.io/ndef-nfc/"}},
             {"URL", new NdefUriRecord { Uri = "nfcinteractor:compose"}},
             {"URL-SpecialChars", new NdefUriRecord { Uri = "custom:Testmessage -_(){}\":@äöüÄÖÜ"}},
-            {"Mailto", new NdefMailtoRecord { Subject = "Feedback for the NDEF Library", Body = "I think the NDEF library is ...", Address = "andreas.jakl@mopius.com"}},
-            {"SMS", new NdefSmsRecord { SmsNumber = "+1234", SmsBody = "Check out the NDEF library at http://ndef.mopius.com/"}},
+            {"Mailto", new NdefMailtoRecord { Subject = "Feedback for the NDEF Library", Body = "I think the NDEF library is ...", Address = "andreas.jakl@live.com"}},
+            {"SMS", new NdefSmsRecord { SmsNumber = "+1234", SmsBody = "Check out the NDEF library at http://andijakl.github.io/ndef-nfc/"}},
             {"SMS-SpecialChars", new NdefSmsRecord { SmsNumber = "+1 (2) 3456 - 789", SmsBody = "Testmessage -_(){}\":@äöüÄÖÜ"}},
             {"Geo", new NdefGeoRecord { Latitude = 48.168604, Longitude = 16.33375, GeoType = NdefGeoRecord.NfcGeoType.GeoUri}},
             {"Android", new NdefAndroidAppRecord { PackageName = "com.twitter.android"}},
-            {"Social", new NdefSocialRecord { SocialType = NdefSocialRecord.NfcSocialType.Twitter, SocialUserName = "mopius"}},
-            {"TextUtf8", new NdefTextRecord { Text = "Mopius", LanguageCode = "en", TextEncoding = NdefTextRecord.TextEncodingType.Utf8}},
-            {"TextUtf16", new NdefTextRecord { Text = "Mopius", LanguageCode = "en", TextEncoding = NdefTextRecord.TextEncodingType.Utf16}},
+            {"Social", new NdefSocialRecord { SocialType = NdefSocialRecord.NfcSocialType.Twitter, SocialUserName = "andijakl"}},
+            {"TextUtf8", new NdefTextRecord { Text = "NFC interactor", LanguageCode = "en", TextEncoding = NdefTextRecord.TextEncodingType.Utf8}},
+            {"TextUtf16", new NdefTextRecord { Text = "NFC interactor", LanguageCode = "en", TextEncoding = NdefTextRecord.TextEncodingType.Utf16}},
             {"Tel", new NdefTelRecord { TelNumber = "+1234" }},
-            {"Ext", new NdefRecord { TypeNameFormat = NdefRecord.TypeNameFormatType.ExternalRtd, Type = Encoding.UTF8.GetBytes("mopius.com:nfc"), Payload = Encoding.UTF8.GetBytes("Testing")}},
+            {"Ext", new NdefRecord { TypeNameFormat = NdefRecord.TypeNameFormatType.ExternalRtd, Type = Encoding.UTF8.GetBytes("nfcinteractor.com:nfc"), Payload = Encoding.UTF8.GetBytes("Testing")}},
             {"Empty", new NdefRecord { TypeNameFormat = NdefRecord.TypeNameFormatType.Empty }}
         };
 
@@ -55,7 +55,7 @@ namespace NfcTagGenerator
             // Dynamically construct some more NDEF records
             var spRecord = new NdefSpRecord
             {
-                Uri = "http://ndef.mopius.com",
+                Uri = "http://andijakl.github.io/ndef-nfc/",
                 NfcAction = NdefSpActRecord.NfcActionType.DoAction
             };
             spRecord.AddTitle(new NdefTextRecord { LanguageCode = "en", Text = "NFC Library" });

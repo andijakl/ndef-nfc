@@ -1,5 +1,5 @@
 # NDEF Library for Proximity APIs (NFC)
-https://github.com/mopius/ndef-nfc
+http://andijakl.github.io/ndef-nfc/
 
 Easily parse and create NDEF records with JavaScript.
 
@@ -100,7 +100,7 @@ var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(byteArray);
 # Status & Roadmap
 
 Any open issues as well as planned features are tracked online:
-http://ndef.mopius.com/workitem/list/basic
+http://andijakl.github.io/ndef-nfc/workitem/list/basic
 
 Known issues and limitations:
 * Text record does not support UTF-16 encoding yet.
@@ -130,9 +130,7 @@ Developed by Andreas Jakl, https://twitter.com/andijakl
 Parts of this library are based on the respective code of the Connectivity Module of Qt Mobility (NdefMessage, NdefRecord, NdefUriRecord and NdefTextRecord classes. Original source code: http://qt.gitorious.org/qt-mobility).
 
 More information about the library:
-http://ndef.mopius.com/
+http://andijakl.github.io/ndef-nfc/
 
-Library homepage:
-https://github.com/mopius/ndef-nfc/
 
 

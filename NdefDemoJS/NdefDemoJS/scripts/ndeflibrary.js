@@ -4,7 +4,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -159,7 +159,7 @@ var fromArrayUTF16 = function (array) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -260,7 +260,7 @@ function initLibraryCore(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -300,7 +300,7 @@ function initLibraryModule(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -418,7 +418,7 @@ function initLibraryNdefAndroidAppRecord(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -573,7 +573,7 @@ function initLibraryNdefSocialRecord(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -773,7 +773,7 @@ function initLibraryNdefGeoRecord(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -934,7 +934,7 @@ function initLibraryNdefTelRecord(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -1152,7 +1152,7 @@ function initLibraryNdefUriRecord(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -1361,7 +1361,7 @@ function initLibraryNdefTextRecord(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -1623,7 +1623,7 @@ function initLibraryNdefRecord(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -1973,7 +1973,7 @@ function initLibraryNdefMessage(context) {
 /****************************************************************************
 **
 ** Copyright (C) 2012-2014 Sebastian Höbarth, http://www.mobilefactory.at/
-** Andreas Jakl, Mopius - http://www.mopius.com/
+** Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.

@@ -1,5 +1,5 @@
 Example app for the NDEF Library for Proximity APIs (NFC)
-http://ndef.mopius.com/
+http://andijakl.github.io/ndef-nfc/
 -------------------------------------------------------------------------------
 
 The NDEF Demo is an example app that demonstrates how to use the 
@@ -26,8 +26,6 @@ NuGet package manager of Visual Studio!
 Related Information
 -------------------------------------------------------------------------------
 More information about the library:
-http://ndef.mopius.com/
+http://andijakl.github.io/ndef-nfc/
 
-Library homepage:
-http://mopius.github.io/ndef-nfc/
 

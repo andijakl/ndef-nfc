@@ -6,7 +6,7 @@
 ** Code example for the NDEF Library for Proximity APIs (NFC).
 **
 ** Created by Andreas Jakl (2013).
-** More information: http://ndef.mopius.com/
+** More information: http://andijakl.github.io/ndef-nfc/
 **
 ** GNU General Public License Usage
 ** Alternatively, this file may be used under the terms of the GNU General
@@ -365,7 +365,7 @@ namespace NdefDemoWin
                 LastName = "Jakl"
             };
             // Add the personal email address to the Contact object’s emails vector
-            var personalEmail = new ContactEmail { Address = "andreas.jakl@mopius.com", Kind = ContactEmailKind.Work };
+            var personalEmail = new ContactEmail { Address = "andreas.jakl@live.com", Kind = ContactEmailKind.Work };
             contact.Emails.Add(personalEmail);
 
             // Adds the home phone number to the Contact object’s phones vector
@@ -375,20 +375,20 @@ namespace NdefDemoWin
             // Adds the address to the Contact object’s addresses vector
             var workAddress = new ContactAddress
             {
-                StreetAddress = "Technologiestrasse 10",
+                StreetAddress = "Street 1",
                 Locality = "Vienna",
                 Region = "Austria",
-                PostalCode = "1120",
+                PostalCode = "1234",
                 Kind = ContactAddressKind.Work
             };
             contact.Addresses.Add(workAddress);
 
-            contact.Websites.Add(new ContactWebsite { Uri = new Uri("http://www.mopius.com/") });
+            contact.Websites.Add(new ContactWebsite { Uri = new Uri("http://www.nfcinteractor.com/") });
 
             contact.JobInfo.Add(new ContactJobInfo
             {
-                CompanyName = "Mopius",
-                Title = "Chief Technology Wizard"
+                CompanyName = "Andreas Jakl",
+                Title = "Mobility Evangelist"
             });
             contact.Notes = "Developer of the NFC Library";
 
@@ -404,7 +404,7 @@ namespace NdefDemoWin
             // Create a new mailto record, set the relevant properties for the email
             var record = new NdefMailtoRecord
             {
-                Address = "andreas.jakl@mopius.com",
+                Address = "andreas.jakl@live.com",
                 Subject = "Feedback for the NDEF Library",
                 Body = "I think the NDEF library is ..."
             };
@@ -460,7 +460,7 @@ namespace NdefDemoWin
                 Details = "Inform other developers about the open source NFC / NDEF Library",
                 Organizer = new AppointmentOrganizer
                 {
-                    Address = "andreas.jakl@mopius.com",
+                    Address = "andreas.jakl@live.com",
                     DisplayName = "Andreas Jakl"
                 },
                 Location = "Email, Facebook, Twitter",

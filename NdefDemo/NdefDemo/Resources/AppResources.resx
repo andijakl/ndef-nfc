@@ -160,7 +160,7 @@ You can also write a message to a tag or publish it to another device. Windows P
     <value>NDEF Library</value>
   </data>
   <data name="AboutNdefLibraryUri" xml:space="preserve">
-    <value>http://ndef.mopius.com/</value>
+    <value>http://andijakl.github.io/ndef-nfc/</value>
   </data>
   <data name="AboutNfcInteractor" xml:space="preserve">
     <value>Install NFC interactor</value>
@@ -175,7 +175,7 @@ You can also write a message to a tag or publish it to another device. Windows P
     <value>For Updates: Twitter</value>
   </data>
   <data name="AboutTwitterUri" xml:space="preserve">
-    <value>https://twitter.com/mopius</value>
+    <value>https://twitter.com/andijakl</value>
   </data>
   <data name="BtnPublishUri" xml:space="preserve">
     <value>Publish URI to Devices</value>

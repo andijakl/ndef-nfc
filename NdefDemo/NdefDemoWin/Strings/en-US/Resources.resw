@@ -121,7 +121,7 @@
     <value>NDEF Library</value>
   </data>
   <data name="AboutNdefLibraryUri" xml:space="preserve">
-    <value>http://ndef.mopius.com/</value>
+    <value>http://andijakl.github.io/ndef-nfc/</value>
   </data>
   <data name="AboutNfcInteractorButton.Content" xml:space="preserve">
     <value>NFC interactor</value>
@@ -139,7 +139,7 @@
     <value>For Updates: Twitter</value>
   </data>
   <data name="AboutTwitterUri" xml:space="preserve">
-    <value>https://twitter.com/mopius</value>
+    <value>https://twitter.com/andijakl</value>
   </data>
   <data name="Actions.Text" xml:space="preserve">
     <value>Actions</value>

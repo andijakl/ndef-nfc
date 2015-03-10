@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2013 Andreas Jakl, Mopius - http://www.mopius.com/
+** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
 ** Original version copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
 ** All rights reserved.
 **
@@ -8,7 +8,7 @@
 ** of Qt Mobility (http://qt.gitorious.org/qt-mobility).
 **
 ** Ported to C# by Andreas Jakl (2012)
-** More information: http://ndef.mopius.com/
+** More information: http://andijakl.github.io/ndef-nfc/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public

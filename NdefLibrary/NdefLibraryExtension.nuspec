@@ -4,18 +4,18 @@
         <id>NdefLibraryExtension</id>
         <version>3.0.2</version>
         <title>NFC / NDEF Library Platform Extensions for Proximity APIs</title>
-        <authors>Mopius</authors>
-        <owners>Mopius</owners>
-        <licenseUrl>https://github.com/mopius/ndef-nfc/blob/master/LICENSE</licenseUrl>
-        <projectUrl>http://ndef.mopius.com/</projectUrl>
+        <authors>Andreas Jakl</authors>
+        <owners>Andreas Jakl</owners>
+        <licenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</licenseUrl>
+        <projectUrl>http://andijakl.github.io/ndef-nfc/</projectUrl>
         <iconUrl>http://www.nfcinteractor.com/ndeflibrary.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>Extension library to the NFC / NDEF library to enable additional, platform-specific use cases.
 
 Based on the cross platform NFC / NDEF library, this extension module adds additional NDEF record classes that integrate with platform features to enable additional use cases. The extension enables creating iCalendar and vCard records, and provides conversion from the WinRT APIs (e.g., Appointment or Contact) to the standardized iCalendar or vCard formats. Depending on the target platform, this extension includes 3rd party extension libraries.</description>
         <summary>Extends the NFC / NDEF Library with platform specific support for additional use cases.</summary>
-        <releaseNotes>See https://github.com/mopius/ndef-nfc/releases for details</releaseNotes>
-        <copyright>Copyright 2012 - 2014 Andreas Jakl, http://www.mopius.com/</copyright>
+        <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
+        <copyright>Copyright 2012 - 2015 Andreas Jakl, http://www.nfcinteractor.com/</copyright>
         <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics</tags>
 		<dependencies> 
 		   <group>

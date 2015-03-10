@@ -9,9 +9,9 @@ using System.Resources;
 [assembly: AssemblyTitle("NdefDemo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mopius")]
+[assembly: AssemblyCompany("Andreas Jakl")]
 [assembly: AssemblyProduct("NdefDemo")]
-[assembly: AssemblyCopyright("Copyright © Mopius 2012 - 2014")]
+[assembly: AssemblyCopyright("Copyright © Andreas Jakl 2012 - 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

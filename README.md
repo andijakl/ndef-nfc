@@ -35,7 +35,7 @@ For Windows (Phone) 8+, the NFC stack is represented through the Proximity APIs 
 
 The NFC / NDEF library is available in C# and JavaScript and can therefore be used on any operating system.
 
-To keep up to date, either follow this project or [follow me on Twitter](https://twitter.com/mopius).
+To keep up to date, either follow this project or [follow me on Twitter](https://twitter.com/andijakl).
 
 ### C# Version
 
@@ -215,7 +215,7 @@ If you want to use the Ndef Library from your own app, the easiest option is to 
 3. Install: "NFC / NDEF Library for Proximity APIs" 
 4. To use the platform extension library, also install: "NFC / NDEF Library Platform Extensions for Proximity APIs"
 
-More instructions: https://github.com/mopius/ndef-nfc/wiki
+More instructions: https://github.com/andijakl/ndef-nfc/wiki
 
 #### Core NFC / NDEF Library
 
@@ -302,7 +302,7 @@ The JavaScript library is available in two versions, both are available in the "
 The NDEF library is classified as stable release and is in use in several projects, most importantly NFC interactor for Windows Phone (http://www.nfcinteractor.com/).
 
 Any open issues as well as planned features are tracked online:
-https://github.com/mopius/ndef-nfc/issues
+https://github.com/andijakl/ndef-nfc/issues
 
 
 
@@ -315,10 +315,7 @@ Ported to Javascript by Sebastian Höbarth, http://www.mobilefactory.at/
 
 Parts of this library are based on the respective code of the Connectivity Module of Qt Mobility (NdefMessage, NdefRecord, NdefUriRecord and NdefTextRecord classes. Original source code: http://qt.gitorious.org/qt-mobility).
 
-More information about the library:
-http://ndef.mopius.com/
-
 Library homepage on GitHub:
-http://mopius.github.io/ndef-nfc/
-https://github.com/mopius/ndef-nfc/
+http://andijakl.github.io/ndef-nfc/
+https://github.com/andijakl/ndef-nfc/
 

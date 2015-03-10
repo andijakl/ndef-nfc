@@ -6,7 +6,7 @@
 ** Code example for the NDEF Library for Proximity APIs (NFC).
 **
 ** Created by Andreas Jakl (2012).
-** More information: http://ndef.mopius.com/
+** More information: http://andijakl.github.io/ndef-nfc/
 **
 ** GNU General Public License Usage
 ** Alternatively, this file may be used under the terms of the GNU General
@@ -212,8 +212,7 @@ namespace NdefDemo
                     GivenName = "Andreas"
                 };
                 var contactProps = await contactInfo.GetPropertiesAsync();
-                contactProps.Add(KnownContactProperties.CompanyName, "Mopius");
-                contactProps.Add(KnownContactProperties.Url, "http://www.mopius.com/");
+                contactProps.Add(KnownContactProperties.Url, "http://www.nfcinteractor.com/");
             }
             else
             {
@@ -236,7 +235,7 @@ namespace NdefDemo
             // Create a new mailto record, set the relevant properties for the email
             var record = new NdefMailtoRecord
                              {
-                                 Address = "andreas.jakl@mopius.com",
+                                 Address = "andreas.jakl@live.com",
                                  Subject = "Feedback for the NDEF Library",
                                  Body = "I think the NDEF library is ..."
                              };

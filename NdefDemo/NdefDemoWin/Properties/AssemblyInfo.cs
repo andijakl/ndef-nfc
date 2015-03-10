@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NdefDemoWin")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mopius")]
+[assembly: AssemblyCompany("Andreas Jakl")]
 [assembly: AssemblyProduct("NdefDemoWin")]
-[assembly: AssemblyCopyright("Copyright © Mopius 2013 - 2014")]
+[assembly: AssemblyCopyright("Copyright © Andreas Jakl 2013 - 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

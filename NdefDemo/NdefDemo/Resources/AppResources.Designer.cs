@@ -92,7 +92,7 @@ namespace NdefDemo.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://ndef.mopius.com/.
+        ///   Looks up a localized string similar to http://andijakl.github.io/ndef-nfc/.
         /// </summary>
         public static string AboutNdefLibraryUri {
             get {
@@ -137,7 +137,7 @@ namespace NdefDemo.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://twitter.com/mopius.
+        ///   Looks up a localized string similar to https://twitter.com/andijakl
         /// </summary>
         public static string AboutTwitterUri {
             get {

@@ -4,10 +4,10 @@
         <id>NdefLibrary</id>
         <version>3.0.2</version>
         <title>NFC / NDEF Library for Proximity APIs</title>
-        <authors>Mopius</authors>
-        <owners>Mopius</owners>
-        <licenseUrl>https://github.com/mopius/ndef-nfc/blob/master/LICENSE</licenseUrl>
-        <projectUrl>http://ndef.mopius.com/</projectUrl>
+        <authors>Andreas Jakl</authors>
+        <owners>Andreas Jakl</owners>
+        <licenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</licenseUrl>
+        <projectUrl>http://andijakl.github.io/ndef-nfc/</projectUrl>
         <iconUrl>http://www.nfcinteractor.com/ndeflibrary.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>The Proximity APIs for NFC (Near Field Communication) in the WinRT platform (Windows 8 and Windows Phone 8) are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
@@ -20,8 +20,8 @@ Further NDEF record classes that extend this library with platform integration a
 
 Note: this portable class library requires Visual Studio 2012 (or higher) and NuGet 2.8.1+.</description>
         <summary>Easily parse and create standardized NDEF records for NFC Tags.</summary>
-        <releaseNotes>See https://github.com/mopius/ndef-nfc/releases for details</releaseNotes>
-        <copyright>Copyright 2012 - 2014 Andreas Jakl, http://www.mopius.com/</copyright>
+        <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
+        <copyright>Copyright 2012 - 2015 Andreas Jakl, http://www.nfcinteractor.com/</copyright>
         <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</tags>
     </metadata>
     <files>

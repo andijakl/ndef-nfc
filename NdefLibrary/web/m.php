@@ -7,7 +7,7 @@
 ** This file is part of the NDEF Library for Proximity APIs, as well as the
 ** NFC Interactor project for Qt.
 ** More information: 
-** http://ndef.mopius.com/
+**http://andijakl.github.io/ndef-nfc/
 ** https://projects.developer.nokia.com/nfcinteractor
 **
 ** GNU Lesser General Public License Usage

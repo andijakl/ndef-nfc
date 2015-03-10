@@ -1,12 +1,12 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2014 Andreas Jakl, Mopius - http://www.mopius.com/
+** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
 **
 ** Created by Andreas Jakl (2014).
-** More information: http://ndef.mopius.com/
+** More information: http://andijakl.github.io/ndef-nfc/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
@@ -68,7 +68,7 @@ namespace NdefLibraryWin.Ndef
     /// </remarks>
     public class NdefIcalendarRecord : NdefIcalendarRecordBase
     {
-        private const string ProductIdDefault = "-//mopius.com//NDEF Library for NFC//EN";
+        private const string ProductIdDefault = "-//nfcinteractor.com//NDEF Library for NFC//EN";
         private Appointment _appointmentData;
 
         public Appointment AppointmentData
