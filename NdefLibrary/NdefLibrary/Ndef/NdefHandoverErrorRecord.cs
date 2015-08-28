@@ -122,7 +122,7 @@ namespace NdefLibrary.Ndef
         /// a number stored in the ErrorData array based on the number of bytes as defined by the
         /// error reason.
         /// </remarks>
-        public UInt32 ErrorDataAsNumber {
+        public uint ErrorDataAsNumber {
             get
             {
                 if (ErrorData == null || ErrorData.Length == 0)
@@ -135,7 +135,7 @@ namespace NdefLibrary.Ndef
                     case ErrorReasonTypes.TemporaryMemoryConstraints:
                     case ErrorReasonTypes.CarrierSpecificConstraints:
                         // 1 byte
-                        return ErrorData.Length != 1 ? (UInt32)0 : ErrorData[0];
+                        return ErrorData.Length != 1 ? (uint)0 : ErrorData[0];
                         //throw new NdefException(NdefExceptionMessages.ExHandoverErrorInvalidData);
                     case ErrorReasonTypes.PermanentMemoryConstraints:
                         // 4 bytes
@@ -143,7 +143,7 @@ namespace NdefLibrary.Ndef
                             return 0;
                             //throw new NdefException(NdefExceptionMessages.ExHandoverErrorInvalidData);
                         // Make sure we're using big endian
-                        return (UInt32)((Payload[0]) << 24) | (UInt32)((Payload[1]) << 16) | (UInt32)((Payload[2]) << 8) | (UInt32)((Payload[3]) << 0);
+                        return (uint)((Payload[0]) << 24) | (uint)((Payload[1]) << 16) | (uint)((Payload[2]) << 8) | (uint)((Payload[3]) << 0);
                     default:
                         return 0;
                         //throw new NdefException(NdefExceptionMessages.ExHandoverErrorUnknownReason);
@@ -233,7 +233,7 @@ namespace NdefLibrary.Ndef
         /// contents and content length of the second (errorData) parameter.</param>
         /// <param name="errorData">Additional data for the error reason. The contents
         /// depend on the error reason, and is usually a time value.</param>
-        public NdefHandoverErrorRecord(ErrorReasonTypes errorReason, UInt32 errorData)
+        public NdefHandoverErrorRecord(ErrorReasonTypes errorReason, uint errorData)
             : base(TypeNameFormatType.NfcRtd, BtHandoverErrorType)
         {
             ErrorReasonAsType = errorReason;

@@ -84,7 +84,7 @@ namespace NdefLibrary.Ndef
         /// </remarks>
         public string Arguments
         {
-            get { return _arguments ?? String.Empty; }
+            get { return _arguments ?? string.Empty; }
             set
             {
                 _arguments = value;
@@ -136,7 +136,7 @@ namespace NdefLibrary.Ndef
         /// </summary>
         private void InitializeData()
         {
-            _arguments = String.Empty;
+            _arguments = string.Empty;
             PlatformIds = null;
         }
 
@@ -336,7 +336,7 @@ namespace NdefLibrary.Ndef
         /// to be a LaunchApp record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.Uri && record.Type.SequenceEqual(WindowsLaunchAppType));
         }
 

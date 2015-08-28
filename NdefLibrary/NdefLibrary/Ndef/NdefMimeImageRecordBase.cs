@@ -118,7 +118,7 @@ namespace NdefLibrary.Ndef
         /// to be a MIME / Image record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
 
             var foundMime = record.Type != null &&
                 ImageMimeTypes.Values.Any(t => t.SequenceEqual(record.Type));

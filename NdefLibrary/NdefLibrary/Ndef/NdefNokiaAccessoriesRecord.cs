@@ -129,7 +129,7 @@ namespace NdefLibrary.Ndef
         {
             if (ProductName != null && SerialNumber != null)
             {
-                Uri = String.Format(NokiaAccessoriesUriFormat, ProductName, SerialNumber);
+                Uri = string.Format(NokiaAccessoriesUriFormat, ProductName, SerialNumber);
             }
         }
 
@@ -153,7 +153,7 @@ namespace NdefLibrary.Ndef
         /// to be a Nokia Accessories record, false if it's a different record.</returns>
         public new static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Type.SequenceEqual(UriType) &&
                    record.Payload != null &&
                    CheckIsValidUri(Encoding.UTF8.GetString(record.Payload, 0, record.Payload.Length));

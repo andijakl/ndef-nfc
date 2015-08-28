@@ -232,7 +232,7 @@ namespace NdefLibrary.Ndef
             _handoverVersion = new NdefHandoverVersion(payload[0]);
             
             // Parse child records (bytes 1+)
-            var childRecordMsg = new Byte[payload.Length - 1];
+            var childRecordMsg = new byte[payload.Length - 1];
             Array.Copy(payload, 1, childRecordMsg, 0, payload.Length - 1);
             SetAndAssignChildRecords(childRecordMsg);
         }
@@ -300,7 +300,8 @@ namespace NdefLibrary.Ndef
         /// to be a Handover Select record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            return record.TypeNameFormat == TypeNameFormatType.NfcRtd && 
+            return record != null &&
+                record.TypeNameFormat == TypeNameFormatType.NfcRtd && 
                 record.Type != null && 
                 record.Type.SequenceEqual(BtHsType) &&
                 record.Payload != null &&

@@ -132,12 +132,12 @@ namespace NdefLibrary.Ndef
         /// and include both the number and the message body.</remarks>
         private void ParseUriToData(string uri, bool allowWrongUriScheme = true)
         {
-            if (allowWrongUriScheme && uri.StartsWith("sms://"))
+            if (allowWrongUriScheme && uri.StartsWith("sms://", StringComparison.Ordinal))
             {
                 uri = uri.Replace("sms://", "sms:");
             }
             // Check if valid SMS URI protocol
-            if (!uri.StartsWith("sms:"))
+            if (!uri.StartsWith("sms:", StringComparison.OrdinalIgnoreCase))
                 return;
 
             // Remove SMS URI protocol from string to parse
@@ -166,7 +166,7 @@ namespace NdefLibrary.Ndef
         private void UpdatePayload()
         {
             if (SmsNumber != null)
-                Uri = SmsScheme + SmsNumber + (!string.IsNullOrEmpty(SmsBody) ? SmsBodyUrl + System.Uri.EscapeDataString(SmsBody) : String.Empty);
+                Uri = SmsScheme + SmsNumber + (!string.IsNullOrEmpty(SmsBody) ? SmsBodyUrl + System.Uri.EscapeDataString(SmsBody) : string.Empty);
         }
 
         /// <summary>
@@ -178,18 +178,18 @@ namespace NdefLibrary.Ndef
         /// to be an Sms record, false if it's a different record.</returns>
         public new static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             if (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Payload != null)
             {
                 if (record.Type.SequenceEqual(NdefUriRecord.UriType))
                 {
                     var testRecord = new NdefUriRecord(record);
-                    return testRecord.Uri.StartsWith(SmsScheme);
+                    return testRecord.Uri.StartsWith(SmsScheme, StringComparison.OrdinalIgnoreCase);
                 }
                 if (record.Type.SequenceEqual(SmartPosterType))
                 {
                     var testRecord = new NdefSpRecord(record);
-                    return testRecord.Uri.StartsWith(SmsScheme);
+                    return testRecord.Uri.StartsWith(SmsScheme, StringComparison.OrdinalIgnoreCase);
                 }
             }
             return false;

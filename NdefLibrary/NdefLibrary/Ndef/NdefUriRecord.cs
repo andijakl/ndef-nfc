@@ -58,7 +58,7 @@ namespace NdefLibrary.Ndef
         /// </summary>
         private static readonly string[] Abbreviations =
         {
-            String.Empty,
+            string.Empty,
             "http://www.",
             "https://www.",
             "http://",
@@ -147,7 +147,7 @@ namespace NdefLibrary.Ndef
             {
                 if (Payload == null || Payload.Length == 0)
                 {
-                    return String.Empty;
+                    return string.Empty;
                 }
                 var encoding = Encoding.UTF8;
                 byte code = Payload.ElementAt(0);
@@ -220,7 +220,7 @@ namespace NdefLibrary.Ndef
         /// to be a URI record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Type.SequenceEqual(UriType));
         }
     }

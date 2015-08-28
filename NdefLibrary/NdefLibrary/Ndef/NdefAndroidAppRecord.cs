@@ -62,7 +62,7 @@ namespace NdefLibrary.Ndef
             {
                 if (Payload == null || Payload.Length == 0)
                 {
-                    return String.Empty;
+                    return string.Empty;
                 }
                 return Encoding.UTF8.GetString(Payload, 0, Payload.Length);
             }
@@ -117,7 +117,7 @@ namespace NdefLibrary.Ndef
         /// to be an Android Application Record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record == null || record.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.ExternalRtd && record.Type.SequenceEqual(AndroidAppRecordType));
         }
     }

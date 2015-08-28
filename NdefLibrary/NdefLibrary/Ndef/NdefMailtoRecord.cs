@@ -191,9 +191,9 @@ namespace NdefLibrary.Ndef
             // adding another query would manually require to add & if needed anyway.
             // -> not using it here.
             var builder = new StringBuilder(MailtoScheme);
-            if (!String.IsNullOrEmpty(Address)) builder.Append(Address);
-            if (!String.IsNullOrEmpty(Subject)) AddQuery(builder, "subject=" + System.Uri.EscapeDataString(Subject), true);
-            if (!String.IsNullOrEmpty(Body)) AddQuery(builder, "body=" + System.Uri.EscapeDataString(Body), String.IsNullOrEmpty(Subject));
+            if (!string.IsNullOrEmpty(Address)) builder.Append(Address);
+            if (!string.IsNullOrEmpty(Subject)) AddQuery(builder, "subject=" + System.Uri.EscapeDataString(Subject), true);
+            if (!string.IsNullOrEmpty(Body)) AddQuery(builder, "body=" + System.Uri.EscapeDataString(Body), string.IsNullOrEmpty(Subject));
 
             Uri = builder.ToString();
         }
@@ -213,7 +213,7 @@ namespace NdefLibrary.Ndef
         /// to be a Mailto record, false if it's a different record.</returns>
         public new static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             if (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Payload != null)
             {
                 if (record.Type.SequenceEqual(NdefUriRecord.UriType))

@@ -242,9 +242,9 @@ namespace NdefLibrary.Ndef
             if (IsHereMapsType(GeoType))
             {
                 // Add title if present
-                if (!String.IsNullOrEmpty(PlaceTitle)) newUri += String.Format(HereMapsTitleUri, System.Uri.EscapeDataString(PlaceTitle));
+                if (!string.IsNullOrEmpty(PlaceTitle)) newUri += string.Format(HereMapsTitleUri, System.Uri.EscapeDataString(PlaceTitle));
                 // App ID has to be present
-                if (!String.IsNullOrEmpty(AppId)) newUri += String.Format(HereMapsAppIdUri, AppId);
+                if (!string.IsNullOrEmpty(AppId)) newUri += string.Format(HereMapsAppIdUri, AppId);
             }
 
             Uri = newUri;
@@ -278,7 +278,7 @@ namespace NdefLibrary.Ndef
             // First check the basics
             if (!base.CheckIfValid()) return false;
 
-            if (IsHereMapsType(GeoType) && String.IsNullOrEmpty(AppId))
+            if (IsHereMapsType(GeoType) && string.IsNullOrEmpty(AppId))
             {
                 throw new NdefException(NdefExceptionMessages.ExGeoNoHereMapsAppId);
             }

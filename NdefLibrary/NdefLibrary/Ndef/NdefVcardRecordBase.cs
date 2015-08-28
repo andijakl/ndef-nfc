@@ -84,7 +84,7 @@ namespace NdefLibrary.Ndef
         /// to be a MIME/vCard record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.Mime && record.Type.SequenceEqual(VcardType));
         }
     }

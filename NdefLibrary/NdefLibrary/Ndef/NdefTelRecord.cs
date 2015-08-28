@@ -26,6 +26,7 @@
 **
 ****************************************************************************/
 
+using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -126,18 +127,18 @@ namespace NdefLibrary.Ndef
         /// to be a Telephone record, false if it's a different record.</returns>
         public new static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             if (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Payload != null)
             {
                 if (record.Type.SequenceEqual(NdefUriRecord.UriType))
                 {
                     var testRecord = new NdefUriRecord(record);
-                    return testRecord.Uri.StartsWith(TelScheme);
+                    return testRecord.Uri.StartsWith(TelScheme, StringComparison.OrdinalIgnoreCase);
                 }
                 if (record.Type.SequenceEqual(SmartPosterType))
                 {
                     var testRecord = new NdefSpRecord(record);
-                    return testRecord.Uri.StartsWith(TelScheme);
+                    return testRecord.Uri.StartsWith(TelScheme, StringComparison.OrdinalIgnoreCase);
                 }
             }
             return false;

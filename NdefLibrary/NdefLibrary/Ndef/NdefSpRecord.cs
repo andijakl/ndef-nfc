@@ -256,7 +256,7 @@ namespace NdefLibrary.Ndef
         /// to be a Smart Poster, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Type.SequenceEqual(SmartPosterType));
         }
 
@@ -307,7 +307,7 @@ namespace NdefLibrary.Ndef
         {
             get
             {
-                return (RecordUri != null && RecordUri.Uri != null) ? RecordUri.Uri : String.Empty;
+                return (RecordUri != null && RecordUri.Uri != null) ? RecordUri.Uri : string.Empty;
             }
             set
             {
@@ -421,7 +421,7 @@ namespace NdefLibrary.Ndef
         /// This is useful if the reader device needs to decide in advance whether 
         /// it has the capability to process the referenced object.
         /// </remarks>
-        public UInt32 NfcSize
+        public uint NfcSize
         {
             get { return (_recordSize != null) ? _recordSize.NfcSize : 0; }
             set
@@ -455,7 +455,7 @@ namespace NdefLibrary.Ndef
         /// </remarks>
         public string NfcMimeType
         {
-            get { return (_recordMimeType != null) ? _recordMimeType.NfcMimeType : String.Empty; }
+            get { return (_recordMimeType != null) ? _recordMimeType.NfcMimeType : string.Empty; }
             set
             {
                 if (_recordMimeType != null)
@@ -610,7 +610,7 @@ namespace NdefLibrary.Ndef
         /// to be an Action record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Type.SequenceEqual(new[] { (byte)'a', (byte)'c', (byte)'t' }));
         }
     }
@@ -649,7 +649,7 @@ namespace NdefLibrary.Ndef
         /// <summary>
         /// Size of the linked content.
         /// </summary>
-        public UInt32 NfcSize
+        public uint NfcSize
         {
             get
             {
@@ -658,7 +658,7 @@ namespace NdefLibrary.Ndef
                     return 0;
 
                 // Make sure we're using big endian
-                return (UInt32)((Payload[0]) << 24) | (UInt32)((Payload[1]) << 16) | (UInt32)((Payload[2]) << 8) | (UInt32)((Payload[3]) << 0);
+                return (uint)((Payload[0]) << 24) | (uint)((Payload[1]) << 16) | (uint)((Payload[2]) << 8) | (uint)((Payload[3]) << 0);
             }
             set
             {
@@ -700,7 +700,7 @@ namespace NdefLibrary.Ndef
         /// to be a size record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Type.SequenceEqual(new[] { (byte)'s' }));
         }
     }
@@ -780,7 +780,7 @@ namespace NdefLibrary.Ndef
         /// to be a (mime) type record, false if it's a different record.</returns>
         public static bool IsRecordType(NdefRecord record)
         {
-            if (record.Type == null) return false;
+            if (record?.Type == null) return false;
             return (record.TypeNameFormat == TypeNameFormatType.NfcRtd && record.Type.SequenceEqual(new[] { (byte)'t' }));
         }
     }
