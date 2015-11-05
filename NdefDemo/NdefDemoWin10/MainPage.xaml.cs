@@ -59,8 +59,11 @@ namespace NdefDemoWin10
             // Initialize NFC
             _device = ProximityDevice.GetDefault();
             // Subscribe for arrived / departed events
-            _device.DeviceArrived += NfcDeviceArrived;
-            _device.DeviceDeparted += NfcDeviceDeparted;
+            if (_device != null)
+            {
+                _device.DeviceArrived += NfcDeviceArrived;
+                _device.DeviceDeparted += NfcDeviceDeparted;
+            }
             // Update status text for UI
             SetStatusOutput(_loader.GetString(_device != null ? "StatusInitialized" : "StatusInitFailed"));
             // Update enabled / disabled state of buttons in the User Interface
