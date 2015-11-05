@@ -117,20 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutNdefLibraryButton.Content" xml:space="preserve">
-    <value>NDEF Library</value>
-  </data>
-  <data name="AboutNdefLibraryUri" xml:space="preserve">
-    <value>http://andijakl.github.io/ndef-nfc/</value>
-  </data>
-  <data name="AboutNfcInteractorButton.Content" xml:space="preserve">
-    <value>NFC interactor</value>
-  </data>
-  <data name="AboutNfcInteractorUri" xml:space="preserve">
-    <value>http://www.nfcinteractor.com/</value>
+  <data name="About.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="AboutText.Text" xml:space="preserve">
-    <value>This simple code example for developers demonstrates how to write NFC code using the NDEF library. You can download the open source library using the NuGet package manager to directly integrate it into your project. For a fully featured tag reader / writer app, install NFC interactor for Windows Phone 8.</value>
+    <value>This simple code example for developers demonstrates how to write NFC code using the NDEF library. You can download the open source library using the NuGet package manager to directly integrate it into your project. For a fully featured tag reader / writer app, install NFC interactor for Windows Phone.</value>
+  </data>
+  <data name="AboutText1.Text" xml:space="preserve">
+    <value>Developed by Andreas Jakl.</value>
+  </data>
+  <data name="AboutText2.Text" xml:space="preserve">
+    <value>Download the open source NFC / NDEF library for Windows from:</value>
   </data>
   <data name="AboutTextTitle.Text" xml:space="preserve">
     <value>About</value>
@@ -177,6 +174,15 @@
   <data name="BtnWriteMailTo.Content" xml:space="preserve">
     <value>Write MailTo Tag</value>
   </data>
+  <data name="ContactEmailButton.Content" xml:space="preserve">
+    <value>Contact per email</value>
+  </data>
+  <data name="ContactEmailButton.NavigateUri" xml:space="preserve">
+    <value>mailto:andreas.jakl@tieto.com</value>
+  </data>
+  <data name="Info.Text" xml:space="preserve">
+    <value>&lt; Info</value>
+  </data>
   <data name="Initialization.Text" xml:space="preserve">
     <value>Initialization</value>
   </data>
@@ -190,6 +196,12 @@ You can also write a message to a tag or publish it to another device. Windows P
   <data name="InstructionsTitle.Text" xml:space="preserve">
     <value>Instructions</value>
   </data>
+  <data name="LibraryUrlButton.Content" xml:space="preserve">
+    <value>github.com/andijakl/ndef-nfc</value>
+  </data>
+  <data name="LibraryUrlButton.NavigateUri" xml:space="preserve">
+    <value>https://github.com/andijakl/ndef-nfc</value>
+  </data>
   <data name="MenuAbout" xml:space="preserve">
     <value>Instructions &amp; About</value>
   </data>
@@ -198,6 +210,12 @@ You can also write a message to a tag or publish it to another device. Windows P
   </data>
   <data name="PageTitleMain" xml:space="preserve">
     <value>nfc tests</value>
+  </data>
+  <data name="Privacy.Text" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="PrivacyText.Text" xml:space="preserve">
+    <value>The app does not store, collect or transmit any personally identifiable data.</value>
   </data>
   <data name="Publishing.Text" xml:space="preserve">
     <value>Publishing</value>
@@ -255,5 +273,17 @@ You can also write a message to a tag or publish it to another device. Windows P
   </data>
   <data name="Subscriptions.Text" xml:space="preserve">
     <value>Subscriptions</value>
+  </data>
+  <data name="Terms.Text" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="TermsText.Text" xml:space="preserve">
+    <value>This application is an open source sample for the NDEF Library for Proximity APIs / NFC.</value>
+  </data>
+  <data name="TwitterButton.Content" xml:space="preserve">
+    <value>Follow on Twitter</value>
+  </data>
+  <data name="TwitterButton.NavigateUri" xml:space="preserve">
+    <value>https://twitter.com/andijakl</value>
   </data>
 </root>

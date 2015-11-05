@@ -15,14 +15,14 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="NdefDemoWin10.App">
-      <uap:VisualElements DisplayName="NFC / NDEF Demo" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Demonstrates reading and writing NDEF formatted tags using the NDEF Library for Proximity APIs (NFC). More information at http://andijakl.github.io/ndef-nfc/" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="NFC / NDEF Demo" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Demonstrates reading and writing NDEF formatted tags using the NDEF Library for Proximity APIs (NFC). More information at http://andijakl.github.io/ndef-nfc/" BackgroundColor="#0080c8">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="NFC Demo" Square71x71Logo="Assets\Square71x71Logo.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
             <uap:ShowOn Tile="wide310x150Logo" />
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#0080c8" />
       </uap:VisualElements>
     </Application>
   </Applications>

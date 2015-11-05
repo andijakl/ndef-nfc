@@ -561,5 +561,10 @@ namespace NdefDemoWin10
              });
         }
         #endregion
+
+        private void AboutButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
+        }
     }
 }
