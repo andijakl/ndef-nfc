@@ -66,10 +66,10 @@
                 </Grid>
 
                 <ScrollViewer Grid.Row="1" Margin="0,0,0,0">
-                    <StackPanel Orientation="Vertical" Grid.Column="0" Margin="12,0,12,0">
+                    <StackPanel Orientation="Vertical" Margin="12,0,12,0">
                         <!--<TextBlock x:Uid="Status" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,0,20"></TextBlock>-->
                         <!--<TextBlock x:Uid="StatusText" x:Name="StatusOutput" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="WrapWholeWords"/>-->
-                        <Image x:Uid="StatusImg" x:Name="StatusImg" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <!--<Image x:Uid="StatusImg" x:Name="StatusImg" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
 
                         <TextBlock x:Uid="Initialization" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,0,20"/>
                         <Button x:Name="BtnInitNfc" x:Uid="BtnInitNfc" Click="BtnInitNfc_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
@@ -78,11 +78,11 @@
                         <Button x:Name="BtnStopSubscription" x:Uid="BtnStopSubscription" Click="BtnStopSubscription_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
                         <TextBlock x:Uid="Publishing" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,10,0,20"/>
                         <Button x:Name="BtnWriteLaunchApp" x:Uid="BtnWriteLaunchApp" Click="BtnWriteLaunchApp_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
-                        <Button x:Name="BtnWriteBusinessCard" x:Uid="BtnWriteBusinessCard" Click="BtnWriteBusinessCard_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <!--<Button x:Name="BtnWriteBusinessCard" x:Uid="BtnWriteBusinessCard" Click="BtnWriteBusinessCard_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />-->
                         <Button x:Name="BtnWriteMailTo" x:Uid="BtnWriteMailTo" Click="BtnWriteMailTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
-                        <Button x:Name="BtnWriteImage" x:Uid="BtnWriteImage" Click="BtnWriteImageTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <!--<Button x:Name="BtnWriteImage" x:Uid="BtnWriteImage" Click="BtnWriteImageTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />-->
                         <Button x:Name="BtnPublishUri" x:Uid="BtnPublishUri" Click="BtnPublishUri_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
-                        <Button x:Name="BtnPublishIcalendar" x:Uid="BtnPublishIcalendar" Click="BtnPublishIcalendar_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <!--<Button x:Name="BtnPublishIcalendar" x:Uid="BtnPublishIcalendar" Click="BtnPublishIcalendar_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />-->
                         <Button x:Name="BtnStopPublication" x:Uid="BtnStopPublication" Click="BtnStopPublication_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
                     </StackPanel>
                 </ScrollViewer>

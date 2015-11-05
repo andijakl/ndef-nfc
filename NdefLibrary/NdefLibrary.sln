@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30626.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefLibrary", "NdefLibrary\NdefLibrary.csproj", "{6FA6963F-89CC-47E5-AF24-79C997AB871D}"
 EndProject
@@ -139,25 +139,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "quint", "quint", "{DDB471EC
 		..\NdefLibraryJS\test\qunit\qunit.js = ..\NdefLibraryJS\test\qunit\qunit.js
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefLibraryUwp", "NdefLibraryUwp\NdefLibraryUwp.csproj", "{556AD831-5CD0-404F-A717-96CF2183206D}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs18
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = NdefLibrary\\NdefLibrary.csproj
-		SccProjectName1 = NdefLibrary
-		SccLocalPath1 = NdefLibrary
-		SccProjectUniqueName2 = NdefLibraryWin\\NdefLibraryWin.csproj
-		SccProjectName2 = NdefLibraryWin
-		SccLocalPath2 = NdefLibraryWin
-		SccProjectUniqueName3 = NdefLibraryWp\\NdefLibraryWp.csproj
-		SccProjectName3 = NdefLibraryWp
-		SccLocalPath3 = NdefLibraryWp
-		SccProjectUniqueName4 = VcardLibrary\\VcardLibrary.csproj
-		SccProjectName4 = VcardLibrary
-		SccLocalPath4 = VcardLibrary
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -219,6 +203,22 @@ Global
 		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|ARM.ActiveCfg = Release|Any CPU
 		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|x64.ActiveCfg = Release|Any CPU
 		{FA79044C-87AA-469B-9C33-B95EBEDE7FDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|ARM.Build.0 = Debug|ARM
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|x64.ActiveCfg = Debug|x64
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|x64.Build.0 = Debug|x64
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|x86.ActiveCfg = Debug|x86
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Debug|x86.Build.0 = Debug|x86
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|ARM.ActiveCfg = Release|ARM
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|ARM.Build.0 = Release|ARM
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|x64.ActiveCfg = Release|x64
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|x64.Build.0 = Release|x64
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|x86.ActiveCfg = Release|x86
+		{556AD831-5CD0-404F-A717-96CF2183206D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
