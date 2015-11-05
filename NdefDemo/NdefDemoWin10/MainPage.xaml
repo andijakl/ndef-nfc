@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="NdefDemoWin10.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NdefDemoWin10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Uid="Initialization" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,0,20"/>
+                <Button x:Name="BtnInitNfc" x:Uid="BtnInitNfc" Click="BtnInitNfc_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBlock x:Uid="Subscriptions" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,10,0,20"/>
+                <Button x:Name="BtnSubscribeNdef" x:Uid="BtnSubscribeNdef" Click="BtnSubscribeNdef_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <Button x:Name="BtnStopSubscription" x:Uid="BtnStopSubscription" Click="BtnStopSubscription_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBlock x:Uid="Publishing" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,10,0,20"/>
+                <Button x:Name="BtnWriteLaunchApp" x:Uid="BtnWriteLaunchApp" Click="BtnWriteLaunchApp_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <Button x:Name="BtnWriteBusinessCard" x:Uid="BtnWriteBusinessCard" Click="BtnWriteBusinessCard_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <Button x:Name="BtnWriteMailTo" x:Uid="BtnWriteMailTo" Click="BtnWriteMailTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <Button x:Name="BtnWriteImage" x:Uid="BtnWriteImage" Click="BtnWriteImageTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <Button x:Name="BtnPublishUri" x:Uid="BtnPublishUri" Click="BtnPublishUri_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <Button x:Name="BtnPublishIcalendar" x:Uid="BtnPublishIcalendar" Click="BtnPublishIcalendar_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                <Button x:Name="BtnStopPublication" x:Uid="BtnStopPublication" Click="BtnStopPublication_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+            </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="120,0,0,0">
+            <TextBlock x:Uid="Status" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,0,20"></TextBlock>
+            <TextBlock x:Uid="StatusText" x:Name="StatusOutput" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="WrapWholeWords"/>
+            <Image x:Uid="StatusImg" x:Name="StatusImg" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+    </Grid>
+</Page>

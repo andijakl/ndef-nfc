@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefDemo", "NdefDemo\NdefDemo.csproj", "{544EC154-B521-4D73-9405-963830ADB213}"
 EndProject
@@ -15,22 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefDemoWin", "NdefDemoWin\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NfcTagGenerator", "NfcTagGenerator\NfcTagGenerator.csproj", "{D4126DDE-0BD9-4906-93B5-475AE1664878}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefDemoWin10", "NdefDemoWin10\NdefDemoWin10.csproj", "{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs18
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = NdefDemo\\NdefDemo.csproj
-		SccProjectName1 = NdefDemo
-		SccLocalPath1 = NdefDemo
-		SccProjectUniqueName2 = NdefDemoWin\\NdefDemoWin.csproj
-		SccProjectName2 = NdefDemoWin
-		SccLocalPath2 = NdefDemoWin
-		SccProjectUniqueName3 = NfcTagGenerator\\NfcTagGenerator.csproj
-		SccProjectName3 = NfcTagGenerator
-		SccLocalPath3 = NfcTagGenerator
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -96,6 +83,28 @@ Global
 		{D4126DDE-0BD9-4906-93B5-475AE1664878}.Release|ARM.ActiveCfg = Release|Any CPU
 		{D4126DDE-0BD9-4906-93B5-475AE1664878}.Release|x64.ActiveCfg = Release|Any CPU
 		{D4126DDE-0BD9-4906-93B5-475AE1664878}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|Any CPU.Build.0 = Debug|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|Any CPU.Deploy.0 = Debug|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|ARM.Build.0 = Debug|ARM
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|ARM.Deploy.0 = Debug|ARM
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|x64.ActiveCfg = Debug|x64
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|x64.Build.0 = Debug|x64
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|x64.Deploy.0 = Debug|x64
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|x86.ActiveCfg = Debug|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|x86.Build.0 = Debug|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Debug|x86.Deploy.0 = Debug|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|Any CPU.ActiveCfg = Release|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|ARM.ActiveCfg = Release|ARM
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|ARM.Build.0 = Release|ARM
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|ARM.Deploy.0 = Release|ARM
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|x64.ActiveCfg = Release|x64
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|x64.Build.0 = Release|x64
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|x64.Deploy.0 = Release|x64
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|x86.ActiveCfg = Release|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|x86.Build.0 = Release|x86
+		{6A77C41E-6EEF-42D8-A9B0-87C507E7A3FB}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
