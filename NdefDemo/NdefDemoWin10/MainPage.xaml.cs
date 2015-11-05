@@ -58,11 +58,26 @@ namespace NdefDemoWin10
         {
             // Initialize NFC
             _device = ProximityDevice.GetDefault();
+            // Subscribe for arrived / departed events
+            _device.DeviceArrived += NfcDeviceArrived;
+            _device.DeviceDeparted += NfcDeviceDeparted;
             // Update status text for UI
             SetStatusOutput(_loader.GetString(_device != null ? "StatusInitialized" : "StatusInitFailed"));
             // Update enabled / disabled state of buttons in the User Interface
             UpdateUiForNfcStatusAsync();
         }
+
+        #region Device Arrived / Departed
+        private void NfcDeviceDeparted(ProximityDevice sender)
+        {
+            SetStatusOutput(_loader.GetString("DeviceDeparted"));
+        }
+
+        private void NfcDeviceArrived(ProximityDevice sender)
+        {
+            SetStatusOutput(_loader.GetString("DeviceArrived"));
+        }
+        #endregion
 
         #region Subscribe for tags
         // ----------------------------------------------------------------------------------------------------
@@ -84,8 +99,18 @@ namespace NdefDemoWin10
         {
             // Get the raw NDEF message data as byte array
             var rawMsg = message.Data.ToArray();
-            // Let the NDEF library parse the NDEF message out of the raw byte array
-            var ndefMessage = NdefMessage.FromByteArray(rawMsg);
+
+            NdefMessage ndefMessage = null;
+            try
+            {
+                // Let the NDEF library parse the NDEF message out of the raw byte array
+                ndefMessage = NdefMessage.FromByteArray(rawMsg);
+            }
+            catch (NdefException e)
+            {
+                SetStatusOutput(string.Format(_loader.GetString("InvalidNdef"), e.Message));
+                return;
+            }
 
             // Analysis result
             var tagContents = new StringBuilder();

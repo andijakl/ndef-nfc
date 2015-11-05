@@ -180,6 +180,12 @@
   <data name="ContactEmailButton.NavigateUri" xml:space="preserve">
     <value>mailto:andreas.jakl@tieto.com</value>
   </data>
+  <data name="DeviceArrived" xml:space="preserve">
+    <value>Device Arrived</value>
+  </data>
+  <data name="DeviceDeparted" xml:space="preserve">
+    <value>Device Departed</value>
+  </data>
   <data name="Info.Text" xml:space="preserve">
     <value>&lt; Info</value>
   </data>
@@ -195,6 +201,9 @@ You can also write a message to a tag or publish it to another device. Windows P
   </data>
   <data name="InstructionsTitle.Text" xml:space="preserve">
     <value>Instructions</value>
+  </data>
+  <data name="InvalidNdef" xml:space="preserve">
+    <value>Invalid NDEF message received. {0}</value>
   </data>
   <data name="LibraryUrlButton.Content" xml:space="preserve">
     <value>github.com/andijakl/ndef-nfc</value>
