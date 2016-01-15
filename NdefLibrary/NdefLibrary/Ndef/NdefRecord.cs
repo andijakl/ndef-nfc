@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
+** Copyright (C) 2012-2016 Andreas Jakl - http://www.nfcinteractor.com/
 ** Original version copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
 ** All rights reserved.
 **
@@ -240,6 +240,8 @@ namespace NdefLibrary.Ndef
                     return typeof(NdefTelRecord);
                 if (NdefNokiaAccessoriesRecord.IsRecordType(this))
                     return typeof(NdefNokiaAccessoriesRecord);
+                if (NdefWindowsSettingsRecord.IsRecordType(this))
+                    return typeof(NdefWindowsSettingsRecord);
                 if (NdefWpSettingsRecord.IsRecordType(this))
                     return typeof(NdefWpSettingsRecord);
             }

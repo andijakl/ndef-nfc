@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
+** Copyright (C) 2012-2016 Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.

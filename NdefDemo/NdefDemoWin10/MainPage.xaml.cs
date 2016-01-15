@@ -520,12 +520,12 @@ namespace NdefDemoWin10
             // to modify the UI thread)
             _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                StatusImg.Source = newImg;
-                if (newImg != null)
-                {
-                    StatusImg.Width = newImg.PixelWidth;
-                    StatusImg.Height = newImg.PixelHeight;
-                }
+                //StatusImg.Source = newImg;
+                //if (newImg != null)
+                //{
+                //    StatusImg.Width = newImg.PixelWidth;
+                //    StatusImg.Height = newImg.PixelHeight;
+                //}
             });
         }
 
@@ -580,10 +580,10 @@ namespace NdefDemoWin10
 
                 // Publishing buttons
                 BtnWriteLaunchApp.IsEnabled = (_device != null && _publishingMessageId == 0);
-                 BtnWriteBusinessCard.IsEnabled = (_device != null && _publishingMessageId == 0);
-                 BtnPublishIcalendar.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 //BtnWriteBusinessCard.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 //BtnPublishIcalendar.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteMailTo.IsEnabled = (_device != null && _publishingMessageId == 0);
-                 BtnWriteImage.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 //BtnWriteImage.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnPublishUri.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnStopPublication.IsEnabled = (_device != null && _publishingMessageId != 0);
              });

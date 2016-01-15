@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Andreas Jakl")]
 [assembly: AssemblyProduct("NdefLibraryWin")]
-[assembly: AssemblyCopyright("Copyright © 2012-2015 Andreas Jakl")]
+[assembly: AssemblyCopyright("Copyright © 2012-2016 Andreas Jakl")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]

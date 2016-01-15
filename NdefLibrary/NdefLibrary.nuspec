@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
-    <metadata minClientVersion="2.8.1">
-        <id>NdefLibrary</id>
-        <version>3.0.3</version>
-        <title>NFC / NDEF Library for Proximity APIs</title>
-        <authors>Andreas Jakl</authors>
-        <owners>Andreas Jakl</owners>
-        <licenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</licenseUrl>
-        <projectUrl>http://andijakl.github.io/ndef-nfc/</projectUrl>
-        <iconUrl>http://www.nfcinteractor.com/ndeflibrary.png</iconUrl>
-        <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>The Proximity APIs for NFC (Near Field Communication) in the WinRT platform (Windows 8 and Windows Phone 8) are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
+  <metadata minClientVersion="2.8.1">
+    <id>NdefLibrary</id>
+    <version>3.0.3</version>
+    <title>NFC / NDEF Library for Proximity APIs</title>
+    <authors>Andreas Jakl</authors>
+    <owners>Andreas Jakl</owners>
+    <licenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://andijakl.github.io/ndef-nfc/</projectUrl>
+    <iconUrl>http://www.nfcinteractor.com/ndeflibrary.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The Proximity APIs for NFC (Near Field Communication) in the WinRT platform (Windows 8 and Windows Phone 8) are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
 
 While the Proximity APIs include basic support for URIs, they lack support for more in-depth control over the NDEF records, as well as additional standardized record types.
 
@@ -19,14 +19,32 @@ This NDEF Library provides a set of classes that enable you to easily work with 
 Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).
 
 Note: this portable class library requires Visual Studio 2012 (or higher) and NuGet 2.8.1+.</description>
-        <summary>Easily parse and create standardized NDEF records for NFC Tags.</summary>
-        <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
-        <copyright>Copyright 2012 - 2015 Andreas Jakl, http://www.nfcinteractor.com/</copyright>
-        <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</tags>
-    </metadata>
-    <files>
-        <file src="NdefLibrary\bin\Release\NdefLibrary.dll" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll" />
-        <file src="NdefLibrary\bin\Release\NdefLibrary.pdb" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.pdb" />
-        <file src="NdefLibrary\**\*.cs" target="src\NdefLibrary" exclude="**\TemporaryGeneratedFile*.cs"/>
-    </files>
+    <summary>Easily parse and create standardized NDEF records for NFC Tags.</summary>
+    <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
+    <copyright>Copyright 2012 - 2015 Andreas Jakl, http://www.nfcinteractor.com/</copyright>
+    <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</tags>
+    <dependencies>
+      <group targetFramework="dotnet">
+        <dependency id="System.Collections" version="4.0.0" />
+        <dependency id="System.Diagnostics.Debug" version="4.0.0" />
+        <dependency id="System.Diagnostics.Tools" version="4.0.0" />
+        <dependency id="System.Globalization" version="4.0.0" />
+        <dependency id="System.IO" version="4.0.0" />
+        <dependency id="System.Linq" version="4.0.0" />
+        <dependency id="System.Reflection" version="4.0.0" />
+        <dependency id="System.Resources.ResourceManager" version="4.0.0" />
+        <dependency id="System.Runtime" version="4.0.0" />
+        <dependency id="System.Runtime.Extensions" version="4.0.0" />
+        <dependency id="System.Text.Encoding" version="4.0.0" />
+        <dependency id="System.Text.RegularExpressions" version="4.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="NdefLibrary\bin\Release\NdefLibrary.dll" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll" />
+    <file src="NdefLibrary\bin\Release\NdefLibrary.pdb" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.pdb" />
+    <file src="NdefLibrary\bin\Release\NdefLibrary.dll" target="lib\dotnet\NdefLibrary.dll" />
+    <file src="NdefLibrary\bin\Release\NdefLibrary.pdb" target="lib\dotnet\NdefLibrary.pdb" />
+    <file src="NdefLibrary\**\*.cs" target="src\NdefLibrary" exclude="**\TemporaryGeneratedFile*.cs" />
+  </files>
 </package>

@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
+** Copyright (C) 2012-2016 Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -47,6 +47,7 @@ namespace NdefLibrary.Ndef
     /// and formats the correct URI string, based on a provided product name and serial
     /// number. See the documentation of the properties for details on the format of those.
     /// </remarks>
+    [Obsolete("This format is no longer used in current and new products.")]
     public class NdefNokiaAccessoriesRecord : NdefUriRecord
     {
         private const string NokiaAccessoriesUriFormat = "nokia-accessories:s?p={0};sn={1}";

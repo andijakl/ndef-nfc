@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
+** Copyright (C) 2012-2016 Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -45,7 +45,7 @@ namespace NdefLibrary.Ndef
     /// by RFC5870, available at: http://geouri.org/
     /// 
     /// * BingMaps: Uses the URI scheme defined by the Maps application
-    /// on Windows 8.
+    /// on Windows 8 / 10.
     /// 
     /// * DriveTo / WalkTo: URI schemes supported by Windows Phone 8 and
     /// used in apps to launch an installed navigation app to navigate
@@ -85,7 +85,7 @@ namespace NdefLibrary.Ndef
             /// </summary>
             GeoUri = 0,
             /// <summary>
-            /// Bing Maps URI scheme, used for Maps on Windows 8 (http://msdn.microsoft.com/en-us/library/windows/apps/jj635237.aspx)
+            /// Bing Maps URI scheme, used for Maps on Windows 8 / 10 (https://msdn.microsoft.com/en-us/library/windows/apps/mt228341.aspx)
             /// </summary>
             BingMaps,
             /// <summary>
@@ -97,11 +97,11 @@ namespace NdefLibrary.Ndef
             /// </summary>
             WebRedirect,
             /// <summary>
-            /// Drive-to URI scheme for Windows Phone 8 (http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj710324%28v=vs.105%29.aspx)
+            /// Drive-to URI scheme for Windows Phone 8 / Windows 10 (https://msdn.microsoft.com/en-us/library/windows/apps/mt228341.aspx)
             /// </summary>
             MsDriveTo,
             /// <summary>
-            /// Walk-to URI scheme for Windows Phone 8 (http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj710324%28v=vs.105%29.aspx)
+            /// Walk-to URI scheme for Windows Phone 8 / Windows 10 (https://msdn.microsoft.com/en-us/library/windows/apps/mt228341.aspx)
             /// </summary>
             MsWalkTo,
             /// <summary>
@@ -155,6 +155,7 @@ namespace NdefLibrary.Ndef
 
         private const string HereMapsAppIdUri = "&appid={0}";
         private const string HereMapsTitleUri = "&title={0}";
+        private const string MsMapsTitleUri = "&destination.name={0}";
 
         private GeoCoordinate _coordinate;
         /// <summary>
@@ -192,7 +193,8 @@ namespace NdefLibrary.Ndef
 
         private string _placeTitle;
         /// <summary>
-        /// Title of the specified place - only used by HERE maps schemes.
+        /// Title of the specified place.
+        /// Used by MsDriveTo, MsWalkTo and the HERE maps schemes.
         /// </summary>
         public string PlaceTitle
         {
@@ -205,7 +207,6 @@ namespace NdefLibrary.Ndef
         /// App ID - has to be present for HERE maps schemes, unfortunately.
         /// It is obviously risky to share your app ID on public NFC tags, so
         /// be careful and use the generic MsDriveTo scheme in those cases.
-        /// See: http://developer.nokia.com/Resources/Library/Lumia/#!maps-and-navigation/here-launchers/wp-uri-schemes-for-location-applications.html
         /// </summary>
         public string AppId
         {
@@ -245,6 +246,11 @@ namespace NdefLibrary.Ndef
                 if (!string.IsNullOrEmpty(PlaceTitle)) newUri += string.Format(HereMapsTitleUri, System.Uri.EscapeDataString(PlaceTitle));
                 // App ID has to be present
                 if (!string.IsNullOrEmpty(AppId)) newUri += string.Format(HereMapsAppIdUri, AppId);
+            }
+            else if (GeoType == NfcGeoType.MsWalkTo || GeoType == NfcGeoType.MsDriveTo)
+            {
+                // Add title if present
+                if (!string.IsNullOrEmpty(PlaceTitle)) newUri += string.Format(MsMapsTitleUri, System.Uri.EscapeDataString(PlaceTitle));
             }
 
             Uri = newUri;
