@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata minClientVersion="2.8.1">
     <id>NdefLibrary</id>
-    <version>3.1.0</version>
+    <version>3.1.1</version>
     <title>NFC / NDEF Library for Proximity APIs</title>
     <authors>Andreas Jakl</authors>
     <owners>Andreas Jakl</owners>
@@ -23,28 +23,10 @@ Note: this portable class library requires Visual Studio 2012 (or higher) and Nu
     <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
     <copyright>Copyright 2012 - 2016 Andreas Jakl, http://www.nfcinteractor.com/</copyright>
     <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</tags>
-    <dependencies>
-      <group targetFramework="dotnet">
-        <dependency id="System.Collections" version="4.0.0" />
-        <dependency id="System.Diagnostics.Debug" version="4.0.0" />
-        <dependency id="System.Diagnostics.Tools" version="4.0.0" />
-        <dependency id="System.Globalization" version="4.0.0" />
-        <dependency id="System.IO" version="4.0.0" />
-        <dependency id="System.Linq" version="4.0.0" />
-        <dependency id="System.Reflection" version="4.0.0" />
-        <dependency id="System.Resources.ResourceManager" version="4.0.0" />
-        <dependency id="System.Runtime" version="4.0.0" />
-        <dependency id="System.Runtime.Extensions" version="4.0.0" />
-        <dependency id="System.Text.Encoding" version="4.0.0" />
-        <dependency id="System.Text.RegularExpressions" version="4.0.0" />
-      </group>
-    </dependencies>
   </metadata>
   <files>
     <file src="NdefLibrary\bin\Release\NdefLibrary.dll" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll" />
     <file src="NdefLibrary\bin\Release\NdefLibrary.pdb" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.pdb" />
-    <file src="NdefLibrary\bin\Release\NdefLibrary.dll" target="lib\dotnet\NdefLibrary.dll" />
-    <file src="NdefLibrary\bin\Release\NdefLibrary.pdb" target="lib\dotnet\NdefLibrary.pdb" />
     <file src="NdefLibrary\**\*.cs" target="src\NdefLibrary" exclude="**\TemporaryGeneratedFile*.cs" />
   </files>
 </package>

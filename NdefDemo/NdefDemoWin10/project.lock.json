@@ -201,7 +201,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/3.0.3": {
+      "NdefLibrary/3.1.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         },
@@ -1787,7 +1787,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/3.0.3": {
+      "NdefLibrary/3.1.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         },
@@ -3406,7 +3406,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/3.0.3": {
+      "NdefLibrary/3.1.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         },
@@ -5030,7 +5030,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/3.0.3": {
+      "NdefLibrary/3.1.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         },
@@ -6649,7 +6649,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/3.0.3": {
+      "NdefLibrary/3.1.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         },
@@ -8273,7 +8273,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/3.0.3": {
+      "NdefLibrary/3.1.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         },
@@ -9892,7 +9892,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/3.0.3": {
+      "NdefLibrary/3.1.1": {
         "compile": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         },
@@ -11924,15 +11924,15 @@
         "ref/xamarinmac20/_._"
       ]
     },
-    "NdefLibrary/3.0.3": {
-      "sha512": "Nnelf3GREnxBDeRGxLWlNnGZLpgdBmEdEmN3QTNgf7GDsFfkHTkpA2jJr1iMIc3eSChegY2IJKltbaOqtWuToA==",
+    "NdefLibrary/3.1.1": {
+      "sha512": "NbEnhlvERaMkH3I6a9xYb+Df3/ASYZ9uui7vPbUQ25WVYQ0XE8h052Gz5QgcdNliiYbZSULc9bwEZnUpf4i3mg==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
         "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll",
         "NdefLibrary.nuspec",
-        "package/services/metadata/core-properties/eaa9226201714932a424a4bda469955f.psmdcp"
+        "package/services/metadata/core-properties/9db676360697491abc05ecfc8b800111.psmdcp"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -14634,7 +14634,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
-      "NdefLibrary >= 3.0.3"
+      "NdefLibrary >= 3.1.1"
     ],
     "UAP,Version=v10.0": []
   }

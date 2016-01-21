@@ -81,6 +81,8 @@
                         <!--<Button x:Name="BtnWriteBusinessCard" x:Uid="BtnWriteBusinessCard" Click="BtnWriteBusinessCard_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />-->
                         <Button x:Name="BtnWriteMailTo" x:Uid="BtnWriteMailTo" Click="BtnWriteMailTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
                         <!--<Button x:Name="BtnWriteImage" x:Uid="BtnWriteImage" Click="BtnWriteImageTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />-->
+                        <Button x:Name="BtnWriteWindowsSettings" x:Uid="BtnWriteWindowsSettings" Click="BtnWriteWindowsSettings_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnWriteMaps" x:Uid="BtnWriteMaps" Click="BtnWriteMaps_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
                         <Button x:Name="BtnPublishUri" x:Uid="BtnPublishUri" Click="BtnPublishUri_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
                         <!--<Button x:Name="BtnPublishIcalendar" x:Uid="BtnPublishIcalendar" Click="BtnPublishIcalendar_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />-->
                         <Button x:Name="BtnStopPublication" x:Uid="BtnStopPublication" Click="BtnStopPublication_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />

@@ -394,6 +394,29 @@ namespace NdefDemoWin10
             //    PublishRecord(record, true);
             //}
         }
+        
+        private void BtnWriteMaps_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a Maps record
+            var record = new NdefGeoRecord
+            {
+                GeoType = NdefGeoRecord.NfcGeoType.MsDriveTo,
+                Latitude = 48.208415,
+                Longitude = 16.371282,
+                PlaceTitle = "Vienna, Austria"
+            };
+            // Publish the record using the proximity device
+            PublishRecord(record, true);
+        }
+
+
+        private void BtnWriteWindowsSettings_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a Windows 10 Settings record
+            var record = new NdefWindowsSettingsRecord {SettingsApp = NdefWindowsSettingsRecord.NfcSettingsApp.DevicesNfc};
+            // Publish the record using the proximity device
+            PublishRecord(record, true);
+        }
 
         private void BtnPublishUri_Click(object sender, RoutedEventArgs e)
         {
@@ -584,6 +607,8 @@ namespace NdefDemoWin10
                  //BtnPublishIcalendar.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteMailTo.IsEnabled = (_device != null && _publishingMessageId == 0);
                  //BtnWriteImage.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 BtnWriteMaps.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 BtnWriteWindowsSettings.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnPublishUri.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnStopPublication.IsEnabled = (_device != null && _publishingMessageId != 0);
              });
@@ -594,5 +619,6 @@ namespace NdefDemoWin10
         {
             MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
         }
+
     }
 }
