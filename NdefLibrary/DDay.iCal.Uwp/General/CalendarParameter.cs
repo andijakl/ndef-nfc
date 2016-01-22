@@ -7,9 +7,11 @@ using System.Diagnostics;
 using DDay.Collections;
 
 namespace DDay.iCal
-{   
-#if !SILVERLIGHT
+{
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class CalendarParameter : 
         CalendarObject,
@@ -17,6 +19,9 @@ namespace DDay.iCal
     {
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         List<string> _Values;
 
         #endregion
@@ -93,7 +98,9 @@ namespace DDay.iCal
 
         #region IValueObject<string> Members
 
-        [field:NonSerialized]
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
+        [field: NonSerialized]
+#endif
         public event EventHandler<ValueChangedEventArgs<string>> ValueChanged;
 
         protected void OnValueChanged(IEnumerable<string> removedValues, IEnumerable<string> addedValues)

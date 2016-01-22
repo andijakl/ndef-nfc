@@ -107,7 +107,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ndef\NdefIcalendarRecord.cs" />
     <Compile Include="Ndef\NdefMimeImageRecord.cs" />
     <Compile Include="Ndef\NdefVcardRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

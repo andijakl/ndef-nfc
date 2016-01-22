@@ -58,7 +58,7 @@ namespace DDay.iCal.Serialization.iCalendar
                     s = new ParameterSerializer();
                 else if (typeof(string).IsAssignableFrom(objectType))
                     s = new StringSerializer();
-                else if (objectType.IsEnum)
+                else if (objectType.GetTypeInfo().IsEnum)
                     s = new EnumSerializer(objectType);
                 else if (typeof(TimeSpan).IsAssignableFrom(objectType))
                     s = new TimeSpanSerializer();

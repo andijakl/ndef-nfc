@@ -12,19 +12,20 @@ namespace DDay.iCal
 
         static public object GetUninitializedObject(Type type)
         {
-            return FormatterServices.GetUninitializedObject(type);
+            // TODO original was - check if new code works: return FormatterServices.GetUninitializedObject(type);
+            return Activator.CreateInstance(type);
         }
 
         static public void OnDeserializing(object obj)
         {
-            StreamingContext ctx = new StreamingContext(StreamingContextStates.All);
+            StreamingContext ctx = new StreamingContext();
             foreach (MethodInfo mi in GetDeserializingMethods(obj.GetType()))
                 mi.Invoke(obj, new object[] { ctx });
         }
 
         static public void OnDeserialized(object obj)
         {
-            StreamingContext ctx = new StreamingContext(StreamingContextStates.All);
+            StreamingContext ctx = new StreamingContext();
             foreach (MethodInfo mi in GetDeserializedMethods(obj.GetType()))
                 mi.Invoke(obj, new object[] { ctx });
         } 

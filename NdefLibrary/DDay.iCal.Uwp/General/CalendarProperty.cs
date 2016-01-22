@@ -29,8 +29,10 @@ namespace DDay.iCal
     /// and X-properties may be applied to calendar components.
     /// </remarks>
     [DebuggerDisplay("{Name}:{Value}")]
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class CalendarProperty :
         CalendarObject,
@@ -38,7 +40,13 @@ namespace DDay.iCal
     {
         #region Private Fields
 
-        private IList<object> _Values;        
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
+        private IList<object> _Values;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif  
         private ICalendarParameterCollection _Parameters;
 
         #endregion
@@ -48,6 +56,9 @@ namespace DDay.iCal
         /// <summary>
         /// Returns a list of parameters that are associated with the iCalendar object.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public ICalendarParameterCollection Parameters
         {
             get { return _Parameters; }
@@ -137,8 +148,8 @@ namespace DDay.iCal
                 // Copy/clone the object if possible (deep copy)
                 if (p.Values is ICopyable)
                     SetValue(((ICopyable)p.Values).Copy<object>());
-                else if (p.Values is ICloneable)
-                    SetValue(((ICloneable)p.Values).Clone());
+                //else if (p.Values is ICloneable)
+                //    SetValue(((ICloneable)p.Values).Clone());
                 else
                     SetValue(p.Values);
 
@@ -154,7 +165,9 @@ namespace DDay.iCal
 
         #region IValueObject<object> Members
 
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
         [field: NonSerialized]
+#endif
         public event EventHandler<ValueChangedEventArgs<object>> ValueChanged;
 
         protected void OnValueChanged(object removedValue, object addedValue)

@@ -1,9 +1,6 @@
 using System;
 using System.Diagnostics;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
-using System.Configuration;
 using System.Runtime.Serialization;
 
 namespace DDay.iCal
@@ -12,8 +9,10 @@ namespace DDay.iCal
     /// A class that represents an RFC 5545 VTODO component.
     /// </summary> 
     [DebuggerDisplay("{Summary} - {Status}")]
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class Todo : 
         RecurringComponent,
@@ -21,8 +20,11 @@ namespace DDay.iCal
     {
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         TodoEvaluator m_Evaluator;
-        
+
         #endregion
 
         #region Public Properties
@@ -30,6 +32,9 @@ namespace DDay.iCal
         /// <summary>
         /// The date/time the todo was completed.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IDateTime Completed
         {
             get { return Properties.Get<IDateTime>("COMPLETED"); }
@@ -39,6 +44,9 @@ namespace DDay.iCal
         /// <summary>
         /// The start date/time of the todo item.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public override IDateTime DTStart
         {
             get
@@ -55,6 +63,9 @@ namespace DDay.iCal
         /// <summary>
         /// The due date of the todo item.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IDateTime Due
         {
             get { return Properties.Get<IDateTime>("DUE"); }
@@ -78,6 +89,9 @@ namespace DDay.iCal
         //
         // Therefore, Duration is not serialized, as Due
         // should always be extrapolated from the duration.
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public TimeSpan Duration
         {
             get { return Properties.Get<TimeSpan>("DURATION"); }
@@ -88,24 +102,36 @@ namespace DDay.iCal
             }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IGeographicLocation GeographicLocation
         {
             get { return Properties.Get<IGeographicLocation>("GEO"); }
             set { Properties.Set("GEO", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public string Location
         {
             get { return Properties.Get<string>("LOCATION"); }
             set { Properties.Set("LOCATION", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public int PercentComplete
         {
             get { return Properties.Get<int>("PERCENT-COMPLETE"); }
             set { Properties.Set("PERCENT-COMPLETE", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IList<string> Resources
         {
             get { return Properties.GetMany<string>("RESOURCES"); }
@@ -115,6 +141,9 @@ namespace DDay.iCal
         /// <summary>
         /// The status of the todo item.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public TodoStatus Status
         {
             get { return Properties.Get<TodoStatus>("STATUS"); }

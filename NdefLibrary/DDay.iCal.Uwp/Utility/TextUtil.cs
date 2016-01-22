@@ -70,7 +70,7 @@ namespace DDay.iCal
         {
             string s = tr.ReadToEnd();
             TextReader reader = Normalize(s, ctx);
-            tr.Close();
+            tr.Dispose();
 
             return reader;
         }

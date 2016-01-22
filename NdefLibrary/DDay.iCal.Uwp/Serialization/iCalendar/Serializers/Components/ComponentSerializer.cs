@@ -115,7 +115,7 @@ namespace DDay.iCal.Serialization.iCalendar
                 ICalendarComponent component = parser.component(ctx, sf, cf, null);
 
                 // Close our text stream
-                tr.Close();
+                tr.Dispose();
 
                 // Return the parsed component
                 return component;

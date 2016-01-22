@@ -84,7 +84,8 @@ The new JavaScript port of the library provides the most important NDEF types al
 * Mailto: sending email messages with recipient address and optional subject and body (C# only) 
 * Telephone call: defining the number to call
 * Nokia Accessories: let the user choose an app to launch on his Nokia Lumia Windows Phone 8 device (C# only) 
-* WpSettings: launch a settings page on Windows Phone 8 (e.g., Bluetooth settings, flight mode). Actually modifying these settings is not allowed by the security model of Windows Phone (C# only) 
+* WpSettings: launch a settings page on Windows Phone 8 (e.g., Bluetooth settings, flight mode). Actually modifying these settings is not allowed by the security model of Windows Phone (C# only). Deprecated class.
+* Windows Settings: launch a settings page on Windows 10 (PC and mobile)
   
 #### Platform-specific extension library to enable real-life use cases (C#)
 
@@ -103,7 +104,6 @@ Another GPL-licensed example app is [NfcShare](http://www.nfcinteractor.com/deve
 Examples of apps currently using the NDEF Library and available in the public store:
 
 * [NFC interactor](http://www.nfcinteractor.com/) for Windows Phone: powerful NFC tag reader / writer app
-* [NearSpeak](http://www.nearspeak.at/): store voice messages on NFC tags
 * [NFCsms](http://www.nfcinteractor.com/related-projects/nfcsms/): enables Windows Phone to send SMS messages from NFC tags 
 
 
@@ -242,7 +242,14 @@ The JavaScript library is available in two versions, both are available in the "
 
 ## Version History (C#)
 
-### Latest changes
+### 3.1.1 - January 2016
+* New extension library targeting Windows 10 / UWP, including Mime/Image and vCard-records
+* New NdefWindowsSettingsRecord to launch all settings pages for Windows 10 (both desktop and mobile)
+* Deprecated NdefWpSettingsRecord from Windows Phone 8
+* Updated Geo tag record for Windows 10, also allowing a title for the DriveTo and WalkTo types
+* New Demo app for Windows 10 (UWP, Universal Windows Platform)
+
+### Changes
 * Rebased library from Codeplex to Github
 
 ### 3.0.3 - March 2015

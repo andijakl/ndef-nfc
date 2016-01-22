@@ -1,11 +1,6 @@
 using System;
-using System.Data;
-using System.Collections;
-using System.Configuration;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Globalization;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 using DDay.Collections;
 
 namespace DDay.iCal
@@ -13,8 +8,10 @@ namespace DDay.iCal
     /// <summary>
     /// A class that represents an RFC 5545 VTIMEZONE component.
     /// </summary>
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public partial class iCalTimeZone :
         CalendarComponent,
@@ -133,7 +130,13 @@ namespace DDay.iCal
 
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         TimeZoneEvaluator m_Evaluator;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         ICalendarObjectList<ITimeZoneInfo> m_TimeZoneInfos;
 
         #endregion
@@ -185,36 +188,54 @@ namespace DDay.iCal
 
         #region ITimeZone Members
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public string ID
         {
             get { return Properties.Get<string>("TZID"); }
             set { Properties.Set("TZID", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public string TZID
         {
             get { return ID; }
             set { ID = value; }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IDateTime LastModified
         {
             get { return Properties.Get<IDateTime>("LAST-MODIFIED"); }
             set { Properties.Set("LAST-MODIFIED", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public Uri Url
         {
             get { return Properties.Get<Uri>("TZURL"); }
             set { Properties.Set("TZURL", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public Uri TZUrl
         {
             get { return Url; }
             set { Url = value; }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public ICalendarObjectList<ITimeZoneInfo> TimeZoneInfos
         {
             get { return m_TimeZoneInfos; }
@@ -230,7 +251,7 @@ namespace DDay.iCal
         /// <returns>A TimeZoneInfo object for the specified iCalDateTime</returns>
         virtual public TimeZoneObservance? GetTimeZoneObservance(IDateTime dt)
         {
-            Trace.TraceInformation("Getting time zone for '" + dt + "'...", "Time Zone");
+            Debug.WriteLine("Getting time zone for '" + dt + "'...", "Time Zone");
             foreach (ITimeZoneInfo tzi in TimeZoneInfos)
             {
                 TimeZoneObservance? observance = tzi.GetObservance(dt);

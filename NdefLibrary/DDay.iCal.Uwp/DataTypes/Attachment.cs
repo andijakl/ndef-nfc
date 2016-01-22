@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using DDay.iCal.Serialization.iCalendar;
 
 namespace DDay.iCal
@@ -169,9 +171,9 @@ namespace DDay.iCal
         /// </summary>
         /// <param name="username">The username to supply for credentials</param>
         /// <param name="password">The pasword to supply for credentials</param>
-        virtual public void LoadDataFromUri(string username, string password)
+        virtual public async Task LoadDataFromUri(string username, string password)
         {
-            LoadDataFromUri(null, username, password);
+            await LoadDataFromUri(null, username, password);
         }
 
         /// <summary>
@@ -181,13 +183,17 @@ namespace DDay.iCal
         /// <param name="uri">The Uri from which to download the <c>Data</c></param>
         /// <param name="username">The username to supply for credentials</param>
         /// <param name="password">The pasword to supply for credentials</param>
-        virtual public void LoadDataFromUri(Uri uri, string username, string password)
+        virtual public async Task LoadDataFromUri(Uri uri, string username, string password)
         {
-            using (WebClient client = new WebClient())
+            NetworkCredential credentials = null;
+            if (username != null &&
+                password != null)
             {
-                if (username != null &&
-                    password != null)
-                    client.Credentials = new System.Net.NetworkCredential(username, password);
+                credentials = new NetworkCredential(username, password);
+            }
+                //client = new System.Net.NetworkCredential(username, password);
+            using (HttpClient client = new HttpClient(new HttpClientHandler { Credentials = credentials }))
+            {
 
                 if (uri == null)
                 {
@@ -196,7 +202,7 @@ namespace DDay.iCal
                     uri = new Uri(Uri.OriginalString);
                 }
 
-                Data = client.DownloadData(uri);
+                Data = await client.GetByteArrayAsync(uri);
             }
         }
 

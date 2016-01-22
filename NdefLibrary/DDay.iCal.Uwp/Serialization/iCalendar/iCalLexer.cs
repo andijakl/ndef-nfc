@@ -14,7 +14,7 @@ namespace DDay.iCal
 	using System;
 	using Stream                          = System.IO.Stream;
 	using TextReader                      = System.IO.TextReader;
-	using Hashtable                       = System.Collections.Hashtable;
+	//using Hashtable                       = System.Collections.Hashtable;
 	using Comparer                        = System.Collections.Comparer;
 	
 	using TokenStreamException            = antlr.TokenStreamException;
@@ -91,7 +91,8 @@ namespace DDay.iCal
 		{
 			caseSensitiveLiterals = true;
 			setCaseSensitive(true);
-			literals = new Hashtable(100, (float) 0.4, null, Comparer.Default);
+		    literals = new Hashtable();
+            //literals = new Hashtable(100, (float) 0.4, null, Comparer.Default);
 		}
 		
 		override public IToken nextToken()			//throws TokenStreamException

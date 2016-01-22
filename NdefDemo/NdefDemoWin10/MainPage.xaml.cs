@@ -22,6 +22,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using NdefLibrary.Ndef;
+using NdefLibraryUwp.Ndef;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -37,7 +38,7 @@ namespace NdefDemoWin10
         private long _publishingMessageId;
         private readonly CoreDispatcher _dispatcher;
         private readonly ResourceLoader _loader = new ResourceLoader();
-        
+
 
         public MainPage()
         {
@@ -51,7 +52,7 @@ namespace NdefDemoWin10
             // Update enabled / disabled state of buttons in the User Interface
             UpdateUiForNfcStatusAsync();
         }
-        
+
 
 
         private void BtnInitNfc_Click(object sender, RoutedEventArgs routedEventArgs)
@@ -74,6 +75,7 @@ namespace NdefDemoWin10
         private void NfcDeviceDeparted(ProximityDevice sender)
         {
             SetStatusOutput(_loader.GetString("DeviceDeparted"));
+            SetStatusImage(null);
         }
 
         private void NfcDeviceArrived(ProximityDevice sender)
@@ -198,52 +200,31 @@ namespace NdefDemoWin10
                     // You can also check the action (if in use by the record), 
                     // mime type and size of the linked content.
                 }
-                //else if (specializedType == typeof(NdefVcardRecordBase))
-                //{
-                //    // --------------------------------------------------------------------------
-                //    // Convert and extract business card info
-                //    var vcardRecord = new NdefVcardRecord(record);
-                //    tagContents.Append("-> Business Card record" + Environment.NewLine);
-                //    var contact = vcardRecord.ContactData;
+                else if (specializedType == typeof(NdefVcardRecordBase))
+                {
+                    // --------------------------------------------------------------------------
+                    // Convert and extract business card info
+                    var vcardRecord = new NdefVcardRecord(record);
+                    tagContents.Append("-> Business Card record" + Environment.NewLine);
+                    var contact = vcardRecord.ContactData;
 
-                //    // Contact has phone or email info set? Use contact manager to show the contact card
-                //    await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                //    {
-                //        if (contact.Emails.Any() || contact.Phones.Any())
-                //        {
-                //            var rect = GetElementRect(StatusOutput);
-                //            ContactManager.ShowContactCard(contact, rect, Placement.Below);
-                //        }
-                //        else
-                //        {
-                //            // No phone or email set - contact manager would not show the contact card.
-                //            // -> parse manually
-                //            tagContents.AppendFormat("Name: {0}\n", contact.DisplayName);
-                //            tagContents.Append("[not parsing other values in the demo app]");
-                //        }
-                //    });
-                //}
-                //else if (specializedType == typeof(NdefIcalendarRecordBase))
-                //{
-                //    // --------------------------------------------------------------------------
-                //    // Convert and extract iCalendar info
-                //    var icalendarRecord = new NdefIcalendarRecord(record);
-                //    tagContents.Append("-> iCalendar record" + Environment.NewLine);
-                //    var ap = icalendarRecord.AppointmentData;
-                //    if (!String.IsNullOrEmpty(ap.Subject))
-                //        tagContents.AppendFormat("Subject: {0}\n", ap.Subject);
-                //    if (!String.IsNullOrEmpty(ap.Details))
-                //        tagContents.AppendFormat("Details: {0}\n", ap.Details);
-                //    if (!String.IsNullOrEmpty(ap.Organizer.Address))
-                //        tagContents.AppendFormat("Organizer Address: {0}\n", ap.Organizer.Address);
-                //    if (!String.IsNullOrEmpty(ap.Location))
-                //        tagContents.AppendFormat("Location: {0}\n", ap.Location);
-                //    tagContents.AppendFormat("Start time: {0}\n", ap.StartTime);
-                //    tagContents.AppendFormat("Duration: {0}\n", ap.Duration);
-                //    tagContents.AppendFormat("AllDay? {0}\n", ap.AllDay ? "yes" : "no");
-                //    if (ap.Reminder != null)
-                //        tagContents.AppendFormat("Reminder: {0}\n", ap.Reminder);
-                //}
+                    // Contact has phone or email info set? Use contact manager to show the contact card
+                    await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                    {
+                        if (contact.Emails.Any() || contact.Phones.Any())
+                        {
+                            var rect = GetElementRect(StatusOutput);
+                            ContactManager.ShowContactCard(contact, rect, Placement.Below);
+                        }
+                        else
+                        {
+                            // No phone or email set - contact manager would not show the contact card.
+                            // -> parse manually
+                            tagContents.AppendFormat("Name: {0}\n", contact.DisplayName);
+                            tagContents.Append("[not parsing other values in the demo app]");
+                        }
+                    });
+                }
                 else if (specializedType == typeof(NdefLaunchAppRecord))
                 {
                     // --------------------------------------------------------------------------
@@ -263,15 +244,15 @@ namespace NdefDemoWin10
                         }
                     }
                 }
-                //else if (specializedType == typeof(NdefMimeImageRecordBase))
-                //{
-                //    // --------------------------------------------------------------------------
-                //    // Convert and extract Image record info
-                //    var imgRecord = new NdefMimeImageRecord(record);
-                //    tagContents.Append("-> MIME / Image record" + Environment.NewLine);
-                //    _dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () => SetStatusImage(await imgRecord.GetImageAsBitmap()));
+                else if (specializedType == typeof(NdefMimeImageRecordBase))
+                {
+                    // --------------------------------------------------------------------------
+                    // Convert and extract Image record info
+                    var imgRecord = new NdefMimeImageRecord(record);
+                    tagContents.Append("-> MIME / Image record" + Environment.NewLine);
+                    _dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () => SetStatusImage(await imgRecord.GetImageAsBitmap()));
 
-                //}
+                }
                 else
                 {
                     // Other type, not handled by this demo
@@ -298,13 +279,13 @@ namespace NdefDemoWin10
             var record = new NdefLaunchAppRecord { Arguments = "Hello World" };
             // WindowsPhone is the pre-defined platform ID for WP8.
             // You can get the application ID from the WMAppManifest.xml file
-            record.AddPlatformAppId("WindowsPhone", "{544ec154-b521-4d73-9405-963830adb213}");
+            //record.AddPlatformAppId("WindowsPhone", "{544ec154-b521-4d73-9405-963830adb213}");
             // The app platform for a Windows 8 computer is Windows. 
             // The format of the proximity app Id is <package family name>!<app Id>. 
             // You can get the package family name from the Windows.ApplicationModel.Package.Current.Id.FamilyName property. 
             // You must copy the app Id value from the Id attribute of the Application element in the 
             // package manifest for your app.
-            record.AddPlatformAppId("Windows", Windows.ApplicationModel.Package.Current.Id.FamilyName + "!" + "NdefDemoWin");
+            record.AddPlatformAppId("Windows", Windows.ApplicationModel.Package.Current.Id.FamilyName + "!" + "App");
 
             // Publish the record using the proximity device
             PublishRecord(record, true);
@@ -345,10 +326,10 @@ namespace NdefDemoWin10
             });
             contact.Notes = "Developer of the NFC Library";
 
-            //var record = new NdefVcardRecord(contact);
+            var record = new NdefVcardRecord(contact);
 
-            //// Publish the record using the proximity device
-            //PublishRecord(record, true);
+            // Publish the record using the proximity device
+            PublishRecord(record, true);
         }
 
 
@@ -368,6 +349,8 @@ namespace NdefDemoWin10
         private async void BtnWriteImageTo_Click(object sender, RoutedEventArgs e)
         {
             // Load an image
+            // Note: Use supplied demo images from /Assets/DemoImages (copy these to the device)
+            // Normal photos will most likely be too large for NFC tags.
 
             var openPicker = new Windows.Storage.Pickers.FileOpenPicker
             {
@@ -387,14 +370,14 @@ namespace NdefDemoWin10
             var file = await openPicker.PickSingleFileAsync();
 
             // file is null if user cancels the file picker.
-            //if (file != null)
-            //{
-            //    var record = await NdefMimeImageRecord.CreateFromFile(file);
-            //    // Publish the record using the proximity device
-            //    PublishRecord(record, true);
-            //}
+            if (file != null)
+            {
+                var record = await NdefMimeImageRecord.CreateFromFile(file);
+                // Publish the record using the proximity device
+                PublishRecord(record, true);
+            }
         }
-        
+
         private void BtnWriteMaps_Click(object sender, RoutedEventArgs e)
         {
             // Create a Maps record
@@ -413,7 +396,7 @@ namespace NdefDemoWin10
         private void BtnWriteWindowsSettings_Click(object sender, RoutedEventArgs e)
         {
             // Create a Windows 10 Settings record
-            var record = new NdefWindowsSettingsRecord {SettingsApp = NdefWindowsSettingsRecord.NfcSettingsApp.DevicesNfc};
+            var record = new NdefWindowsSettingsRecord { SettingsApp = NdefWindowsSettingsRecord.NfcSettingsApp.DevicesNfc };
             // Publish the record using the proximity device
             PublishRecord(record, true);
         }
@@ -424,31 +407,6 @@ namespace NdefDemoWin10
             var record = new NdefUriRecord { Uri = "http://www.nfcinteractor.com/" };
             // Publish the record using the proximity device
             PublishRecord(record, false);
-        }
-
-        private void BtnPublishIcalendar_Click(object sender, RoutedEventArgs e)
-        {
-            // Warning: iCalendar support is currently still in alpha in the library!
-            // Functionality and APIs might change in future updates.
-            var ap = new Appointment
-            {
-                Subject = "Spread the word",
-                Details = "Inform other developers about the open source NFC / NDEF Library",
-                Organizer = new AppointmentOrganizer
-                {
-                    Address = "andreas.jakl@live.com",
-                    DisplayName = "Andreas Jakl"
-                },
-                Location = "Email, Facebook, Twitter",
-                AllDay = true,
-                StartTime = DateTimeOffset.UtcNow.AddDays(1),
-                Reminder = new TimeSpan(0, 0, -30, 0)
-            };
-
-            //var record = new NdefIcalendarRecord(ap);
-
-            //// Publish the record using the proximity device
-            //PublishRecord(record, false);
         }
 
         private void PublishRecord(NdefRecord record, bool writeToTag)
@@ -543,12 +501,12 @@ namespace NdefDemoWin10
             // to modify the UI thread)
             _dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                //StatusImg.Source = newImg;
-                //if (newImg != null)
-                //{
-                //    StatusImg.Width = newImg.PixelWidth;
-                //    StatusImg.Height = newImg.PixelHeight;
-                //}
+                StatusImg.Source = newImg;
+                if (newImg != null)
+                {
+                    StatusImg.Width = newImg.PixelWidth;
+                    StatusImg.Height = newImg.PixelHeight;
+                }
             });
         }
 
@@ -597,16 +555,16 @@ namespace NdefDemoWin10
              {
                  BtnInitNfc.IsEnabled = (_device == null);
 
-                // Subscription buttons
-                BtnSubscribeNdef.IsEnabled = (_device != null && _subscriptionIdNdef == 0);
+                 // Subscription buttons
+                 BtnSubscribeNdef.IsEnabled = (_device != null && _subscriptionIdNdef == 0);
                  BtnStopSubscription.IsEnabled = (_device != null && _subscriptionIdNdef != 0);
 
-                // Publishing buttons
-                BtnWriteLaunchApp.IsEnabled = (_device != null && _publishingMessageId == 0);
-                 //BtnWriteBusinessCard.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 // Publishing buttons
+                 BtnWriteLaunchApp.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 BtnWriteBusinessCard.IsEnabled = (_device != null && _publishingMessageId == 0);
                  //BtnPublishIcalendar.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteMailTo.IsEnabled = (_device != null && _publishingMessageId == 0);
-                 //BtnWriteImage.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 BtnWriteImage.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteMaps.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteWindowsSettings.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnPublishUri.IsEnabled = (_device != null && _publishingMessageId == 0);

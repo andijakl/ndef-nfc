@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DDay.iCal
 {
@@ -46,7 +47,7 @@ namespace DDay.iCal
         /// </summary>
         /// <param name="username">The username to supply for credentials</param>
         /// <param name="password">The pasword to supply for credentials</param>
-        void LoadDataFromUri(string username, string password);
+        Task LoadDataFromUri(string username, string password);
 
         /// <summary>
         /// Loads (fills) the <c>Data</c> property with the file designated
@@ -55,6 +56,6 @@ namespace DDay.iCal
         /// <param name="uri">The Uri from which to download the <c>Data</c></param>
         /// <param name="username">The username to supply for credentials</param>
         /// <param name="password">The pasword to supply for credentials</param>
-        void LoadDataFromUri(Uri uri, string username, string password);
+        Task LoadDataFromUri(Uri uri, string username, string password);
     }
 }

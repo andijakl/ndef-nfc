@@ -1,10 +1,3 @@
-using System;
-using System.Diagnostics;
-using System.Data;
-using System.Configuration;
-using DDay.iCal;
-using DDay.iCal.Serialization;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace DDay.iCal
@@ -12,15 +5,20 @@ namespace DDay.iCal
     /// <summary>
     /// A class that represents an RFC 5545 VJOURNAL component.
     /// </summary>
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class Journal : 
         RecurringComponent,
         IJournal
     {
         #region IJournal Members
-        
+
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public JournalStatus Status
         {
             get { return Properties.Get<JournalStatus>("STATUS"); }

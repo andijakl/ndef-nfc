@@ -768,7 +768,7 @@ namespace DDay.iCal
             else if (HasTime)
                 return Value.TimeOfDay.ToString() + tz;
             else
-                return Value.ToShortDateString() + tz;
+                return Value.ToString(System.Globalization.DateTimeFormatInfo.CurrentInfo.ShortDatePattern) + tz;
         }
 
         #endregion

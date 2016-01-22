@@ -15,8 +15,10 @@ namespace DDay.iCal
     /// This class is used by the parsing framework for iCalendar components.
     /// Generally, you should not need to use this class directly.
     /// </summary>
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     [DebuggerDisplay("Component: {Name}")]
     public class CalendarComponent :
@@ -68,7 +70,7 @@ namespace DDay.iCal
         static public ICalendarComponent LoadFromStream(TextReader tr)
         {
             string text = tr.ReadToEnd();
-            tr.Close();
+            tr.Dispose();
 
             byte[] memoryBlock = Encoding.UTF8.GetBytes(text);
             MemoryStream ms = new MemoryStream(memoryBlock);
@@ -83,14 +85,17 @@ namespace DDay.iCal
             return default(T);
         }
 
-        #endregion        
+        #endregion
 
         #endregion
 
         #endregion
 
         #region Private Fields
-                
+
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private ICalendarPropertyList m_Properties;        
 
         #endregion

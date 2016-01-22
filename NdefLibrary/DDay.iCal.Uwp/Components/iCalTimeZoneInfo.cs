@@ -1,19 +1,18 @@
 using System;
-using System.Data;
-using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Runtime.Serialization;
 
 namespace DDay.iCal
-{    
+{
     /// <summary>
     /// A class that contains time zone information, and is usually accessed
     /// from an iCalendar object using the <see cref="DDay.iCal.iCalendar.GetTimeZone"/> method.        
     /// </summary>
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class iCalTimeZoneInfo : 
         CalendarComponent,
@@ -21,7 +20,13 @@ namespace DDay.iCal
     {
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         TimeZoneInfoEvaluator m_Evaluator;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         DateTime m_End;
 
         #endregion

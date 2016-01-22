@@ -5,8 +5,10 @@ using System.Runtime.Serialization;
 
 namespace DDay.iCal
 {
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class CalendarObjectBase :
         ICopyable,        
@@ -14,6 +16,9 @@ namespace DDay.iCal
     {
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private bool m_IsLoaded;
 
         #endregion
@@ -67,8 +72,10 @@ namespace DDay.iCal
         {
             get { return m_IsLoaded; }
         }
-        
+
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
         [field:NonSerialized]
+#endif
         public event EventHandler Loaded;
 
         virtual public void OnLoaded()
@@ -78,6 +85,6 @@ namespace DDay.iCal
                 Loaded(this, EventArgs.Empty);
         }
 
-        #endregion
+#endregion
     }
 }

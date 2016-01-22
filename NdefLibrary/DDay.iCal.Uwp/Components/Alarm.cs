@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
-using System.Configuration;
 using System.Runtime.Serialization;
 
 namespace DDay.iCal
@@ -11,8 +8,10 @@ namespace DDay.iCal
     /// A class that represents an RFC 2445 VALARM component.
     /// FIXME: move GetOccurrences() logic into an AlarmEvaluator.
     /// </summary>    
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class Alarm :
         CalendarComponent,
@@ -20,54 +19,81 @@ namespace DDay.iCal
     {
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private List<AlarmOccurrence> m_Occurrences;
 
         #endregion
 
         #region Public Properties
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public AlarmAction Action
         {
             get { return Properties.Get<AlarmAction>("ACTION"); }
             set { Properties.Set("ACTION", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IAttachment Attachment
         {
             get { return Properties.Get<IAttachment>("ATTACH"); }
             set { Properties.Set("ATTACH", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IList<IAttendee> Attendees
         {
             get { return Properties.GetMany<IAttendee>("ATTENDEE"); }
             set { Properties.Set("ATTENDEE", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public string Description
         {
             get { return Properties.Get<string>("DESCRIPTION"); }
             set { Properties.Set("DESCRIPTION", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public TimeSpan Duration
         {
             get { return Properties.Get<TimeSpan>("DURATION"); }
             set { Properties.Set("DURATION", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public int Repeat
         {
             get { return Properties.Get<int>("REPEAT"); }
             set { Properties.Set("REPEAT", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public string Summary
         {
             get { return Properties.Get<string>("SUMMARY"); }
             set { Properties.Set("SUMMARY", value); }
         }
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public ITrigger Trigger
         {
             get { return Properties.Get<ITrigger>("TRIGGER"); }
@@ -78,6 +104,9 @@ namespace DDay.iCal
 
         #region Protected Properties
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual protected List<AlarmOccurrence> Occurrences
         {
             get { return m_Occurrences; }

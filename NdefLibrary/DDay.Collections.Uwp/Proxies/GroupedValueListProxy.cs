@@ -10,8 +10,10 @@ namespace DDay.Collections
     /// <summary>
     /// A proxy for a keyed list.
     /// </summary>
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class GroupedValueListProxy<TGroup, TInterface, TItem, TOriginalValue, TNewValue> :
         IGroupedValueListProxy<TInterface, TNewValue>
@@ -20,8 +22,17 @@ namespace DDay.Collections
     {
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         IGroupedValueList<TGroup, TInterface, TItem, TOriginalValue> _RealObject;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         TGroup _Group;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         TInterface _Container;
 
         #endregion

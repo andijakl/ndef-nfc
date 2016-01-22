@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Collections;
+using System.Reflection;
 
 namespace DDay.iCal.Serialization.iCalendar
 {
@@ -168,7 +169,7 @@ namespace DDay.iCal.Serialization.iCalendar
                 ICalendarProperty p = parser.property(ctx, null);
 
                 // Close our text stream
-                tr.Close();
+                tr.Dispose();
 
                 // Return the parsed property
                 return p;

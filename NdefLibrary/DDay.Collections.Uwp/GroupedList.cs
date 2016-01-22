@@ -9,8 +9,10 @@ namespace DDay.Collections
     /// <summary>
     /// A list of objects that are keyed.
     /// </summary>
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class GroupedList<TGroup, TItem> :
         IGroupedList<TGroup, TItem>
@@ -18,7 +20,13 @@ namespace DDay.Collections
     {
         #region Protected Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         List<IMultiLinkedList<TItem>> _Lists = new List<IMultiLinkedList<TItem>>();
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         Dictionary<TGroup, IMultiLinkedList<TItem>> _Dictionary = new Dictionary<TGroup, IMultiLinkedList<TItem>>();
 
         #endregion
@@ -146,12 +154,16 @@ namespace DDay.Collections
 
         #endregion
 
-        #region IGroupedList<TGroup, TObject> Members
+#region IGroupedList<TGroup, TObject> Members
 
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
         [field: NonSerialized]
+#endif
         public event EventHandler<ObjectEventArgs<TItem, int>> ItemAdded;
 
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
         [field: NonSerialized]
+#endif
         public event EventHandler<ObjectEventArgs<TItem, int>> ItemRemoved;
 
         protected void OnItemAdded(TItem obj, int index)
@@ -337,9 +349,9 @@ namespace DDay.Collections
             }
         }
         
-        #endregion
+#endregion
 
-        #region ICollection<TObject> Members
+#region ICollection<TObject> Members
 
         virtual public bool Contains(TItem item)
         {
@@ -359,9 +371,9 @@ namespace DDay.Collections
             get { return false; }
         }
 
-        #endregion
+#endregion
 
-        #region IList<TObject> Members
+#region IList<TObject> Members
 
         virtual public void Insert(int index, TItem item)
         {
@@ -412,24 +424,24 @@ namespace DDay.Collections
             }
         }
 
-        #endregion
+#endregion
 
-        #region IEnumerable<U> Members
+#region IEnumerable<U> Members
 
         public IEnumerator<TItem> GetEnumerator()
         {
             return new GroupedListEnumerator<TItem>(_Lists);
         }
 
-        #endregion
+#endregion
 
-        #region IEnumerable Members
+#region IEnumerable Members
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return new GroupedListEnumerator<TItem>(_Lists);
         }
 
-        #endregion
+#endregion
     }    
 }

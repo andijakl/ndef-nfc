@@ -12,8 +12,10 @@ namespace DDay.iCal
     /// <summary>
     /// The base class for all iCalendar objects and components.
     /// </summary>
-#if !SILVERLIGHT
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
     [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class CalendarObject :
         CalendarObjectBase,
@@ -21,12 +23,30 @@ namespace DDay.iCal
     {
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private ICalendarObject _Parent = null;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private ICalendarObjectList<ICalendarObject> _Children;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private ServiceProvider _ServiceProvider;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private string _Name;
-        
+
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private int _Line;
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         private int _Column;
 
         #endregion
@@ -278,7 +298,9 @@ namespace DDay.iCal
 
         #region IGroupedObject Members
 
-        [field: NonSerialized]
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
+        [field:NonSerialized]
+#endif
         public event EventHandler<ObjectEventArgs<string, string>> GroupChanged;
 
         protected void OnGroupChanged(string @old, string @new)

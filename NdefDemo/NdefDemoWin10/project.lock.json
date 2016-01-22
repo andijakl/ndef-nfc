@@ -209,6 +209,17 @@
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         }
       },
+      "NdefLibraryExtension/3.1.1": {
+        "dependencies": {
+          "NdefLibrary": "[3.1.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -1793,6 +1804,17 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
+        }
+      },
+      "NdefLibraryExtension/3.1.1": {
+        "dependencies": {
+          "NdefLibrary": "[3.1.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3412,6 +3434,17 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
+        }
+      },
+      "NdefLibraryExtension/3.1.1": {
+        "dependencies": {
+          "NdefLibrary": "[3.1.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5038,6 +5071,17 @@
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         }
       },
+      "NdefLibraryExtension/3.1.1": {
+        "dependencies": {
+          "NdefLibrary": "[3.1.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -6655,6 +6699,17 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
+        }
+      },
+      "NdefLibraryExtension/3.1.1": {
+        "dependencies": {
+          "NdefLibrary": "[3.1.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8281,6 +8336,17 @@
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
         }
       },
+      "NdefLibraryExtension/3.1.1": {
+        "dependencies": {
+          "NdefLibrary": "[3.1.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -9898,6 +9964,17 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll": {}
+        }
+      },
+      "NdefLibraryExtension/3.1.1": {
+        "dependencies": {
+          "NdefLibrary": "[3.1.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NdefLibraryUwp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -11933,6 +12010,21 @@
         "lib/portable-net45+win8+wp8+wpa81/NdefLibrary.dll",
         "NdefLibrary.nuspec",
         "package/services/metadata/core-properties/9db676360697491abc05ecfc8b800111.psmdcp"
+      ]
+    },
+    "NdefLibraryExtension/3.1.1": {
+      "sha512": "m7zQD0h9OhPTdq3nPPn4MSMOwrBHfmOGJDm+YaZaO2azd06IrhSnH+49gi8WoTXywjQyqOAI09opmhrouJSQYw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/netcore451/NdefLibraryWin.dll",
+        "lib/netcore451/VcardLibrary.dll",
+        "lib/uap10.0/NdefLibraryUwp.dll",
+        "lib/wp8/NdefLibraryWp.dll",
+        "lib/wpa81/NdefLibraryWp.dll",
+        "NdefLibraryExtension.nuspec",
+        "package/services/metadata/core-properties/03c853524114474fae34b9ed74aff056.psmdcp"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -14634,7 +14726,8 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
-      "NdefLibrary >= 3.1.1"
+      "NdefLibrary >= 3.1.1",
+      "NdefLibraryExtension >= 3.1.1"
     ],
     "UAP,Version=v10.0": []
   }

@@ -19,8 +19,10 @@ namespace DDay.iCal
     ///         <item>Create a TextCollection DataType for 'text' items separated by commas</item>
     ///     </list>
     /// </note>
-#if !SILVERLIGHT
-    [Serializable]    
+#if !(SILVERLIGHT || WINDOWS_PHONE || NETFX_CORE || PORTABLE)
+    [Serializable]
+#elif NETFX_CORE || PORTABLE
+    [DataContract]
 #endif
     public class Event : 
         RecurringComponent,
@@ -39,6 +41,9 @@ namespace DDay.iCal
         /// the end date/time will be extrapolated.
         /// </note>
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public override IDateTime DTStart
         {
             get
@@ -63,6 +68,9 @@ namespace DDay.iCal
         /// will be extrapolated.
         /// </note>
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IDateTime DTEnd
         {
             get { return Properties.Get<IDateTime>("DTEND"); }
@@ -97,6 +105,9 @@ namespace DDay.iCal
         //
         // Therefore, Duration is not serialized, as DTEnd
         // should always be extrapolated from the duration.
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public TimeSpan Duration
         {
             get { return Properties.Get<TimeSpan>("DURATION"); }
@@ -113,6 +124,9 @@ namespace DDay.iCal
         /// <summary>
         /// An alias to the DTEnd field (i.e. end date/time).
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public IDateTime End
         {
             get { return DTEnd; }
@@ -122,6 +136,9 @@ namespace DDay.iCal
         /// <summary>
         /// Returns true if the event is an all-day event.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         virtual public bool IsAllDay
         {
             get { return !Start.HasTime; }
@@ -148,6 +165,9 @@ namespace DDay.iCal
         /// <summary>
         /// The geographic location (lat/long) of the event.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public IGeographicLocation GeographicLocation
         {
             get { return Properties.Get<IGeographicLocation>("GEO"); }
@@ -157,6 +177,9 @@ namespace DDay.iCal
         /// <summary>
         /// The location of the event.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public string Location
         {
             get { return Properties.Get<string>("LOCATION"); }
@@ -168,6 +191,9 @@ namespace DDay.iCal
         /// <example>Conference room #2</example>
         /// <example>Projector</example>
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public IList<string> Resources
         {
             get { return Properties.GetMany<string>("RESOURCES"); }
@@ -177,6 +203,9 @@ namespace DDay.iCal
         /// <summary>
         /// The status of the event.
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public EventStatus Status
         {
             get { return Properties.Get<EventStatus>("STATUS"); }
@@ -190,6 +219,9 @@ namespace DDay.iCal
         /// or if the time cannot be scheduled for anything
         /// else (opaque).
         /// </summary>
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         public TransparencyType Transparency
         {
             get { return Properties.Get<TransparencyType>("TRANSP"); }
@@ -200,6 +232,9 @@ namespace DDay.iCal
 
         #region Private Fields
 
+#if NETFX_CORE || PORTABLE
+        [DataMember]
+#endif
         EventEvaluator m_Evaluator;
 
         #endregion
