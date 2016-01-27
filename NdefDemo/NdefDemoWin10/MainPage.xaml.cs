@@ -289,7 +289,7 @@ namespace NdefDemoWin10
             var appId = Windows.ApplicationModel.Store.CurrentApp.AppId;    // Crashes when app is not launched through store?
             // Issue on Windows 10: http://stackoverflow.com/questions/34221812/how-to-launch-my-app-via-nfc-tag
             // Issue on Windows 10: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/c9653f06-0d48-498f-9b3e-335435780fd4/cw81windows-81-app-license-error-0x803f6107?forum=wpdevelop
-            record.AddPlatformAppId("Windows", familyName + "!" + familyName);
+            record.AddPlatformAppId("Windows", familyName + "!" + appId);
 
             // Publish the record using the proximity device
             PublishRecord(record, true);
