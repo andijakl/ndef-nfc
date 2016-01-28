@@ -277,19 +277,24 @@ namespace NdefDemoWin10
             // Create a new LaunchApp record to launch this app
             // The app will print the arguments when it is launched (see MainPage.OnNavigatedTo() method)
             var record = new NdefLaunchAppRecord { Arguments = "Hello World" };
+
             // WindowsPhone is the pre-defined platform ID for WP8.
             // You can get the application ID from the WMAppManifest.xml file
             //record.AddPlatformAppId("WindowsPhone", "{544ec154-b521-4d73-9405-963830adb213}");
+
             // The app platform for a Windows 8 computer is Windows. 
             // The format of the proximity app Id is <package family name>!<app Id>. 
             // You can get the package family name from the Windows.ApplicationModel.Package.Current.Id.FamilyName property. 
             // You must copy the app Id value from the Id attribute of the Application element in the 
             // package manifest for your app.
+
             var familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
-            var appId = Windows.ApplicationModel.Store.CurrentApp.AppId;    // Crashes when app is not launched through store?
+            //var appId = Windows.ApplicationModel.Store.CurrentApp.AppId;    // Crashes when app is not installed from the app store!
+            var appId = "8bf48432-f9c8-48cd-a014-c44d868347dc";
             // Issue on Windows 10: http://stackoverflow.com/questions/34221812/how-to-launch-my-app-via-nfc-tag
             // Issue on Windows 10: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/c9653f06-0d48-498f-9b3e-335435780fd4/cw81windows-81-app-license-error-0x803f6107?forum=wpdevelop
-            record.AddPlatformAppId("Windows", familyName + "!" + appId);
+            record.AddPlatformAppId("Windows", "{" + familyName + "!" + appId + "}");
+            record.AddPlatformAppId("WindowsPhone", appId);
 
             // Publish the record using the proximity device
             PublishRecord(record, true);
