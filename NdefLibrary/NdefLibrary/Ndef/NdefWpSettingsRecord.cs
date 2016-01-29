@@ -25,6 +25,8 @@
 ** http://www.gnu.org/copyleft/gpl.html.
 **
 ****************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -55,6 +57,7 @@ namespace NdefLibrary.Ndef
     /// More information:
     /// http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj662937%28v=vs.105%29.aspx
     /// </remarks>
+    [Obsolete("This format is no longer used in new products - use NdefWindowsSettingsRecord for Windows 10 / UWP apps.")]
     public class NdefWpSettingsRecord : NdefUriRecord
     {
         /// <summary>

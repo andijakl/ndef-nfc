@@ -5,7 +5,7 @@ Easily parse and create NFC tags that contain standard-based NDEF messages.
 
 Available in C# and JavaScript (for HTML5-based apps).
 
-The library download comes with complete example apps that demonstrates reading and writing tags using the NDEF Library.
+The library download comes with complete example apps that demonstrate reading and writing tags using the NDEF Library. Available for: Windows 10 / UWP, Windows 8.1 / WinRT and Windows Phone 8 / Silverlight.
 
 
 
@@ -39,11 +39,11 @@ To keep up to date, either follow this project or [follow me on Twitter](https:/
 
 ### C# Version
 
-The library is available as a ready-made portable class library, which can be used on the Windows 8(.1) (WinRT) platform, as well as on Windows Phone 8(.1). Both platforms provide support for interacting with the NFC hardware through the Proximity APIs.
+The library is available as a ready-made portable class library, which can be used on the Windows 10 (UWP), Windows 8(.1) (WinRT) platform, as well as on Windows Phone 8(.1) (Silverlight). All three platforms provide support for interacting with the NFC hardware through the Proximity APIs.
 
-Additional platform-specific functionality is added through the the separate extension library. It integrates with the platform APIs for WinRT / WP8.0 and allows real-life tasks like creating a business card record based on a Contact from the Windows 8 address book.
+Additional platform-specific functionality is added through the the separate extension library. It integrates with the platform APIs for UWP / WinRT / WP8.0 and allows real-life tasks like creating a business card record based on a Contact from the Windows 8 address book.
 
-Two example apps are available - for Windows 8.1 as well as Windows Phone 8.0. In addition to the library download on this page, you can use the NuGet package manager of Visual Studio to easily integrate the library with your project.
+Three example apps are available - for Windows 10, Windows 8.1 as well as Windows Phone 8.0. In addition to the library download on this page, you can use the NuGet package manager of Visual Studio to easily integrate the library with your project.
 
 ### JavaScript / HTML5 Version
 
@@ -83,9 +83,9 @@ The new JavaScript port of the library provides the most important NDEF types al
 * SMS: defining number and body of the message (C# only) 
 * Mailto: sending email messages with recipient address and optional subject and body (C# only) 
 * Telephone call: defining the number to call
-* Nokia Accessories: let the user choose an app to launch on his Nokia Lumia Windows Phone 8 device (C# only) 
-* WpSettings: launch a settings page on Windows Phone 8 (e.g., Bluetooth settings, flight mode). Actually modifying these settings is not allowed by the security model of Windows Phone (C# only). Deprecated class.
 * Windows Settings: launch a settings page on Windows 10 (PC and mobile)
+* Nokia Accessories: let the user choose an app to launch on his Nokia Lumia Windows Phone 8 device (C# only). Deprecated class.
+* WpSettings: launch a settings page on Windows Phone 8 (e.g., Bluetooth settings, flight mode). Actually modifying these settings is not allowed by the security model of Windows Phone (C# only). Deprecated class.
   
 #### Platform-specific extension library to enable real-life use cases (C#)
 
@@ -97,7 +97,7 @@ The new JavaScript port of the library provides the most important NDEF types al
 
 ## Example Apps
 
-For C#, the library download comes with NdefDemo and NdefDemoWin: Windows Phone 8 and Windows 8.1 example apps that demonstrate some of the features of the NDEF Library. Both demos are available under GPL v3 license.
+For C#, the library download comes with NdefDemoWin10 (for Windows 10 / UWP), NdefDemoWin (for Windows 8.1 / WinRT) and NdefDemo (for Windows Phone 8.0 / Silverlight). These example apps demonstrate some of the features of the NDEF Library. Both demos are available under GPL v3 license.
 
 Another GPL-licensed example app is [NfcShare](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/), which is available together with accompanying webinar slides and a recording at the [NFC developer's section at NfcInteractor.com](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/).
 
@@ -204,9 +204,9 @@ var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(byteArray);
 
 ## Installation (C#)
 
-To try the library, you can download the complete library package from this site and test the included NdefDemo example app (currently available for Windows Phone 8). Note that the Windows 8.1 version of the NdefDemoWin example app requires the [Microsoft Multilingual App Toolkit](http://msdn.microsoft.com/en-us/windows/apps/bg127574).
+To try the library, you can download the complete library package from this site and test the included NdefDemo example app. Note that the Windows 8.1 version (NdefDemoWin) requires the [Microsoft Multilingual App Toolkit](http://msdn.microsoft.com/en-us/windows/apps/bg127574).
 
-If you want to use the Ndef Library from your own app, the easiest option is to use the NuGet package manager in Visual Studio 2012/2013 to automatically download & integrate the portable library:
+If you want to use the NFC / Ndef Library from your own app, the easiest option is to use the NuGet package manager in Visual Studio to automatically download & integrate the portable library:
 
 * Ensure you have Nuget version >= 2.8.1. Update through: Tools -> Extensions and Updates... -> Updates (left sidebar) -> Visual Studio Gallery _(Otherwise, you will get an error message like this during installation: Install failed. Rolling back... Could not install package 'NdefLibrary'. You are trying to install this package into a project that targets 'WindowsPhone,Version=v8.0', but the package does not contain any assembly references that are compatible with that framework. For more information, contact the package author.")_
 
@@ -214,8 +214,6 @@ If you want to use the Ndef Library from your own app, the easiest option is to 
 2. Search "Online" for "NDEF"
 3. Install: "NFC / NDEF Library for Proximity APIs" 
 4. To use the platform extension library, also install: "NFC / NDEF Library Platform Extensions for Proximity APIs"
-
-More instructions: https://github.com/andijakl/ndef-nfc/wiki
 
 #### Core NFC / NDEF Library
 
@@ -245,7 +243,7 @@ The JavaScript library is available in two versions, both are available in the "
 ### 3.1.1 - January 2016
 * New extension library targeting Windows 10 / UWP, including Mime/Image and vCard-records
 * New NdefWindowsSettingsRecord to launch all settings pages for Windows 10 (both desktop and mobile)
-* Deprecated NdefWpSettingsRecord from Windows Phone 8
+* Deprecated NdefNokiaAccessoriesRecord and NdefWpSettingsRecord from Windows Phone 8
 * Updated Geo tag record for Windows 10, also allowing a title for the DriveTo and WalkTo types
 * New Demo app for Windows 10 (UWP, Universal Windows Platform)
 

@@ -3,7 +3,8 @@ http://andijakl.github.io/ndef-nfc/
 -------------------------------------------------------------------------------
 
 The NDEF Demo is an example app that demonstrates how to use the 
-NDEF Library for Proximity APIs (NFC) in a Windows 8.1 and Windows Phone 8 app.
+NDEF Library for Proximity APIs (NFC) in a Windows 10 (UWP), Windows 8.1 (WinRT) 
+and Windows Phone 8 (Silverlight) app.
 
 
 Overview
