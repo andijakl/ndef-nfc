@@ -147,6 +147,9 @@
   <data name="BtnInitNfc.Content" xml:space="preserve">
     <value>Initialize NFC</value>
   </data>
+  <data name="BtnLockTag.Content" xml:space="preserve">
+    <value>Lock NFC Tag</value>
+  </data>
   <data name="BtnPublishIcalendar.Content" xml:space="preserve">
     <value>Publish iCalendar (.ics) to Devices</value>
   </data>
@@ -255,6 +258,12 @@ You can also write a message to a tag or publish it to another device. Windows P
   </data>
   <data name="StatusLaunchedFromTag" xml:space="preserve">
     <value>Launched app with LaunchApp tag. Arguments: "{0}"</value>
+  </data>
+  <data name="StatusLockingNotSupported" xml:space="preserve">
+    <value>Your device does not support locking NFC tags ({0})</value>
+  </data>
+  <data name="StatusLockingTag" xml:space="preserve">
+    <value>Tap a tag to lock / write protect it (warning: irreversible!)</value>
   </data>
   <data name="StatusMessageWritten" xml:space="preserve">
     <value>Success: message published!</value>

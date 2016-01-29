@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -412,10 +413,39 @@ namespace NdefDemoWin10
 
         private void BtnPublishUri_Click(object sender, RoutedEventArgs e)
         {
+            // TODO
+            BtnLockTag_Click(sender, e);
+            return;
             // Create a URI record
             var record = new NdefUriRecord { Uri = "http://www.nfcinteractor.com/" };
             // Publish the record using the proximity device
             PublishRecord(record, false);
+        }
+
+        private void BtnLockTag_Click(object sender, RoutedEventArgs e)
+        {
+            if (_device == null) return;
+            // Make sure we're not already publishing another message
+            StopPublishingMessage(false);
+            // Start locking tags
+            try
+            {
+                var empty = new byte[0];
+                _publishingMessageId = _device.PublishBinaryMessage("SetTagReadOnly", empty.AsBuffer(), TagLockedHandler);
+                // Update status text for UI
+                SetStatusOutput(string.Format(_loader.GetString("StatusLockingTag")));
+                // Update enabled / disabled state of buttons in the User Interface
+                UpdateUiForNfcStatusAsync();
+            }
+            catch (Exception ex)
+            {
+                SetStatusOutput(string.Format(_loader.GetString("StatusLockingNotSupported"), ex.Message));
+            }
+        }
+
+        private void TagLockedHandler(ProximityDevice sender, long messageid)
+        {
+            
         }
 
         private void PublishRecord(NdefRecord record, bool writeToTag)
@@ -569,14 +599,14 @@ namespace NdefDemoWin10
                  BtnStopSubscription.IsEnabled = (_device != null && _subscriptionIdNdef != 0);
 
                  // Publishing buttons
-                 BtnWriteLaunchApp.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteBusinessCard.IsEnabled = (_device != null && _publishingMessageId == 0);
-                 //BtnPublishIcalendar.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteMailTo.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteImage.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteMaps.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnWriteWindowsSettings.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnPublishUri.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 BtnWriteLaunchApp.IsEnabled = (_device != null && _publishingMessageId == 0);
+                 BtnLockTag.IsEnabled = (_device != null && _publishingMessageId == 0);
                  BtnStopPublication.IsEnabled = (_device != null && _publishingMessageId != 0);
              });
         }
