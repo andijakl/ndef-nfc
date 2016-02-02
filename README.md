@@ -7,6 +7,8 @@ Available in C# and JavaScript (for HTML5-based apps).
 
 The library download comes with complete example apps that demonstrate reading and writing tags using the NDEF Library. Available for: Windows 10 / UWP, Windows 8.1 / WinRT and Windows Phone 8 / Silverlight.
 
+Download the Windows 10 NDEF Demo Example app: https://www.microsoft.com/store/apps/9nblggh5p3rm
+
 
 
 ## Background - NFC and NDEF
@@ -97,9 +99,9 @@ The new JavaScript port of the library provides the most important NDEF types al
 
 ## Example Apps
 
-For C#, the library download comes with NdefDemoWin10 (for Windows 10 / UWP), NdefDemoWin (for Windows 8.1 / WinRT) and NdefDemo (for Windows Phone 8.0 / Silverlight). These example apps demonstrate some of the features of the NDEF Library. Both demos are available under GPL v3 license.
+For C#, the library download comes with NdefDemoWin10 (for Windows 10 / UWP), NdefDemoWin (for Windows 8.1 / WinRT) and NdefDemo (for Windows Phone 8.0 / Silverlight). These example apps demonstrate some of the features of the NDEF Library. These demos are available under GPL v3 license. You can download the Windows 10 example app from the [Windows Store](https://www.microsoft.com/store/apps/9nblggh5p3rm).
 
-Another GPL-licensed example app is [NfcShare](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/), which is available together with accompanying webinar slides and a recording at the [NFC developer's section at NfcInteractor.com](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/).
+Another GPL-licensed example app for Windows Phone 8 is [NfcShare](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/), which is available together with accompanying webinar slides and a recording at the [NFC developer's section at NfcInteractor.com](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/).
 
 Examples of apps currently using the NDEF Library and available in the public store:
 

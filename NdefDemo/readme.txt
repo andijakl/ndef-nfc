@@ -6,6 +6,8 @@ The NDEF Demo is an example app that demonstrates how to use the
 NDEF Library for Proximity APIs (NFC) in a Windows 10 (UWP), Windows 8.1 (WinRT) 
 and Windows Phone 8 (Silverlight) app.
 
+You can download the Windows 10 example app from the [Windows Store](https://www.microsoft.com/store/apps/9nblggh5p3rm).
+
 
 Overview
 -------------------------------------------------------------------------------
