@@ -413,9 +413,6 @@ namespace NdefDemoWin10
 
         private void BtnPublishUri_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
-            BtnLockTag_Click(sender, e);
-            return;
             // Create a URI record
             var record = new NdefUriRecord { Uri = "http://www.nfcinteractor.com/" };
             // Publish the record using the proximity device
