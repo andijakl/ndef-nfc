@@ -7,8 +7,7 @@ Available in C# and JavaScript (for HTML5-based apps).
 
 The library download comes with complete example apps that demonstrate reading and writing tags using the NDEF Library. Available for: Windows 10 / UWP, Windows 8.1 / WinRT and Windows Phone 8 / Silverlight.
 
-Download the Windows 10 NDEF Demo Example app: https://www.microsoft.com/store/apps/9nblggh5p3rm
-
+[NuGet Library Download](https://nuget.org/packages/NdefLibrary) | [Platform Specific Extension Library](https://www.nuget.org/packages/NdefLibraryExtension) | [Windows 10 Example App Download](https://www.microsoft.com/store/apps/9nblggh5p3rm)
 
 
 ## Background - NFC and NDEF
@@ -114,7 +113,7 @@ Examples of apps currently using the NDEF Library and available in the public st
 
 ### Reading & parsing a Smart Poster
 
-``` 
+```csharp
 private void MessageReceivedHandler(ProximityDevice sender, ProximityMessage message)
 {
     // Parse raw byte array to NDEF message
@@ -141,7 +140,7 @@ private void MessageReceivedHandler(ProximityDevice sender, ProximityMessage mes
 
 ### Writing a Smart Poster
 
-``` 
+```csharp
 // Initialize Smart Poster record with URI, Action + 1 Title
 var spRecord = new NdefSpRecord {
                   Uri = "http://www.nfcinteractor.com", 
@@ -166,7 +165,7 @@ _device.PublishBinaryMessage("NDEF", msg.ToByteArray().AsBuffer());
 
 ### Create a URI Record:
 
-``` 
+```javascript
 // Create NDEF Message
 var ndefMessage = new NdefLibrary.NdefMessage();
 // Create NDEF Uri Record
@@ -182,7 +181,7 @@ var byteArray = ndefMessage.toByteArray();
 
 ### Create a raw NDEF Message by defined input:
 
-``` 
+```javascript
 var recordType = new Array(1,3,1,3,5,6,7);
 var recordPayload = new Array(1,2,1);
 var id = new Array(3,3);
@@ -198,7 +197,7 @@ var byteArray = ndefMessage.toByteArray();
 
 ### Create a raw NDEF Message by byte array from NFC tag:
 
-``` 
+```javascript
 var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(byteArray);
 ``` 
 
