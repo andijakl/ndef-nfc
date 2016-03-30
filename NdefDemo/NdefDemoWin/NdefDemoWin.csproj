@@ -173,16 +173,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DDay.iCal.1.0.2.575\lib\DDay.iCal.dll</HintPath>
     </Reference>
-    <Reference Include="NdefLibrary, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NdefLibrary.3.0.3\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
+    <Reference Include="NdefLibrary, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NdefLibrary.3.1.1\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NdefLibraryWin, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NdefLibraryExtension.3.0.3\lib\netcore451\NdefLibraryWin.dll</HintPath>
+    <Reference Include="NdefLibraryWin, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NdefLibraryExtension.3.1.1\lib\netcore451\NdefLibraryWin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="VcardLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NdefLibraryExtension.3.0.3\lib\netcore451\VcardLibrary.dll</HintPath>
+      <HintPath>..\packages\NdefLibraryExtension.3.1.1\lib\netcore451\VcardLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

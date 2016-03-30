@@ -147,12 +147,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="NdefLibrary, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NdefLibrary.3.0.3\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
+    <Reference Include="NdefLibrary, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NdefLibrary.3.1.1\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NdefLibraryWp, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NdefLibraryExtension.3.0.3\lib\wp8\NdefLibraryWp.dll</HintPath>
+      <HintPath>..\packages\NdefLibraryExtension.3.1.1\lib\wp8\NdefLibraryWp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
