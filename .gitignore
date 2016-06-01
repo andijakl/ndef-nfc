@@ -183,3 +183,4 @@ UpgradeLog*.htm
 FakesAssemblies/
 /NdefLibrary/NuGetPush.bat
 /NdefLibrary/nupkg
+/NdefLibrary/NdefLibraryUwp/project.lock.json

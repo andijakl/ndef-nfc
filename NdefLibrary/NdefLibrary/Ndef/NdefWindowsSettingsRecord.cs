@@ -124,7 +124,7 @@ namespace NdefLibrary.Ndef
                                 {NfcSettingsApp.PrivacyOtherDevices, "ms-settings:privacy-customdevices"},
                                 {NfcSettingsApp.PrivacyFeedback, "ms-settings:privacy-feedback"},
 
-                                {NfcSettingsApp.UpdateSecurityDeveopers, "ms-settings:developers"}};
+                                {NfcSettingsApp.UpdateSecurityDevelopers, "ms-settings:developers"}};
 
         /// <summary>
         /// The different setting schemes for launching setting app pages on
@@ -195,7 +195,7 @@ namespace NdefLibrary.Ndef
             PrivacyOtherDevices,
             PrivacyFeedback,
 
-            UpdateSecurityDeveopers
+            UpdateSecurityDevelopers
         }
 
         private NfcSettingsApp _settingsApp;
