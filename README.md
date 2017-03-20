@@ -100,12 +100,12 @@ The new JavaScript port of the library provides the most important NDEF types al
 
 For C#, the library download comes with NdefDemoWin10 (for Windows 10 / UWP), NdefDemoWin (for Windows 8.1 / WinRT) and NdefDemo (for Windows Phone 8.0 / Silverlight). These example apps demonstrate some of the features of the NDEF Library. These demos are available under GPL v3 license. You can download the Windows 10 example app from the [Windows Store](https://www.microsoft.com/store/apps/9nblggh5p3rm).
 
-Another GPL-licensed example app for Windows Phone 8 is [NfcShare](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/), which is available together with accompanying webinar slides and a recording at the [NFC developer's section at NfcInteractor.com](http://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/).
+Another GPL-licensed example app for Windows Phone 8 is [NfcShare](https://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/), which is available together with accompanying webinar slides and a recording at the [NFC developer's section at NfcInteractor.com](https://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/).
 
 Examples of apps currently using the NDEF Library and available in the public store:
 
-* [NFC interactor](http://www.nfcinteractor.com/) for Windows Phone: powerful NFC tag reader / writer app
-* [NFCsms](http://www.nfcinteractor.com/related-projects/nfcsms/): enables Windows Phone to send SMS messages from NFC tags 
+* [NFC interactor](https://www.nfcinteractor.com/) for Windows Phone: powerful NFC tag reader / writer app
+* [NFCsms](https://www.nfcinteractor.com/related-projects/nfcsms/): enables Windows Phone to send SMS messages from NFC tags 
 
 
 
@@ -308,7 +308,7 @@ The JavaScript library is available in two versions, both are available in the "
 
 ## Status & Roadmap
 
-The NDEF library is classified as stable release and is in use in several projects, most importantly NFC interactor for Windows Phone (http://www.nfcinteractor.com/).
+The NDEF library is classified as stable release and is in use in several projects, most importantly NFC interactor for Windows Phone (https://www.nfcinteractor.com/).
 
 Any open issues as well as planned features are tracked online:
 https://github.com/andijakl/ndef-nfc/issues
@@ -319,12 +319,18 @@ https://github.com/andijakl/ndef-nfc/issues
 
 Released under the LGPL 2.1 license - see the LICENSE.LGPL file for details.
 
-Developed by Andreas Jakl, https://twitter.com/andijakl
-Ported to Javascript by Sebastian Höbarth, http://www.mobilefactory.at/
+Developed by Andreas Jakl
+https://twitter.com/andijakl
+https://www.andreasjakl.com/
 
-Parts of this library are based on the respective code of the Connectivity Module of Qt Mobility (NdefMessage, NdefRecord, NdefUriRecord and NdefTextRecord classes. Original source code: http://qt.gitorious.org/qt-mobility).
+Ported to Javascript by Sebastian Höbarth
+http://www.mobilefactory.at/
+
+Parts of this library are based on the respective code of the Connectivity Module of Qt Mobility (NdefMessage, NdefRecord, NdefUriRecord and NdefTextRecord classes. Original source code: https://doc-snapshots.qt.io/qt-mobility/).
 
 Library homepage on GitHub:
-http://andijakl.github.io/ndef-nfc/
+https://andijakl.github.io/ndef-nfc/
 https://github.com/andijakl/ndef-nfc/
 
+You might also be interested in the Bluetooth Beacon library:
+https://github.com/andijakl/universal-beacon
