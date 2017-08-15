@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>4.0.0</Version>
+    <Authors>Andreas Jakl</Authors>
+    <Company>Andreas Jakl</Company>
+    <Description>The Proximity APIs for NFC (Near Field Communication) in the Windows platform (Windows 10, Windows 8 and Windows Phone 8) are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
+
+While the Proximity APIs include basic support for URIs, they lack support for more in-depth control over the NDEF records, as well as additional standardized record types.
+
+This NDEF Library provides a set of classes that enable you to easily work with NDEF records on top of the Windows Proximity APIs, for use with Windows 8 and Windows Phone 8 or any other platform where you can develop with C#.
+
+Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).</Description>
+    <Product>NFC / NDEF Library for Proximity APIs</Product>
+    <Copyright>Copyright 2012 - 2017 Andreas Jakl, http://www.nfcinteractor.com/</Copyright>
+    <PackageLicenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>http://andijakl.github.io/ndef-nfc/</PackageProjectUrl>
+    <PackageIconUrl>http://www.nfcinteractor.com/ndeflibrary.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/andijakl/ndef-nfc/</RepositoryUrl>
+    <PackageTags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</PackageTags>
+    <PackageReleaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Ndef\NdefExceptionMessages.Designer.cs">
+      <DependentUpon>NdefExceptionMessages.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Ndef\NdefExceptionMessages.resx">
+      <LastGenOutput>NdefExceptionMessages.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
