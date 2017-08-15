@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+using NdefLibraryNetStandard.Ndef;
 
 namespace NdefLibrary.Ndef
 {
