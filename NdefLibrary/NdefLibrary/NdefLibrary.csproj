@@ -34,7 +34,7 @@ Further NDEF record classes that extend this library with platform integration a
 
   <ItemGroup>
     <EmbeddedResource Update="Ndef\NdefExceptionMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <SubType>Designer</SubType>
       <LastGenOutput>NdefExceptionMessages.Designer.cs</LastGenOutput>

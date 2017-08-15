@@ -10,6 +10,7 @@
 
 namespace NdefLibrary.Ndef {
     using System;
+    using System.Reflection;
     
     
     /// <summary>
@@ -22,7 +23,7 @@ namespace NdefLibrary.Ndef {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class NdefExceptionMessages {
+    public class NdefExceptionMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +37,10 @@ namespace NdefLibrary.Ndef {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NdefLibrary.Ndef.NdefExceptionMessages", typeof(NdefExceptionMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NdefLibrary.Ndef.NdefExceptionMessages", typeof(NdefExceptionMessages).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +52,7 @@ namespace NdefLibrary.Ndef {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +64,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Unknown format for class of device information..
         /// </summary>
-        internal static string ExBtCodUnknownFormat {
+        public static string ExBtCodUnknownFormat {
             get {
                 return ResourceManager.GetString("ExBtCodUnknownFormat", resourceCulture);
             }
@@ -72,7 +73,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Encoded Bluetooth OOB data length does not match payload length..
         /// </summary>
-        internal static string ExBtInvalidLength {
+        public static string ExBtInvalidLength {
             get {
                 return ResourceManager.GetString("ExBtInvalidLength", resourceCulture);
             }
@@ -81,7 +82,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Invalid length of the simple pairing hash C (should be 16 octets)..
         /// </summary>
-        internal static string ExBtInvalidLengthSimplePairingHashC {
+        public static string ExBtInvalidLengthSimplePairingHashC {
             get {
                 return ResourceManager.GetString("ExBtInvalidLengthSimplePairingHashC", resourceCulture);
             }
@@ -90,7 +91,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Invalid length of the simple pairing randomizer R (should be 16 octets)..
         /// </summary>
-        internal static string ExBtInvalidLengthSimplePairingRandomizerR {
+        public static string ExBtInvalidLengthSimplePairingRandomizerR {
             get {
                 return ResourceManager.GetString("ExBtInvalidLengthSimplePairingRandomizerR", resourceCulture);
             }
@@ -99,7 +100,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to OOB data does not reach minumum length of 8 bytes..
         /// </summary>
-        internal static string ExBtInvalidMinimumLength {
+        public static string ExBtInvalidMinimumLength {
             get {
                 return ResourceManager.GetString("ExBtInvalidMinimumLength", resourceCulture);
             }
@@ -108,7 +109,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Bluetooth Device address must be defined..
         /// </summary>
-        internal static string ExBtNoDeviceAddress {
+        public static string ExBtNoDeviceAddress {
             get {
                 return ResourceManager.GetString("ExBtNoDeviceAddress", resourceCulture);
             }
@@ -117,7 +118,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No valid Bluetooth address in hexadecimal format..
         /// </summary>
-        internal static string ExBtNoValidHexAddress {
+        public static string ExBtNoValidHexAddress {
             get {
                 return ResourceManager.GetString("ExBtNoValidHexAddress", resourceCulture);
             }
@@ -126,7 +127,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No valid Bluetooth Service Class ID..
         /// </summary>
-        internal static string ExBtNoValidServiceClassId {
+        public static string ExBtNoValidServiceClassId {
             get {
                 return ResourceManager.GetString("ExBtNoValidServiceClassId", resourceCulture);
             }
@@ -135,7 +136,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Bluetooth Service Class Length invalid..
         /// </summary>
-        internal static string ExBtNoValidServiceClassLength {
+        public static string ExBtNoValidServiceClassLength {
             get {
                 return ResourceManager.GetString("ExBtNoValidServiceClassLength", resourceCulture);
             }
@@ -144,7 +145,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to HERE Maps URI schemes require an AppId..
         /// </summary>
-        internal static string ExGeoNoHereMapsAppId {
+        public static string ExGeoNoHereMapsAppId {
             get {
                 return ResourceManager.GetString("ExGeoNoHereMapsAppId", resourceCulture);
             }
@@ -153,7 +154,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No Carrier Data Reference present in Handover Select / Alternative Carrier record..
         /// </summary>
-        internal static string ExHandoverAcCarrierNoData {
+        public static string ExHandoverAcCarrierNoData {
             get {
                 return ResourceManager.GetString("ExHandoverAcCarrierNoData", resourceCulture);
             }
@@ -162,7 +163,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Data Reference is too long - use the record ID in max 255 characters..
         /// </summary>
-        internal static string ExHandoverDataReferenceTooLong {
+        public static string ExHandoverDataReferenceTooLong {
             get {
                 return ResourceManager.GetString("ExHandoverDataReferenceTooLong", resourceCulture);
             }
@@ -171,7 +172,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Too many auxiliary data references - use max 255 data references..
         /// </summary>
-        internal static string ExHandoverDataTooManyAuxiliaryReferences {
+        public static string ExHandoverDataTooManyAuxiliaryReferences {
             get {
                 return ResourceManager.GetString("ExHandoverDataTooManyAuxiliaryReferences", resourceCulture);
             }
@@ -180,7 +181,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Invalid error data..
         /// </summary>
-        internal static string ExHandoverErrorInvalidData {
+        public static string ExHandoverErrorInvalidData {
             get {
                 return ResourceManager.GetString("ExHandoverErrorInvalidData", resourceCulture);
             }
@@ -189,7 +190,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Can not create Handover Error record based on the provided source data..
         /// </summary>
-        internal static string ExHandoverErrorInvalidSourceData {
+        public static string ExHandoverErrorInvalidSourceData {
             get {
                 return ResourceManager.GetString("ExHandoverErrorInvalidSourceData", resourceCulture);
             }
@@ -198,7 +199,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No error data present..
         /// </summary>
-        internal static string ExHandoverErrorNoData {
+        public static string ExHandoverErrorNoData {
             get {
                 return ResourceManager.GetString("ExHandoverErrorNoData", resourceCulture);
             }
@@ -207,7 +208,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No error reason present..
         /// </summary>
-        internal static string ExHandoverErrorNoReason {
+        public static string ExHandoverErrorNoReason {
             get {
                 return ResourceManager.GetString("ExHandoverErrorNoReason", resourceCulture);
             }
@@ -216,7 +217,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Unknown error reason..
         /// </summary>
-        internal static string ExHandoverErrorUnknownReason {
+        public static string ExHandoverErrorUnknownReason {
             get {
                 return ResourceManager.GetString("ExHandoverErrorUnknownReason", resourceCulture);
             }
@@ -225,7 +226,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Handover version must be one byte, containing major and minor fields..
         /// </summary>
-        internal static string ExHandoverInvalidVersion {
+        public static string ExHandoverInvalidVersion {
             get {
                 return ResourceManager.GetString("ExHandoverInvalidVersion", resourceCulture);
             }
@@ -234,7 +235,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to The Alternative Carrier record needs to define a carrier data reference..
         /// </summary>
-        internal static string ExHandoverNoCarrierDataReference {
+        public static string ExHandoverNoCarrierDataReference {
             get {
                 return ResourceManager.GetString("ExHandoverNoCarrierDataReference", resourceCulture);
             }
@@ -243,7 +244,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Can not create Handover Select message - found illegal record..
         /// </summary>
-        internal static string ExHandoverSelectMsgInvalidRecords {
+        public static string ExHandoverSelectMsgInvalidRecords {
             get {
                 return ResourceManager.GetString("ExHandoverSelectMsgInvalidRecords", resourceCulture);
             }
@@ -252,7 +253,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No calendar data found in the supplied calendar data..
         /// </summary>
-        internal static string ExIcalendarNoCalendarFound {
+        public static string ExIcalendarNoCalendarFound {
             get {
                 return ResourceManager.GetString("ExIcalendarNoCalendarFound", resourceCulture);
             }
@@ -261,7 +262,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to The supplied calendar information does not contain a valid event / appointment..
         /// </summary>
-        internal static string ExIcalendarNoEventFound {
+        public static string ExIcalendarNoEventFound {
             get {
                 return ResourceManager.GetString("ExIcalendarNoEventFound", resourceCulture);
             }
@@ -270,7 +271,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Attempted to instantiate new record from incompatible record..
         /// </summary>
-        internal static string ExInvalidCopy {
+        public static string ExInvalidCopy {
             get {
                 return ResourceManager.GetString("ExInvalidCopy", resourceCulture);
             }
@@ -279,7 +280,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Arguments for LaunchApp must not be empty..
         /// </summary>
-        internal static string ExLaunchAppArgumentsEmpty {
+        public static string ExLaunchAppArgumentsEmpty {
             get {
                 return ResourceManager.GetString("ExLaunchAppArgumentsEmpty", resourceCulture);
             }
@@ -288,7 +289,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Unable to assemble LaunchApp payload: length of platform / AppID tuple more than 255 characters..
         /// </summary>
-        internal static string ExLaunchAppPlatformLength {
+        public static string ExLaunchAppPlatformLength {
             get {
                 return ResourceManager.GetString("ExLaunchAppPlatformLength", resourceCulture);
             }
@@ -297,7 +298,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Unable to assemble LaunchApp payload: at least one platform / AppID tuple is required..
         /// </summary>
-        internal static string ExLaunchAppPlatformMissing {
+        public static string ExLaunchAppPlatformMissing {
             get {
                 return ResourceManager.GetString("ExLaunchAppPlatformMissing", resourceCulture);
             }
@@ -306,7 +307,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to At least one platform / app ID tuple needs to be defined..
         /// </summary>
-        internal static string ExLaunchAppPlatformsEmpty {
+        public static string ExLaunchAppPlatformsEmpty {
             get {
                 return ResourceManager.GetString("ExLaunchAppPlatformsEmpty", resourceCulture);
             }
@@ -315,7 +316,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to For a Windows Phone platform ID, please supply the 36 character product ID containing only hexadecimal characters and &apos;-&apos;..
         /// </summary>
-        internal static string ExLaunchAppWpId {
+        public static string ExLaunchAppWpId {
             get {
                 return ResourceManager.GetString("ExLaunchAppWpId", resourceCulture);
             }
@@ -324,7 +325,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Recipient address must not be empty..
         /// </summary>
-        internal static string ExMailtoAddressEmpty {
+        public static string ExMailtoAddressEmpty {
             get {
                 return ResourceManager.GetString("ExMailtoAddressEmpty", resourceCulture);
             }
@@ -333,7 +334,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to The recipient address does not appear to be valid..
         /// </summary>
-        internal static string ExMailtoAddressNotValid {
+        public static string ExMailtoAddressNotValid {
             get {
                 return ResourceManager.GetString("ExMailtoAddressNotValid", resourceCulture);
             }
@@ -342,7 +343,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Message Begin flag present after first record..
         /// </summary>
-        internal static string ExMessageBeginLate {
+        public static string ExMessageBeginLate {
             get {
                 return ResourceManager.GetString("ExMessageBeginLate", resourceCulture);
             }
@@ -351,7 +352,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Expected Message Begin missing in first record..
         /// </summary>
-        internal static string ExMessageBeginMissing {
+        public static string ExMessageBeginMissing {
             get {
                 return ResourceManager.GetString("ExMessageBeginMissing", resourceCulture);
             }
@@ -360,7 +361,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Message End flag present after last record..
         /// </summary>
-        internal static string ExMessageEndLate {
+        public static string ExMessageEndLate {
             get {
                 return ResourceManager.GetString("ExMessageEndLate", resourceCulture);
             }
@@ -369,7 +370,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Invalid chunked data, Id Length != 0..
         /// </summary>
-        internal static string ExMessageInvalidChunkedId {
+        public static string ExMessageInvalidChunkedId {
             get {
                 return ResourceManager.GetString("ExMessageInvalidChunkedId", resourceCulture);
             }
@@ -378,7 +379,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Invalid chunked data, Type Length != 0..
         /// </summary>
-        internal static string ExMessageInvalidChunkedType {
+        public static string ExMessageInvalidChunkedType {
             get {
                 return ResourceManager.GetString("ExMessageInvalidChunkedType", resourceCulture);
             }
@@ -387,7 +388,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Malformed NDEF Message, missing begin or end..
         /// </summary>
-        internal static string ExMessageNoBeginOrEnd {
+        public static string ExMessageNoBeginOrEnd {
             get {
                 return ResourceManager.GetString("ExMessageNoBeginOrEnd", resourceCulture);
             }
@@ -396,7 +397,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Partial chunk not empty or typeNameFormat not 0x06 as expected..
         /// </summary>
-        internal static string ExMessagePartialChunk {
+        public static string ExMessagePartialChunk {
             get {
                 return ResourceManager.GetString("ExMessagePartialChunk", resourceCulture);
             }
@@ -405,7 +406,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Ndef parse error: Unexpected end of message..
         /// </summary>
-        internal static string ExMessageUnexpectedEnd {
+        public static string ExMessageUnexpectedEnd {
             get {
                 return ResourceManager.GetString("ExMessageUnexpectedEnd", resourceCulture);
             }
@@ -414,7 +415,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Language code must be 5 characters..
         /// </summary>
-        internal static string ExNearSpeakLanguageWrongLength {
+        public static string ExNearSpeakLanguageWrongLength {
             get {
                 return ResourceManager.GetString("ExNearSpeakLanguageWrongLength", resourceCulture);
             }
@@ -423,7 +424,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Online ID must be set..
         /// </summary>
-        internal static string ExNearSpeakNoCloudId {
+        public static string ExNearSpeakNoCloudId {
             get {
                 return ResourceManager.GetString("ExNearSpeakNoCloudId", resourceCulture);
             }
@@ -432,7 +433,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Language code must be defined..
         /// </summary>
-        internal static string ExNearSpeakNoLanguage {
+        public static string ExNearSpeakNoLanguage {
             get {
                 return ResourceManager.GetString("ExNearSpeakNoLanguage", resourceCulture);
             }
@@ -441,7 +442,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Text to speak must not be empty..
         /// </summary>
-        internal static string ExNearSpeakNoText {
+        public static string ExNearSpeakNoText {
             get {
                 return ResourceManager.GetString("ExNearSpeakNoText", resourceCulture);
             }
@@ -450,7 +451,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No valid NearSpeak type identifier..
         /// </summary>
-        internal static string ExNearSpeakNoValidType {
+        public static string ExNearSpeakNoValidType {
             get {
                 return ResourceManager.GetString("ExNearSpeakNoValidType", resourceCulture);
             }
@@ -459,7 +460,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to ProductName for Nokia Accessories record must not be empty..
         /// </summary>
-        internal static string ExNokiaAccessoriesProductEmpty {
+        public static string ExNokiaAccessoriesProductEmpty {
             get {
                 return ResourceManager.GetString("ExNokiaAccessoriesProductEmpty", resourceCulture);
             }
@@ -468,7 +469,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Serial number for Nokia Accessories must not be empty..
         /// </summary>
-        internal static string ExNokiaAccessoriesSerialEmpty {
+        public static string ExNokiaAccessoriesSerialEmpty {
             get {
                 return ResourceManager.GetString("ExNokiaAccessoriesSerialEmpty", resourceCulture);
             }
@@ -477,7 +478,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Serial number must be 19 chars, decimal numbers only..
         /// </summary>
-        internal static string ExNokiaAccessoriesSerialFormat {
+        public static string ExNokiaAccessoriesSerialFormat {
             get {
                 return ResourceManager.GetString("ExNokiaAccessoriesSerialFormat", resourceCulture);
             }
@@ -486,7 +487,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to The raw URI can only be retrieved if the URI is not abbreviated by the record..
         /// </summary>
-        internal static string ExRawUriNoAbbreviation {
+        public static string ExRawUriNoAbbreviation {
             get {
                 return ResourceManager.GetString("ExRawUriNoAbbreviation", resourceCulture);
             }
@@ -495,7 +496,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to The Empty record must not have a payload or a type..
         /// </summary>
-        internal static string ExRecordEmptyWithTypeOrPayload {
+        public static string ExRecordEmptyWithTypeOrPayload {
             get {
                 return ResourceManager.GetString("ExRecordEmptyWithTypeOrPayload", resourceCulture);
             }
@@ -504,7 +505,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to No Type set for record..
         /// </summary>
-        internal static string ExRecordNoType {
+        public static string ExRecordNoType {
             get {
                 return ResourceManager.GetString("ExRecordNoType", resourceCulture);
             }
@@ -513,7 +514,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Id must not be set for middle or terminating record (TNF = Unchanged)..
         /// </summary>
-        internal static string ExRecordUnchangedId {
+        public static string ExRecordUnchangedId {
             get {
                 return ResourceManager.GetString("ExRecordUnchangedId", resourceCulture);
             }
@@ -522,7 +523,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Record with TNF Unchanged must have an empty type name..
         /// </summary>
-        internal static string ExRecordUnchangedTypeName {
+        public static string ExRecordUnchangedTypeName {
             get {
                 return ResourceManager.GetString("ExRecordUnchangedTypeName", resourceCulture);
             }
@@ -531,7 +532,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Body text for SMS record must not be empty..
         /// </summary>
-        internal static string ExSmsBodyEmpty {
+        public static string ExSmsBodyEmpty {
             get {
                 return ResourceManager.GetString("ExSmsBodyEmpty", resourceCulture);
             }
@@ -540,7 +541,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Number for SMS record must not be empty..
         /// </summary>
-        internal static string ExSmsNumberEmpty {
+        public static string ExSmsNumberEmpty {
             get {
                 return ResourceManager.GetString("ExSmsNumberEmpty", resourceCulture);
             }
@@ -549,7 +550,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Social user name must not be empty..
         /// </summary>
-        internal static string ExSocialNoUser {
+        public static string ExSocialNoUser {
             get {
                 return ResourceManager.GetString("ExSocialNoUser", resourceCulture);
             }
@@ -558,7 +559,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Uri of Smart Poster must not be empty..
         /// </summary>
-        internal static string ExSpUriEmpty {
+        public static string ExSpUriEmpty {
             get {
                 return ResourceManager.GetString("ExSpUriEmpty", resourceCulture);
             }
@@ -567,7 +568,7 @@ namespace NdefLibrary.Ndef {
         /// <summary>
         ///   Looks up a localized string similar to Number for telephone record must not be empty..
         /// </summary>
-        internal static string ExTelNumberEmpty {
+        public static string ExTelNumberEmpty {
             get {
                 return ResourceManager.GetString("ExTelNumberEmpty", resourceCulture);
             }

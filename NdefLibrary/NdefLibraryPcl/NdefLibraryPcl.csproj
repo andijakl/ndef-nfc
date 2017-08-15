@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6FA6963F-89CC-47E5-AF24-79C997AB871D}</ProjectGuid>
@@ -11,7 +11,7 @@
     <RootNamespace>NdefLibrary</RootNamespace>
     <AssemblyName>NdefLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SccProjectName>SAK</SccProjectName>
@@ -42,45 +42,92 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <EmbeddedResource Include="Ndef\NdefExceptionMessages.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>NdefExceptionMessages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="GeoCoordinate.cs" />
-    <Compile Include="Ndef\NdefHandoverAlternativeCarrierRecord.cs" />
-    <Compile Include="Ndef\NdefAndroidAppRecord.cs" />
-    <Compile Include="Ndef\NdefBtSecureSimplePairingRecord.cs" />
-    <Compile Include="Ndef\NdefHandoverErrorRecord.cs" />
-    <Compile Include="Ndef\NdefHandoverSelectRecord.cs" />
-    <Compile Include="Ndef\NdefException.cs" />
-    <Compile Include="Ndef\NdefExceptionMessages.Designer.cs">
+    <Compile Include="..\NdefLibrary\GeoCoordinate.cs">
+      <Link>GeoCoordinate.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefAndroidAppRecord.cs">
+      <Link>Ndef\NdefAndroidAppRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefBtSecureSimplePairingRecord.cs">
+      <Link>Ndef\NdefBtSecureSimplePairingRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefException.cs">
+      <Link>Ndef\NdefException.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefExceptionMessages.Designer.cs">
+      <Link>Ndef\NdefExceptionMessages.Designer.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NdefExceptionMessages.resx</DependentUpon>
     </Compile>
-    <Compile Include="Ndef\NdefGeoRecord.cs" />
-    <Compile Include="Ndef\NdefHandoverVersion.cs" />
-    <Compile Include="Ndef\NdefIcalendarRecordBase.cs" />
-    <Compile Include="Ndef\NdefLaunchAppRecord.cs" />
-    <Compile Include="Ndef\NdefMailtoRecord.cs" />
-    <Compile Include="Ndef\NdefMessage.cs" />
-    <Compile Include="Ndef\NdefMimeImageRecordBase.cs" />
-    <Compile Include="Ndef\NdefNokiaAccessoriesRecord.cs" />
-    <Compile Include="Ndef\NdefRecord.cs" />
-    <Compile Include="Ndef\NdefSmartUriRecord.cs" />
-    <Compile Include="Ndef\NdefSmsRecord.cs" />
-    <Compile Include="Ndef\NdefSocialRecord.cs" />
-    <Compile Include="Ndef\NdefSpRecord.cs" />
-    <Compile Include="Ndef\NdefTelRecord.cs" />
-    <Compile Include="Ndef\NdefTextRecord.cs" />
-    <Compile Include="Ndef\NdefUriRecord.cs" />
-    <Compile Include="Ndef\NdefVcardRecordBase.cs" />
-    <Compile Include="Ndef\NdefWindowsSettingsRecord.cs" />
-    <Compile Include="Ndef\NdefWpSettingsRecord.cs" />
+    <Compile Include="..\NdefLibrary\Ndef\NdefGeoRecord.cs">
+      <Link>Ndef\NdefGeoRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefHandoverAlternativeCarrierRecord.cs">
+      <Link>Ndef\NdefHandoverAlternativeCarrierRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefHandoverErrorRecord.cs">
+      <Link>Ndef\NdefHandoverErrorRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefHandoverSelectRecord.cs">
+      <Link>Ndef\NdefHandoverSelectRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefHandoverVersion.cs">
+      <Link>Ndef\NdefHandoverVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefIcalendarRecordBase.cs">
+      <Link>Ndef\NdefIcalendarRecordBase.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefLaunchAppRecord.cs">
+      <Link>Ndef\NdefLaunchAppRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefMailtoRecord.cs">
+      <Link>Ndef\NdefMailtoRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefMessage.cs">
+      <Link>Ndef\NdefMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefMimeImageRecordBase.cs">
+      <Link>Ndef\NdefMimeImageRecordBase.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefRecord.cs">
+      <Link>Ndef\NdefRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefSmartUriRecord.cs">
+      <Link>Ndef\NdefSmartUriRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefSmsRecord.cs">
+      <Link>Ndef\NdefSmsRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefSocialRecord.cs">
+      <Link>Ndef\NdefSocialRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefSpRecord.cs">
+      <Link>Ndef\NdefSpRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefTelRecord.cs">
+      <Link>Ndef\NdefTelRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefTextRecord.cs">
+      <Link>Ndef\NdefTextRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefUriRecord.cs">
+      <Link>Ndef\NdefUriRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefVcardRecordBase.cs">
+      <Link>Ndef\NdefVcardRecordBase.cs</Link>
+    </Compile>
+    <Compile Include="..\NdefLibrary\Ndef\NdefWindowsSettingsRecord.cs">
+      <Link>Ndef\NdefWindowsSettingsRecord.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\NdefLibrary\Ndef\NdefExceptionMessages.resx">
+      <Link>Ndef\NdefExceptionMessages.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NdefExceptionMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
