@@ -238,12 +238,8 @@ namespace NdefLibrary.Ndef
                     return typeof(NdefMailtoRecord);
                 if (NdefTelRecord.IsRecordType(this))
                     return typeof(NdefTelRecord);
-                if (NdefNokiaAccessoriesRecord.IsRecordType(this))
-                    return typeof(NdefNokiaAccessoriesRecord);
                 if (NdefWindowsSettingsRecord.IsRecordType(this))
                     return typeof(NdefWindowsSettingsRecord);
-                if (NdefWpSettingsRecord.IsRecordType(this))
-                    return typeof(NdefWpSettingsRecord);
             }
             // Unique / base record types
             if (NdefUriRecord.IsRecordType(this))

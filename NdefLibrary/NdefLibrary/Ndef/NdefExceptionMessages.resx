@@ -283,7 +283,7 @@
     <value>Social user name must not be empty.</value>
   </data>
   <data name="ExSpUriEmpty" xml:space="preserve">
-    <value>Uri of Smart Poster ust not be empty.</value>
+    <value>Uri of Smart Poster must not be empty.</value>
   </data>
   <data name="ExTelNumberEmpty" xml:space="preserve">
     <value>Number for telephone record must not be empty.</value>

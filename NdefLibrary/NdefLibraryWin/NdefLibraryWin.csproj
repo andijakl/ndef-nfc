@@ -107,7 +107,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\NdefLibrary\NdefLibraryPcl.csproj">
+    <ProjectReference Include="..\NdefLibraryPcl\NdefLibraryPcl.csproj">
       <Project>{6FA6963F-89CC-47E5-AF24-79C997AB871D}</Project>
       <Name>NdefLibraryPcl</Name>
     </ProjectReference>

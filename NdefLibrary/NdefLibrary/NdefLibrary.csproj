@@ -6,11 +6,11 @@
     <Version>4.0.0</Version>
     <Authors>Andreas Jakl</Authors>
     <Company>Andreas Jakl</Company>
-    <Description>The Proximity APIs for NFC (Near Field Communication) in the Windows platform (Windows 10, Windows 8 and Windows Phone 8) are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
+    <Description>The Proximity APIs for NFC (Near Field Communication) in the Windows platform are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
 
 While the Proximity APIs include basic support for URIs, they lack support for more in-depth control over the NDEF records, as well as additional standardized record types.
 
-This NDEF Library provides a set of classes that enable you to easily work with NDEF records on top of the Windows Proximity APIs, for use with Windows 8 and Windows Phone 8 or any other platform where you can develop with C#.
+This NDEF Library provides a set of classes that enable you to easily work with NDEF records on top of the Windows Proximity APIs, for use with Windows or any other platform where you can develop with C#.
 
 Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).</Description>
     <Product>NFC / NDEF Library for Proximity APIs</Product>
@@ -26,16 +26,18 @@ Further NDEF record classes that extend this library with platform integration a
 
   <ItemGroup>
     <Compile Update="Ndef\NdefExceptionMessages.Designer.cs">
-      <DependentUpon>NdefExceptionMessages.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DependentUpon>NdefExceptionMessages.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Ndef\NdefExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
       <LastGenOutput>NdefExceptionMessages.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
