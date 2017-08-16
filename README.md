@@ -237,8 +237,8 @@ The JavaScript library is available in two versions, both are available in the "
 
 ## Version History (C#)
 
-### 4.0.0 - August 2017
-* Main NFC / NDEF library is ported to .net Standard 1.4
+### 4.1.0 - August 2017
+* Main NFC / NDEF library is ported to .NET Standard 1.4
 * Use latest .net Core beta version of iCal.net library instead of custom UWP port
 * Removed deprecated code and versions from the repository, including Silverlight and WinRT versions + example apps.
 
