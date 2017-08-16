@@ -1,7 +1,9 @@
 ﻿{
   "dependencies": {
     "Ical.Net": "3.0.11-net-core-beta",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
+    "NdefLibrary": "4.0.0",
+    "NdefLibraryExtension": "4.0.0"
   },
   "frameworks": {
     "uap10.0.10240": {}
