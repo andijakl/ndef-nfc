@@ -1,0 +1,1 @@
+D:\Source\GitHub\ndef-nfc\NdefDemo\NdefDemoWin10\bin\ARM\Release\Upload\NdefDemoWin10_1.4.14.0\NdefDemoWin10_1.4.14.0_x86_x64_arm.appxbundle

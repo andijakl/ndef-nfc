@@ -17,8 +17,8 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>NdefDemoWin10_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>4023F143CF7400268F8B36381F85E34ED07C1401</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>NdefDemoWin10_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>311B6C479222D754E78C3A90896E813955CB960B</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
@@ -94,6 +94,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="NdefDemoWin10_TemporaryKey.pfx" />
     <None Include="project.json" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
