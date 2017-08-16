@@ -111,11 +111,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Ndef\NdefExceptionMessages1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NdefExceptionMessagesUwp.resx</DependentUpon>
-    </Compile>
     <Compile Include="Ndef\NdefIcalendarRecord.cs" />
     <Compile Include="Ndef\NdefMimeImageRecord.cs" />
     <Compile Include="Ndef\NdefVcardRecord.cs" />
@@ -127,30 +122,22 @@
     <EmbeddedResource Include="Properties\NdefLibraryUwp.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Ical.Net">
+      <Version>3.0.11-net-core-beta</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.4.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NdefLibraryPcl\NdefLibraryPcl.csproj">
-      <Project>{6fa6963f-89cc-47e5-af24-79c997ab871d}</Project>
-      <Name>NdefLibraryPcl</Name>
+    <ProjectReference Include="..\NdefLibrary\NdefLibrary.csproj">
+      <Project>{dbba9941-cdee-47c1-a49b-e65d855e965e}</Project>
+      <Name>NdefLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\VcardLibraryPcl\VcardLibraryPcl.csproj">
-      <Project>{fa79044c-87aa-469b-9c33-b95ebede7fdc}</Project>
-      <Name>VcardLibraryPcl</Name>
+    <ProjectReference Include="..\VcardLibrary\VcardLibrary.csproj">
+      <Project>{78e74734-bd54-45de-b000-c99f209cdd7f}</Project>
+      <Name>VcardLibrary</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="antlr.runtime">
-      <HintPath>..\..\..\ical.net\net-core\Ical.Net\Ical.Net\bin\Release\netstandard1.3\antlr.runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Ical.Net">
-      <HintPath>..\..\..\ical.net\net-core\Ical.Net\Ical.Net\bin\Release\netstandard1.3\Ical.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Ical.Net.Collections">
-      <HintPath>..\..\..\ical.net\net-core\Ical.Net\Ical.Net\bin\Release\netstandard1.3\Ical.Net.Collections.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

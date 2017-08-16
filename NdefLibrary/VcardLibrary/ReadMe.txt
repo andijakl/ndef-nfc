@@ -2,6 +2,10 @@
 vCard Class Library for .NET (Version 0.4; LGPL license)
 Copyright (c) 2007-2009 David Pinch * http://www.thoughtproject.com/Libraries/vCard/
 
+Ported to .net Standard 1.4 by Andreas Jakl, for use in the NFC / NDEF Library.
+Copyright 2012 - 2017, Andreas Jakl, LGPL license.
+https://github.com/andijakl/ndef-nfc/tree/master/NdefLibrary/VcardLibrary
+
 Introduction
 
     This is a simple library for manipulating vCards.  A vCard is used to exchange

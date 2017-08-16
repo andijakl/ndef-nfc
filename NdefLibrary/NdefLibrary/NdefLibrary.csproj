@@ -16,8 +16,8 @@ Further NDEF record classes that extend this library with platform integration a
     <Product>NFC / NDEF Library for Proximity APIs</Product>
     <Copyright>Copyright 2012 - 2017 Andreas Jakl, http://www.nfcinteractor.com/</Copyright>
     <PackageLicenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>http://andijakl.github.io/ndef-nfc/</PackageProjectUrl>
-    <PackageIconUrl>http://www.nfcinteractor.com/ndeflibrary.png</PackageIconUrl>
+    <PackageProjectUrl>https://andijakl.github.io/ndef-nfc/</PackageProjectUrl>
+    <PackageIconUrl>https://www.nfcinteractor.com/ndeflibrary.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/andijakl/ndef-nfc/</RepositoryUrl>
     <PackageTags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</PackageTags>
     <PackageReleaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</PackageReleaseNotes>

@@ -10,6 +10,7 @@
     <PackageProjectUrl>https://github.com/andijakl/ndef-nfc/tree/master/NdefLibrary/VcardLibrary</PackageProjectUrl>
     <RepositoryUrl>https://github.com/andijakl/ndef-nfc/tree/master/NdefLibrary/VcardLibrary</RepositoryUrl>
     <Company />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

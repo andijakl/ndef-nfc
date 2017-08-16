@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NdefLibraryUwp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("NDEF Library for Proximity APIs / NFC (UWP Extension)")]
+[assembly: AssemblyDescription("Easily parse and create NDEF records with the Windows Proximity APIs / Near Field Communication NFC.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Andreas Jakl")]
 [assembly: AssemblyProduct("NdefLibraryUwp")]
-[assembly: AssemblyCopyright("Copyright © 2017 Andreas Jakl")]
+[assembly: AssemblyCopyright("Copyright © 2012-2017 Andreas Jakl")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
