@@ -11,6 +11,9 @@
     <RepositoryUrl>https://github.com/andijakl/ndef-nfc/tree/master/NdefLibrary/VcardLibrary</RepositoryUrl>
     <Company />
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <FileVersion>4.1.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

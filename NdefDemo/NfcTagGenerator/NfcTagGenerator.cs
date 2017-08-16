@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2015 Andreas Jakl - http://www.nfcinteractor.com/
+** Copyright (C) 2012-2017 Andreas Jakl - http://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Code example for the NDEF Library for Proximity APIs (NFC).
@@ -34,11 +34,11 @@ namespace NfcTagGenerator
 
         private static readonly Dictionary<string, NdefRecord> NfcRecords = new Dictionary<string, NdefRecord>
         {
-            {"URL-http", new NdefUriRecord { Uri = "http://andijakl.github.io/ndef-nfc/"}},
+            {"URL-http", new NdefUriRecord { Uri = "https://andijakl.github.io/ndef-nfc/"}},
             {"URL", new NdefUriRecord { Uri = "nfcinteractor:compose"}},
             {"URL-SpecialChars", new NdefUriRecord { Uri = "custom:Testmessage -_(){}\":@äöüÄÖÜ"}},
             {"Mailto", new NdefMailtoRecord { Subject = "Feedback for the NDEF Library", Body = "I think the NDEF library is ...", Address = "andreas.jakl@live.com"}},
-            {"SMS", new NdefSmsRecord { SmsNumber = "+1234", SmsBody = "Check out the NDEF library at http://andijakl.github.io/ndef-nfc/"}},
+            {"SMS", new NdefSmsRecord { SmsNumber = "+1234", SmsBody = "Check out the NDEF library at https://andijakl.github.io/ndef-nfc/"}},
             {"SMS-SpecialChars", new NdefSmsRecord { SmsNumber = "+1 (2) 3456 - 789", SmsBody = "Testmessage -_(){}\":@äöüÄÖÜ"}},
             {"Geo", new NdefGeoRecord { Latitude = 48.168604, Longitude = 16.33375, GeoType = NdefGeoRecord.NfcGeoType.GeoUri}},
             {"Android", new NdefAndroidAppRecord { PackageName = "com.twitter.android"}},
@@ -55,7 +55,7 @@ namespace NfcTagGenerator
             // Dynamically construct some more NDEF records
             var spRecord = new NdefSpRecord
             {
-                Uri = "http://andijakl.github.io/ndef-nfc/",
+                Uri = "https://andijakl.github.io/ndef-nfc/",
                 NfcAction = NdefSpActRecord.NfcActionType.DoAction
             };
             spRecord.AddTitle(new NdefTextRecord { LanguageCode = "en", Text = "NFC Library" });
@@ -73,7 +73,7 @@ namespace NfcTagGenerator
             }
 
             // Multi-record file
-            var record1 = new NdefUriRecord {Uri = "http://www.twitter.com"};
+            var record1 = new NdefUriRecord {Uri = "https://www.twitter.com"};
             var record2 = new NdefAndroidAppRecord {PackageName = "com.twitter.android"};
             var twoRecordsMsg = new NdefMessage {record1, record2};
             WriteTagFile(tagsDirectory, "TwoRecords", twoRecordsMsg);
@@ -102,7 +102,7 @@ namespace NfcTagGenerator
             var ndefMessageBytes = ndefMessage.ToByteArray();
 
             // Write NDEF message to binary file
-            var binFileName = String.Format(FileNameBin, tagName);
+            var binFileName = string.Format(FileNameBin, tagName);
             using (var fs = File.Create(Path.Combine(pathName, binFileName)))
             {
                 foreach (var curByte in ndefMessageBytes)
@@ -112,7 +112,7 @@ namespace NfcTagGenerator
             }
 
             // Write NDEF message to hex file
-            var hexFileName = String.Format(FileNameHex, tagName);
+            var hexFileName = string.Format(FileNameHex, tagName);
             using (var fs = File.Create(Path.Combine(pathName, hexFileName)))
             {
                 using (var logFileWriter = new StreamWriter(fs))

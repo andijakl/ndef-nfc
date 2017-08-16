@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>NdefLibrary</id>
-    <version>4.0.0</version>
+    <version>4.1.0</version>
     <title>NFC / NDEF Library for Proximity APIs</title>
     <authors>Andreas Jakl</authors>
     <owners>Andreas Jakl</owners>

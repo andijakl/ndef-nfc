@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>4.0.0</Version>
+    <Version>4.1.0</Version>
     <Authors>Andreas Jakl</Authors>
     <Company>Andreas Jakl</Company>
     <Description>The Proximity APIs for NFC (Near Field Communication) in the Windows platform are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
@@ -22,6 +22,9 @@ Further NDEF record classes that extend this library with platform integration a
     <PackageTags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</PackageTags>
     <PackageReleaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <FileVersion>4.1.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

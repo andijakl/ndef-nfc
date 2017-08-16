@@ -94,7 +94,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="NdefDemoWin10_StoreKey.pfx" />
     <None Include="project.json" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
@@ -111,7 +110,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="NdefDemoWin10_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\DemoImages\minimal.gif" />
@@ -145,11 +143,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="antlr.runtime">
-      <HintPath>..\..\NdefLibrary\NdefLibraryUwp\bin\Debug\antlr.runtime.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -338,7 +338,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/4.0.0": {
+      "NdefLibrary/4.1.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -350,11 +350,11 @@
           "lib/netstandard1.4/NdefLibrary.dll": {}
         }
       },
-      "NdefLibraryExtension/4.0.0": {
+      "NdefLibraryExtension/4.1.0": {
         "type": "package",
         "dependencies": {
           "Ical.Net": "3.0.11-net-core-beta",
-          "NdefLibrary": "4.0.0"
+          "NdefLibrary": "4.1.0"
         },
         "compile": {
           "lib/uap10.0/NdefLibraryUwp.dll": {},
@@ -2738,7 +2738,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/4.0.0": {
+      "NdefLibrary/4.1.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -2750,11 +2750,11 @@
           "lib/netstandard1.4/NdefLibrary.dll": {}
         }
       },
-      "NdefLibraryExtension/4.0.0": {
+      "NdefLibraryExtension/4.1.0": {
         "type": "package",
         "dependencies": {
           "Ical.Net": "3.0.11-net-core-beta",
-          "NdefLibrary": "4.0.0"
+          "NdefLibrary": "4.1.0"
         },
         "compile": {
           "lib/uap10.0/NdefLibraryUwp.dll": {},
@@ -5221,7 +5221,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/4.0.0": {
+      "NdefLibrary/4.1.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -5233,11 +5233,11 @@
           "lib/netstandard1.4/NdefLibrary.dll": {}
         }
       },
-      "NdefLibraryExtension/4.0.0": {
+      "NdefLibraryExtension/4.1.0": {
         "type": "package",
         "dependencies": {
           "Ical.Net": "3.0.11-net-core-beta",
-          "NdefLibrary": "4.0.0"
+          "NdefLibrary": "4.1.0"
         },
         "compile": {
           "lib/uap10.0/NdefLibraryUwp.dll": {},
@@ -7741,7 +7741,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/4.0.0": {
+      "NdefLibrary/4.1.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -7753,11 +7753,11 @@
           "lib/netstandard1.4/NdefLibrary.dll": {}
         }
       },
-      "NdefLibraryExtension/4.0.0": {
+      "NdefLibraryExtension/4.1.0": {
         "type": "package",
         "dependencies": {
           "Ical.Net": "3.0.11-net-core-beta",
-          "NdefLibrary": "4.0.0"
+          "NdefLibrary": "4.1.0"
         },
         "compile": {
           "lib/uap10.0/NdefLibraryUwp.dll": {},
@@ -10233,7 +10233,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/4.0.0": {
+      "NdefLibrary/4.1.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -10245,11 +10245,11 @@
           "lib/netstandard1.4/NdefLibrary.dll": {}
         }
       },
-      "NdefLibraryExtension/4.0.0": {
+      "NdefLibraryExtension/4.1.0": {
         "type": "package",
         "dependencies": {
           "Ical.Net": "3.0.11-net-core-beta",
-          "NdefLibrary": "4.0.0"
+          "NdefLibrary": "4.1.0"
         },
         "compile": {
           "lib/uap10.0/NdefLibraryUwp.dll": {},
@@ -12759,7 +12759,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/4.0.0": {
+      "NdefLibrary/4.1.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -12771,11 +12771,11 @@
           "lib/netstandard1.4/NdefLibrary.dll": {}
         }
       },
-      "NdefLibraryExtension/4.0.0": {
+      "NdefLibraryExtension/4.1.0": {
         "type": "package",
         "dependencies": {
           "Ical.Net": "3.0.11-net-core-beta",
-          "NdefLibrary": "4.0.0"
+          "NdefLibrary": "4.1.0"
         },
         "compile": {
           "lib/uap10.0/NdefLibraryUwp.dll": {},
@@ -15251,7 +15251,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "NdefLibrary/4.0.0": {
+      "NdefLibrary/4.1.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -15263,11 +15263,11 @@
           "lib/netstandard1.4/NdefLibrary.dll": {}
         }
       },
-      "NdefLibraryExtension/4.0.0": {
+      "NdefLibraryExtension/4.1.0": {
         "type": "package",
         "dependencies": {
           "Ical.Net": "3.0.11-net-core-beta",
-          "NdefLibrary": "4.0.0"
+          "NdefLibrary": "4.1.0"
         },
         "compile": {
           "lib/uap10.0/NdefLibraryUwp.dll": {},
@@ -19904,24 +19904,24 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "NdefLibrary/4.0.0": {
-      "sha512": "lIwv0WCdSOpAC8qjNuScbKFAF0YGcnB8MmiK2onf/KgK6L/DwP6w4M1elsJWd9TwqPRgofCT6WGfvDbw3fyctw==",
+    "NdefLibrary/4.1.0": {
+      "sha512": "OKf3bzRcoywOue7NXoGmUXPcdVMJhSocF67bCauwBTe0OTZdKv74vpptBCOfdVsUVDV/PfJ8NMxl3lZMu/tpww==",
       "type": "package",
-      "path": "ndeflibrary/4.0.0",
+      "path": "ndeflibrary/4.1.0",
       "files": [
         "lib/netstandard1.4/NdefLibrary.dll",
-        "ndeflibrary.4.0.0.nupkg.sha512",
+        "ndeflibrary.4.1.0.nupkg.sha512",
         "ndeflibrary.nuspec"
       ]
     },
-    "NdefLibraryExtension/4.0.0": {
-      "sha512": "17NRTfVMDTdPPU2VAxRYVBAgaRTMmJa9MASoDOokhcTnUZ8jfZRfzsX77WbGhPMf7nPXHG8ZdnjOBLBDZ7Z60g==",
+    "NdefLibraryExtension/4.1.0": {
+      "sha512": "0VnAgynVbBk3Hryj9CkbsV+Z4NOkGSrhG6Rch9gvbuA6W4kBS77Rpo5GtXLh8eEzliDje8DqjkrFpFaLWI5RuQ==",
       "type": "package",
-      "path": "ndeflibraryextension/4.0.0",
+      "path": "ndeflibraryextension/4.1.0",
       "files": [
         "lib/uap10.0/NdefLibraryUwp.dll",
         "lib/uap10.0/VcardLibrary.dll",
-        "ndeflibraryextension.4.0.0.nupkg.sha512",
+        "ndeflibraryextension.4.1.0.nupkg.sha512",
         "ndeflibraryextension.nuspec"
       ]
     },
@@ -26122,8 +26122,8 @@
     "": [
       "Ical.Net >= 3.0.11-net-core-beta",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.4.0",
-      "NdefLibrary >= 4.0.0",
-      "NdefLibraryExtension >= 4.0.0"
+      "NdefLibrary >= 4.1.0",
+      "NdefLibraryExtension >= 4.1.0"
     ],
     "UAP,Version=v10.0.10240": []
   },
@@ -26151,8 +26151,8 @@
     "dependencies": {
       "Ical.Net": "3.0.11-net-core-beta",
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
-      "NdefLibrary": "4.0.0",
-      "NdefLibraryExtension": "4.0.0"
+      "NdefLibrary": "4.1.0",
+      "NdefLibraryExtension": "4.1.0"
     },
     "frameworks": {
       "uap10.0.10240": {}
