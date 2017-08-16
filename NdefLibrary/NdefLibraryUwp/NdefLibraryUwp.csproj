@@ -106,9 +106,24 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Ndef\NdefExceptionMessagesUwp.Designer.cs">
+      <DependentUpon>NdefExceptionMessagesUwp.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ndef\NdefExceptionMessages1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NdefExceptionMessagesUwp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ndef\NdefIcalendarRecord.cs" />
     <Compile Include="Ndef\NdefMimeImageRecord.cs" />
     <Compile Include="Ndef\NdefVcardRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Ndef\NdefExceptionMessagesUwp.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NdefExceptionMessagesUwp.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\NdefLibraryUwp.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +140,17 @@
       <Project>{fa79044c-87aa-469b-9c33-b95ebede7fdc}</Project>
       <Name>VcardLibraryPcl</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime">
+      <HintPath>..\..\..\ical.net\net-core\Ical.Net\Ical.Net\bin\Release\netstandard1.3\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net">
+      <HintPath>..\..\..\ical.net\net-core\Ical.Net\Ical.Net\bin\Release\netstandard1.3\Ical.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net.Collections">
+      <HintPath>..\..\..\ical.net\net-core\Ical.Net\Ical.Net\bin\Release\netstandard1.3\Ical.Net.Collections.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

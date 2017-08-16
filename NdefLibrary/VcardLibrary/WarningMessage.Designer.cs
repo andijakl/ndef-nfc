@@ -10,6 +10,7 @@
 
 namespace VcardLibrary {
     using System;
+    using System.Reflection;
     
     
     /// <summary>
@@ -22,7 +23,7 @@ namespace VcardLibrary {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class WarningMessage {
+    public class WarningMessage {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +37,10 @@ namespace VcardLibrary {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VcardLibrary.WarningMessage", typeof(WarningMessage).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VcardLibrary.WarningMessage", typeof(WarningMessage).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +52,7 @@ namespace VcardLibrary {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +64,7 @@ namespace VcardLibrary {
         /// <summary>
         ///   Looks up a localized string similar to Line {0} A blank line was encountered.  This is not allowed in the vCard specification..
         /// </summary>
-        internal static string BlankLine {
+        public static string BlankLine {
             get {
                 return ResourceManager.GetString("BlankLine", resourceCulture);
             }
@@ -72,7 +73,7 @@ namespace VcardLibrary {
         /// <summary>
         ///   Looks up a localized string similar to Line {0}: A colon (:) is missing.  All properties must be in NAME:VALUE format..
         /// </summary>
-        internal static string ColonMissing {
+        public static string ColonMissing {
             get {
                 return ResourceManager.GetString("ColonMissing", resourceCulture);
             }
@@ -81,7 +82,7 @@ namespace VcardLibrary {
         /// <summary>
         ///   Looks up a localized string similar to Line {0}: The name section of the property is empty..
         /// </summary>
-        internal static string EmptyName {
+        public static string EmptyName {
             get {
                 return ResourceManager.GetString("EmptyName", resourceCulture);
             }

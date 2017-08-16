@@ -146,6 +146,26 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime">
+      <HintPath>..\..\NdefLibrary\NdefLibraryUwp\bin\Debug\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net">
+      <HintPath>..\..\NdefLibrary\NdefLibraryUwp\bin\Debug\Ical.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net.Collections">
+      <HintPath>..\..\NdefLibrary\NdefLibraryUwp\bin\Debug\Ical.Net.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NdefLibrary">
+      <HintPath>..\..\NdefLibrary\NdefLibraryUwp\bin\Debug\NdefLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="NdefLibraryUwp">
+      <HintPath>..\..\NdefLibrary\NdefLibraryUwp\bin\Debug\NdefLibraryUwp.dll</HintPath>
+    </Reference>
+    <Reference Include="VcardLibrary">
+      <HintPath>..\..\NdefLibrary\NdefLibraryUwp\bin\Debug\VcardLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
