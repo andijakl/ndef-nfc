@@ -14,7 +14,7 @@ This NDEF Library provides a set of classes that enable you to easily work with 
 
 Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).</Description>
     <Product>NFC / NDEF Library for Proximity APIs</Product>
-    <Copyright>Copyright 2012 - 2017 Andreas Jakl, http://www.nfcinteractor.com/</Copyright>
+    <Copyright>Copyright 2012 - 2017 Andreas Jakl, https://www.nfcinteractor.com/</Copyright>
     <PackageLicenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://andijakl.github.io/ndef-nfc/</PackageProjectUrl>
     <PackageIconUrl>https://www.nfcinteractor.com/ndeflibrary.png</PackageIconUrl>

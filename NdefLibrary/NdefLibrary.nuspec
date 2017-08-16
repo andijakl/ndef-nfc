@@ -1,32 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
-  <metadata minClientVersion="2.8.1">
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
     <id>NdefLibrary</id>
-    <version>3.1.1</version>
+    <version>4.0.0</version>
     <title>NFC / NDEF Library for Proximity APIs</title>
     <authors>Andreas Jakl</authors>
     <owners>Andreas Jakl</owners>
-    <licenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</licenseUrl>
-    <projectUrl>http://andijakl.github.io/ndef-nfc/</projectUrl>
-    <iconUrl>http://www.nfcinteractor.com/ndeflibrary.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>The Proximity APIs for NFC (Near Field Communication) in the Windows platform (Windows 10, Windows 8 and Windows Phone 8) are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
+    <licenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://andijakl.github.io/ndef-nfc/</projectUrl>
+    <iconUrl>https://www.nfcinteractor.com/ndeflibrary.png</iconUrl>
+    <description>The Proximity APIs for NFC (Near Field Communication) in the Windows platform are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
 
 While the Proximity APIs include basic support for URIs, they lack support for more in-depth control over the NDEF records, as well as additional standardized record types.
 
-This NDEF Library provides a set of classes that enable you to easily work with NDEF records on top of the Windows Proximity APIs, for use with Windows 8 and Windows Phone 8 or any other platform where you can develop with C#.
+This NDEF Library provides a set of classes that enable you to easily work with NDEF records on top of the Windows Proximity APIs, for use with Windows or any other platform where you can develop with C#.
 
-Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).
-
-Note: this portable class library requires Visual Studio 2012 (or higher) and NuGet 2.8.1+.</description>
-    <summary>Easily parse and create standardized NDEF records for NFC Tags.</summary>
+Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).</description>
     <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
-    <copyright>Copyright 2012 - 2016 Andreas Jakl, http://www.nfcinteractor.com/</copyright>
+    <summary>Easily parse and create standardized NDEF records for NFC Tags.</summary>
+    <copyright>Copyright 2012 - 2017 Andreas Jakl, https://www.nfcinteractor.com/</copyright>
     <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</tags>
+    <repository url="https://github.com/andijakl/ndef-nfc/" />
+    <dependencies>
+      <group targetFramework=".NETStandard1.4">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
   </metadata>
   <files>
-    <file src="NdefLibrary\bin\Release\NdefLibrary.dll" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll" />
-    <file src="NdefLibrary\bin\Release\NdefLibrary.pdb" target="lib\portable-net45+win8+wp8+wpa81\NdefLibrary.pdb" />
-    <file src="NdefLibrary\**\*.cs" target="src\NdefLibrary" exclude="**\TemporaryGeneratedFile*.cs" />
+    <file src="D:\Source\GitHub\ndef-nfc\NdefLibrary\NdefLibrary\bin\Release\netstandard1.4\NdefLibrary.dll" target="lib\netstandard1.4\NdefLibrary.dll" />
+    <file src="D:\Source\GitHub\ndef-nfc\NdefLibrary\NdefLibrary\bin\Release\netstandard1.4\NdefLibrary.pdb" target="lib\netstandard1.4\NdefLibrary.pdb" />
+    <file src="D:\Source\GitHub\ndef-nfc\NdefLibrary\NdefLibrary\**\*.cs" target="src\NdefLibrary" exclude="**\TemporaryGeneratedFile*.cs;NdefLibrary\obj\**\*.*" />
   </files>
 </package>
