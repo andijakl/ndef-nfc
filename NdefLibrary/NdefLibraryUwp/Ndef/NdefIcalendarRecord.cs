@@ -1,20 +1,20 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2017 Andreas Jakl - http://www.nfcinteractor.com/
+** Copyright (C) 2012-2017 Andreas Jakl - https://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
 **
 ** Created by Andreas Jakl (2014).
-** More information: http://andijakl.github.io/ndef-nfc/
+** More information: https://andijakl.github.io/ndef-nfc/
 **
 ** GNU Lesser General Public License Usage
 ** This file may be used under the terms of the GNU Lesser General Public
-** License version 2.1 as published by the Free Software Foundation and
+** License version 3 as published by the Free Software Foundation and
 ** appearing in the file LICENSE.LGPL included in the packaging of this
 ** file. Please review the following information to ensure the GNU Lesser
-** General Public License version 2.1 requirements will be met:
-** http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+** General Public License version 3 requirements will be met:
+** http://www.gnu.org/licenses/lgpl.html.
 **
 ** GNU General Public License Usage
 ** Alternatively, this file may be used under the terms of the GNU General
