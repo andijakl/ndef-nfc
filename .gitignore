@@ -184,3 +184,4 @@ FakesAssemblies/
 /NdefLibrary/NuGetPush.bat
 /NdefLibrary/nupkg
 /NdefLibrary/NdefLibraryUwp/project.lock.json
+/NdefDemo/NdefDemoWin10/Package.StoreAssociation.xml
