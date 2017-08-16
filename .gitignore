@@ -186,3 +186,6 @@ FakesAssemblies/
 /NdefLibrary/NdefLibraryUwp/project.lock.json
 /NdefDemo/NdefDemoWin10/Package.StoreAssociation.xml
 /NdefDemo/NdefDemoWin10/BundleArtifacts
+.vs/
+/NdefLibrary/.vs
+/NdefDemo/.vs
