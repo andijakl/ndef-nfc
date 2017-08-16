@@ -9,15 +9,11 @@ var searchData=
   ['ndefhandovererrorrecord',['NdefHandoverErrorRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_handover_error_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefhandoverselectrecord',['NdefHandoverSelectRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_handover_select_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefhandoverversion',['NdefHandoverVersion',['../class_ndef_library_1_1_ndef_1_1_ndef_handover_version.html',1,'NdefLibrary::Ndef']]],
-  ['ndeficalendarrecord',['NdefIcalendarRecord',['../class_ndef_library_win_1_1_ndef_1_1_ndef_icalendar_record.html',1,'NdefLibraryWin::Ndef']]],
   ['ndeficalendarrecordbase',['NdefIcalendarRecordBase',['../class_ndef_library_1_1_ndef_1_1_ndef_icalendar_record_base.html',1,'NdefLibrary::Ndef']]],
   ['ndeflaunchapprecord',['NdefLaunchAppRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_launch_app_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefmailtorecord',['NdefMailtoRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_mailto_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefmessage',['NdefMessage',['../class_ndef_library_1_1_ndef_1_1_ndef_message.html',1,'NdefLibrary::Ndef']]],
-  ['ndefmimeimagerecord',['NdefMimeImageRecord',['../class_ndef_library_uwp_1_1_ndef_1_1_ndef_mime_image_record.html',1,'NdefLibraryUwp::Ndef']]],
-  ['ndefmimeimagerecord',['NdefMimeImageRecord',['../class_ndef_library_win_1_1_ndef_1_1_ndef_mime_image_record.html',1,'NdefLibraryWin::Ndef']]],
   ['ndefmimeimagerecordbase',['NdefMimeImageRecordBase',['../class_ndef_library_1_1_ndef_1_1_ndef_mime_image_record_base.html',1,'NdefLibrary::Ndef']]],
-  ['ndefnokiaaccessoriesrecord',['NdefNokiaAccessoriesRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_nokia_accessories_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefrecord',['NdefRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefsmarturirecord',['NdefSmartUriRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_smart_uri_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefsmsrecord',['NdefSmsRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_sms_record.html',1,'NdefLibrary::Ndef']]],
@@ -29,10 +25,6 @@ var searchData=
   ['ndeftelrecord',['NdefTelRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_tel_record.html',1,'NdefLibrary::Ndef']]],
   ['ndeftextrecord',['NdefTextRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_text_record.html',1,'NdefLibrary::Ndef']]],
   ['ndefurirecord',['NdefUriRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_uri_record.html',1,'NdefLibrary::Ndef']]],
-  ['ndefvcardrecord',['NdefVcardRecord',['../class_ndef_library_win_1_1_ndef_1_1_ndef_vcard_record.html',1,'NdefLibraryWin::Ndef']]],
-  ['ndefvcardrecord',['NdefVcardRecord',['../class_ndef_library_uwp_1_1_ndef_1_1_ndef_vcard_record.html',1,'NdefLibraryUwp::Ndef']]],
-  ['ndefvcardrecord',['NdefVcardRecord',['../class_ndef_library_wp_1_1_ndef_1_1_ndef_vcard_record.html',1,'NdefLibraryWp::Ndef']]],
   ['ndefvcardrecordbase',['NdefVcardRecordBase',['../class_ndef_library_1_1_ndef_1_1_ndef_vcard_record_base.html',1,'NdefLibrary::Ndef']]],
-  ['ndefwindowssettingsrecord',['NdefWindowsSettingsRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_windows_settings_record.html',1,'NdefLibrary::Ndef']]],
-  ['ndefwpsettingsrecord',['NdefWpSettingsRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_wp_settings_record.html',1,'NdefLibrary::Ndef']]]
+  ['ndefwindowssettingsrecord',['NdefWindowsSettingsRecord',['../class_ndef_library_1_1_ndef_1_1_ndef_windows_settings_record.html',1,'NdefLibrary::Ndef']]]
 ];
