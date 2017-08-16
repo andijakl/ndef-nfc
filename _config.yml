@@ -1,0 +1,8 @@
+title: NDEF Library for Proximity APIs / NFC
+description: Easily parse and create NFC tags that contain standard-based NDEF messages.
+google_analytics: UA-44072423-3
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
