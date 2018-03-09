@@ -144,6 +144,12 @@
   <data name="ApplicationTitle.Text" xml:space="preserve">
     <value>NFC NDEF Demo</value>
   </data>
+  <data name="BlogButton.Content" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="BlogButton.NavigateUri" xml:space="preserve">
+    <value>https://www.andreasjakl.com</value>
+  </data>
   <data name="BtnInitNfc.Content" xml:space="preserve">
     <value>Initialize NFC</value>
   </data>

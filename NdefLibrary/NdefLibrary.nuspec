@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>NdefLibrary</id>
-    <version>4.1.0</version>
+    <version>4.2.0</version>
     <title>NFC / NDEF Library for Proximity APIs</title>
     <authors>Andreas Jakl</authors>
     <owners>Andreas Jakl</owners>
@@ -19,7 +19,7 @@ This NDEF Library provides a set of classes that enable you to easily work with 
 Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).</description>
     <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
     <summary>Easily parse and create standardized NDEF records for NFC Tags.</summary>
-    <copyright>Copyright 2012 - 2017 Andreas Jakl, https://www.nfcinteractor.com/</copyright>
+    <copyright>Copyright 2012 - 2018 Andreas Jakl, https://www.nfcinteractor.com/</copyright>
     <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</tags>
     <repository url="https://github.com/andijakl/ndef-nfc/" />
     <dependencies>
@@ -29,8 +29,8 @@ Further NDEF record classes that extend this library with platform integration a
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\Source\GitHub\ndef-nfc\NdefLibrary\NdefLibrary\bin\Release\netstandard1.4\NdefLibrary.dll" target="lib\netstandard1.4\NdefLibrary.dll" />
-    <file src="D:\Source\GitHub\ndef-nfc\NdefLibrary\NdefLibrary\bin\Release\netstandard1.4\NdefLibrary.pdb" target="lib\netstandard1.4\NdefLibrary.pdb" />
-    <file src="D:\Source\GitHub\ndef-nfc\NdefLibrary\NdefLibrary\**\*.cs" target="src\NdefLibrary" exclude="**\TemporaryGeneratedFile*.cs;NdefLibrary\obj\**\*.*" />
+    <file src="NdefLibrary\bin\Release\netstandard1.4\NdefLibrary.dll" target="lib\netstandard1.4\NdefLibrary.dll" />
+    <file src="NdefLibrary\bin\Release\netstandard1.4\NdefLibrary.pdb" target="lib\netstandard1.4\NdefLibrary.pdb" />
+    <file src="NdefLibrary\**\*.cs" target="src\NdefLibrary" exclude="**\TemporaryGeneratedFile*.cs;NdefLibrary\obj\**\*.*" />
   </files>
 </package>

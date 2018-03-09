@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2017 Andreas Jakl - https://www.nfcinteractor.com/
+** Copyright (C) 2012-2018 Andreas Jakl - https://www.nfcinteractor.com/
 ** All rights reserved.
 **
 ** Extension to the NDEF handling classes.
@@ -34,8 +34,9 @@ using System.Text;
 using Windows.ApplicationModel.Appointments;
 using Ical.Net;
 using Ical.Net.DataTypes;
-using Ical.Net.Serialization.iCalendar.Serializers;
 using NdefLibrary.Ndef;
+using Ical.Net.Serialization;
+using Ical.Net.CalendarComponents;
 
 namespace NdefLibraryUwp.Ndef
 {
@@ -191,7 +192,7 @@ namespace NdefLibraryUwp.Ndef
         private void ConvertIcalendarToAppointment(byte[] iCalendarPayload)
         {
             var iCalendarStream = new MemoryStream(iCalendarPayload);
-            var calendarCollection = Calendar.LoadFromStream(iCalendarStream);
+            var calendarCollection = CalendarCollection.Load(iCalendarStream);
 
             if (calendarCollection.Count >= 1)
             {

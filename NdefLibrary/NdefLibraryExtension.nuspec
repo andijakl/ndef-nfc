@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
     <metadata minClientVersion="2.8.1">
         <id>NdefLibraryExtension</id>
-        <version>4.1.0</version>
+        <version>4.2.0</version>
         <title>NFC / NDEF Library Platform Extensions for Proximity APIs</title>
         <authors>Andreas Jakl</authors>
         <owners>Andreas Jakl</owners>
@@ -15,16 +15,16 @@
 Based on the cross platform NFC / NDEF library, this extension module adds additional NDEF record classes that integrate with platform features to enable additional use cases. The extension enables creating vCard records, Mime Image records as well as iCalendar records on Windows 10 (UWP). This extension includes 3rd party extension libraries.</description>
         <summary>Extends the NFC / NDEF Library with platform specific support for additional use cases.</summary>
         <releaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</releaseNotes>
-        <copyright>Copyright 2012 - 2017 Andreas Jakl, https://www.nfcinteractor.com/</copyright>
+        <copyright>Copyright 2012 - 2018 Andreas Jakl, https://www.nfcinteractor.com/</copyright>
         <tags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics</tags>
 		<dependencies> 
 		   <group>
-				<dependency id="NdefLibrary" version="4.1.0" />
+				<dependency id="NdefLibrary" version="4.2.0" />
 		   </group>
 		   
 		   <group targetFramework="uap10.0">
-				<dependency id="NdefLibrary" version="4.1.0" />
-				<dependency id="Ical.Net" version="3.0.11-net-core-beta" />
+				<dependency id="NdefLibrary" version="4.2.0" />
+				<dependency id="Ical.Net" version="4.0.6" />
 		   </group>
 
 		</dependencies>

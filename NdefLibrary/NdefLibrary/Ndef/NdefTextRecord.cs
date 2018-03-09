@@ -1,6 +1,6 @@
 ﻿/****************************************************************************
 **
-** Copyright (C) 2012-2016 Andreas Jakl - https://www.nfcinteractor.com/
+** Copyright (C) 2012-2018 Andreas Jakl - https://www.nfcinteractor.com/
 ** Original version copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies).
 ** All rights reserved.
 **

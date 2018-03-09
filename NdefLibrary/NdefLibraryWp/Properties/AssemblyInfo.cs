@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Andreas Jakl")]
 [assembly: AssemblyProduct("NdefLibraryWp")]
-[assembly: AssemblyCopyright("Copyright © 2012-2016 Andreas Jakl")]
+[assembly: AssemblyCopyright("Copyright © 2012-2018 Andreas Jakl")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

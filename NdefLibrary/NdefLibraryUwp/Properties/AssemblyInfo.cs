@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Andreas Jakl")]
 [assembly: AssemblyProduct("NdefLibraryUwp")]
-[assembly: AssemblyCopyright("Copyright © 2012-2017 Andreas Jakl")]
+[assembly: AssemblyCopyright("Copyright © 2012-2018 Andreas Jakl")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
