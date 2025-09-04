@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>NFC Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>NFC Demo</h1>
+    <p>This demo shows how to use the Web NFC API to read and write NDEF messages.</p>
+
+    <div class="container">
+        <div class="section">
+            <h2>Subscribe</h2>
+            <button id="subscribeBtn">Subscribe for NDEF</button>
+        </div>
+
+        <div class="section">
+            <h2>Publish</h2>
+            <div>
+                <label for="urlInput">URL:</label>
+                <input type="text" id="urlInput" value="https://www.nfcinteractor.com">
+                <button id="publishUriBtn">Publish URI</button>
+            </div>
+            <div>
+                <label for="twitterInput">Twitter:</label>
+                <input type="text" id="twitterInput" value="andijakl">
+                <button id="publishTwitterBtn">Publish Twitter</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Share</h2>
+            <button id="shareUriBtn">Share URI to Device</button>
+        </div>
+
+        <div class="section">
+            <h2>Status</h2>
+            <ul id="statusList"></ul>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
