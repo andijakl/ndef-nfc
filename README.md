@@ -48,7 +48,7 @@ An example app is available for Windows 10. In addition to the library download 
 
 ### JavaScript / HTML5 Version
 
-The new JavaScript port of the library provides the most important NDEF types also to HTML5 / JavaScript apps.
+The JavaScript port of the library provides comprehensive NDEF support for modern web applications. It's built as ES modules and is compatible with the Web NFC API for Chrome on Android. The library includes support for common NDEF record types including social media records for modern platforms.
 
 
 
@@ -68,8 +68,11 @@ The new JavaScript port of the library provides the most important NDEF types al
 * URI: the most common type: any kind of URI, for example an Internet address, email link or any custom URI scheme.
 * Smart Poster: combines a URL with textual descriptions in various languages (C# only) 
 * Text records: contains text in a specific language
+* Social records: support for modern social media platforms including X (formerly Twitter), LinkedIn, Instagram, Threads, TikTok, and Facebook (JavaScript version includes enhanced social media support)
 * Microsoft LaunchApp: launch a Windows (Phone) app just by tapping a tag (C# only) 
 * Android Application Record (AAR): launch an Android app
+* Geo records: longitude & latitude of a place using standard Geo URI schemes
+* Tel records: telephone number links
 * Bluetooth Secure Simple Pairing: connect to a Bluetooth device, contains information about the target device like the service class (C# only) 
 * Handover Select: part of the Connection Handover specification, provides a list of alternative carriers to connect to. Used for example for NFC loudspeakers. Includes support for child records - Handover Alternative Carrier and Handover Error records (C# only) 
 
@@ -97,6 +100,8 @@ The new JavaScript port of the library provides the most important NDEF types al
 ## Example Apps
 
 For C#, the library download comes with NdefDemoWin10 (for Windows 10 / UWP). This example app demonstrates some of the features of the NDEF Library. The demo is available under GPL v3 license. You can download the Windows 10 example app from the [Windows Store](https://www.microsoft.com/store/apps/9nblggh5p3rm).
+
+For JavaScript, the `NdefDemoJS` directory contains a modern web application built with Vite that demonstrates the Web NFC API integration and various NDEF record types. The demo showcases social media records, URI records, and real-time NFC tag reading/writing. It requires Chrome for Android and works with physical NFC tags.
 
 Another GPL-licensed example app for Windows Phone 8 is [NfcShare](https://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/), which is available together with accompanying webinar slides and a recording at the [NFC developer's section at NfcInteractor.com](https://www.nfcinteractor.com/developers/presentations/lumia-app-lab-nfc-webinar/).
 
@@ -161,42 +166,85 @@ _device.PublishBinaryMessage("NDEF", msg.ToByteArray().AsBuffer());
 
 ## Usage Example (JavaScript)
 
+### Installation
+
+Install the library using npm:
+
+```bash
+npm install ndef-library
+```
+
+### ES Module Import
+
+The library is distributed as ES modules for modern JavaScript applications:
+
+```javascript
+import { NdefMessage, NdefRecord, NdefUriRecord, NdefTextRecord, NdefSocialRecord, NfcSocialType } from 'ndef-library';
+```
+
 ### Create a URI Record:
 
 ```javascript
 // Create NDEF Message
-var ndefMessage = new NdefLibrary.NdefMessage();
+const ndefMessage = new NdefMessage();
 // Create NDEF Uri Record
-var ndefUriRecord = new NdefLibrary.NdefUriRecord();
-// Set Uri in record
-ndefUriRecord.setUri("https://www.mobilefactory.at");
+const ndefUriRecord = new NdefUriRecord("https://www.nfcinteractor.com");
 // Add record to message
 ndefMessage.push(ndefUriRecord);
 // Get byte array for NFC tag
-var byteArray = ndefMessage.toByteArray();
-``` 
+const byteArray = ndefMessage.toByteArray();
+```
 
+### Create Social Media Records:
+
+```javascript
+// Create social media records for modern platforms
+const xRecord = new NdefSocialRecord("username", NfcSocialType.X);          // X (formerly Twitter)
+const linkedinRecord = new NdefSocialRecord("andreasjakl", NfcSocialType.LinkedIn);
+const instagramRecord = new NdefSocialRecord("username", NfcSocialType.Instagram);
+const threadsRecord = new NdefSocialRecord("username", NfcSocialType.Threads);
+
+// Add to message
+const socialMessage = new NdefMessage([xRecord, linkedinRecord]);
+```
+
+### Web NFC API Integration:
+
+The library works seamlessly with the Web NFC API (Chrome for Android):
+
+```javascript
+// Writing to NFC tag
+const ndef = new NDEFReader();
+await ndef.write(message);
+
+// Reading from NFC tag
+await ndef.scan();
+ndef.onreading = event => {
+    const message = new NdefMessage(event.message.records.map(r => 
+        new NdefRecord(r.recordType, r.mediaType, r.data, r.id)));
+    console.log(message.records);
+};
+```
 
 ### Create a raw NDEF Message by defined input:
 
 ```javascript
-var recordType = new Array(1,3,1,3,5,6,7);
-var recordPayload = new Array(1,2,1);
-var id = new Array(3,3);
-var ndefRecord2 = new NdefLibrary.NdefRecord(NdefLibrary.NdefRecord.TypeNameFormatType.NfcRtd, recordType);
+const recordType = new Array(1,3,1,3,5,6,7);
+const recordPayload = new Array(1,2,1);
+const id = new Array(3,3);
+const ndefRecord2 = new NdefRecord(NdefRecord.TypeNameFormatType.NfcRtd, recordType);
 ndefRecord2.setPayload(recordPayload);
 ndefRecord2.setId(id);
 
-var ndefMessage = new NdefLibrary.NdefMessage();
+const ndefMessage = new NdefMessage();
 ndefMessage.push(ndefRecord2);
-var byteArray = ndefMessage.toByteArray();
-``` 
-
+const byteArray = ndefMessage.toByteArray();
+```
 
 ### Create a raw NDEF Message by byte array from NFC tag:
 
 ```javascript
-var ndefMessage = NdefLibrary.NdefMessage.fromByteArray(byteArray);
+const ndefMessage = NdefMessage.fromByteArray(byteArray);
 ``` 
 
 
@@ -228,10 +276,37 @@ You can also download the complete portable library project from the source cont
 
 ## Installation (JavaScript)
 
-The JavaScript library is available in two versions, both are available in the "dist" folder of the JavaScript project:
+The JavaScript library is designed for modern web applications and supports ES modules.
 
-* _ndeflibrary.js:_ complete version of the library, use for debugging & development
-* _ndeflibrary.min.js:_ minified version of the library, use for release 
+### NPM Installation
+
+Install the library using npm:
+
+```bash
+npm install ndef-library
+```
+
+### Browser Compatibility
+
+**Important**: The JavaScript library uses the Web NFC API, which is currently **only supported in Chrome for Android** (version 89+). Desktop browsers and other mobile browsers do not yet support the Web NFC API.
+
+### Demo Application
+
+The `NdefDemoJS` directory contains a modern demo application built with Vite that demonstrates:
+
+- Reading and writing NDEF messages using the Web NFC API
+- Creating various record types including social media records
+- Modern ES module architecture
+- Responsive design for mobile devices
+
+To run the demo:
+
+1. Navigate to the `NdefDemoJS` directory
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Access from your Android device using Chrome browser at `http://[YOUR_IP]:5173/src`
+
+For production deployment, build the demo with `npm run build` and deploy the `dist` folder to any web server with HTTPS support. 
 
 
 
@@ -290,11 +365,19 @@ The JavaScript library is available in two versions, both are available in the "
 
 ## Version History (JavaScript)
 
-### Known issues and limitations:
-* Text record does not support UTF-16 encoding yet.
-* Does not identify specialized types for URL records (e.g., Tel record)
-* Unit test issue: URL encoding of special characters not equivalent to C# output.
-* Unit test issue: UTF-16 text comparison with string.
+### 2.0.0 - September 2025
+* Complete modernization of the JavaScript library
+* Rebuilt as ES modules for modern web applications
+* Added comprehensive social media record support (X/Twitter, LinkedIn, Instagram, Threads, TikTok, Facebook)
+* Integration with Web NFC API for Chrome on Android
+* New Vite-based demo application with modern development workflow
+* Improved TypeScript support and better development experience
+* Enhanced documentation and examples
+
+### Known Browser Compatibility:
+* Web NFC API support is currently limited to Chrome for Android (version 89+)
+* Desktop browsers and other mobile browsers do not yet support the Web NFC API
+* HTTPS is required for Web NFC API in production environments
 
 ### 1.0.0 - Work in progress
 * Fixes for the compiled JavaScript library (include const to compiled version)
