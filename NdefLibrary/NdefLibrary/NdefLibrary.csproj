@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>4.1.0</Version>
+    <Version>5.0.0</Version>
     <Authors>Andreas Jakl</Authors>
     <Company>Andreas Jakl</Company>
     <Description>The Proximity APIs for NFC (Near Field Communication) in the Windows platform are compatible to NDEF (NFC Data Exchange Format) messages, which are used on NFC tags and to send data between two devices.
@@ -14,18 +14,25 @@ This NDEF Library provides a set of classes that enable you to easily work with 
 
 Further NDEF record classes that extend this library with platform integration are available in the NdefLibraryExtension NuGet package (e.g., to use business cards, iCalendar data or images).</Description>
     <Product>NFC / NDEF Library for Proximity APIs</Product>
-    <Copyright>Copyright 2012 - 2017 Andreas Jakl, https://www.nfcinteractor.com/</Copyright>
-    <PackageLicenseUrl>https://github.com/andijakl/ndef-nfc/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright 2012 - 2025 Andreas Jakl, https://www.nfcinteractor.com/</Copyright>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://andijakl.github.io/ndef-nfc/</PackageProjectUrl>
-    <PackageIconUrl>https://www.nfcinteractor.com/ndeflibrary.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/andijakl/ndef-nfc/</RepositoryUrl>
+    <PackageIcon>NdefLibraryLogo.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
     <PackageTags>nfc ndef proximity smart poster snep near field communication message record launchapp vcard vcf icalendar ical ics bluetooth handover</PackageTags>
-    <PackageReleaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated to netstandard2.1; modern NuGet metadata (SPDX license expression, embedded icon, readme); version 5.0.0.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>4.1.0.0</AssemblyVersion>
-    <FileVersion>4.1.0.0</FileVersion>
+    <AssemblyVersion>5.0.0.0</AssemblyVersion>
+    <FileVersion>5.0.0.0</FileVersion>
+    <PackageReadmeFile>README.NuGet.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\NdefLibraryLogo.png" Pack="true" PackagePath="" Visible="false" />
+    <None Include="README.NuGet.md" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Ndef\NdefExceptionMessages.Designer.cs">
