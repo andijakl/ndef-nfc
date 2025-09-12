@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <UseWinUI>true</UseWinUI>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>NdefLibraryWinApp</AssemblyName>
+    <RootNamespace>NdefLibraryWinApp</RootNamespace>
+    <Authors>Andreas Jakl</Authors>
+    <Company>Andreas Jakl</Company>
+    <Description>Windows App SDK (WinUI 3) extension helpers (formerly UWP extension) for the NDEF library: calendar, contacts and image conversions.</Description>
+    <PackageProjectUrl>https://andijakl.github.io/ndef-nfc/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/andijakl/ndef-nfc/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>nfc;ndef;proximity;windows;winappsdk;winui3;calendar;contacts;image;vcard;ical</PackageTags>
+    <PackageReleaseNotes>Migrated from UWP to Windows App SDK / WinUI 3. Updated namespaces and imaging APIs.</PackageReleaseNotes>
+    <Version>5.0.0</Version>
+    <AssemblyVersion>5.0.0.0</AssemblyVersion>
+    <FileVersion>5.0.0.0</FileVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NdefLibrary\NdefLibrary.csproj" />
+    <ProjectReference Include="..\VcardLibrary\VcardLibrary.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Ical.Net" Version="5.1.0" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240802000" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

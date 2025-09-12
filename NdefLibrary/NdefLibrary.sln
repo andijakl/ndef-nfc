@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
@@ -137,7 +137,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NdefLibrary", "NdefLibrary\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VcardLibrary", "VcardLibrary\VcardLibrary.csproj", "{78E74734-BD54-45DE-B000-C99F209CDD7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefLibraryUwp", "NdefLibraryUwp\NdefLibraryUwp.csproj", "{4FCE4089-C713-49CA-8326-9E1A49D12B65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdefLibraryWinApp", "NdefLibraryWinApp\\NdefLibraryWinApp.csproj", "{4FCE4089-C713-49CA-8326-9E1A49D12B65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
