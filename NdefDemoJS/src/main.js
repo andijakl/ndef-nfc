@@ -1,11 +1,11 @@
-import { NdefMessage, NdefRecord, NdefUriRecord, NdefTextRecord, NdefGeoRecord, NdefSocialRecord, NdefTelRecord, NdefAndroidAppRecord } from 'ndef-library';
+import { NdefMessage, NdefRecord, NdefUriRecord, NdefTextRecord, NdefGeoRecord, NdefSocialRecord, NdefTelRecord, NdefAndroidAppRecord, NfcSocialType } from 'ndef-library';
 
 const statusList = document.getElementById("statusList");
 const urlInput = document.getElementById("urlInput");
-const twitterInput = document.getElementById("twitterInput");
+const linkedinInput = document.getElementById("linkedinInput");
 const subscribeBtn = document.getElementById("subscribeBtn");
 const publishUriBtn = document.getElementById("publishUriBtn");
-const publishTwitterBtn = document.getElementById("publishTwitterBtn");
+const publishLinkedInBtn = document.getElementById("publishLinkedInBtn");
 const shareUriBtn = document.getElementById("shareUriBtn");
 
 let ndef = null;
@@ -64,9 +64,9 @@ function publishUri() {
     publish(message);
 }
 
-function publishTwitter() {
-    const twitterRecord = new NdefSocialRecord(twitterInput.value, 'twitter');
-    const message = new NdefMessage([twitterRecord]);
+function publishLinkedIn() {
+    const linkedinRecord = new NdefSocialRecord(linkedinInput.value, NfcSocialType.LinkedIn);
+    const message = new NdefMessage([linkedinRecord]);
     publish(message);
 }
 
@@ -88,7 +88,7 @@ async function shareUri() {
 
 subscribeBtn.addEventListener("click", subscribe);
 publishUriBtn.addEventListener("click", publishUri);
-publishTwitterBtn.addEventListener("click", publishTwitter);
+publishLinkedInBtn.addEventListener("click", publishLinkedIn);
 shareUriBtn.addEventListener("click", shareUri);
 
 if ('NDEFReader' in window) {

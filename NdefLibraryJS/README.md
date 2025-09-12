@@ -36,6 +36,23 @@ const uriRecord = new NdefUriRecord("https://www.example.com");
 const message = new NdefMessage([textRecord, uriRecord]);
 ```
 
+### Creating Social Media Records
+
+You can create social media records for various platforms:
+
+```javascript
+import { NdefSocialRecord, NfcSocialType } from 'ndef-library';
+
+// Create records for different social platforms
+const xRecord = new NdefSocialRecord("username", NfcSocialType.X);          // X (formerly Twitter)
+const linkedinRecord = new NdefSocialRecord("username", NfcSocialType.LinkedIn);
+const instagramRecord = new NdefSocialRecord("username", NfcSocialType.Instagram);
+const threadsRecord = new NdefSocialRecord("username", NfcSocialType.Threads);
+const tiktokRecord = new NdefSocialRecord("username", NfcSocialType.TikTok);
+
+const socialMessage = new NdefMessage([xRecord, linkedinRecord]);
+```
+
 ### Writing an NDEF Message
 
 You can use the Web NFC API to write an NDEF message to an NFC tag:
@@ -67,7 +84,7 @@ The library provides the following classes:
 *   `NdefUriRecord`: A record that contains a URI.
 *   `NdefTextRecord`: A record that contains a text string.
 *   `NdefGeoRecord`: A record that contains a geographic coordinate.
-*   `NdefSocialRecord`: A record that contains a social network link.
+*   `NdefSocialRecord`: A record that contains a social network link. Supports X (formerly Twitter), LinkedIn, Facebook, Instagram, Threads, and TikTok.
 *   `NdefTelRecord`: A record that contains a telephone number.
 *   `NdefAndroidAppRecord`: A record that contains an Android Application Record (AAR).
 
@@ -87,13 +104,21 @@ To run the demo on your Android phone:
    * Navigate to the `NdefDemoJS` directory on your development machine.
    * Install the dependencies: `npm install`
    * Start the development server: `npm run dev`
+   * The server will start on port 5173 and be accessible from other devices on your network.
 
 2. **Access the demo from your Android device:**
    * Make sure your Android device and development machine are on the same network.
-   * Find your development machine's IP address (e.g., `192.168.1.100`).
+   * Find your development machine's IP address:
+     * On Windows: Open Command Prompt and run `ipconfig` (look for IPv4 Address)
+     * On Mac/Linux: Run `ifconfig` or `ip addr show`
    * On your Android device, open **Chrome** browser.
    * Navigate to `http://[YOUR_IP_ADDRESS]:5173/src` (replace `[YOUR_IP_ADDRESS]` with your actual IP).
    * For example: `http://192.168.1.100:5173/src`
+
+   **Troubleshooting network access:**
+   * If you can't access the server from other devices, check your firewall settings.
+   * On Windows, you may need to allow the Node.js application through Windows Defender Firewall.
+   * Ensure your network allows communication between devices (some public networks block this).
 
 3. **Enable NFC on your Android device:**
    * Go to **Settings > Connected devices > Connection preferences > NFC** (path may vary by device).

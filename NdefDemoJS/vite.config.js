@@ -5,5 +5,9 @@ export default defineConfig({
   build: {
     outDir: '../dist',
     emptyOutDir: true
+  },
+  server: {
+    host: '0.0.0.0', // Allow external connections
+    port: 5173
   }
 })

@@ -1,31 +1,25 @@
 import { NdefUriRecord } from './NdefUriRecord.js';
 
 export const NfcSocialType = {
-    Twitter: 0,
+    X: 0,           // Formerly Twitter
     LinkedIn: 1,
     Facebook: 2,
-    Xing: 3,
-    VKontakte: 4,
-    FoursquareWeb: 5,
-    FoursquareApp: 6,
-    Skype: 7,
-    GooglePlus: 8
+    Instagram: 3,
+    Threads: 4,
+    TikTok: 5
 };
 
 const SOCIAL_TAG_TYPE_URIS = [
-    "http://twitter.com/{0}",
-    "http://linkedin.com/in/{0}",
-    "http://facebook.com/{0}",
-    "http://xing.com/profile/{0}",
-    "http://vkontakte.ru/{0}",
-    "http://m.foursquare.com/v/{0}",
-    "foursquare://venues/{0}",
-    "skype:{0}?call",
-    "https://plus.google.com/{0}"
+    "https://x.com/{0}",                    // X (formerly Twitter)
+    "https://linkedin.com/in/{0}",         // LinkedIn
+    "https://facebook.com/{0}",            // Facebook
+    "https://instagram.com/{0}",           // Instagram
+    "https://threads.net/@{0}",            // Threads
+    "https://tiktok.com/@{0}"              // TikTok
 ];
 
 export class NdefSocialRecord extends NdefUriRecord {
-    constructor(socialUserName, socialType = NfcSocialType.Twitter) {
+    constructor(socialUserName, socialType = NfcSocialType.X) {
         super();
         this.socialUserName = socialUserName;
         this.socialType = socialType;
