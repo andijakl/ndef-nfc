@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    margin: 2em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.section {
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+h1, h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5em;
+}
+
+button {
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+input {
+    padding: 0.5em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+#statusList {
+    list-style: none;
+    padding: 0;
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+}
