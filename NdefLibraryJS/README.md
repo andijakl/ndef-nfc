@@ -73,11 +73,44 @@ The library provides the following classes:
 
 ## Demo Application
 
-The `NdefDemoJS` directory contains a demo application that shows how to use the library. To run the demo:
+The `NdefDemoJS` directory contains a demo application that shows how to use the library with the Web NFC API.
 
-1.  Navigate to the `NdefDemoJS` directory.
-2.  Install the dependencies: `npm install`
-3.  Start the development server: `npm run dev`
-4.  Open your browser and navigate to `http://localhost:5173/src`.
+### Browser Compatibility
 
-You will need a browser that supports the Web NFC API and an NFC-enabled device to test the demo.
+**Important**: The Web NFC API is currently only supported in **Chrome for Android** (version 89+). This means the demo application will only work on Android devices using the Chrome browser. Desktop browsers (including Chrome on Windows/Mac/Linux) and other mobile browsers (Safari, Firefox, Samsung Internet, etc.) do not support the Web NFC API.
+
+### Running the Demo on Chrome for Android
+
+To run the demo on your Android phone:
+
+1. **Set up the development environment:**
+   * Navigate to the `NdefDemoJS` directory on your development machine.
+   * Install the dependencies: `npm install`
+   * Start the development server: `npm run dev`
+
+2. **Access the demo from your Android device:**
+   * Make sure your Android device and development machine are on the same network.
+   * Find your development machine's IP address (e.g., `192.168.1.100`).
+   * On your Android device, open **Chrome** browser.
+   * Navigate to `http://[YOUR_IP_ADDRESS]:5173/src` (replace `[YOUR_IP_ADDRESS]` with your actual IP).
+   * For example: `http://192.168.1.100:5173/src`
+
+3. **Enable NFC on your Android device:**
+   * Go to **Settings > Connected devices > Connection preferences > NFC** (path may vary by device).
+   * Turn on **NFC**.
+
+4. **Test the demo:**
+   * The demo will show whether Web NFC is supported.
+   * Use the "Subscribe for NDEF" button to start listening for NFC tags.
+   * Use the "Publish" buttons to write data to NFC tags.
+   * You'll need physical NFC tags to test the read/write functionality.
+
+### Alternative: Build and Deploy
+
+For a production setup, you can build the demo and deploy it to a web server:
+
+1. Build the demo: `npm run build`
+2. Deploy the `dist` folder to any web server accessible from your Android device.
+3. Access the deployed URL using Chrome on your Android device.
+
+**Note**: HTTPS is required for the Web NFC API to work in production environments.
