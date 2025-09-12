@@ -1,6 +1,14 @@
 NDEF Library for Proximity APIs / NFC
 ========
 
+## .NET 8 Version
+
+This repository now contains a modernized version of the NDEF Library, updated to target .NET 8. The original library was targeted for .NET Standard 1.4 and had dependencies on UWP. This version removes all UWP dependencies and is fully cross-platform.
+
+The updated library is located in the `NdefLibrary/NdefLibrary.NET` and `NdefLibrary/VcardLibrary.NET` directories.
+
+**Note:** The WinUI 3 sample application is not included in this branch due to limitations in the development environment. The original UWP application is still available in the `NdefDemo` directory.
+
 Easily parse and create NFC tags that contain standard-based NDEF messages.
 
 Available in C# and JavaScript (for HTML5-based apps).
