@@ -54,6 +54,7 @@
   </Applications>
 
   <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
     <Capability Name="internetClient" />
     <DeviceCapability Name="proximity" />
   </Capabilities>

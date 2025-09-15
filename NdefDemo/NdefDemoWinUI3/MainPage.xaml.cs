@@ -789,6 +789,47 @@ namespace NdefDemoWinUI3
              });
             return Task.CompletedTask;
         }
+
+        /// <summary>
+        /// Test method to verify image handling functionality works correctly with WinUI 3
+        /// </summary>
+        private async Task<bool> TestImageHandlingAsync()
+        {
+            try
+            {
+                // Test with a demo image from the Assets folder
+                var demoImagePath = System.IO.Path.Combine(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, 
+                    "Assets", "DemoImages", "minimal.png");
+                
+                if (System.IO.File.Exists(demoImagePath))
+                {
+                    // Create an NDEF image record from the demo file
+                    var imageRecord = NdefMimeImageRecord.CreateFromFile(demoImagePath);
+                    
+                    // Test the conversion to BitmapImage
+                    var ndefImage = imageRecord.GetImage();
+                    if (ndefImage != null)
+                    {
+                        var bitmapImage = await ConvertNdefImageToBitmap(ndefImage);
+                        if (bitmapImage != null)
+                        {
+                            // Test displaying the image
+                            SetStatusImage(bitmapImage);
+                            SetStatusOutput("Image handling test successful - demo image displayed");
+                            return true;
+                        }
+                    }
+                }
+                
+                SetStatusOutput("Image handling test failed - could not process demo image");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                SetStatusOutput($"Image handling test failed with exception: {ex.Message}");
+                return false;
+            }
+        }
         #endregion
 
         private void AboutButton_Tapped(object sender, TappedRoutedEventArgs e)
