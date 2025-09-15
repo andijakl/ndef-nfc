@@ -6,13 +6,113 @@
     xmlns:local="using:NdefDemoWinUI3"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="NFC / NDEF Demo - WinUI 3" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" 
-                   FontSize="24" />
-    </Grid>
+    <SplitView x:Name="MainSplitView" PanePlacement="Right" DisplayMode="Overlay" IsPaneOpen="False">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="LayoutVisualStateGroup">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainPageItem.LeftColumnWidth" Value="210"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainPageItem.LeftColumnWidth" Value="140"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <SplitView.Content>
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Status & Menu -->
+                <Rectangle Grid.Row="0" Fill="{StaticResource CustomAccentBrush}"/>
+                <Grid Grid.Row="0" x:Name="StatusMsgArea">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- Status -->
+                    <TextBlock Grid.Column="0" TextWrapping="Wrap" 
+                               x:Uid="Status" Style="{StaticResource InfoTextBlockStyle}" 
+                               Foreground="{ThemeResource SystemControlHighlightAltAltHighBrush}"/>
+                    <TextBlock Grid.Column="1"
+                       x:Name="StatusOutput" TextWrapping="Wrap" Text="{Binding StatusText}" Style="{StaticResource InfoTextBlockStyle}" 
+                       Foreground="{ThemeResource SystemControlHighlightAltAltHighBrush}"/>
+                    <Image Grid.Column="2" x:Uid="StatusImg" x:Name="StatusImg" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                    <!-- Toggle about view -->
+                    <ToggleButton x:Name="TogglePaneButton" Grid.Column="3" 
+                                  TabIndex="1"
+                                  Content="&#xE11B;"
+                                  Style="{StaticResource SplitViewTogglePaneButtonStyle}"
+                                  IsChecked="{Binding IsPaneOpen, ElementName=MainSplitView, Mode=TwoWay}"
+                                  AutomationProperties.Name="About"
+                                  ToolTipService.ToolTip="About" />
+                </Grid>
+
+                <ScrollViewer Grid.Row="1" Margin="0,0,0,0">
+                    <StackPanel Orientation="Vertical" Margin="12,0,12,0">
+
+                        <TextBlock x:Uid="Initialization" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,0,20"/>
+                        <Button x:Name="BtnInitNfc" x:Uid="BtnInitNfc" Click="BtnInitNfc_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <TextBlock x:Uid="Subscriptions" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,10,0,20"/>
+                        <Button x:Name="BtnSubscribeNdef" x:Uid="BtnSubscribeNdef" Click="BtnSubscribeNdef_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnStopSubscription" x:Uid="BtnStopSubscription" Click="BtnStopSubscription_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <TextBlock x:Uid="Publishing" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,10,0,20"/>
+                        <Button x:Name="BtnWriteBusinessCard" x:Uid="BtnWriteBusinessCard" Click="BtnWriteBusinessCard_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnWriteMailTo" x:Uid="BtnWriteMailTo" Click="BtnWriteMailTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnWriteImage" x:Uid="BtnWriteImage" Click="BtnWriteImageTo_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnWriteWindowsSettings" x:Uid="BtnWriteWindowsSettings" Click="BtnWriteWindowsSettings_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnWriteMaps" x:Uid="BtnWriteMaps" Click="BtnWriteMaps_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnPublishUri" x:Uid="BtnPublishUri" Click="BtnPublishUri_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnWriteLaunchApp" x:Uid="BtnWriteLaunchApp" Click="BtnWriteLaunchApp_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <Button x:Name="BtnLockTag" x:Uid="BtnLockTag" Click="BtnLockTag_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                        <!--<Button x:Name="BtnPublishIcalendar" x:Uid="BtnPublishIcalendar" Click="BtnPublishIcalendar_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />-->
+                        <Button x:Name="BtnStopPublication" x:Uid="BtnStopPublication" Click="BtnStopPublication_Click" HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </SplitView.Content>
+
+        <SplitView.Pane >
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical">
+                    <Grid Tapped="AboutButton_Tapped">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" x:Uid="Info" Style="{StaticResource BeaconTypeTextBlockStyle}"/>
+                    </Grid>
+                    <TextBlock x:Uid="Instructions" Style="{StaticResource InfoTextBlockStyle}" />
+                    <TextBlock x:Uid="About" Style="{StaticResource BeaconTypeTextBlockStyle}"/>
+                    <TextBlock x:Uid="AboutText1" Style="{StaticResource InfoTextBlockStyle}" />
+                    <HyperlinkButton x:Uid="TwitterButton" Style="{StaticResource HyperlinkStyle}"/>
+                    <HyperlinkButton x:Uid="BlogButton" Style="{StaticResource HyperlinkStyle}"/>
+                    <HyperlinkButton x:Uid="ContactEmailButton" Style="{StaticResource HyperlinkStyle}"/>
+                    <TextBlock x:Uid="AboutText2" Style="{StaticResource InfoTextBlockStyle}" />
+                    <HyperlinkButton x:Uid="LibraryUrlButton" Style="{StaticResource HyperlinkStyle}"/>
+                    <TextBlock x:Uid="Privacy" Style="{StaticResource BeaconTypeTextBlockStyle}"/>
+                    <TextBlock x:Uid="PrivacyText" Style="{StaticResource InfoTextBlockStyle}" />
+                    <TextBlock x:Uid="Terms" Style="{StaticResource BeaconTypeTextBlockStyle}"/>
+                    <TextBlock x:Uid="TermsText" Style="{StaticResource InfoTextBlockStyle}" />
+                </StackPanel>
+            </ScrollViewer>
+        </SplitView.Pane>
+    </SplitView>
+
 </Page>

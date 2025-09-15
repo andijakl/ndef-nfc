@@ -48,7 +48,8 @@ namespace NdefDemoWinUI3
         /// <param name="e">Details about the navigation failure</param>
         private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+            var pageTypeName = e.SourcePageType?.FullName ?? "Unknown";
+            throw new InvalidOperationException($"Failed to load Page {pageTypeName}", e.Exception);
         }
     }
 }

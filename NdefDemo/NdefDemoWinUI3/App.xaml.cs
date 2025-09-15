@@ -52,6 +52,10 @@ namespace NdefDemoWinUI3
             m_window.Activate();
         }
 
-        private Window m_window;
+        private Window? m_window;
+        
+        public Window? MainWindow => m_window;
+        
+        public new static App Current => (App)Application.Current;
     }
 }
