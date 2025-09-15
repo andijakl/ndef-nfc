@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutText.Text" xml:space="preserve">
+    <value>This simple code example for developers demonstrates how to write NFC code using the NDEF library. You can download the open source library using the NuGet package manager to directly integrate it into your project. For a fully featured tag reader / writer app, install NFC interactor for Windows Phone.</value>
+  </data>
+  <data name="AboutText1.Text" xml:space="preserve">
+    <value>Developed by Andreas Jakl.</value>
+  </data>
+  <data name="AboutText2.Text" xml:space="preserve">
+    <value>Download the open source NFC / NDEF library for Windows from:</value>
+  </data>
+  <data name="AboutTextTitle.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutTwitterButton.Content" xml:space="preserve">
+    <value>For Updates: Twitter</value>
+  </data>
+  <data name="AboutTwitterUri" xml:space="preserve">
+    <value>https://twitter.com/andijakl</value>
+  </data>
+  <data name="Actions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ApplicationTitle.Text" xml:space="preserve">
+    <value>NFC NDEF Demo</value>
+  </data>
+  <data name="BlogButton.Content" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="BlogButton.NavigateUri" xml:space="preserve">
+    <value>https://www.andreasjakl.com</value>
+  </data>
+  <data name="BtnInitNfc.Content" xml:space="preserve">
+    <value>Initialize NFC</value>
+  </data>
+  <data name="BtnLockTag.Content" xml:space="preserve">
+    <value>Lock NFC Tag</value>
+  </data>
+  <data name="BtnPublishIcalendar.Content" xml:space="preserve">
+    <value>Publish iCalendar (.ics) to Devices</value>
+  </data>
+  <data name="BtnPublishUri.Content" xml:space="preserve">
+    <value>Publish URI to Devices</value>
+  </data>
+  <data name="BtnStopPublication.Content" xml:space="preserve">
+    <value>Stop Publication</value>
+  </data>
+  <data name="BtnStopSubscription.Content" xml:space="preserve">
+    <value>Stop Subscription</value>
+  </data>
+  <data name="BtnSubscribeNdef.Content" xml:space="preserve">
+    <value>Subscribe for NDEF messages</value>
+  </data>
+  <data name="BtnWriteBusinessCard.Content" xml:space="preserve">
+    <value>Write Business Card Tag</value>
+  </data>
+  <data name="BtnWriteImage.Content" xml:space="preserve">
+    <value>Write PNG image tag</value>
+  </data>
+  <data name="BtnWriteLaunchApp.Content" xml:space="preserve">
+    <value>Write LaunchApp Tag</value>
+  </data>
+  <data name="BtnWriteMailTo.Content" xml:space="preserve">
+    <value>Write MailTo Tag</value>
+  </data>
+  <data name="BtnWriteMaps.Content" xml:space="preserve">
+    <value>Write Maps Tag (Windows Drive To)</value>
+  </data>
+  <data name="BtnWriteWindowsSettings.Content" xml:space="preserve">
+    <value>Write Windows 10 Settings Tag</value>
+  </data>
+  <data name="ContactEmailButton.Content" xml:space="preserve">
+    <value>Contact per email</value>
+  </data>
+  <data name="ContactEmailButton.NavigateUri" xml:space="preserve">
+    <value>mailto:andreas.jakl@live.com</value>
+  </data>
+  <data name="DeviceArrived" xml:space="preserve">
+    <value>Device Arrived</value>
+  </data>
+  <data name="DeviceDeparted" xml:space="preserve">
+    <value>Device Departed</value>
+  </data>
+  <data name="Info.Text" xml:space="preserve">
+    <value>&lt; Info</value>
+  </data>
+  <data name="Initialization.Text" xml:space="preserve">
+    <value>Initialization</value>
+  </data>
+  <data name="Instructions.Text" xml:space="preserve">
+    <value>This example app demonstrates the NDEF library for Proximity APIs.
+
+After initializing NFC, you can use the app to subscribe for NDEF messages - tapping a tag will parse four of the NDEF records supported by the NDEF library: URI, MailTo, Smart Poster, LaunchApp.
+
+You can also write a message to a tag or publish it to another device. Windows Phone can write to NDEF formatted NFC Forum Type 1 - 4 tags. To publish messages, the other device needs to support the standardized SNEP protcol.</value>
+  </data>
+  <data name="InstructionsTitle.Text" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="InvalidNdef" xml:space="preserve">
+    <value>Invalid NDEF message received. {0}</value>
+  </data>
+  <data name="LibraryUrlButton.Content" xml:space="preserve">
+    <value>github.com/andijakl/ndef-nfc</value>
+  </data>
+  <data name="LibraryUrlButton.NavigateUri" xml:space="preserve">
+    <value>https://github.com/andijakl/ndef-nfc</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>Instructions &amp; About</value>
+  </data>
+  <data name="PageTitleAbout" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="PageTitleMain" xml:space="preserve">
+    <value>nfc tests</value>
+  </data>
+  <data name="Privacy.Text" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="PrivacyText.Text" xml:space="preserve">
+    <value>The app does not store, collect or transmit any personally identifiable data.</value>
+  </data>
+  <data name="Publishing.Text" xml:space="preserve">
+    <value>Publishing</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+  </data>
+  <data name="SettingsFlyout.Title" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Status.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusInitFailed" xml:space="preserve">
+    <value>Failed to initialize proximity device</value>
+  </data>
+  <data name="StatusInitialized" xml:space="preserve">
+    <value>Successfully initialized proximity device</value>
+  </data>
+  <data name="StatusLaunchedFromTag" xml:space="preserve">
+    <value>Launched app with LaunchApp tag. Arguments: "{0}"</value>
+  </data>
+  <data name="StatusLockingNotSupported" xml:space="preserve">
+    <value>Your device does not support locking NFC tags ({0})</value>
+  </data>
+  <data name="StatusLockingTag" xml:space="preserve">
+    <value>Tap a tag to lock / write protect it (warning: irreversible!)</value>
+  </data>
+  <data name="StatusMessageWritten" xml:space="preserve">
+    <value>Success: message published!</value>
+  </data>
+  <data name="StatusNfcParsingError" xml:space="preserve">
+    <value>Error when parsing NFC data: {0}</value>
+  </data>
+  <data name="StatusPublicationError" xml:space="preserve">
+    <value>There was an error publishing this message: {0}</value>
+  </data>
+  <data name="StatusPublicationStopped" xml:space="preserve">
+    <value>Stopped publishing a message</value>
+  </data>
+  <data name="StatusSubscribed" xml:space="preserve">
+    <value>Subscribed for NDEF messages (subscription ID: {0})</value>
+  </data>
+  <data name="StatusSubscriptionStopped" xml:space="preserve">
+    <value>Stopped subscription for NDEF messages</value>
+  </data>
+  <data name="StatusTagParsed" xml:space="preserve">
+    <value>Tag parsed: {0}</value>
+  </data>
+  <data name="StatusText.Text" xml:space="preserve">
+    <value>Tap the "Initialize NFC" button to start NFC</value>
+  </data>
+  <data name="StatusWriteToDevice" xml:space="preserve">
+    <value>Tap a device to write the message (size: {0} bytes, publication ID: {1})</value>
+  </data>
+  <data name="StatusWriteToTag" xml:space="preserve">
+    <value>Tap a tag to write the message (size: {0} bytes, publication ID: {1})</value>
+  </data>
+  <data name="Subscriptions.Text" xml:space="preserve">
+    <value>Subscriptions</value>
+  </data>
+  <data name="Terms.Text" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="TermsText.Text" xml:space="preserve">
+    <value>This application is an open source sample for the NDEF Library for Proximity APIs / NFC.</value>
+  </data>
+  <data name="TwitterButton.Content" xml:space="preserve">
+    <value>Follow on Twitter</value>
+  </data>
+  <data name="TwitterButton.NavigateUri" xml:space="preserve">
+    <value>https://twitter.com/andijakl</value>
+  </data>
+</root>
