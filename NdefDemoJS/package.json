@@ -8,7 +8,7 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.1.5"
+    "vite": "^7.1.11"
   },
   "dependencies": {
     "ndef-library": "file:../NdefLibraryJS"
