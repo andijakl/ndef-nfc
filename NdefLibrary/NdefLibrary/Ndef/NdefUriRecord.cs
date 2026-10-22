@@ -166,7 +166,7 @@ namespace NdefLibrary.Ndef
                 var useAbbreviation = 0;
                 for (var i = 1; i < Abbreviations.Length; i++)
                 {
-                    if (uriString.StartsWith(Abbreviations[i]))
+                    if (uriString.StartsWith(Abbreviations[i], StringComparison.Ordinal))
                     {
                         useAbbreviation = i;
                         break;

@@ -43,7 +43,7 @@ namespace NdefLibrary.Ndef
     /// This record is usually written on static NFC tags that facilitate Bluetooth
     /// handover, as found in speakers or headsets. It enables devices to 
     /// establish a Bluetooth connection by tapping the NFC tag, without
-    /// having to manually start a device & service search.
+    /// having to manually start a device &amp; service search.
     /// 
     /// The record has to define at least the Bluetooth device address. 
     /// In addition, it usually contains additional optional Bluetooth OOB
@@ -206,7 +206,7 @@ namespace NdefLibrary.Ndef
         /// </summary>
         /// <remarks>
         /// The Hash C should be generated anew for each pairing - this is usually
-        /// not possible on passive & static NFC Forum tags.
+        /// not possible on passive &amp; static NFC Forum tags.
         /// </remarks>
         public byte[] SimplePairingHashC
         {

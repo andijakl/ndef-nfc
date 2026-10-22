@@ -28,7 +28,8 @@ export class NdefGeoRecord extends NdefUriRecord {
     }
 
     updatePayload() {
-        if (!this.latitude || !this.longitude) {
+        // 0 is a valid coordinate (equator / prime meridian)
+        if (this.latitude == null || this.longitude == null) {
             return;
         }
         const base = GEO_TAG_TYPE_URIS[this.geoType];

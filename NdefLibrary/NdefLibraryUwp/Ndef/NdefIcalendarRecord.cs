@@ -67,7 +67,7 @@ namespace NdefLibraryUwp.Ndef
     /// Note that the iCalendar standard is a cross-platform calendar standard and not
     /// to be confused with Apple's iCal.
     /// 
-    /// <see cref="http://www.ietf.org/rfc/rfc2445.txt"/>
+    /// <see href="http://www.ietf.org/rfc/rfc2445.txt"/>
     /// </remarks>
     public class NdefIcalendarRecord : NdefIcalendarRecordBase
     {
@@ -89,7 +89,7 @@ namespace NdefLibraryUwp.Ndef
         /// The product ID is mandatory for an ics file according to the specification.
         /// If you do not set this from your app, a default product ID will be used.
         /// See the official iCalendar specification for further details.
-        /// <see cref="http://www.ietf.org/rfc/rfc2445.txt"/>
+        /// <see href="http://www.ietf.org/rfc/rfc2445.txt"/>
         /// </summary>
         public string ProductId
         {
@@ -160,14 +160,25 @@ namespace NdefLibraryUwp.Ndef
             // Event description and main properties
             evt.Summary = ap.Subject;
             evt.Description = ap.Details;
-            evt.Organizer = new Organizer(ap.Organizer.Address) { CommonName = ap.Organizer.DisplayName };
+            if (ap.Organizer != null)
+            {
+                evt.Organizer = new Organizer(ap.Organizer.Address) { CommonName = ap.Organizer.DisplayName };
+            }
             evt.Url = ap.Uri;
 
             // Time
-            evt.Start = new CalDateTime(ap.StartTime.UtcDateTime, TimeZoneInfo.Utc.Id);
-            evt.Duration = ap.Duration;
-            evt.IsAllDay = ap.AllDay;
-            
+            if (ap.AllDay)
+            {
+                // iCalendar represents all-day events through a start value without time
+                evt.Start = new CalDateTime(DateOnly.FromDateTime(ap.StartTime.Date));
+                evt.Duration = Duration.FromDays(Math.Max(1, (int)Math.Round(ap.Duration.TotalDays)));
+            }
+            else
+            {
+                evt.Start = new CalDateTime(ap.StartTime.UtcDateTime, TimeZoneInfo.Utc.Id);
+                evt.Duration = Duration.FromTimeSpanExact(ap.Duration);
+            }
+
             // Location
             evt.Location = ap.Location;
             
@@ -180,7 +191,7 @@ namespace NdefLibraryUwp.Ndef
                 evt.Alarms.Add(new Alarm
                 {
                     //Duration = ap.Reminder,
-                    Trigger = new Trigger(reminderSource),
+                    Trigger = new Trigger(Duration.FromTimeSpanExact(reminderSource)),
                     //Action = AlarmAction.Audio,
                     //Description = "Reminder"
                 });
@@ -220,7 +231,7 @@ namespace NdefLibraryUwp.Ndef
 
                         // Time
                         StartTime = evt.Start.AsUtc,
-                        Duration = evt.Duration,
+                        Duration = evt.EffectiveDuration.ToTimeSpan(evt.Start),
                         AllDay = evt.IsAllDay,
 
                         // Location
@@ -244,7 +255,7 @@ namespace NdefLibraryUwp.Ndef
                     // Reminder
                     if (evt.Alarms != null && evt.Alarms.Count > 0)
                     {
-                        ap.Reminder =  evt.Alarms.First().Trigger.Duration;
+                        ap.Reminder = evt.Alarms.First().Trigger?.Duration?.ToTimeSpanUnspecified();
                     }
                         
                     AppointmentData = ap;

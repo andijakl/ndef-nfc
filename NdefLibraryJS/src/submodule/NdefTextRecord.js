@@ -10,7 +10,7 @@ export class NdefTextRecord extends NdefRecord {
 
     constructor(text, languageCode = "en", encoding = TextEncodingType.Utf8) {
         super(TypeNameFormatType.NfcRtd, NdefTextRecord.TEXT_TYPE);
-        if (text) {
+        if (text != null) {
             this.setText(text, languageCode, encoding);
         }
     }
@@ -52,7 +52,8 @@ export class NdefTextRecord extends NdefRecord {
 
     setText(text, languageCode = "en", encoding = TextEncodingType.Utf8) {
         const encodedLanguage = new TextEncoder().encode(languageCode);
-        const encodedText = new TextEncoder().encode(text);
+        // TextEncoder only supports UTF-8
+        const encodedText = encoding === TextEncodingType.Utf16 ? encodeUtf16BE(text) : new TextEncoder().encode(text);
 
         const payloadLength = 1 + encodedLanguage.length + encodedText.length;
         const payload = new Uint8Array(payloadLength);
@@ -68,4 +69,19 @@ export class NdefTextRecord extends NdefRecord {
 
         this.setPayload(payload);
     }
+}
+
+/**
+ * Encodes a string as UTF-16 big endian (the byte order mandated by the NFC Forum Text RTD).
+ * @param {string} text
+ * @returns {Uint8Array}
+ */
+function encodeUtf16BE(text) {
+    const bytes = new Uint8Array(text.length * 2);
+    for (let i = 0; i < text.length; i++) {
+        const codeUnit = text.charCodeAt(i);
+        bytes[i * 2] = codeUnit >> 8;
+        bytes[i * 2 + 1] = codeUnit & 0xff;
+    }
+    return bytes;
 }

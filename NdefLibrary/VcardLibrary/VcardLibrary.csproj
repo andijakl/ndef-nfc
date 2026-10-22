@@ -1,19 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
-    <Version>4.0.0</Version>
+    <TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
+    <Version>5.0.0</Version>
     <Authors>David Pinch, Andreas Jakl</Authors>
-    <Product>vCard Library for .NET, ported to .net standard by Andreas Jakl</Product>
-    <Description>This is a simple library for manipulating vCards.  A vCard is used to exchange contact information (e.g. to import into Microsoft Outlook or download from the web into a suitable PIM application).  All code is released under the LGPL for free use and with full permission to use with commercial software.</Description>
-    <Copyright>Copyright (C) 2007 David Pinch (dave@thoughtproject.com), 2017 Andreas Jakl</Copyright>
-    <PackageProjectUrl>https://github.com/andijakl/ndef-nfc/tree/master/NdefLibrary/VcardLibrary</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/andijakl/ndef-nfc/tree/master/NdefLibrary/VcardLibrary</RepositoryUrl>
     <Company />
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>4.1.0.0</AssemblyVersion>
-    <FileVersion>4.1.0.0</FileVersion>
+    <Product>vCard Library for .NET, ported to .NET Standard by Andreas Jakl</Product>
+    <Description>This is a simple library for manipulating vCards.  A vCard is used to exchange contact information (e.g. to import into Microsoft Outlook or download from the web into a suitable PIM application).  All code is released under the LGPL for free use and with full permission to use with commercial software.</Description>
+    <Copyright>Copyright (C) 2007 David Pinch (dave@thoughtproject.com), 2017 - 2026 Andreas Jakl</Copyright>
+    <!-- Not published on its own: shipped inside the NdefLibraryExtension package -->
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

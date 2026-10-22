@@ -21,9 +21,7 @@ describe('Message Parsing Integration Tests', () => {
             const parsedRecord = parsedMessage.records[0];
             expect(parsedRecord.getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
             expect(Array.from(parsedRecord.getType())).toEqual([0x55]); // 'U' type
-            
-            // Note: Due to parsing implementation issues, we verify basic structure
-            expect(parsedRecord.getPayload().length).toBeGreaterThan(0);
+            expect(Array.from(parsedRecord.getPayload())).toEqual(Array.from(originalUri.getPayload()));
         });
 
         test('should handle single text record round-trip', () => {
@@ -127,20 +125,18 @@ describe('Message Parsing Integration Tests', () => {
             // Verify MB and ME flags in serialization
             expect(bytes[0] & 0x80).toBe(0x80); // First record should have MB flag
             
-            // Find second record start (this is approximate due to parsing issues)
-            let secondRecordStart = 3 + 1; // Skip first record header
-            secondRecordStart += uriRecord.getPayload().length; // Skip first record payload
-            
-            if (secondRecordStart < bytes.length) {
-                expect(bytes[secondRecordStart] & 0x40).toBe(0x40); // Second record should have ME flag
-            }
-            
+            // Second record starts after the first record's header (flags, type length, payload length, type) and payload
+            const secondRecordStart = 4 + uriRecord.getPayload().length;
+            expect(bytes[secondRecordStart] & 0x40).toBe(0x40); // Second record should have ME flag
+
             // Parse back from bytes
             const parsedMessage = NdefMessage.fromByteArray(bytes);
-            
-            // Due to parsing implementation issues, we verify basic structure
-            expect(parsedMessage.length).toBeGreaterThanOrEqual(1);
-            expect(parsedMessage.records[0].getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
+
+            expect(parsedMessage.length).toBe(2);
+            expect(NdefUriRecord.isRecordType(parsedMessage.records[0])).toBe(true);
+            expect(NdefTextRecord.isRecordType(parsedMessage.records[1])).toBe(true);
+            expect(Array.from(parsedMessage.records[0].getPayload())).toEqual(Array.from(uriRecord.getPayload()));
+            expect(Array.from(parsedMessage.records[1].getPayload())).toEqual(Array.from(textRecord.getPayload()));
         });
 
         test('should parse message with three records', () => {
@@ -160,9 +156,11 @@ describe('Message Parsing Integration Tests', () => {
             // Parse back from bytes
             const parsedMessage = NdefMessage.fromByteArray(bytes);
             
-            // Due to parsing issues, we verify at least one record is parsed
-            expect(parsedMessage.length).toBeGreaterThanOrEqual(1);
-            expect(parsedMessage.records[0].getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
+            expect(parsedMessage.length).toBe(3);
+            [record1, record2, record3].forEach((original, index) => {
+                expect(Array.from(parsedMessage.records[index].getType())).toEqual(original.getType());
+                expect(Array.from(parsedMessage.records[index].getPayload())).toEqual(original.getPayload());
+            });
         });
 
         test('should handle message with mixed record sizes', () => {
@@ -225,30 +223,30 @@ describe('Message Parsing Integration Tests', () => {
         test('should handle single byte array', () => {
             const singleByte = new Uint8Array([0xD0]); // Just flags
             
-            // This should not crash, though behavior may be undefined
+            // Truncated data is rejected instead of returning garbage records
             expect(() => {
-                const message = NdefMessage.fromByteArray(singleByte);
-            }).not.toThrow();
+                NdefMessage.fromByteArray(singleByte);
+            }).toThrow(/Invalid NDEF message/);
         });
 
         test('should handle truncated header', () => {
             // Incomplete header (missing payload length)
             const truncatedHeader = new Uint8Array([0xD1, 0x01]); // flags, type_len but no payload_len
             
-            // Should not crash
+            // Truncated data is rejected
             expect(() => {
-                const message = NdefMessage.fromByteArray(truncatedHeader);
-            }).not.toThrow();
+                NdefMessage.fromByteArray(truncatedHeader);
+            }).toThrow(/Invalid NDEF message/);
         });
 
         test('should handle header with missing payload data', () => {
             // Complete header but missing payload
             const headerOnly = new Uint8Array([0xD1, 0x01, 0x05, 0x54]); // Says payload is 5 bytes but none provided
             
-            // Should not crash
+            // Truncated data is rejected
             expect(() => {
-                const message = NdefMessage.fromByteArray(headerOnly);
-            }).not.toThrow();
+                NdefMessage.fromByteArray(headerOnly);
+            }).toThrow(/Invalid NDEF message/);
         });
 
         test('should handle invalid TNF values', () => {
@@ -272,19 +270,11 @@ describe('Message Parsing Integration Tests', () => {
                 0x48, 0x65, 0x6C, 0x6C, 0x6F
             ]);
             
-            // Due to parsing implementation issues, this may throw or behave unexpectedly
-            // We test that it doesn't crash the entire system
-            try {
-                const message = NdefMessage.fromByteArray(noMeFlag);
-                // If parsing succeeds, verify basic structure
-                expect(message.length).toBeGreaterThanOrEqual(0);
-                if (message.length > 0) {
-                    expect(message.records[0].getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
-                }
-            } catch (error) {
-                // Parsing may fail due to implementation issues - this is acceptable for malformed data
-                expect(error).toBeInstanceOf(Error);
-            }
+            // Lenient parsing: the record is returned even though the ME flag is missing
+            const message = NdefMessage.fromByteArray(noMeFlag);
+            expect(message.length).toBe(1);
+            expect(message.records[0].getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
+            expect(Array.from(message.records[0].getPayload())).toEqual([0x48, 0x65, 0x6C, 0x6C, 0x6F]);
         });
 
         test('should handle long record with incorrect length', () => {
@@ -296,10 +286,10 @@ describe('Message Parsing Integration Tests', () => {
                 0x48, 0x65, 0x6C, 0x6C, 0x6F // only 5 bytes of payload
             ]);
             
-            // Should not crash
+            // Truncated data is rejected
             expect(() => {
-                const message = NdefMessage.fromByteArray(incorrectLength);
-            }).not.toThrow();
+                NdefMessage.fromByteArray(incorrectLength);
+            }).toThrow(/Invalid NDEF message/);
         });
 
         test('should handle record with ID length but no ID data', () => {
@@ -310,21 +300,21 @@ describe('Message Parsing Integration Tests', () => {
                 0x48, 0x65, 0x6C, 0x6C, 0x6F // payload
             ]);
             
-            // Should not crash
+            // Truncated data is rejected
             expect(() => {
-                const message = NdefMessage.fromByteArray(missingId);
-            }).not.toThrow();
+                NdefMessage.fromByteArray(missingId);
+            }).toThrow(/Invalid NDEF message/);
         });
 
         test('should handle null or undefined input', () => {
             // Test null input
             expect(() => {
-                const message = NdefMessage.fromByteArray(null);
+                NdefMessage.fromByteArray(null);
             }).toThrow();
             
             // Test undefined input
             expect(() => {
-                const message = NdefMessage.fromByteArray(undefined);
+                NdefMessage.fromByteArray(undefined);
             }).toThrow();
         });
     });

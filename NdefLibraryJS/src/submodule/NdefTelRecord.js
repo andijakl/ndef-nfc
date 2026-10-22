@@ -11,8 +11,13 @@ export class NdefTelRecord extends NdefUriRecord {
     }
 
     static isRecordType(record) {
-        return NdefUriRecord.isRecordType(record) &&
-            record.getUri().startsWith(TEL_SCHEME);
+        if (!NdefUriRecord.isRecordType(record)) {
+            return false;
+        }
+        // The record may be a generic NdefRecord (e.g., parsed from raw bytes)
+        const uriRecord = new NdefUriRecord();
+        uriRecord.setPayload(record.getPayload());
+        return uriRecord.getUri().startsWith(TEL_SCHEME);
     }
 
     checkIfValid() {

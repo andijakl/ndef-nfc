@@ -42,8 +42,6 @@ describe('NdefTextRecord', () => {
             
             expect(record.getLanguageCode()).toBe(languageCode);
             expect(record.getTextEncoding()).toBe(encoding);
-            // KNOWN BUG: UTF-16 encoding is broken in the implementation
-            // This test documents the expected behavior, not the current buggy behavior
             expect(record.getText()).toBe(text);
         });
 

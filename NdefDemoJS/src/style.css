@@ -1,48 +1,123 @@
+:root {
+    color-scheme: light dark;
+    --accent: #0080c8;
+    --border: #8884;
+}
+
 body {
-    font-family: sans-serif;
-    margin: 2em;
+    font-family: system-ui, sans-serif;
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 960px;
+    line-height: 1.4;
+}
+
+h1 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.2em;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1em;
+}
+
+@media (min-width: 720px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status {
+        grid-column: 1 / -1;
+    }
 }
 
 .section {
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-h1, h2 {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.5em;
+.info {
+    padding: 0.75em 1em;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.info.error {
+    border-color: #c00;
+}
+
+.hint {
+    margin-top: 0;
+    opacity: 0.8;
+}
+
+label {
+    display: block;
+    margin-top: 0.75em;
+    font-weight: 600;
+}
+
+.row {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 0.25em;
+}
+
+.row input {
+    flex: 1;
+    min-width: 0;
 }
 
 button {
-    padding: 0.5em 1em;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
+    padding: 0.6em 1em;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    background-color: var(--accent);
+    color: white;
+    font: inherit;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #e0e0e0;
+button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#cancelWriteBtn {
+    margin-top: 1em;
 }
 
 input {
-    padding: 0.5em;
-    border-radius: 3px;
-    border: 1px solid #ccc;
+    padding: 0.6em;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font: inherit;
 }
 
 #statusList {
     list-style: none;
+    margin: 0;
     padding: 0;
-    height: 200px;
-    overflow-y: scroll;
-    border: 1px solid #ccc;
-    padding: 0.5em;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+#statusList li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid var(--border);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#statusList time {
+    opacity: 0.6;
+    margin-right: 0.5em;
 }

@@ -1,0 +1,41 @@
+<Project>
+  <!-- Shared settings for all projects of the NDEF Library solution. -->
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <!-- Version shared by the NdefLibrary and NdefLibraryExtension packages -->
+  <PropertyGroup>
+    <Version>5.0.0</Version>
+    <Authors>Andreas Jakl</Authors>
+    <Company>Andreas Jakl</Company>
+    <Copyright>Copyright 2012 - 2026 Andreas Jakl, https://www.nfcinteractor.com/</Copyright>
+  </PropertyGroup>
+
+  <!-- NuGet package metadata -->
+  <PropertyGroup>
+    <PackageProjectUrl>https://andijakl.github.io/ndef-nfc/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/andijakl/ndef-nfc</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>NdefLibraryLogo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>See https://github.com/andijakl/ndef-nfc/releases for details</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <!-- Source Link (included in the .NET SDK) + symbol packages for debugging into the library -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)nupkg</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsPackable)' != 'false'">
+    <None Include="$(MSBuildThisFileDirectory)NdefLibraryLogo.png" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="$(MSBuildThisFileDirectory)README.nuget.md" Pack="true" PackagePath="\README.md" Visible="false" />
+  </ItemGroup>
+
+</Project>

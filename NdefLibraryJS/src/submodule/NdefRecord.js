@@ -80,7 +80,7 @@ export class NdefRecord {
         this._typeNameFormat = value;
     }
 
-    checkSpecializedType(checkForSubtypes) {
+    checkSpecializedType(_checkForSubtypes) {
         // TODO
     }
 

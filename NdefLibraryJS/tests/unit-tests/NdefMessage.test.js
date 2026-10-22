@@ -212,7 +212,7 @@ describe('Message parsing from byte arrays', () => {
             const record = message.records[0];
             expect(record.getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
             expect(Array.from(record.getType())).toEqual([0x54]);
-            expect(Array.from(record.getPayload())).toEqual([0x54, 0x02, 0x65, 0x6E, 0x48, 0x65, 0x6C, 0x6C]);
+            expect(Array.from(record.getPayload())).toEqual([0x02, 0x65, 0x6E, 0x48, 0x65, 0x6C, 0x6C, 0x6F]);
         });
 
         test('should parse URI record with short format', () => {
@@ -228,7 +228,7 @@ describe('Message parsing from byte arrays', () => {
             const record = message.records[0];
             expect(record.getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
             expect(Array.from(record.getType())).toEqual([0x55]);
-            expect(Array.from(record.getPayload())).toEqual([0x55, 0x01, 0x67, 0x6F, 0x6F, 0x67, 0x6C]);
+            expect(Array.from(record.getPayload())).toEqual([0x01, 0x67, 0x6F, 0x6F, 0x67, 0x6C, 0x65]);
         });
 
         test('should parse record with ID field', () => {
@@ -249,7 +249,7 @@ describe('Message parsing from byte arrays', () => {
             expect(Array.from(record.getPayload())).toEqual([0x02, 0x65, 0x6E, 0x48, 0x69]);
         });
 
-        test('should parse multiple records in message (with parsing bugs)', () => {
+        test('should parse multiple records in message', () => {
             // Two records: first with MB, second with ME
             const bytes = new Uint8Array([
                 // First record: MB|SR|NFC_RTD = 0x91
@@ -262,14 +262,14 @@ describe('Message parsing from byte arrays', () => {
             
             expect(message.length).toBe(2);
             
-            // Due to parsing bugs, we can only verify basic structure
             const record1 = message.records[0];
             expect(record1.getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
             expect(Array.from(record1.getType())).toEqual([0x54]);
-            
+            expect(Array.from(record1.getPayload())).toEqual([0x02, 0x65, 0x6E, 0x48, 0x69]);
+
             const record2 = message.records[1];
-            // Note: parsing is buggy for multi-record messages
-            expect(record2).toBeDefined();
+            expect(Array.from(record2.getType())).toEqual([0x55]);
+            expect(Array.from(record2.getPayload())).toEqual([0x01, 0x67, 0x6F, 0x6F, 0x67, 0x6C, 0x65]);
         });
 
         test('should parse long record format', () => {
@@ -295,9 +295,7 @@ describe('Message parsing from byte arrays', () => {
             expect(record.getTypeNameFormat()).toBe(TypeNameFormatType.NfcRtd);
             expect(Array.from(record.getType())).toEqual([0x54]);
             expect(record.getPayload().length).toBe(300);
-            // Due to parsing bug, type gets included in payload
-            const expectedPayload = [0x54, ...longPayload.slice(0, 299)];
-            expect(Array.from(record.getPayload())).toEqual(expectedPayload);
+            expect(Array.from(record.getPayload())).toEqual(Array.from(longPayload));
         });
 
         test('should handle empty byte array', () => {
@@ -325,7 +323,8 @@ describe('Message parsing from byte arrays', () => {
             // Verify first record has MB flag
             expect(bytes[0] & 0x80).toBe(0x80);
             
-            // Note: Due to parsing bugs in the implementation, we don't test round-trip
+            // Round trip: parsing the bytes again results in the same byte sequence
+            expect(Array.from(NdefMessage.fromByteArray(bytes).toByteArray())).toEqual(Array.from(bytes));
         });
 
         test('should handle record with ID in serialization and parsing', () => {
@@ -345,9 +344,8 @@ describe('Message parsing from byte arrays', () => {
             
             expect(parsed.getTypeNameFormat()).toBe(originalRecord.getTypeNameFormat());
             expect(Array.from(parsed.getType())).toEqual(Array.from(originalRecord.getType()));
-            // Note: Due to parsing issues, we only verify basic structure
-            expect(parsed.getPayload().length).toBeGreaterThan(0);
-            expect(parsed.getId().length).toBeGreaterThan(0);
+            expect(Array.from(parsed.getPayload())).toEqual(Array.from(originalRecord.getPayload()));
+            expect(Array.from(parsed.getId())).toEqual([0x01, 0x02, 0x03]);
         });
 
         test('should handle long record serialization and parsing', () => {
@@ -363,8 +361,7 @@ describe('Message parsing from byte arrays', () => {
             
             expect(parsed.getTypeNameFormat()).toBe(originalRecord.getTypeNameFormat());
             expect(Array.from(parsed.getType())).toEqual(Array.from(originalRecord.getType()));
-            // Due to parsing issues, we verify the payload has reasonable length
-            expect(parsed.getPayload().length).toBeGreaterThan(400);
+            expect(Array.from(parsed.getPayload())).toEqual(longPayload);
         });
     });
 

@@ -33,7 +33,7 @@ using System.Threading.Tasks;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
-using Windows.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Xaml.Media.Imaging;
 using NdefLibrary.Ndef;
 
 namespace NdefLibraryUwp.Ndef
@@ -53,7 +53,7 @@ namespace NdefLibraryUwp.Ndef
     /// a file. If loading from a stream / file, the class will automatically
     /// determine the correct MIME type and set it to the record.
     /// 
-    /// When loading & parsing an existing record, just construct this class
+    /// When loading &amp; parsing an existing record, just construct this class
     /// based on a generic NdefRecord. You can then use convenient getter methods
     /// to retrieve a WriteableBitmap from the image data payload, no matter
     /// which encoding the image data is actually using.
@@ -150,12 +150,7 @@ namespace NdefLibraryUwp.Ndef
         public async Task SetImage(WriteableBitmap bmp, ImageMimeType mimeType, double dpi = 96.0)
         {
             var encoderId = GetBitmapEncoderIdForMimeType(mimeType);
-            byte[] pixels;
-            using (var stream = bmp.PixelBuffer.AsStream())
-            {
-                pixels = new byte[(uint)stream.Length];
-                await stream.ReadAsync(pixels, 0, pixels.Length);
-            }
+            var pixels = bmp.PixelBuffer.ToArray();
 
             using (var imgStream = new MemoryStream())
             {
@@ -212,13 +207,15 @@ namespace NdefLibraryUwp.Ndef
             var decoder = await BitmapDecoder.CreateAsync(imgStream);
             var fileCodecId = decoder.DecoderInformation.CodecId;
 
+            // The decoder may have moved the stream position while detecting the image type
+            imgStream.Seek(0);
             Payload = new byte[imgStream.Size];
             await imgStream.ReadAsync(Payload.AsBuffer(), (uint)imgStream.Size, InputStreamOptions.None);
             Type = ImageMimeTypes[GetMimeTypeForBitmapDecoderId(fileCodecId)];
         }
 
         /// <summary>
-        /// Utility method to determine & update the MIME type of the record according
+        /// Utility method to determine &amp; update the MIME type of the record according
         /// to the current payload.
         /// </summary>
         /// <remarks>
@@ -318,7 +315,7 @@ namespace NdefLibraryUwp.Ndef
             }
             if (codecId.Equals(BitmapDecoder.BmpDecoderId))
             {
-                return ImageMimeType.Png;
+                return ImageMimeType.Bmp;
             }
             if (codecId.Equals(BitmapDecoder.TiffDecoderId))
             {

@@ -219,12 +219,12 @@ namespace NdefLibrary.Ndef
                 if (record.Type.SequenceEqual(NdefUriRecord.UriType))
                 {
                     var testRecord = new NdefUriRecord(record);
-                    return testRecord.Uri.StartsWith(MailtoScheme);
+                    return testRecord.Uri.StartsWith(MailtoScheme, StringComparison.Ordinal);
                 }
                 if (record.Type.SequenceEqual(SmartPosterType))
                 {
                     var testRecord = new NdefSpRecord(record);
-                    return testRecord.Uri.StartsWith(MailtoScheme);
+                    return testRecord.Uri.StartsWith(MailtoScheme, StringComparison.Ordinal);
                 }
             }
             return false;

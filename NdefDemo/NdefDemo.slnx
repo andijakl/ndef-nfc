@@ -1,0 +1,23 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="LICENSE.GPL" />
+    <File Path="readme.txt" />
+  </Folder>
+  <Folder Name="/NdefLibrary/">
+    <Project Path="../NdefLibrary/NdefLibrary/NdefLibrary.csproj" />
+    <Project Path="../NdefLibrary/NdefLibraryUwp/NdefLibraryUwp.csproj" />
+    <Project Path="../NdefLibrary/VcardLibrary/VcardLibrary.csproj" />
+  </Folder>
+  <Project Path="NdefDemoWinUI3/NdefDemoWinUI3.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+    <Deploy />
+  </Project>
+  <Project Path="NfcTagGenerator/NfcTagGenerator.csproj" />
+</Solution>

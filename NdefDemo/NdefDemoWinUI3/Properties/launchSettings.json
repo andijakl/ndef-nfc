@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "NdefDemoWinUI3 (Package)": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

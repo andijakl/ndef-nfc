@@ -230,19 +230,19 @@ describe('Specialized NDEF Record Types', () => {
 
         describe('Social record modification', () => {
             test('should allow changing username after creation', () => {
-                const record = new NdefSocialRecord("olduser", NfcSocialType.Twitter);
+                const record = new NdefSocialRecord("olduser", NfcSocialType.X);
 
                 record.setSocialUserName("newuser");
                 expect(record.getSocialUserName()).toBe("newuser");
-                expect(record.getUri()).toBe("http://twitter.com/newuser");
+                expect(record.getUri()).toBe("https://x.com/newuser");
             });
 
             test('should allow changing social type after creation', () => {
-                const record = new NdefSocialRecord("testuser", NfcSocialType.Twitter);
+                const record = new NdefSocialRecord("testuser", NfcSocialType.X);
 
                 record.setSocialType(NfcSocialType.Facebook);
                 expect(record.getSocialType()).toBe(NfcSocialType.Facebook);
-                expect(record.getUri()).toBe("http://facebook.com/testuser");
+                expect(record.getUri()).toBe("https://facebook.com/testuser");
             });
         });
 
@@ -549,15 +549,12 @@ describe('Specialized NDEF Record Types', () => {
         });
 
         test('should have correct NfcSocialType constants', () => {
-            expect(NfcSocialType.Twitter).toBe(0);
+            expect(NfcSocialType.X).toBe(0);
             expect(NfcSocialType.LinkedIn).toBe(1);
             expect(NfcSocialType.Facebook).toBe(2);
-            expect(NfcSocialType.Xing).toBe(3);
-            expect(NfcSocialType.VKontakte).toBe(4);
-            expect(NfcSocialType.FoursquareWeb).toBe(5);
-            expect(NfcSocialType.FoursquareApp).toBe(6);
-            expect(NfcSocialType.Skype).toBe(7);
-            expect(NfcSocialType.GooglePlus).toBe(8);
+            expect(NfcSocialType.Instagram).toBe(3);
+            expect(NfcSocialType.Threads).toBe(4);
+            expect(NfcSocialType.TikTok).toBe(5);
         });
     });
 });

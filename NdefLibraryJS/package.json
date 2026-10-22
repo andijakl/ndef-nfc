@@ -1,26 +1,57 @@
 {
   "name": "ndef-library",
-  "version": "2.0.0",
-  "description": "A modern NDEF library for NFC",
-  "main": "dist/ndeflibrary.js",
+  "version": "3.0.0",
+  "description": "Parse and create standardized NDEF records for NFC tags, with Web NFC integration",
+  "keywords": [
+    "nfc",
+    "ndef",
+    "web-nfc",
+    "nfc-tag",
+    "smart-poster"
+  ],
+  "homepage": "https://andijakl.github.io/ndef-nfc/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andijakl/ndef-nfc.git",
+    "directory": "NdefLibraryJS"
+  },
+  "license": "LGPL-3.0-or-later",
+  "author": "Sebastian Höbarth / Andreas Jakl",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "main": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    "types"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "build": "rollup -c",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test:ci": "jest --ci --coverage --watchAll=false",
-    "lint": "eslint src/**/*.js"
+    "build": "npm run build:types && npm run build:bundle",
+    "build:types": "tsc -p tsconfig.json",
+    "build:bundle": "rollup -c",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "prepack": "npm run build"
   },
   "devDependencies": {
-    "rollup": "^4.62.2",
-    "jest": "^29.0.0",
-    "jest-environment-jsdom": "^30.2.0",
-    "eslint": "^8.0.0",
-    "@babel/preset-env": "^7.22.15",
-    "babel-jest": "^29.0.3",
-    "@babel/core": "^7.29.6"
-  },
-  "author": "Sebastian Höbarth / Andreas Jakl / Jules",
-  "license": "LGPL-3.0-or-later"
+    "@eslint/js": "^10.0.1",
+    "@rollup/plugin-terser": "^1.0.0",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "rollup": "^4.64.12",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
 }

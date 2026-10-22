@@ -6,3 +6,4 @@ export * from './submodule/NdefSocialRecord.js';
 export * from './submodule/NdefTelRecord.js';
 export * from './submodule/NdefAndroidAppRecord.js';
 export * from './submodule/NdefMessage.js';
+export * from './submodule/NdefWebNfc.js';

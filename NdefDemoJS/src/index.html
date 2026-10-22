@@ -1,45 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>NFC Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NFC / NDEF Demo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>NFC Demo</h1>
-    <p>This demo shows how to use the Web NFC API to read and write NDEF messages.</p>
+    <h1>NFC / NDEF Demo</h1>
+    <p>Read and write NFC tags with the <a href="https://github.com/andijakl/ndef-nfc">NDEF Library</a> and the Web NFC API (Chrome on Android).</p>
+
+    <p id="supportInfo" class="info"></p>
 
     <div class="container">
-        <div class="section">
-            <h2>Subscribe</h2>
-            <button id="subscribeBtn">Subscribe for NDEF</button>
-        </div>
+        <section class="section">
+            <h2>Read</h2>
+            <button id="scanBtn">Start scanning</button>
+        </section>
 
-        <div class="section">
-            <h2>Publish</h2>
-            <div>
-                <label for="urlInput">URL:</label>
-                <input type="text" id="urlInput" value="https://www.nfcinteractor.com">
-                <button id="publishUriBtn">Publish URI</button>
+        <section class="section">
+            <h2>Write</h2>
+            <p class="hint">Tap a button, then hold an NFC tag to the back of the phone.</p>
+
+            <label for="urlInput">URL</label>
+            <div class="row">
+                <input type="url" id="urlInput" value="https://www.nfcinteractor.com">
+                <button id="writeUriBtn">Write</button>
             </div>
-            <div>
-                <label for="linkedinInput">LinkedIn:</label>
+
+            <label for="textInput">Text</label>
+            <div class="row">
+                <input type="text" id="textInput" value="Hello from the NDEF Library!">
+                <button id="writeTextBtn">Write</button>
+            </div>
+
+            <label for="linkedinInput">LinkedIn profile</label>
+            <div class="row">
                 <input type="text" id="linkedinInput" value="andreasjakl">
-                <button id="publishLinkedInBtn">Publish LinkedIn Profile</button>
+                <button id="writeLinkedInBtn">Write</button>
             </div>
-        </div>
 
-        <div class="section">
+            <label for="telInput">Phone number</label>
+            <div class="row">
+                <input type="tel" id="telInput" value="+431234567">
+                <button id="writeTelBtn">Write</button>
+            </div>
+
+            <label>Location (geo URI)</label>
+            <div class="row">
+                <input type="number" id="latInput" value="48.2082" step="any" aria-label="Latitude">
+                <input type="number" id="lonInput" value="16.3738" step="any" aria-label="Longitude">
+                <button id="writeGeoBtn">Write</button>
+            </div>
+
+            <button id="cancelWriteBtn" disabled>Cancel pending write</button>
+        </section>
+
+        <section class="section">
             <h2>Share</h2>
-            <button id="shareUriBtn">Share URI to Device</button>
-        </div>
+            <button id="shareUriBtn">Share URL</button>
+        </section>
 
-        <div class="section">
+        <section class="section status">
             <h2>Status</h2>
             <ul id="statusList"></ul>
-        </div>
+        </section>
     </div>
 
     <script type="module" src="main.js"></script>

@@ -3,7 +3,7 @@ https://andijakl.github.io/ndef-nfc/
 -------------------------------------------------------------------------------
 
 The NDEF Demo is an example app that demonstrates how to use the 
-NDEF Library for Proximity APIs (NFC) in a Windows 10 (UWP) app.
+NDEF Library for Proximity APIs (NFC) in a WinUI 3 app for Windows 10 / 11.
 
 You can download the Windows 10 example app from the [Windows Store](https://www.microsoft.com/store/apps/9nblggh5p3rm).
 
@@ -21,8 +21,8 @@ record types.
 This NDEF Library provides a set of classes that enable you to easily work with 
 NDEF records on top of the Windows Proximity APIs.
 
-Integrate the library into your Windows project using the 
-NuGet package manager of Visual Studio!
+Integrate the library into your .NET project using the
+NuGet packages NdefLibrary and NdefLibraryExtension!
 
 
 Related Information

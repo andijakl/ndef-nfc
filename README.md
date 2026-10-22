@@ -5,7 +5,7 @@ Easily parse and create NFC tags that contain standard-based NDEF messages.
 
 Available in C# and JavaScript (for HTML5-based apps).
 
-The library download comes with complete example apps that demonstrate reading and writing tags using the NDEF Library. Available for: .net Standard 1.4, Windows 10 / UWP. The Windows 8.1 / WinRT and Windows Phone 8 / Silverlight versions are deprecated and are no longer available in the latest packages.
+The library download comes with complete example apps that demonstrate reading and writing tags using the NDEF Library. Available for: .NET Standard 2.0 and .NET 10 (cross-platform), plus Windows platform extensions for WinUI 3 / Windows App SDK. The UWP, Windows 8.1 / WinRT and Windows Phone 8 / Silverlight versions are deprecated and are no longer available in the latest packages.
 
 [NuGet Library Download](https://nuget.org/packages/NdefLibrary) | [Platform Specific Extension Library](https://www.nuget.org/packages/NdefLibraryExtension) | [Windows 10 Example App Download](https://www.microsoft.com/store/apps/9nblggh5p3rm)
 
@@ -30,21 +30,17 @@ Additionally, the library can parse NDEF byte arrays that you read from tags or 
 
 For Windows, the NFC stack is represented through the Proximity APIs - they encapsulate NFC hardware communication and basic NDEF formatting for a very limited subset of the NDEF standards. This missing part is added by this NDEF library.
 
-
-
 ## Availability
 
 The NFC / NDEF library is available in C# and JavaScript and can therefore be used on any operating system.
 
-To keep up to date, either follow this project or [follow me on Twitter](https://twitter.com/andijakl).
-
 ### C# Version
 
-The library is available as a ready-made portable class library, which can be used on any platform compatible to .net Standard 1.4+, like Windows 10 (UWP).
+The core library targets .NET Standard 2.0 and .NET 10. It can therefore be used on any modern .NET platform (Windows, Linux, macOS, Android and iOS via .NET MAUI, as well as .NET Framework 4.6.2+ and Unity).
 
-Additional platform-specific functionality is added through the the separate extension library. It integrates with the platform APIs for UWP and allows real-life tasks like creating a business card record based on a Contact from the Windows address book.
+Additional platform-specific functionality is added through the separate extension library. It targets .NET 10 on Windows with WinUI 3 / Windows App SDK and allows real-life tasks like creating a business card record based on a Contact from the Windows address book.
 
-An example app is available for Windows 10. In addition to the library download on this page, you can use the NuGet package manager of Visual Studio to easily integrate the library with your project.
+A WinUI 3 example app is available for Windows 10 (1809+) and Windows 11. In addition to the library download on this page, you can use the NuGet package manager to easily integrate the library with your project.
 
 ### JavaScript / HTML5 Version
 
@@ -99,7 +95,7 @@ The JavaScript port of the library provides comprehensive NDEF support for moder
 
 ## Example Apps
 
-For C#, the library download comes with NdefDemoWin10 (for Windows 10 / UWP). This example app demonstrates some of the features of the NDEF Library. The demo is available under GPL v3 license. You can download the Windows 10 example app from the [Windows Store](https://www.microsoft.com/store/apps/9nblggh5p3rm).
+For C#, the library download comes with NdefDemoWinUI3 (a WinUI 3 app for Windows 10 / 11) and NfcTagGenerator (a cross-platform console app that writes sample NDEF messages to files). The example app demonstrates some of the features of the NDEF Library. The demo is available under GPL v3 license. You can download the Windows 10 example app from the [Windows Store](https://www.microsoft.com/store/apps/9nblggh5p3rm).
 
 For JavaScript, the `NdefDemoJS` directory contains a modern web application built with Vite that demonstrates the Web NFC API integration and various NDEF record types. The demo showcases social media records, URI records, and real-time NFC tag reading/writing. It requires Chrome for Android and works with physical NFC tags.
 
@@ -210,20 +206,21 @@ const socialMessage = new NdefMessage([xRecord, linkedinRecord]);
 
 ### Web NFC API Integration:
 
-The library works seamlessly with the Web NFC API (Chrome for Android):
+Web NFC (Chrome for Android) uses its own record structure instead of raw NDEF bytes. `toWebNfcMessage()` and `fromWebNfcMessage()` convert between both:
 
 ```javascript
+import { toWebNfcMessage, fromWebNfcMessage } from 'ndef-library';
+
 // Writing to NFC tag
 const ndef = new NDEFReader();
-await ndef.write(message);
+await ndef.write(toWebNfcMessage(message));
 
 // Reading from NFC tag
-await ndef.scan();
 ndef.onreading = event => {
-    const message = new NdefMessage(event.message.records.map(r => 
-        new NdefRecord(r.recordType, r.mediaType, r.data, r.id)));
+    const message = fromWebNfcMessage(event.message);
     console.log(message.records);
 };
+await ndef.scan();
 ```
 
 ### Create a raw NDEF Message by defined input:
@@ -232,7 +229,7 @@ ndef.onreading = event => {
 const recordType = new Array(1,3,1,3,5,6,7);
 const recordPayload = new Array(1,2,1);
 const id = new Array(3,3);
-const ndefRecord2 = new NdefRecord(NdefRecord.TypeNameFormatType.NfcRtd, recordType);
+const ndefRecord2 = new NdefRecord(TypeNameFormatType.NfcRtd, recordType);
 ndefRecord2.setPayload(recordPayload);
 ndefRecord2.setId(id);
 
@@ -253,24 +250,38 @@ const ndefMessage = NdefMessage.fromByteArray(byteArray);
 
 To try the library, you can clone the complete repository from GitHub and test the included NdefDemo example app.
 
-If you want to use the NFC / NDEF Library from your own app, the easiest option is to use the NuGet package manager in Visual Studio to automatically download & integrate the portable library:
+If you want to use the NFC / NDEF Library from your own app, the easiest option is to add the NuGet package:
 
-1. Tools -> Library Package Manager -> Manage NuGet Packages for Solution...
-2. Search "Online" for "NDEF"
-3. Install: "NFC / NDEF Library for Proximity APIs" 
-4. To use the platform extension library, also install: "NFC / NDEF Library Platform Extensions for Proximity APIs"
+```bash
+dotnet add package NdefLibrary
+```
+
+To use the Windows platform extension library (WinUI 3 / Windows App SDK), also add `NdefLibraryExtension`. Both packages include Source Link and symbol packages, so you can debug into the library code.
 
 #### Core NFC / NDEF Library
 
 * More information: https://nuget.org/packages/NdefLibrary
-* Debug symbols: http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibrary
 
 #### NFC / NDEF Library Platform-Specific Extension Library
 
 * More information: https://www.nuget.org/packages/NdefLibraryExtension
-* Debug symbols: http://www.symbolsource.org/Public/Metadata/NuGet/Project/NdefLibraryExtension
 
-You can also download the complete portable library project from the source control server of this project, and build the library yourself, or directly integrate the relevant class files.
+### Building from source
+
+Requirements: .NET 10 SDK. For the Windows extension library and the WinUI 3 demo app, Visual Studio 2026 (or 2022 17.14+) with the "WinUI application development" workload.
+
+* `NdefLibrary/NdefLibrary.slnx`: core library, Windows extension library and unit tests
+* `NdefDemo/NdefDemo.slnx`: WinUI 3 demo app and NfcTagGenerator, referencing the library projects
+
+```bash
+dotnet test --project NdefLibrary/NdefLibrary.Tests/NdefLibrary.Tests.csproj
+```
+
+```bash
+dotnet pack NdefLibrary/NdefLibrary.slnx -c Release
+```
+
+The packages are written to `NdefLibrary/nupkg`. The WinUI 3 demo app needs a platform when building from the command line, e.g. `dotnet build NdefDemo/NdefDemo.slnx -p:Platform=x64`.
 
 
 
@@ -288,7 +299,7 @@ npm install ndef-library
 
 ### Browser Compatibility
 
-**Important**: The JavaScript library uses the Web NFC API, which is currently **only supported in Chrome for Android** (version 89+). Desktop browsers and other mobile browsers do not yet support the Web NFC API.
+**Important**: The JavaScript library itself runs in any modern browser and in Node.js. Reading and writing tags requires the Web NFC API, which is currently **only supported in Chrome for Android** (version 89+) and only in secure contexts (`https://` or `http://localhost`).
 
 ### Demo Application
 
@@ -303,14 +314,23 @@ To run the demo:
 
 1. Navigate to the `NdefDemoJS` directory
 2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Access from your Android device using Chrome browser at `http://[YOUR_IP]:5173/src`
+3. Start the development server with a self-signed HTTPS certificate: `npm run dev:https`
+4. Open `https://[YOUR_IP]:5173/` in Chrome on your Android device and accept the certificate warning
 
-For production deployment, build the demo with `npm run build` and deploy the `dist` folder to any web server with HTTPS support. 
+See [NdefLibraryJS/README.md](NdefLibraryJS/README.md) for alternatives (USB port forwarding, static hosting). For production deployment, build the demo with `npm run build` and deploy the `dist` folder to any web server with HTTPS support.
 
 
 
 ## Version History (C#)
+
+### 5.0.0 - 2026
+* Core library and vCard library now target .NET Standard 2.0 and .NET 10 (previously .NET Standard 1.4)
+* Extension library (NuGet: NdefLibraryExtension) ported from UWP to WinUI 3 / Windows App SDK on .NET 10. `NdefMimeImageRecord` now uses `Microsoft.UI.Xaml.Media.Imaging.WriteableBitmap`
+* Updated to Ical.Net 5
+* Demo app ported from UWP to WinUI 3; NfcTagGenerator ported to .NET 10
+* Modern SDK-style projects, `.slnx` solutions, central package management, Source Link and symbol packages
+* New xUnit test project for the core library
+* Fixes: BMP images were labeled as `image/png` in `NdefMimeImageRecord`; URI abbreviation and mailto detection now use ordinal string comparison
 
 ### 4.1.0 - August 2017
 * Main NFC / NDEF library is ported to .NET Standard 1.4
@@ -364,6 +384,14 @@ For production deployment, build the demo with `npm run build` and deploy the `d
 
 
 ## Version History (JavaScript)
+
+### 3.0.0 - 2026
+* New `toWebNfcMessage()` / `fromWebNfcMessage()` to read and write tags with the Web NFC API
+* Fixed parsing of raw NDEF messages: payloads were shifted by one byte for records without ID
+* Fixed UTF-16 text records (text was encoded as UTF-8), geo records at coordinate 0, and `NdefTelRecord.isRecordType()` on generic records
+* `NdefMessage.fromByteArray()` accepts `Uint8Array`, `ArrayBuffer`, `DataView` and arrays, and rejects truncated data
+* Tooling: Vitest instead of Jest + Babel, ESLint flat config, generated TypeScript declarations, ES module bundles via Rollup
+* Demo app: Vite 8, mobile layout, HTTPS dev server for testing on Android, reads smart posters and writes more record types
 
 ### 2.0.0 - September 2025
 * Complete modernization of the JavaScript library

@@ -45,7 +45,7 @@ namespace NdefLibrary.Ndef
     /// If creating a multi-record NDEF message, it's recommended to put this
     /// record to the end of the message.
     /// </remarks>
-    /// <seealso cref="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html#aar"/>
+    /// <seealso href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html#aar"/>
     public class NdefAndroidAppRecord : NdefRecord
     {
         /// <summary>

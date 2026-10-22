@@ -1,4 +1,4 @@
-import { NdefRecord, TypeNameFormatType } from './NdefRecord.js';
+import { NdefRecord } from './NdefRecord.js';
 
 export class NdefMessage {
     constructor(records) {
@@ -23,34 +23,52 @@ export class NdefMessage {
         return this._records.length;
     }
 
-    static fromByteArray(bytes) {
+    /**
+     * Parses a raw NDEF message.
+     * @param {Uint8Array | ArrayBuffer | DataView | number[]} input Raw bytes of the NDEF message.
+     * @returns {NdefMessage}
+     */
+    static fromByteArray(input) {
+        const bytes = toUint8Array(input);
         const message = new NdefMessage();
-        let i = 0;
-        while (i < bytes.length) {
-            const flags = bytes[i];
+        const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+        let offset = 0;
+        while (offset < bytes.length) {
+            // Record layout: flags | type length | payload length (1 or 4 bytes) | [id length] | type | [id] | payload
+            const flags = bytes[offset++];
             const tnf = flags & 0x07;
             const sr = (flags & 0x10) !== 0;
             const il = (flags & 0x08) !== 0;
 
-            const typeLength = bytes[++i];
-            const payloadLength = sr ? bytes[++i] : new DataView(bytes.buffer, ++i, 4).getUint32(0, false);
-            i += sr ? 0 : 3;
-            const idLength = il ? bytes[++i] : 0;
+            const headerLength = 1 + (sr ? 1 : 4) + (il ? 1 : 0);
+            if (offset + headerLength > bytes.length) {
+                throw new Error("Invalid NDEF message: record header exceeds message length");
+            }
+            const typeLength = bytes[offset++];
+            let payloadLength;
+            if (sr) {
+                payloadLength = bytes[offset++];
+            } else {
+                payloadLength = view.getUint32(offset, false);
+                offset += 4;
+            }
+            const idLength = il ? bytes[offset++] : 0;
 
-            const type = bytes.slice(++i, i + typeLength);
-            i += typeLength -1;
-            const id = il ? bytes.slice(++i, i + idLength) : new Uint8Array(0);
-            i += il ? idLength - 1 : -1;
-            const payload = bytes.slice(++i, i + payloadLength);
-            i += payloadLength -1;
+            if (offset + typeLength + idLength + payloadLength > bytes.length) {
+                throw new Error("Invalid NDEF message: record exceeds message length");
+            }
+            const type = bytes.slice(offset, offset + typeLength);
+            offset += typeLength;
+            const id = bytes.slice(offset, offset + idLength);
+            offset += idLength;
+            const payload = bytes.slice(offset, offset + payloadLength);
+            offset += payloadLength;
 
-            const record = new NdefRecord(tnf, type, payload, id);
-            message.push(record);
+            message.push(new NdefRecord(tnf, type, payload, id));
 
             if ((flags & 0x40) !== 0) { // ME flag
                 break;
             }
-            i++;
         }
         return message;
     }
@@ -102,7 +120,6 @@ export class NdefMessage {
 
             if (il) {
                 header.set(record.getId(), offset);
-                offset += idLength;
             }
 
             const newBuffer = new Uint8Array(buffer.length + header.length + payloadLength);
@@ -114,4 +131,21 @@ export class NdefMessage {
 
         return buffer;
     }
+}
+
+/**
+ * @param {Uint8Array | ArrayBuffer | DataView | number[]} input
+ * @returns {Uint8Array}
+ */
+function toUint8Array(input) {
+    if (input instanceof Uint8Array) {
+        return input;
+    }
+    if (ArrayBuffer.isView(input)) {
+        return new Uint8Array(input.buffer, input.byteOffset, input.byteLength);
+    }
+    if (input instanceof ArrayBuffer) {
+        return new Uint8Array(input);
+    }
+    return Uint8Array.from(input);
 }
